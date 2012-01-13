@@ -1,0 +1,11 @@
+{
+    "name": "application-name"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "jQuery": " >=1.6.0 "
+      "underscore": ">=0.0.1"
+      "backbone": ">=0.0.1 "
+    , "jtemplate": ">= 0.0.1"
+  }
+}
