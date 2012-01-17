@@ -1,0 +1,1203 @@
+
+
+csslint: There are 15 problems in ./css/lab/less/epaper.css.
+
+epaper.css
+1: warning at line 1, col 1
+The universal selector (*) is known to be slow.
+* {
+
+epaper.css
+2: warning at line 7, col 16
+Values of 0 shouldn't have units specified.
+  line-height: 0px;
+
+epaper.css
+3: warning at line 95, col 3
+Background image '../../imgs/audio_carrot.png' was used multiple times, first declared at line 87, col 3.
+  background: url("../../imgs/audio_carrot.png") no-repeat 0 0;
+
+epaper.css
+4: warning at line 134, col 3
+Background image '../../imgs/audio_progressbar.gif' was used multiple times, first declared at line 121, col 3.
+  background: url("../../imgs/audio_progressbar.gif") no-repeat 0 0;
+
+epaper.css
+5: warning at line 135, col 30
+Values of 0 shouldn't have units specified.
+  background-position: right 0px;
+
+epaper.css
+6: warning at line 155, col 3
+Using height with padding can sometimes make elements larger than you expect.
+  padding: 7px 0 0 5px;
+
+epaper.css
+7: warning at line 155, col 3
+Using width with padding can sometimes make elements larger than you expect.
+  padding: 7px 0 0 5px;
+
+epaper.css
+8: warning at line 156, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 148, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat 0 0;
+
+epaper.css
+9: warning at line 159, col 8
+Values of 0 shouldn't have units specified.
+  top: 0px;
+
+epaper.css
+10: warning at line 160, col 9
+Values of 0 shouldn't have units specified.
+  left: 0px;
+
+epaper.css
+11: warning at line 178, col 59
+Don't use adjoining classes.
+.epaper .epaper_zoom .zoom_in:hover, .epaper .epaper_zoom .zoom_in.touched {
+
+epaper.css
+12: warning at line 181, col 60
+Don't use adjoining classes.
+.epaper .epaper_zoom .zoom_out:hover, .epaper .epaper_zoom .zoom_out.touched {
+
+epaper.css
+13: warning at line 193, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 148, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat 0 0;
+
+epaper.css
+14: warning at line 216, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 148, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat 0 0;
+
+epaper.css
+15: warning at line 223, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 148, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat 0 0;
+
+
+csslint: There are 19 problems in ./css/lab/stylus/epaper.css.
+
+epaper.css
+1: warning at line 1, col 1
+The universal selector (*) is known to be slow.
+* {
+
+epaper.css
+2: warning at line 7, col 16
+Values of 0 shouldn't have units specified.
+  line-height: 0px;
+
+epaper.css
+3: warning at line 96, col 3
+Background image '../../imgs/audio_carrot.png' was used multiple times, first declared at line 87, col 3.
+  background: url("../../imgs/audio_carrot.png") no-repeat;
+
+epaper.css
+4: error at line 123, col 24
+Expected LBRACE at line 123, col 24.
+.audio_indicator width:129px,
+
+epaper.css
+5: error at line 123, col 24
+Unexpected token '129px' at line 123, col 24.
+.audio_indicator width:129px,
+
+epaper.css
+6: error at line 123, col 29
+Unexpected token ',' at line 123, col 29.
+.audio_indicator width:129px,
+
+epaper.css
+7: warning at line 131, col 71
+Values of 0 shouldn't have units specified.
+  background: url("../../imgs/audio_progressbar.gif") no-repeat right 0px;
+
+epaper.css
+8: warning at line 131, col 3
+Background image '../../imgs/audio_progressbar.gif' was used multiple times, first declared at line 121, col 3.
+  background: url("../../imgs/audio_progressbar.gif") no-repeat right 0px;
+
+epaper.css
+9: warning at line 150, col 3
+Using width with padding can sometimes make elements larger than you expect.
+  padding: 7px 0 0 5px;
+
+epaper.css
+10: warning at line 150, col 3
+Using height with padding can sometimes make elements larger than you expect.
+  padding: 7px 0 0 5px;
+
+epaper.css
+11: warning at line 151, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 144, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat left 0;
+
+epaper.css
+12: warning at line 153, col 8
+Values of 0 shouldn't have units specified.
+  top: 0px;
+
+epaper.css
+13: warning at line 154, col 9
+Values of 0 shouldn't have units specified.
+  left: 0px;
+
+epaper.css
+14: warning at line 169, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 144, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat left -35px;
+
+epaper.css
+15: warning at line 175, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 144, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat;
+
+epaper.css
+16: warning at line 179, col 3
+Duplicate property 'right' found.
+  right: -20px;
+
+epaper.css
+17: warning at line 193, col 22
+Don't use adjoining classes.
+.epaper .epaper_zoom .zoom_in.touched {
+
+epaper.css
+18: warning at line 197, col 22
+Don't use adjoining classes.
+.epaper .epaper_zoom .zoom_out.touched {
+
+epaper.css
+19: warning at line 217, col 3
+Background image '../../imgs/epaper_overlay.png' was used multiple times, first declared at line 144, col 3.
+  background: url("../../imgs/epaper_overlay.png") no-repeat 0 -74px;
+
+
+csslint: No errors in ./css/lib/base-groups.css.
+
+
+csslint: There are 17 problems in ./css/lib/harmonise.css.
+
+harmonise.css
+1: warning at line 12, col 1
+Outlines should only be modified using :focus.
+html, body, div, span, applet, object, iframe,
+
+harmonise.css
+2: warning at line 42, col 1
+Outlines shouldn't be hidden unless other visual changes are made.
+:focus {
+
+harmonise.css
+3: warning at line 49, col 2
+Unknown property 'border-spacing'.
+	border-spacing: 0;
+
+harmonise.css
+4: warning at line 100, col 1
+Heading (h1) has already been defined.
+h1 {
+
+harmonise.css
+5: warning at line 104, col 1
+Heading (h2) has already been defined.
+h2 { font-size: 1.125em;   /* 18px */ }
+
+harmonise.css
+6: warning at line 105, col 1
+Heading (h3) has already been defined.
+h3 { font-size: 1.0em;     /* 16px */ }
+
+harmonise.css
+7: warning at line 106, col 1
+Heading (h4) has already been defined.
+h4 { font-size: 0.875em;   /* 14px */ }
+
+harmonise.css
+8: warning at line 107, col 1
+Heading (h5) has already been defined.
+h5, h6 { font-size: 0.8125em;  /* 13px */ }
+
+harmonise.css
+9: warning at line 107, col 5
+Heading (h6) has already been defined.
+h5, h6 { font-size: 0.8125em;  /* 13px */ }
+
+harmonise.css
+10: warning at line 121, col 1
+Heading (h1) has already been defined.
+h1 {
+
+harmonise.css
+11: warning at line 126, col 1
+Heading (h2) has already been defined.
+h2 {
+
+harmonise.css
+12: warning at line 131, col 1
+Heading (h3) has already been defined.
+h3 {
+
+harmonise.css
+13: warning at line 136, col 1
+Heading (h4) has already been defined.
+h4 {
+
+harmonise.css
+14: warning at line 314, col 1
+Element (input.short) is overqualified, just use .short without element name.
+input.short {
+
+harmonise.css
+15: warning at line 335, col 19
+Element (input.cancel) is overqualified, just use .cancel without element name.
+.button-container input.cancel {
+
+harmonise.css
+16: warning
+Too many font-size declarations (12), abstraction needed.
+
+harmonise.css
+17: warning
+You have 3 h1s, 3 h2s, 3 h3s, 3 h4s, 2 h5s, 2 h6s defined in this stylesheet.
+
+
+csslint: No errors in ./css/lib/ie.css.
+
+
+csslint: There are 52 problems in ./css/reset-min.css.
+
+reset-min.css
+1: warning at line 2, col 201
+Unknown property 'border-spacing'.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+2: warning at line 2, col 416
+Heading (h1) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+3: warning at line 2, col 422
+Heading (h3) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+4: warning at line 2, col 425
+Heading (h4) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+5: warning at line 2, col 428
+Heading (h5) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+6: warning at line 2, col 431
+Heading (h6) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+7: warning at line 2, col 770
+Unknown property '*font-size'.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+8: warning at line 2, col 419
+Heading (h2) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset-min.css
+9: warning at line 17, col 75
+Unknown property '*zoom'.
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+reset-min.css
+10: warning at line 17, col 57
+Unknown property '*display'.
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+reset-min.css
+11: warning at line 60, col 1
+Outlines should only be modified using :focus.
+a:hover, a:active { outline: 0; }
+
+reset-min.css
+12: warning at line 75, col 46
+Using height with border-top can sometimes make elements larger than you expect.
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+reset-min.css
+13: warning at line 82, col 59
+Unknown property '_font-family'.
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+reset-min.css
+14: warning at line 146, col 21
+Unknown property '*margin-left'.
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+reset-min.css
+15: warning at line 157, col 89
+Unknown property '*vertical-align'.
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+reset-min.css
+16: warning at line 164, col 38
+Unknown property '*overflow'.
+button, input { line-height: normal; *overflow: visible; }
+
+reset-min.css
+17: warning at line 171, col 1
+The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+reset-min.css
+18: warning at line 177, col 47
+The box-sizing property isn't supported in IE6 and IE7.
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+
+reset-min.css
+19: warning at line 178, col 87
+The box-sizing property isn't supported in IE6 and IE7.
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+reset-min.css
+20: warning at line 191, col 1
+Rule is empty.
+input:valid, textarea:valid {  }
+
+reset-min.css
+21: warning at line 199, col 36
+Unknown property 'border-spacing'.
+table { border-collapse: collapse; border-spacing: 0; }
+
+reset-min.css
+22: warning at line 208, col 1
+Don't use IDs in selectors.
+#container {
+
+reset-min.css
+23: warning at line 214, col 1
+Don't use IDs in selectors.
+#menu {
+
+reset-min.css
+24: warning at line 218, col 1
+Don't use IDs in selectors.
+#menu ul {
+
+reset-min.css
+25: warning at line 222, col 1
+Don't use IDs in selectors.
+#menu ul li {
+
+reset-min.css
+26: warning at line 226, col 1
+Don't use IDs in selectors.
+#menu ul li a {
+
+reset-min.css
+27: warning at line 231, col 1
+Don't use IDs in selectors.
+#menu ul li a:hover {
+
+reset-min.css
+28: warning at line 234, col 1
+Don't use IDs in selectors.
+#container {
+
+reset-min.css
+29: warning at line 234, col 1
+Rule is empty.
+#container {
+
+reset-min.css
+30: warning at line 237, col 1
+Don't use IDs in selectors.
+#logo {
+
+reset-min.css
+31: warning at line 240, col 1
+Heading (h1) has already been defined.
+h1{
+
+reset-min.css
+32: warning at line 244, col 1
+Don't use IDs in selectors.
+#page {
+
+reset-min.css
+33: warning at line 251, col 1
+Don't use IDs in selectors.
+#footer {
+
+reset-min.css
+34: warning at line 272, col 1
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset-min.css
+35: warning at line 272, col 1
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset-min.css
+36: warning at line 272, col 35
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset-min.css
+37: warning at line 272, col 35
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset-min.css
+38: warning at line 322, col 3
+The universal selector (*) is known to be slow.
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+39: warning at line 322, col 7
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+40: warning at line 322, col 43
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+41: warning at line 322, col 68
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+42: warning at line 322, col 98
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+43: warning at line 322, col 122
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset-min.css
+44: warning at line 323, col 18
+Use of !important
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+
+reset-min.css
+45: warning at line 326, col 17
+Attribute selectors with ^= are slow!
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+reset-min.css
+46: warning at line 326, col 47
+Attribute selectors with ^= are slow!
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+reset-min.css
+47: warning at line 330, col 9
+Use of !important
+  img { max-width: 100% !important; }
+
+reset-min.css
+48: warning at line 332, col 6
+Heading (h2) has already been defined.
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+reset-min.css
+49: warning at line 332, col 10
+Heading (h3) has already been defined.
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+reset-min.css
+50: warning at line 333, col 3
+Heading (h2) has already been defined.
+  h2, h3{ page-break-after: avoid; }
+
+reset-min.css
+51: warning at line 333, col 7
+Heading (h3) has already been defined.
+  h2, h3{ page-break-after: avoid; }
+
+reset-min.css
+52: warning
+You have 3 h1s, 4 h2s, 4 h3s, 2 h4s, 2 h5s, 2 h6s defined in this stylesheet.
+
+
+csslint: There are 52 problems in ./css/reset.css.
+
+reset.css
+1: warning at line 2, col 201
+Unknown property 'border-spacing'.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+2: warning at line 2, col 416
+Heading (h1) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+3: warning at line 2, col 422
+Heading (h3) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+4: warning at line 2, col 425
+Heading (h4) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+5: warning at line 2, col 428
+Heading (h5) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+6: warning at line 2, col 431
+Heading (h6) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+7: warning at line 2, col 770
+Unknown property '*font-size'.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+8: warning at line 2, col 419
+Heading (h2) has already been defined.
+html{color:#000;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+reset.css
+9: warning at line 17, col 75
+Unknown property '*zoom'.
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+reset.css
+10: warning at line 17, col 57
+Unknown property '*display'.
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+reset.css
+11: warning at line 60, col 1
+Outlines should only be modified using :focus.
+a:hover, a:active { outline: 0; }
+
+reset.css
+12: warning at line 75, col 46
+Using height with border-top can sometimes make elements larger than you expect.
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+reset.css
+13: warning at line 82, col 59
+Unknown property '_font-family'.
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+reset.css
+14: warning at line 146, col 21
+Unknown property '*margin-left'.
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+reset.css
+15: warning at line 157, col 89
+Unknown property '*vertical-align'.
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+reset.css
+16: warning at line 164, col 38
+Unknown property '*overflow'.
+button, input { line-height: normal; *overflow: visible; }
+
+reset.css
+17: warning at line 171, col 1
+The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+reset.css
+18: warning at line 177, col 47
+The box-sizing property isn't supported in IE6 and IE7.
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+
+reset.css
+19: warning at line 178, col 87
+The box-sizing property isn't supported in IE6 and IE7.
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+reset.css
+20: warning at line 191, col 1
+Rule is empty.
+input:valid, textarea:valid {  }
+
+reset.css
+21: warning at line 199, col 36
+Unknown property 'border-spacing'.
+table { border-collapse: collapse; border-spacing: 0; }
+
+reset.css
+22: warning at line 208, col 1
+Don't use IDs in selectors.
+#container {
+
+reset.css
+23: warning at line 214, col 1
+Don't use IDs in selectors.
+#menu {
+
+reset.css
+24: warning at line 218, col 1
+Don't use IDs in selectors.
+#menu ul {
+
+reset.css
+25: warning at line 222, col 1
+Don't use IDs in selectors.
+#menu ul li {
+
+reset.css
+26: warning at line 226, col 1
+Don't use IDs in selectors.
+#menu ul li a {
+
+reset.css
+27: warning at line 231, col 1
+Don't use IDs in selectors.
+#menu ul li a:hover {
+
+reset.css
+28: warning at line 234, col 1
+Don't use IDs in selectors.
+#container {
+
+reset.css
+29: warning at line 234, col 1
+Rule is empty.
+#container {
+
+reset.css
+30: warning at line 237, col 1
+Don't use IDs in selectors.
+#logo {
+
+reset.css
+31: warning at line 240, col 1
+Heading (h1) has already been defined.
+h1{
+
+reset.css
+32: warning at line 244, col 1
+Don't use IDs in selectors.
+#page {
+
+reset.css
+33: warning at line 251, col 1
+Don't use IDs in selectors.
+#footer {
+
+reset.css
+34: warning at line 272, col 1
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset.css
+35: warning at line 272, col 1
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset.css
+36: warning at line 272, col 35
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset.css
+37: warning at line 272, col 35
+Don't use adjoining classes.
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+reset.css
+38: warning at line 322, col 3
+The universal selector (*) is known to be slow.
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+39: warning at line 322, col 7
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+40: warning at line 322, col 43
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+41: warning at line 322, col 68
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+42: warning at line 322, col 98
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+43: warning at line 322, col 122
+Use of !important
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+
+reset.css
+44: warning at line 323, col 18
+Use of !important
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+
+reset.css
+45: warning at line 326, col 17
+Attribute selectors with ^= are slow!
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+reset.css
+46: warning at line 326, col 47
+Attribute selectors with ^= are slow!
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+reset.css
+47: warning at line 330, col 9
+Use of !important
+  img { max-width: 100% !important; }
+
+reset.css
+48: warning at line 332, col 6
+Heading (h2) has already been defined.
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+reset.css
+49: warning at line 332, col 10
+Heading (h3) has already been defined.
+  p, h2, h3 { orphans: 3; widows: 3; }
+
+reset.css
+50: warning at line 333, col 3
+Heading (h2) has already been defined.
+  h2, h3{ page-break-after: avoid; }
+
+reset.css
+51: warning at line 333, col 7
+Heading (h3) has already been defined.
+  h2, h3{ page-break-after: avoid; }
+
+reset.css
+52: warning
+You have 3 h1s, 4 h2s, 4 h3s, 2 h4s, 2 h5s, 2 h6s defined in this stylesheet.
+
+
+csslint: There are 1 problems in ./css/solution/demo.css.
+
+demo.css
+1: warning at line 7, col 1
+Don't use IDs in selectors.
+#logo{
+
+
+csslint: There are 80 problems in ./css/tpl/tpl.css.
+
+tpl.css
+1: warning at line 6, col 1
+Rule is empty.
+.ui-nav{}
+
+tpl.css
+2: warning at line 7, col 1
+Rule is empty.
+.ui-nav-item{}
+
+tpl.css
+3: warning at line 8, col 1
+Rule is empty.
+.ui-nav-item-current{}
+
+tpl.css
+4: warning at line 9, col 1
+Rule is empty.
+.ui-nav-item-child{}
+
+tpl.css
+5: warning at line 10, col 1
+Rule is empty.
+.ui-nav-item-active-child{}
+
+tpl.css
+6: warning at line 17, col 1
+Rule is empty.
+.ui-title{}
+
+tpl.css
+7: warning at line 18, col 1
+Rule is empty.
+.ui-title-cnt{}
+
+tpl.css
+8: warning at line 19, col 1
+Rule is empty.
+.ui-title-subcnt{}
+
+tpl.css
+9: warning at line 26, col 1
+Rule is empty.
+.ui-step{}
+
+tpl.css
+10: warning at line 27, col 1
+Rule is empty.
+.ui-step-item{}
+
+tpl.css
+11: warning at line 28, col 1
+Rule is empty.
+.ui-step-current{}
+
+tpl.css
+12: warning at line 31, col 1
+Rule is empty.
+.ui-step-item-first{}
+
+tpl.css
+13: warning at line 32, col 1
+Rule is empty.
+.ui-step-item-last{}
+
+tpl.css
+14: warning at line 39, col 1
+Rule is empty.
+.ui-list{}
+
+tpl.css
+15: warning at line 40, col 1
+Rule is empty.
+.ui-list-item{}
+
+tpl.css
+16: warning at line 41, col 1
+Rule is empty.
+.ui-list-item-hover{}
+
+tpl.css
+17: warning at line 48, col 1
+Rule is empty.
+.ui-repeater{}
+
+tpl.css
+18: warning at line 49, col 1
+Rule is empty.
+.ui-repeater-item{}
+
+tpl.css
+19: warning at line 50, col 1
+Rule is empty.
+.ui-repeater-current{}
+
+tpl.css
+20: warning at line 57, col 1
+Rule is empty.
+.ui-dropdown {}
+
+tpl.css
+21: warning at line 58, col 1
+Rule is empty.
+.ui-dropdown-header {}
+
+tpl.css
+22: warning at line 59, col 1
+Rule is empty.
+.ui-dropdown-container {}
+
+tpl.css
+23: warning at line 62, col 1
+Rule is empty.
+.ui-dropdown-active .ui-dropdown-header  {}
+
+tpl.css
+24: warning at line 63, col 1
+Rule is empty.
+.ui-dropdown-active .ui-dropdown-container {}
+
+tpl.css
+25: warning at line 70, col 1
+Rule is empty.
+.ui-page{}
+
+tpl.css
+26: warning at line 71, col 1
+Rule is empty.
+.ui-page-item{}
+
+tpl.css
+27: warning at line 72, col 1
+Rule is empty.
+.ui-page-item-current{}
+
+tpl.css
+28: warning at line 75, col 1
+Rule is empty.
+.ui-page-item-info{}
+
+tpl.css
+29: warning at line 76, col 1
+Rule is empty.
+.ui-page-item-first{}
+
+tpl.css
+30: warning at line 77, col 1
+Rule is empty.
+.ui-page-item-last{}
+
+tpl.css
+31: warning at line 78, col 1
+Rule is empty.
+.ui-page-item-prev{}
+
+tpl.css
+32: warning at line 79, col 1
+Rule is empty.
+.ui-page-item-next{}
+
+tpl.css
+33: warning at line 86, col 1
+Rule is empty.
+.ui-tip {}
+
+tpl.css
+34: warning at line 87, col 1
+Rule is empty.
+.ui-tip-cnt {}
+
+tpl.css
+35: warning at line 94, col 1
+Rule is empty.
+.ui-message {}
+
+tpl.css
+36: warning at line 95, col 1
+Rule is empty.
+.ui-message-cnt {}
+
+tpl.css
+37: warning at line 98, col 1
+Rule is empty.
+.ui-message-error {}
+
+tpl.css
+38: warning at line 99, col 1
+Rule is empty.
+.ui-message-warn {}
+
+tpl.css
+39: warning at line 100, col 1
+Rule is empty.
+.ui-message-success {}
+
+tpl.css
+40: warning at line 107, col 1
+Rule is empty.
+.ui-button {}
+
+tpl.css
+41: warning at line 108, col 1
+Rule is empty.
+.ui-button-text {}
+
+tpl.css
+42: warning at line 109, col 1
+Rule is empty.
+.ui-button .ui-icon {}
+
+tpl.css
+43: warning at line 111, col 1
+Rule is empty.
+.ui-button-icon-left {}
+
+tpl.css
+44: warning at line 112, col 1
+Rule is empty.
+.ui-button-icon-left .ui-icon-rarr {}
+
+tpl.css
+45: warning at line 113, col 1
+Rule is empty.
+.ui-button-icon-left .ui-button-text {}
+
+tpl.css
+46: warning at line 115, col 1
+Rule is empty.
+.ui-button-icon-right {}
+
+tpl.css
+47: warning at line 116, col 1
+Rule is empty.
+.ui-button-icon-right .ui-icon-rarr {}
+
+tpl.css
+48: warning at line 117, col 1
+Rule is empty.
+.ui-button-icon-right .ui-button-text {}
+
+tpl.css
+49: warning at line 120, col 1
+Rule is empty.
+.ui-button-hover {}
+
+tpl.css
+50: warning at line 121, col 1
+Rule is empty.
+.ui-button-disabled {}
+
+tpl.css
+51: warning at line 122, col 1
+Rule is empty.
+.ui-state-selected {}
+
+tpl.css
+52: warning at line 130, col 1
+Rule is empty.
+.ui-input {}
+
+tpl.css
+53: warning at line 132, col 1
+Rule is empty.
+.ui-input-hover {}
+
+tpl.css
+54: warning at line 133, col 1
+Rule is empty.
+.ui-input-focus {}
+
+tpl.css
+55: warning at line 134, col 1
+Rule is empty.
+.ui-input-disabled {}
+
+tpl.css
+56: warning at line 136, col 1
+Rule is empty.
+.ui-label {}
+
+tpl.css
+57: warning at line 138, col 1
+Rule is empty.
+.ui-label-hover {}
+
+tpl.css
+58: warning at line 139, col 1
+Rule is empty.
+.ui-label-focus {}
+
+tpl.css
+59: warning at line 141, col 1
+Rule is empty.
+.ui-textarea {}
+
+tpl.css
+60: warning at line 143, col 1
+Rule is empty.
+.ui-textarea-hover {}
+
+tpl.css
+61: warning at line 144, col 1
+Rule is empty.
+.ui-textarea-disabled {}
+
+tpl.css
+62: warning at line 152, col 1
+Rule is empty.
+.ui-form {}
+
+tpl.css
+63: warning at line 153, col 1
+Rule is empty.
+.ui-form legend {}
+
+tpl.css
+64: warning at line 155, col 1
+Rule is empty.
+.ui-form-item{}
+
+tpl.css
+65: warning at line 156, col 1
+Rule is empty.
+.ui-form-required {}
+
+tpl.css
+66: warning at line 157, col 1
+Rule is empty.
+.ui-form-explain {}
+
+tpl.css
+67: warning at line 160, col 1
+Rule is empty.
+.ui-form-hover {}
+
+tpl.css
+68: warning at line 161, col 1
+Rule is empty.
+.ui-form-focus {}
+
+tpl.css
+69: warning at line 162, col 1
+Rule is empty.
+.ui-form-error {}
+
+tpl.css
+70: warning at line 163, col 1
+Rule is empty.
+.ui-form-success {}
+
+tpl.css
+71: warning at line 164, col 1
+Rule is empty.
+.ui-form-warn {}
+
+tpl.css
+72: warning at line 165, col 1
+Rule is empty.
+.ui-form-loading {}
+
+tpl.css
+73: warning at line 172, col 1
+Rule is empty.
+.ui-tab {}
+
+tpl.css
+74: warning at line 173, col 1
+Rule is empty.
+.ui-tab-trigger {}
+
+tpl.css
+75: warning at line 174, col 1
+Rule is empty.
+.ui-tab-trigger-item {}
+
+tpl.css
+76: warning at line 175, col 1
+Rule is empty.
+.ui-tab-trigger-item-current{}
+
+tpl.css
+77: warning at line 177, col 1
+Rule is empty.
+.ui-tab-cnt {}
+
+tpl.css
+78: warning at line 178, col 1
+Rule is empty.
+.ui-tab-cnt-item {}
+
+tpl.css
+79: warning at line 179, col 1
+Rule is empty.
+.ui-tab-cnt-item-current {}
+
+tpl.css
+80: warning at line 186, col 1
+Rule is empty.
+.ui-table {}

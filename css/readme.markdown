@@ -31,4 +31,6 @@
  
 # Model Lib (模式库，如：注册框架，搜索框架)  
  
-## Yahoo! Design Pattern Library <http://developer.yahoo.com/ypatterns/>
+## Yahoo! Design Pattern Library <http://developer.yahoo.com/ypatterns/>   
+
+#### 注：请在你编写css文件时参考 aliceui spec <http://aliceui.com/css-spec/>,也可以参考 tpl/tpl.css模板文件

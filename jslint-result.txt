@@ -1,0 +1,1916 @@
+
+./app.build.js
+ #1 Expected ':' and instead saw 'name'.
+    name: "script/helper/require-jquery" // Line 27, Pos 9
+ #2 Missing space between 'name' and ':'.
+    name: "script/helper/require-jquery" // Line 27, Pos 13
+ #3 Expected an identifier and instead saw ':'.
+    name: "script/helper/require-jquery" // Line 27, Pos 13
+ #4 Stopping.  (77% scanned).
+     // Line 27, Pos 13
+
+./script/app.js
+ #1 'define' was used before it was defined.
+    define([ // Line 2, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 3, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 4, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 5, Pos 3
+ #5 Expected 'js/router' at column 5, not column 3.
+    'js/router', // Request router.js // Line 6, Pos 3
+ #6 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, Router){ // Line 7, Pos 12
+ #7 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, Router){ // Line 7, Pos 16
+ #8 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, Router){ // Line 7, Pos 36
+ #9 Missing space between ')' and '{'.
+    ], function($, _, Backbone, Router){ // Line 7, Pos 36
+#10 Missing 'use strict' statement.
+    var initialize = function(){ // Line 8, Pos 3
+#11 Expected 'var' at column 5, not column 3.
+    var initialize = function(){ // Line 8, Pos 3
+#12 Expected exactly one space between 'function' and '('.
+    var initialize = function(){ // Line 8, Pos 28
+#13 Expected exactly one space between ')' and '{'.
+    var initialize = function(){ // Line 8, Pos 30
+#14 Missing space between ')' and '{'.
+    var initialize = function(){ // Line 8, Pos 30
+#15 Expected 'Router' at column 13, not column 5.
+    Router.initialize(); // Line 10, Pos 5
+#16 Expected '}' at column 9, not column 3.
+    } // Line 11, Pos 3
+#17 Expected ';' and instead saw 'return'.
+    } // Line 11, Pos 4
+#18 Expected 'return' at column 5, not column 3.
+    return { // Line 13, Pos 3
+#19 Expected 'initialize' at column 9, not column 5.
+    initialize: initialize // Line 14, Pos 5
+#20 Expected '}' at column 5, not column 3.
+    }; // Line 15, Pos 3
+
+./script/collections/projects.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 2, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 3, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 4, Pos 3
+ #5 Expected 'models/projects' at column 5, not column 3.
+    'models/projects' // Line 5, Pos 3
+ #6 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, projectsModel){ // Line 6, Pos 12
+ #7 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, projectsModel){ // Line 6, Pos 16
+ #8 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, projectsModel){ // Line 6, Pos 43
+ #9 Missing space between ')' and '{'.
+    ], function($, _, Backbone, projectsModel){ // Line 6, Pos 43
+#10 Missing 'use strict' statement.
+    var projectsCollection = Backbone.Collection.extend({ // Line 7, Pos 3
+#11 Expected 'var' at column 5, not column 3.
+    var projectsCollection = Backbone.Collection.extend({ // Line 7, Pos 3
+#12 Expected 'model' at column 13, not column 5.
+    model: projectsModel, // Line 8, Pos 5
+#13 Expected 'initialize' at column 13, not column 5.
+    initialize: function(){ // Line 9, Pos 5
+#14 Expected exactly one space between 'function' and '('.
+    initialize: function(){ // Line 9, Pos 25
+#15 Expected exactly one space between ')' and '{'.
+    initialize: function(){ // Line 9, Pos 27
+#16 Missing space between ')' and '{'.
+    initialize: function(){ // Line 9, Pos 27
+#17 Expected '}' at column 13, not column 5.
+    } // Line 11, Pos 5
+#18 Expected '}' at column 9, not column 3.
+    }); // Line 13, Pos 3
+#19 Unexpected '(space)'.
+     // Line 14, Pos 1
+#20 Expected 'return' at column 5, not column 3.
+    return new projectsCollection; // Line 15, Pos 3
+#21 A constructor name 'projectsCollection' should start with an uppercase letter.
+    return new projectsCollection; // Line 15, Pos 14
+#22 Missing '()'.
+    return new projectsCollection; // Line 15, Pos 32
+
+./script/collections/template.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 2, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 3, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone' // Line 4, Pos 3
+ #5 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone){ // Line 5, Pos 12
+ #6 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone){ // Line 5, Pos 16
+ #7 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone){ // Line 5, Pos 28
+ #8 Missing space between ')' and '{'.
+    ], function($, _, Backbone){ // Line 5, Pos 28
+ #9 Missing 'use strict' statement.
+    return {}; // Line 7, Pos 3
+#10 Expected 'return' at column 5, not column 3.
+    return {}; // Line 7, Pos 3
+
+./script/helper/boilerplate.js
+ #1 'define' was used before it was defined.
+    define([ // Line 3, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery',     // lib/jquery/jquery // Line 5, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // lib/underscore/underscore // Line 6, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone'    // lib/backbone/backbone // Line 7, Pos 3
+ #5 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone){ // Line 8, Pos 12
+ #6 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone){ // Line 8, Pos 16
+ #7 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone){ // Line 8, Pos 28
+ #8 Missing space between ')' and '{'.
+    ], function($, _, Backbone){ // Line 8, Pos 28
+ #9 Missing 'use strict' statement.
+    return {}; // Line 11, Pos 3
+#10 Expected 'return' at column 5, not column 3.
+    return {}; // Line 11, Pos 3
+
+./script/helper/i18n.js
+ #1 Unexpected 'strict'.
+    /*jslint regexp: false, nomen: false, plusplus: false, strict: false */ // Line 6, Pos 56
+ #2 Stopping.  (3% scanned).
+     // Line 6, Pos 56
+
+./script/helper/jquery_plugins_manager.js
+ #1 'define' was used before it was defined.
+    define(["jquery"],function($){ // Line 1, Pos 1
+ #2 Missing space between ',' and 'function'.
+    define(["jquery"],function($){ // Line 1, Pos 19
+ #3 Expected exactly one space between 'function' and '('.
+    define(["jquery"],function($){ // Line 1, Pos 27
+ #4 Expected exactly one space between ')' and '{'.
+    define(["jquery"],function($){ // Line 1, Pos 30
+ #5 Missing space between ')' and '{'.
+    define(["jquery"],function($){ // Line 1, Pos 30
+ #6 Missing 'use strict' statement.
+    $.plugin = function(name, object) { // Line 3, Pos 3
+ #7 Expected '$' at column 5, not column 3.
+    $.plugin = function(name, object) { // Line 3, Pos 3
+ #8 Expected exactly one space between 'function' and '('.
+    $.plugin = function(name, object) { // Line 3, Pos 22
+ #9 Expected '$' at column 9, not column 5.
+    $.fn[name] = function(options) { // Line 4, Pos 5
+#10 Expected exactly one space between 'function' and '('.
+    $.fn[name] = function(options) { // Line 4, Pos 26
+#11 Expected 'var' at column 13, not column 7.
+    var args = Array.prototype.slice.call(arguments, 1); // Line 5, Pos 7
+#12 Expected 'return' at column 13, not column 7.
+    return this.each(function() { // Line 6, Pos 7
+#13 Expected exactly one space between 'function' and '('.
+    return this.each(function() { // Line 6, Pos 32
+#14 Expected 'var' at column 17, not column 9.
+    var instance = $.data(this, name); // Line 7, Pos 9
+#15 Expected 'if' at column 17, not column 9.
+    if (instance) { // Line 8, Pos 9
+#16 Expected 'instance' at column 21, not column 11.
+    instance[options].apply(instance, args); // Line 9, Pos 11
+#17 Expected '}' at column 17, not column 9.
+    } else { // Line 10, Pos 9
+#18 Expected 'instance' at column 21, not column 11.
+    instance = $.data(this, name, new object(options, this)); // Line 11, Pos 11
+#19 A constructor name 'object' should start with an uppercase letter.
+    instance = $.data(this, name, new object(options, this)); // Line 11, Pos 45
+#20 Expected '}' at column 17, not column 9.
+    } // Line 12, Pos 9
+#21 Expected '}' at column 13, not column 7.
+    }); // Line 13, Pos 7
+#22 Expected '}' at column 9, not column 5.
+    }; // Line 14, Pos 5
+#23 Expected '}' at column 5, not column 3.
+    }; // Line 15, Pos 3
+#24 Expected 'return' at column 5, not column 3.
+    return $.plugin;   // Line 16, Pos 3
+#25 Unexpected '(space)'.
+    return $.plugin;   // Line 16, Pos 19
+
+./script/helper/mediator.js
+ #1 'define' was used before it was defined.
+    define(function (require) { // Line 2, Pos 1
+ #2 Missing 'use strict' statement.
+    var subscribe = function (channel, fn) { // Line 3, Pos 5
+ #3 Expected exactly one space between ')' and 'channels'.
+    channels[channel] = []; // Line 6, Pos 13
+ #4 Expected '{' and instead saw 'channels'.
+    channels[channel] = []; // Line 6, Pos 13
+ #5 Expected exactly one space between ')' and 'return'.
+    return false; // Line 15, Pos 13
+ #6 Expected '{' and instead saw 'return'.
+    return false; // Line 15, Pos 13
+ #7 Combine this with the previous 'var' statement.
+    var args = Array.prototype.slice.call(arguments, 1); // Line 16, Pos 13
+ #8 Move 'var' declarations to the top of the function.
+    for (var i = 0, l = channels[channel].length; i < l; i++) { // Line 17, Pos 14
+ #9 Stopping.  (37% scanned).
+     // Line 17, Pos 14
+
+./script/helper/nls/color.js
+ #1 'define' was used before it was defined.
+    define({ // Line 1, Pos 1
+
+./script/helper/nls/lamp.js
+ #1 'define' was used before it was defined.
+    define(["js/helper/i18n!js/helper/nls/color"], function(color) { // Line 1, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(["js/helper/i18n!js/helper/nls/color"], function(color) { // Line 1, Pos 56
+ #3 Missing 'use strict' statement.
+    return { // Line 2, Pos 5
+ #4 Expected ';' and instead saw '}'.
+    } // Line 4, Pos 6
+
+./script/helper/order.js
+ #1 Unexpected 'strict'.
+    /*jslint nomen: false, plusplus: false, strict: false */ // Line 6, Pos 41
+ #2 Stopping.  (3% scanned).
+     // Line 6, Pos 41
+
+./script/helper/text.js
+ #1 Unexpected 'strict'.
+    /*jslint regexp: false, nomen: false, plusplus: false, strict: false */ // Line 6, Pos 56
+ #2 Stopping.  (2% scanned).
+     // Line 6, Pos 56
+
+./script/helper/tpl_engine.js
+ #1 'define' was used before it was defined.
+    define(function(require) { // Line 1, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(function(require) { // Line 1, Pos 16
+ #3 Missing 'use strict' statement.
+    return function(type, tpl, data,cb) { // Line 2, Pos 5
+ #4 Expected exactly one space between 'function' and '('.
+    return function(type, tpl, data,cb) { // Line 2, Pos 20
+ #5 Missing space between ',' and 'cb'.
+    return function(type, tpl, data,cb) { // Line 2, Pos 37
+ #6 'type' is already defined.
+    var type = type || "jtemplate", $ = require('jquery'); // Line 3, Pos 13
+ #7 Unexpected 'type'.
+    var type = type || "jtemplate", $ = require('jquery'); // Line 3, Pos 20
+ #8 Expected exactly one space between 'switch' and '('.
+    switch(type) { // Line 4, Pos 15
+ #9 Expected 'case' at column 9, not column 13.
+    case "jtemplate": // Line 5, Pos 13
+#10 Expected 'var' at column 13, not column 17.
+    var $ = require('jquery'), jtem = 'js/helper/order!lib/jtemplate', tem = $.createTemplateURL(tpl); // Line 6, Pos 17
+#11 Combine this with the previous 'var' statement.
+    var $ = require('jquery'), jtem = 'js/helper/order!lib/jtemplate', tem = $.createTemplateURL(tpl); // Line 6, Pos 21
+#12 '$' is already defined.
+    var $ = require('jquery'), jtem = 'js/helper/order!lib/jtemplate', tem = $.createTemplateURL(tpl); // Line 6, Pos 21
+#13 Expected 'cb' at column 13, not column 17.
+    cb($.processTemplateToText(tem, data)); // Line 7, Pos 17
+#14 Expected 'break' at column 13, not column 17.
+    break; // Line 8, Pos 17
+#15 Expected 'case' at column 9, not column 13.
+    case "mustache": // Line 9, Pos 13
+#16 Expected 'var' at column 13, not column 17.
+    var Mustache = require('js/lib/mustache'); // Line 10, Pos 17
+#17 Combine this with the previous 'var' statement.
+    var Mustache = require('js/lib/mustache'); // Line 10, Pos 21
+#18 Expected '$' at column 13, not column 17.
+    $.ajax({ // Line 11, Pos 17
+#19 Expected 'url' at column 17, not column 21.
+    url : tpl, // Line 12, Pos 21
+#20 Expected 'type' at column 17, not column 21.
+    type:"GET", // Line 13, Pos 21
+#21 Missing space between ':' and 'GET'.
+    type:"GET", // Line 13, Pos 26
+#22 Expected 'dataType' at column 17, not column 21.
+    dataType:"json", // Line 14, Pos 21
+#23 Missing space between ':' and 'json'.
+    dataType:"json", // Line 14, Pos 30
+#24 Expected 'complete' at column 17, not column 21.
+    complete:function(d){ // Line 15, Pos 21
+#25 Missing space between ':' and 'function'.
+    complete:function(d){ // Line 15, Pos 30
+#26 Expected exactly one space between 'function' and '('.
+    complete:function(d){ // Line 15, Pos 38
+#27 Expected exactly one space between ')' and '{'.
+    complete:function(d){ // Line 15, Pos 41
+#28 Missing space between ')' and '{'.
+    complete:function(d){ // Line 15, Pos 41
+#29 Expected 'cb' at column 21, not column 23.
+    cb(Mustache.to_html(d.responseText,data)); // Line 16, Pos 23
+#30 Missing space between ',' and 'data'.
+    cb(Mustache.to_html(d.responseText,data)); // Line 16, Pos 58
+#31 Expected '}' at column 17, not column 21.
+    } // Line 17, Pos 21
+#32 Expected '}' at column 13, not column 17.
+    }); // Line 18, Pos 17
+#33 Expected 'break' at column 13, not column 17.
+    break; // Line 19, Pos 17
+#34 Expected 'case' at column 9, not column 13.
+    case "coffeekup": // Line 20, Pos 13
+#35 Expected 'break' at column 13, not column 17.
+    break; // Line 21, Pos 17
+#36 Expected 'default' at column 9, not column 13.
+    default: // Line 22, Pos 13
+#37 Expected 'break' at column 13, not column 17.
+    break; // Line 23, Pos 17
+
+./script/lib/backbone/_backbone.js
+ #1 'define' was used before it was defined.
+    define(['help/order!lib/backbone'], function(){ // Line 1, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(['help/order!lib/backbone'], function(){ // Line 1, Pos 45
+ #3 Expected exactly one space between ')' and '{'.
+    define(['help/order!lib/backbone'], function(){ // Line 1, Pos 47
+ #4 Missing space between ')' and '{'.
+    define(['help/order!lib/backbone'], function(){ // Line 1, Pos 47
+ #5 Unexpected dangling '_' in '_'.
+    _.noConflict(); // Line 5, Pos 3
+ #6 Missing 'use strict' statement.
+    _.noConflict(); // Line 5, Pos 3
+ #7 Expected '_' at column 5, not column 3.
+    _.noConflict(); // Line 5, Pos 3
+ #8 '_' was used before it was defined.
+    _.noConflict(); // Line 5, Pos 3
+ #9 Expected '$' at column 5, not column 3.
+    $.noConflict(); // Line 6, Pos 3
+#10 '$' was used before it was defined.
+    $.noConflict(); // Line 6, Pos 3
+#11 Expected 'return' at column 5, not column 3.
+    return Backbone.noConflict(); // Line 7, Pos 3
+#12 'Backbone' was used before it was defined.
+    return Backbone.noConflict(); // Line 7, Pos 10
+
+./script/lib/jquery/_jquery.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'help/order!lib/jquery' at column 5, not column 3.
+    'help/order!lib/jquery' // Line 3, Pos 3
+ #3 Expected exactly one space between 'function' and '('.
+    ], function($){ // Line 4, Pos 12
+ #4 Expected exactly one space between ')' and '{'.
+    ], function($){ // Line 4, Pos 15
+ #5 Missing space between ')' and '{'.
+    ], function($){ // Line 4, Pos 15
+ #6 Missing 'use strict' statement.
+    return $; // Line 6, Pos 3
+ #7 Expected 'return' at column 5, not column 3.
+    return $; // Line 6, Pos 3
+
+./script/lib/es5-shim.js
+ #1 Missing 'use strict' statement.
+    if (typeof define == "function") { // Line 30, Pos 5
+ #2 'define' was used before it was defined.
+    if (typeof define == "function") { // Line 30, Pos 16
+ #3 Expected '===' and instead saw '=='.
+    if (typeof define == "function") { // Line 30, Pos 23
+ #4 Move the invocation into the parens that contain the function.
+    })(function () { // Line 36, Pos 3
+ #5 Missing 'use strict' statement.
+    if (!Function.prototype.bind) { // Line 58, Pos 1
+ #6 Expected 'if' at column 5, not column 1.
+    if (!Function.prototype.bind) { // Line 58, Pos 1
+ #7 Expected 'Function' at column 9, not column 5.
+    Function.prototype.bind = function bind(that) { // .length is 1 // Line 59, Pos 5
+ #8 Expected 'var' at column 13, not column 9.
+    var target = this; // Line 61, Pos 9
+ #9 Expected 'if' at column 13, not column 9.
+    if (typeof target != "function") { // Line 63, Pos 9
+#10 Expected '!==' and instead saw '!='.
+    if (typeof target != "function") { // Line 63, Pos 27
+#11 Expected 'throw' at column 17, not column 13.
+    throw new TypeError(); // TODO message // Line 64, Pos 13
+#12 Expected '}' at column 13, not column 9.
+    } // Line 65, Pos 9
+#13 Expected 'var' at column 13, not column 9.
+    var args = slice.call(arguments, 1); // for normal call // Line 69, Pos 9
+#14 Combine this with the previous 'var' statement.
+    var args = slice.call(arguments, 1); // for normal call // Line 69, Pos 13
+#15 'slice' was used before it was defined.
+    var args = slice.call(arguments, 1); // for normal call // Line 69, Pos 20
+#16 Expected 'var' at column 13, not column 9.
+    var bound = function () { // Line 79, Pos 9
+#17 Combine this with the previous 'var' statement.
+    var bound = function () { // Line 79, Pos 13
+#18 Expected 'if' at column 21, not column 13.
+    if (this instanceof bound) { // Line 81, Pos 13
+#19 Expected 'var' at column 25, not column 17.
+    var F = function(){}; // Line 98, Pos 17
+#20 Expected exactly one space between 'function' and '('.
+    var F = function(){}; // Line 98, Pos 33
+#21 Expected exactly one space between ')' and '{'.
+    var F = function(){}; // Line 98, Pos 35
+#22 Missing space between ')' and '{'.
+    var F = function(){}; // Line 98, Pos 35
+#23 Expected 'F' at column 25, not column 17.
+    F.prototype = target.prototype; // Line 99, Pos 17
+#24 Expected 'var' at column 25, not column 17.
+    var self = new F; // Line 100, Pos 17
+#25 Combine this with the previous 'var' statement.
+    var self = new F; // Line 100, Pos 21
+#26 Missing '()'.
+    var self = new F; // Line 100, Pos 33
+#27 Expected 'var' at column 25, not column 17.
+    var result = target.apply( // Line 102, Pos 17
+#28 Combine this with the previous 'var' statement.
+    var result = target.apply( // Line 102, Pos 21
+#29 Expected 'self' at column 33, not column 21.
+    self, // Line 103, Pos 21
+#30 Expected 'args' at column 33, not column 21.
+    args.concat(slice.call(arguments)) // Line 104, Pos 21
+#31 Expected ')' at column 29, not column 17.
+    ); // Line 105, Pos 17
+#32 Expected 'if' at column 25, not column 17.
+    if (Object(result) === result) { // Line 106, Pos 17
+#33 Use the object literal notation {}.
+    if (Object(result) === result) { // Line 106, Pos 27
+#34 Expected 'return' at column 29, not column 21.
+    return result; // Line 107, Pos 21
+#35 Expected '}' at column 25, not column 17.
+    } // Line 108, Pos 17
+#36 Expected 'return' at column 25, not column 17.
+    return self; // Line 109, Pos 17
+#37 Expected '}' at column 21, not column 13.
+    } else { // Line 111, Pos 13
+#38 Expected 'return' at column 25, not column 17.
+    return target.apply( // Line 131, Pos 17
+#39 Expected 'that' at column 29, not column 21.
+    that, // Line 132, Pos 21
+#40 Expected 'args' at column 29, not column 21.
+    args.concat(slice.call(arguments)) // Line 133, Pos 21
+#41 Expected ')' at column 25, not column 17.
+    ); // Line 134, Pos 17
+#42 Expected '}' at column 21, not column 13.
+    } // Line 136, Pos 13
+#43 Expected '}' at column 17, not column 9.
+    }; // Line 138, Pos 9
+#44 Expected 'return' at column 13, not column 9.
+    return bound; // Line 170, Pos 9
+#45 Expected '}' at column 9, not column 5.
+    }; // Line 171, Pos 5
+#46 Expected '}' at column 5, not column 1.
+    } // Line 172, Pos 1
+#47 Expected 'var' at column 5, not column 1.
+    var call = Function.prototype.call; // Line 178, Pos 1
+#48 Expected 'var' at column 5, not column 1.
+    var prototypeOfArray = Array.prototype; // Line 179, Pos 1
+#49 Combine this with the previous 'var' statement.
+    var prototypeOfArray = Array.prototype; // Line 179, Pos 5
+#50 Expected 'var' at column 5, not column 1.
+    var prototypeOfObject = Object.prototype; // Line 180, Pos 1
+#51 Too many errors. (16% scanned).
+     // Line 180, Pos 1
+
+./script/lib/json2.js
+ #1 Unexpected 'strict'.
+    /*jslint evil: true, strict: false */ // Line 149, Pos 22
+ #2 Stopping.  (30% scanned).
+     // Line 149, Pos 22
+
+./script/lib/jtemplate.js
+ #1 Unexpected '(space)'.
+     // Line 10, Pos 1
+ #2 Expected exactly one space between 'if' and '('.
+    if(window.jQuery && !window.jQuery.createTemplate) {(function(jQuery) { // Line 19, Pos 3
+ #3 'window' was used before it was defined.
+    if(window.jQuery && !window.jQuery.createTemplate) {(function(jQuery) { // Line 19, Pos 4
+ #4 Expected exactly one space between 'function' and '('.
+    if(window.jQuery && !window.jQuery.createTemplate) {(function(jQuery) { // Line 19, Pos 62
+ #5 Unexpected '(space)'.
+     // Line 20, Pos 1
+ #6 Unexpected '(space)'.
+     // Line 26, Pos 1
+ #7 Unexpected '(space)'.
+     // Line 38, Pos 1
+ #8 Unexpected '(space)'.
+     // Line 45, Pos 1
+ #9 Unexpected '(space)'.
+     // Line 53, Pos 1
+#10 Unexpected '(space)'.
+     // Line 59, Pos 1
+#11 Unexpected '(space)'.
+     // Line 66, Pos 1
+#12 Unexpected '(space)'.
+     // Line 67, Pos 1
+#13 Missing 'use strict' statement.
+    var Template = function(s, includes, settings) { // Line 85, Pos 5
+#14 Expected exactly one space between 'function' and '('.
+    var Template = function(s, includes, settings) { // Line 85, Pos 28
+#15 Unexpected dangling '_' in '_tree'.
+    this._tree = []; // Line 86, Pos 14
+#16 Unexpected dangling '_' in '_param'.
+    this._param = {}; // Line 87, Pos 14
+#17 Unexpected dangling '_' in '_includes'.
+    this._includes = null; // Line 88, Pos 14
+#18 Unexpected dangling '_' in '_templates'.
+    this._templates = {}; // Line 89, Pos 14
+#19 Unexpected dangling '_' in '_templates_code'.
+    this._templates_code = {}; // Line 90, Pos 14
+#20 Unexpected '(space)'.
+     // Line 91, Pos 1
+#21 Unexpected '(space)'.
+     // Line 100, Pos 1
+#22 'TemplateUtils' was used before it was defined.
+    this.f_cloneData = (this.settings.f_cloneData !== undefined) ? (this.settings.f_cloneData) : (TemplateUtils.cloneData); // Line 101, Pos 103
+#23 Unexpected '(space)'.
+     // Line 103, Pos 1
+#24 Unexpected '(space)'.
+     // Line 105, Pos 1
+#25 Expected exactly one space between 'if' and '('.
+    if(s) { // Line 106, Pos 11
+#26 Unexpected dangling '_' in '_templates_code'.
+    this.setTemplate(this._templates_code['MAIN'], includes, this.settings); // Line 107, Pos 35
+#27 ['MAIN'] is better written in dot notation.
+    this.setTemplate(this._templates_code['MAIN'], includes, this.settings); // Line 107, Pos 51
+#28 Unexpected '(space)'.
+     // Line 109, Pos 1
+#29 Unexpected dangling '_' in '_templates_code'.
+    this._templates_code = null; // Line 110, Pos 14
+#30 Unexpected '(space)'.
+     // Line 112, Pos 1
+#31 Unexpected '(space)'.
+     // Line 118, Pos 1
+#32 Unexpected '(space)'.
+     // Line 124, Pos 1
+#33 Expected exactly one space between 'function' and '('.
+    Template.prototype.splitTemplates = function(s, includes) { // Line 130, Pos 49
+#34 Insecure '.'.
+    var reg = /\{#template *(\w*?)( .*)*\}/g; // Line 131, Pos 41
+#35 Combine this with the previous 'var' statement.
+    var iter, tname, se; // Line 132, Pos 13
+#36 Combine this with the previous 'var' statement.
+    var lastIndex = null; // Line 133, Pos 13
+#37 Unexpected '(space)'.
+     // Line 134, Pos 1
+#38 Unexpected dangling '_' in '_template_settings'.
+    var _template_settings = []; // Line 135, Pos 13
+#39 Combine this with the previous 'var' statement.
+    var _template_settings = []; // Line 135, Pos 13
+#40 Unexpected '(space)'.
+     // Line 136, Pos 1
+#41 Expected exactly one space between 'while' and '('.
+    while((iter = reg.exec(s)) != null) { // Line 137, Pos 14
+#42 Expected '!==' and instead saw '!='.
+    while((iter = reg.exec(s)) != null) { // Line 137, Pos 36
+#43 Expected exactly one space between 'if' and '('.
+    if(se == -1) { // Line 141, Pos 15
+#44 Expected '===' and instead saw '=='.
+    if(se == -1) { // Line 141, Pos 19
+#45 Unexpected dangling '_' in '_templates_code'.
+    this._templates_code[tname] = s.substring(lastIndex, se); // Line 144, Pos 18
+#46 Unexpected dangling '_' in '_template_settings'.
+    _template_settings[tname] = TemplateUtils.optionToObject(iter[2]); // Line 145, Pos 13
+#47 'TemplateUtils' was used before it was defined.
+    _template_settings[tname] = TemplateUtils.optionToObject(iter[2]); // Line 145, Pos 41
+#48 Expected exactly one space between 'if' and '('.
+    if(lastIndex === null) { // Line 147, Pos 11
+#49 Unexpected dangling '_' in '_templates_code'.
+    this._templates_code['MAIN'] = s; // Line 148, Pos 18
+#50 ['MAIN'] is better written in dot notation.
+    this._templates_code['MAIN'] = s; // Line 148, Pos 34
+#51 Too many errors. (12% scanned).
+     // Line 148, Pos 34
+
+./script/lib/modernizr/_modernizr.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'help/order!lib/modernizr-2.0.6.js' at column 5, not column 3.
+    'help/order!lib/modernizr-2.0.6.js' // Line 3, Pos 3
+ #3 Expected exactly one space between 'function' and '('.
+    ], function(){ // Line 4, Pos 12
+ #4 Expected exactly one space between ')' and '{'.
+    ], function(){ // Line 4, Pos 14
+ #5 Missing space between ')' and '{'.
+    ], function(){ // Line 4, Pos 14
+ #6 Missing 'use strict' statement.
+    return Modernizr; // Line 6, Pos 3
+ #7 Expected 'return' at column 5, not column 3.
+    return Modernizr; // Line 6, Pos 3
+ #8 'Modernizr' was used before it was defined.
+    return Modernizr; // Line 6, Pos 10
+
+./script/lib/mustache.js
+ #1 'define' was used before it was defined.
+    define(function(){ // Line 6, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(function(){ // Line 6, Pos 16
+ #3 Expected exactly one space between ')' and '{'.
+    define(function(){ // Line 6, Pos 18
+ #4 Missing space between ')' and '{'.
+    define(function(){ // Line 6, Pos 18
+ #5 Missing 'use strict' statement.
+    var Mustache = function() { // Line 7, Pos 1
+ #6 Expected 'var' at column 5, not column 1.
+    var Mustache = function() { // Line 7, Pos 1
+ #7 Expected exactly one space between 'function' and '('.
+    var Mustache = function() { // Line 7, Pos 24
+ #8 Expected 'var' at column 13, not column 3.
+    var Renderer = function() {}; // Line 8, Pos 3
+ #9 Expected exactly one space between 'function' and '('.
+    var Renderer = function() {}; // Line 8, Pos 26
+#10 Expected 'Renderer' at column 13, not column 3.
+    Renderer.prototype = { // Line 10, Pos 3
+#11 Expected 'otag' at column 17, not column 5.
+    otag: "{{", // Line 11, Pos 5
+#12 Expected 'ctag' at column 17, not column 5.
+    ctag: "}}", // Line 12, Pos 5
+#13 Expected 'pragmas' at column 17, not column 5.
+    pragmas: {}, // Line 13, Pos 5
+#14 Expected 'buffer' at column 17, not column 5.
+    buffer: [], // Line 14, Pos 5
+#15 Expected 'pragmas_implemented' at column 17, not column 5.
+    pragmas_implemented: { // Line 15, Pos 5
+#16 Expected 'IMPLICIT-ITERATOR' at column 21, not column 7.
+    "IMPLICIT-ITERATOR": true // Line 16, Pos 7
+#17 Expected '}' at column 17, not column 5.
+    }, // Line 17, Pos 5
+#18 Expected 'context' at column 17, not column 5.
+    context: {}, // Line 18, Pos 5
+#19 Expected 'render' at column 17, not column 5.
+    render: function(template, context, partials, in_recursion) { // Line 20, Pos 5
+#20 Expected exactly one space between 'function' and '('.
+    render: function(template, context, partials, in_recursion) { // Line 20, Pos 21
+#21 Expected 'if' at column 21, not column 7.
+    if(!in_recursion) { // Line 22, Pos 7
+#22 Expected exactly one space between 'if' and '('.
+    if(!in_recursion) { // Line 22, Pos 9
+#23 Expected 'this' at column 25, not column 9.
+    this.context = context; // Line 23, Pos 9
+#24 Expected 'this' at column 25, not column 9.
+    this.buffer = []; // TODO: make this non-lazy // Line 24, Pos 9
+#25 Expected '}' at column 21, not column 7.
+    } // Line 25, Pos 7
+#26 Expected 'if' at column 21, not column 7.
+    if(!this.includes("", template)) { // Line 28, Pos 7
+#27 Expected exactly one space between 'if' and '('.
+    if(!this.includes("", template)) { // Line 28, Pos 9
+#28 Expected 'if' at column 25, not column 9.
+    if(in_recursion) { // Line 29, Pos 9
+#29 Expected exactly one space between 'if' and '('.
+    if(in_recursion) { // Line 29, Pos 11
+#30 Expected 'return' at column 29, not column 11.
+    return template; // Line 30, Pos 11
+#31 Expected '}' at column 25, not column 9.
+    } else { // Line 31, Pos 9
+#32 Expected 'this' at column 29, not column 11.
+    this.send(template); // Line 32, Pos 11
+#33 Expected 'return' at column 29, not column 11.
+    return; // Line 33, Pos 11
+#34 Expected '}' at column 25, not column 9.
+    } // Line 34, Pos 9
+#35 Expected '}' at column 21, not column 7.
+    } // Line 35, Pos 7
+#36 Expected 'template' at column 21, not column 7.
+    template = this.render_pragmas(template); // Line 37, Pos 7
+#37 Expected 'var' at column 21, not column 7.
+    var html = this.render_section(template, context, partials); // Line 38, Pos 7
+#38 Expected 'if' at column 21, not column 7.
+    if(in_recursion) { // Line 39, Pos 7
+#39 Expected exactly one space between 'if' and '('.
+    if(in_recursion) { // Line 39, Pos 9
+#40 Expected 'return' at column 25, not column 9.
+    return this.render_tags(html, context, partials, in_recursion); // Line 40, Pos 9
+#41 Expected '}' at column 21, not column 7.
+    } // Line 41, Pos 7
+#42 Expected 'this' at column 21, not column 7.
+    this.render_tags(html, context, partials, in_recursion); // Line 43, Pos 7
+#43 Expected '}' at column 17, not column 5.
+    }, // Line 44, Pos 5
+#44 Expected 'send' at column 17, not column 5.
+    send: function(line) { // Line 49, Pos 5
+#45 Expected exactly one space between 'function' and '('.
+    send: function(line) { // Line 49, Pos 19
+#46 Expected 'if' at column 21, not column 7.
+    if(line !== "") { // Line 50, Pos 7
+#47 Expected exactly one space between 'if' and '('.
+    if(line !== "") { // Line 50, Pos 9
+#48 Expected 'this' at column 25, not column 9.
+    this.buffer.push(line); // Line 51, Pos 9
+#49 Expected '}' at column 21, not column 7.
+    } // Line 52, Pos 7
+#50 Expected '}' at column 17, not column 5.
+    }, // Line 53, Pos 5
+#51 Too many errors. (16% scanned).
+     // Line 53, Pos 5
+
+./script/lib/swfobject.js
+ #1 Expected exactly one space between 'function' and '('.
+    var swfobject = function() { // Line 5, Pos 25
+ #2 Unexpected '(space)'.
+     // Line 6, Pos 1
+ #3 Missing 'use strict' statement.
+    var UNDEF = "undefined", // Line 7, Pos 5
+ #4 Unexpected '(space)'.
+     // Line 14, Pos 1
+ #5 'window' was used before it was defined.
+    win = window, // Line 15, Pos 15
+ #6 'document' was used before it was defined.
+    doc = document, // Line 16, Pos 15
+ #7 'navigator' was used before it was defined.
+    nav = navigator, // Line 17, Pos 15
+ #8 Unexpected '(space)'.
+     // Line 18, Pos 1
+ #9 'main' was used before it was defined.
+    domLoadFnArr = [main], // Line 20, Pos 25
+#10 Unexpected '(space)'.
+     // Line 33, Pos 1
+#11 Unexpected '(space)'.
+    */   // Line 37, Pos 7
+#12 Expected 'ua' at column 9, not column 5.
+    ua = function() { // Line 38, Pos 5
+#13 Expected exactly one space between 'function' and '('.
+    ua = function() { // Line 38, Pos 18
+#14 Expected 'var' at column 13, not column 9.
+    var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF, // Line 39, Pos 9
+#15 Expected '!==' and instead saw '!='.
+    var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF, // Line 39, Pos 48
+#16 Expected '!==' and instead saw '!='.
+    var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF, // Line 39, Pos 92
+#17 Expected '!==' and instead saw '!='.
+    var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF, // Line 39, Pos 129
+#18 Expected 'u' at column 17, not column 13.
+    u = nav.userAgent.toLowerCase(), // Line 40, Pos 13
+#19 Expected 'p' at column 17, not column 13.
+    p = nav.platform.toLowerCase(), // Line 41, Pos 13
+#20 Expected 'windows' at column 17, not column 13.
+    windows = p ? /win/.test(p) : /win/.test(u), // Line 42, Pos 13
+#21 Expected 'mac' at column 17, not column 13.
+    mac = p ? /mac/.test(p) : /mac/.test(u), // Line 43, Pos 13
+#22 Expected 'webkit' at column 17, not column 13.
+    webkit = /webkit/.test(u) ? parseFloat(u.replace(/^.*webkit\/(\d+(\.\d+)?).*$/, "$1")) : false, // returns either the webkit version or false if not webkit // Line 44, Pos 13
+#23 Insecure '.'.
+    webkit = /webkit/.test(u) ? parseFloat(u.replace(/^.*webkit\/(\d+(\.\d+)?).*$/, "$1")) : false, // returns either the webkit version or false if not webkit // Line 44, Pos 64
+#24 Insecure '.'.
+    webkit = /webkit/.test(u) ? parseFloat(u.replace(/^.*webkit\/(\d+(\.\d+)?).*$/, "$1")) : false, // returns either the webkit version or false if not webkit // Line 44, Pos 87
+#25 Expected 'ie' at column 17, not column 13.
+    ie = !+"\v1", // feature detection based on Andrea Giammarchi's solution: http://webreflection.blogspot.com/2009/01/32-bytes-to-know-if-your-browser-is-ie.html // Line 45, Pos 13
+#26 Confusing use of '!'.
+    ie = !+"\v1", // feature detection based on Andrea Giammarchi's solution: http://webreflection.blogspot.com/2009/01/32-bytes-to-know-if-your-browser-is-ie.html // Line 45, Pos 18
+#27 Expected 'playerVersion' at column 17, not column 13.
+    playerVersion = [0,0,0], // Line 46, Pos 13
+#28 Missing space between ',' and '(number)'.
+    playerVersion = [0,0,0], // Line 46, Pos 32
+#29 Missing space between ',' and '(number)'.
+    playerVersion = [0,0,0], // Line 46, Pos 34
+#30 Expected 'd' at column 17, not column 13.
+    d = null; // Line 47, Pos 13
+#31 Expected 'if' at column 13, not column 9.
+    if (typeof nav.plugins != UNDEF && typeof nav.plugins[SHOCKWAVE_FLASH] == OBJECT) { // Line 48, Pos 9
+#32 Expected '!==' and instead saw '!='.
+    if (typeof nav.plugins != UNDEF && typeof nav.plugins[SHOCKWAVE_FLASH] == OBJECT) { // Line 48, Pos 32
+#33 Expected '===' and instead saw '=='.
+    if (typeof nav.plugins != UNDEF && typeof nav.plugins[SHOCKWAVE_FLASH] == OBJECT) { // Line 48, Pos 80
+#34 Expected 'd' at column 17, not column 13.
+    d = nav.plugins[SHOCKWAVE_FLASH].description; // Line 49, Pos 13
+#35 Expected 'if' at column 17, not column 13.
+    if (d && !(typeof nav.mimeTypes != UNDEF && nav.mimeTypes[FLASH_MIME_TYPE] && !nav.mimeTypes[FLASH_MIME_TYPE].enabledPlugin)) { // navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin indicates whether plug-ins are enabled or disabled in Safari 3+ // Line 50, Pos 13
+#36 Expected '!==' and instead saw '!='.
+    if (d && !(typeof nav.mimeTypes != UNDEF && nav.mimeTypes[FLASH_MIME_TYPE] && !nav.mimeTypes[FLASH_MIME_TYPE].enabledPlugin)) { // navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin indicates whether plug-ins are enabled or disabled in Safari 3+ // Line 50, Pos 45
+#37 Expected 'plugin' at column 21, not column 17.
+    plugin = true; // Line 51, Pos 17
+#38 Expected 'ie' at column 21, not column 17.
+    ie = false; // cascaded feature detection for Internet Explorer // Line 52, Pos 17
+#39 Expected 'd' at column 21, not column 17.
+    d = d.replace(/^.*\s+(\S+\s+\S+$)/, "$1"); // Line 53, Pos 17
+#40 Insecure '.'.
+    d = d.replace(/^.*\s+(\S+\s+\S+$)/, "$1"); // Line 53, Pos 33
+#41 Expected 'playerVersion' at column 21, not column 17.
+    playerVersion[0] = parseInt(d.replace(/^(.*)\..*$/, "$1"), 10); // Line 54, Pos 17
+#42 Insecure '.'.
+    playerVersion[0] = parseInt(d.replace(/^(.*)\..*$/, "$1"), 10); // Line 54, Pos 58
+#43 Insecure '.'.
+    playerVersion[0] = parseInt(d.replace(/^(.*)\..*$/, "$1"), 10); // Line 54, Pos 63
+#44 Expected 'playerVersion' at column 21, not column 17.
+    playerVersion[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10); // Line 55, Pos 17
+#45 Insecure '.'.
+    playerVersion[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10); // Line 55, Pos 57
+#46 Insecure '.'.
+    playerVersion[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10); // Line 55, Pos 62
+#47 Insecure '.'.
+    playerVersion[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10); // Line 55, Pos 67
+#48 Expected 'playerVersion' at column 21, not column 17.
+    playerVersion[2] = /[a-zA-Z]/.test(d) ? parseInt(d.replace(/^.*[a-zA-Z]+(.*)$/, "$1"), 10) : 0; // Line 56, Pos 17
+#49 Insecure '.'.
+    playerVersion[2] = /[a-zA-Z]/.test(d) ? parseInt(d.replace(/^.*[a-zA-Z]+(.*)$/, "$1"), 10) : 0; // Line 56, Pos 78
+#50 Insecure '.'.
+    playerVersion[2] = /[a-zA-Z]/.test(d) ? parseInt(d.replace(/^.*[a-zA-Z]+(.*)$/, "$1"), 10) : 0; // Line 56, Pos 90
+#51 Too many errors. (7% scanned).
+     // Line 56, Pos 90
+
+./script/lib/underscore/_underscore.js
+ #1 'define' was used before it was defined.
+    define(['help/order!lib/underscore'], function(){ // Line 2, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(['help/order!lib/underscore'], function(){ // Line 2, Pos 47
+ #3 Expected exactly one space between ')' and '{'.
+    define(['help/order!lib/underscore'], function(){ // Line 2, Pos 49
+ #4 Missing space between ')' and '{'.
+    define(['help/order!lib/underscore'], function(){ // Line 2, Pos 49
+ #5 Missing 'use strict' statement.
+    return _; // Line 4, Pos 3
+ #6 Expected 'return' at column 5, not column 3.
+    return _; // Line 4, Pos 3
+ #7 Unexpected dangling '_' in '_'.
+    return _; // Line 4, Pos 10
+ #8 '_' was used before it was defined.
+    return _; // Line 4, Pos 10
+
+./script/lib/underscore.js
+ #1 Expected exactly one space between 'function' and '('.
+    (function() { // Line 9, Pos 10
+ #2 Missing 'use strict' statement.
+    var root = this; // Line 15, Pos 3
+ #3 Expected 'var' at column 5, not column 3.
+    var root = this; // Line 15, Pos 3
+ #4 Expected 'var' at column 5, not column 3.
+    var previousUnderscore = root._; // Line 18, Pos 3
+ #5 Combine this with the previous 'var' statement.
+    var previousUnderscore = root._; // Line 18, Pos 7
+ #6 Unexpected dangling '_' in '_'.
+    var previousUnderscore = root._; // Line 18, Pos 33
+ #7 Expected 'var' at column 5, not column 3.
+    var breaker = {}; // Line 21, Pos 3
+ #8 Combine this with the previous 'var' statement.
+    var breaker = {}; // Line 21, Pos 7
+ #9 Expected 'var' at column 5, not column 3.
+    var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype; // Line 24, Pos 3
+#10 Combine this with the previous 'var' statement.
+    var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype; // Line 24, Pos 7
+#11 Expected 'var' at column 5, not column 3.
+    var slice            = ArrayProto.slice, // Line 27, Pos 3
+#12 Combine this with the previous 'var' statement.
+    var slice            = ArrayProto.slice, // Line 27, Pos 7
+#13 Expected 'unshift' at column 9, not column 7.
+    unshift          = ArrayProto.unshift, // Line 28, Pos 7
+#14 Expected 'toString' at column 9, not column 7.
+    toString         = ObjProto.toString, // Line 29, Pos 7
+#15 Expected 'hasOwnProperty' at column 9, not column 7.
+    hasOwnProperty   = ObjProto.hasOwnProperty; // Line 30, Pos 7
+#16 Expected 'var' at column 5, not column 3.
+    var // Line 34, Pos 3
+#17 Combine this with the previous 'var' statement.
+    nativeForEach      = ArrayProto.forEach, // Line 35, Pos 5
+#18 Expected 'nativeForEach' at column 13, not column 5.
+    nativeForEach      = ArrayProto.forEach, // Line 35, Pos 5
+#19 Expected 'nativeMap' at column 9, not column 5.
+    nativeMap          = ArrayProto.map, // Line 36, Pos 5
+#20 Expected 'nativeReduce' at column 9, not column 5.
+    nativeReduce       = ArrayProto.reduce, // Line 37, Pos 5
+#21 Expected 'nativeReduceRight' at column 9, not column 5.
+    nativeReduceRight  = ArrayProto.reduceRight, // Line 38, Pos 5
+#22 Expected 'nativeFilter' at column 9, not column 5.
+    nativeFilter       = ArrayProto.filter, // Line 39, Pos 5
+#23 Expected 'nativeEvery' at column 9, not column 5.
+    nativeEvery        = ArrayProto.every, // Line 40, Pos 5
+#24 Expected 'nativeSome' at column 9, not column 5.
+    nativeSome         = ArrayProto.some, // Line 41, Pos 5
+#25 Expected 'nativeIndexOf' at column 9, not column 5.
+    nativeIndexOf      = ArrayProto.indexOf, // Line 42, Pos 5
+#26 Expected 'nativeLastIndexOf' at column 9, not column 5.
+    nativeLastIndexOf  = ArrayProto.lastIndexOf, // Line 43, Pos 5
+#27 Expected 'nativeIsArray' at column 9, not column 5.
+    nativeIsArray      = Array.isArray, // Line 44, Pos 5
+#28 Expected 'nativeKeys' at column 9, not column 5.
+    nativeKeys         = Object.keys, // Line 45, Pos 5
+#29 Expected 'nativeBind' at column 9, not column 5.
+    nativeBind         = FuncProto.bind; // Line 46, Pos 5
+#30 Expected 'var' at column 5, not column 3.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 3
+#31 Unexpected dangling '_' in '_'.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 7
+#32 Combine this with the previous 'var' statement.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 7
+#33 Expected exactly one space between 'function' and '('.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 19
+#34 'wrapper' was used before it was defined.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 38
+#35 A constructor name 'wrapper' should start with an uppercase letter.
+    var _ = function(obj) { return new wrapper(obj); }; // Line 49, Pos 38
+#36 Expected 'if' at column 5, not column 3.
+    if (typeof module !== 'undefined' && module.exports) { // Line 54, Pos 3
+#37 Expected 'module' at column 9, not column 5.
+    module.exports = _; // Line 55, Pos 5
+#38 Unexpected dangling '_' in '_'.
+    module.exports = _; // Line 55, Pos 22
+#39 Unexpected dangling '_' in '_'.
+    _._ = _; // Line 56, Pos 5
+#40 Expected '_' at column 9, not column 5.
+    _._ = _; // Line 56, Pos 5
+#41 Unexpected dangling '_' in '_'.
+    _._ = _; // Line 56, Pos 7
+#42 Unexpected dangling '_' in '_'.
+    _._ = _; // Line 56, Pos 11
+#43 Expected '}' at column 5, not column 3.
+    } else { // Line 57, Pos 3
+#44 Expected 'root' at column 9, not column 5.
+    root['_'] = _; // Line 59, Pos 5
+#45 ['_'] is better written in dot notation.
+    root['_'] = _; // Line 59, Pos 10
+#46 Unexpected dangling '_' in '_'.
+    root['_'] = _; // Line 59, Pos 17
+#47 Expected '}' at column 5, not column 3.
+    } // Line 60, Pos 3
+#48 Unexpected dangling '_' in '_'.
+    _.VERSION = '1.1.7'; // Line 63, Pos 3
+#49 Expected '_' at column 5, not column 3.
+    _.VERSION = '1.1.7'; // Line 63, Pos 3
+#50 Expected 'var' at column 5, not column 3.
+    var each = _.each = _.forEach = function(obj, iterator, context) { // Line 71, Pos 3
+#51 Too many errors. (8% scanned).
+     // Line 71, Pos 3
+
+./script/main.js
+ #1 Expected exactly one space between 'function' and '('.
+    require(['js/widget/epaper'], function(epaper) { // Line 23, Pos 39
+ #2 Missing 'use strict' statement.
+    epaper.init({ // Line 24, Pos 5
+ #3 Expected 'js/app' at column 5, not column 3.
+    'js/app', // Line 33, Pos 3
+ #4 Expected 'help/order!jquery' at column 5, not column 3.
+    'help/order!jquery',  // Line 37, Pos 3
+ #5 Unexpected '(space)'.
+    'help/order!jquery',  // Line 37, Pos 23
+ #6 Expected 'help/order!underscore' at column 5, not column 3.
+    'help/order!underscore',  // Line 38, Pos 3
+ #7 Unexpected '(space)'.
+    'help/order!underscore',  // Line 38, Pos 27
+ #8 Expected 'help/order!backbone' at column 5, not column 3.
+    'help/order!backbone' // Line 39, Pos 3
+ #9 Expected exactly one space between 'function' and '('.
+    ], function(App) { // Line 41, Pos 12
+#10 Missing 'use strict' statement.
+    App.initialize(); // Line 45, Pos 5
+
+./script/models/projects.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 2, Pos 3
+ #3 Expected 'backbone' at column 5, not column 3.
+    'backbone' // Line 3, Pos 3
+ #4 Expected exactly one space between 'function' and '('.
+    ], function(_, Backbone) { // Line 4, Pos 12
+ #5 Unexpected dangling '_' in '_'.
+    ], function(_, Backbone) { // Line 4, Pos 13
+ #6 Missing 'use strict' statement.
+    var projectsModel = Backbone.Model.extend({ // Line 5, Pos 3
+ #7 Expected 'var' at column 5, not column 3.
+    var projectsModel = Backbone.Model.extend({ // Line 5, Pos 3
+ #8 Expected 'defaults' at column 13, not column 5.
+    defaults: { // Line 6, Pos 5
+ #9 Expected 'score' at column 17, not column 7.
+    score: 10 // Line 7, Pos 7
+#10 Expected '}' at column 13, not column 5.
+    }, // Line 8, Pos 5
+#11 Expected 'initialize' at column 13, not column 5.
+    initialize: function(){ // Line 9, Pos 5
+#12 Expected exactly one space between 'function' and '('.
+    initialize: function(){ // Line 9, Pos 25
+#13 Expected exactly one space between ')' and '{'.
+    initialize: function(){ // Line 9, Pos 27
+#14 Missing space between ')' and '{'.
+    initialize: function(){ // Line 9, Pos 27
+#15 Expected '}' at column 13, not column 5.
+    } // Line 10, Pos 5
+#16 Unexpected '(space)'.
+     // Line 11, Pos 1
+#17 Expected '}' at column 9, not column 3.
+    }); // Line 12, Pos 3
+#18 Expected 'return' at column 5, not column 3.
+    return projectsModel; // Line 13, Pos 3
+
+./script/views/home/main.js
+ #1 'define' was used before it was defined.
+    define([ // Line 1, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 2, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 3, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 4, Pos 3
+ #5 Expected 'help/text!tpl/underscore/home/main.html' at column 5, not column 3.
+    'help/text!tpl/underscore/home/main.html' // Line 5, Pos 3
+ #6 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, mainHomeTemplate){ // Line 6, Pos 12
+ #7 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, mainHomeTemplate){ // Line 6, Pos 16
+ #8 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, mainHomeTemplate){ // Line 6, Pos 46
+ #9 Missing space between ')' and '{'.
+    ], function($, _, Backbone, mainHomeTemplate){ // Line 6, Pos 46
+#10 Missing 'use strict' statement.
+    var mainHomeView = Backbone.View.extend({ // Line 8, Pos 3
+#11 Expected 'var' at column 5, not column 3.
+    var mainHomeView = Backbone.View.extend({ // Line 8, Pos 3
+#12 Expected 'el' at column 13, not column 5.
+    el: $("#page"), // Line 9, Pos 5
+#13 Expected 'render' at column 13, not column 5.
+    render: function(){ // Line 10, Pos 5
+#14 Expected exactly one space between 'function' and '('.
+    render: function(){ // Line 10, Pos 21
+#15 Expected exactly one space between ')' and '{'.
+    render: function(){ // Line 10, Pos 23
+#16 Missing space between ')' and '{'.
+    render: function(){ // Line 10, Pos 23
+#17 Expected 'this' at column 17, not column 7.
+    this.el.html(mainHomeTemplate); // Line 11, Pos 7
+#18 Expected '}' at column 13, not column 5.
+    } // Line 12, Pos 5
+#19 Expected '}' at column 9, not column 3.
+    }); // Line 13, Pos 3
+#20 Expected 'return' at column 5, not column 3.
+    return new mainHomeView; // Line 14, Pos 3
+#21 A constructor name 'mainHomeView' should start with an uppercase letter.
+    return new mainHomeView; // Line 14, Pos 14
+#22 Missing '()'.
+    return new mainHomeView; // Line 14, Pos 26
+
+./script/views/projects/list.js
+ #1 'define' was used before it was defined.
+    define([ // Line 2, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 3, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 4, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 5, Pos 3
+ #5 Expected 'help/text!tpl/underscore/projects/list.html' at column 5, not column 3.
+    'help/text!tpl/underscore/projects/list.html' // Line 8, Pos 3
+ #6 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, projectListTemplate){ // Line 9, Pos 12
+ #7 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, projectListTemplate){ // Line 9, Pos 16
+ #8 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, projectListTemplate){ // Line 9, Pos 49
+ #9 Missing space between ')' and '{'.
+    ], function($, _, Backbone, projectListTemplate){ // Line 9, Pos 49
+#10 Missing 'use strict' statement.
+    var projectListView = Backbone.View.extend({ // Line 10, Pos 3
+#11 Expected 'var' at column 5, not column 3.
+    var projectListView = Backbone.View.extend({ // Line 10, Pos 3
+#12 Expected 'el' at column 13, not column 5.
+    el: $('#container'), // Line 11, Pos 5
+#13 Expected 'render' at column 13, not column 5.
+    render: function(){ // Line 12, Pos 5
+#14 Expected exactly one space between 'function' and '('.
+    render: function(){ // Line 12, Pos 21
+#15 Expected exactly one space between ')' and '{'.
+    render: function(){ // Line 12, Pos 23
+#16 Missing space between ')' and '{'.
+    render: function(){ // Line 12, Pos 23
+#17 Expected 'var' at column 17, not column 7.
+    var data = {}; // Line 14, Pos 7
+#18 Expected 'var' at column 17, not column 7.
+    var compiledTemplate = _.template( projectListTemplate, data ); // Line 15, Pos 7
+#19 Combine this with the previous 'var' statement.
+    var compiledTemplate = _.template( projectListTemplate, data ); // Line 15, Pos 11
+#20 Unexpected dangling '_' in '_'.
+    var compiledTemplate = _.template( projectListTemplate, data ); // Line 15, Pos 30
+#21 Unexpected space between '(' and 'projectListTemplate'.
+    var compiledTemplate = _.template( projectListTemplate, data ); // Line 15, Pos 42
+#22 Unexpected space between 'data' and ')'.
+    var compiledTemplate = _.template( projectListTemplate, data ); // Line 15, Pos 68
+#23 Expected 'this' at column 17, not column 7.
+    this.el.append( compiledTemplate ); // Line 17, Pos 7
+#24 Unexpected space between '(' and 'compiledTemplate'.
+    this.el.append( compiledTemplate ); // Line 17, Pos 23
+#25 Unexpected space between 'compiledTemplate' and ')'.
+    this.el.append( compiledTemplate ); // Line 17, Pos 40
+#26 Expected '}' at column 13, not column 5.
+    } // Line 18, Pos 5
+#27 Expected '}' at column 9, not column 3.
+    }); // Line 19, Pos 3
+#28 Expected 'return' at column 5, not column 3.
+    return new projectListView; // Line 22, Pos 3
+#29 A constructor name 'projectListView' should start with an uppercase letter.
+    return new projectListView; // Line 22, Pos 14
+#30 Missing '()'.
+    return new projectListView; // Line 22, Pos 29
+
+./script/views/users/list.js
+ #1 'define' was used before it was defined.
+    define([ // Line 2, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 3, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 4, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 5, Pos 3
+ #5 Expected 'help/text!tpl/underscore/users/list.html' at column 5, not column 3.
+    'help/text!tpl/underscore/users/list.html' // Line 6, Pos 3
+ #6 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, userListTemplate){ // Line 7, Pos 12
+ #7 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, userListTemplate){ // Line 7, Pos 16
+ #8 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, userListTemplate){ // Line 7, Pos 46
+ #9 Missing space between ')' and '{'.
+    ], function($, _, Backbone, userListTemplate){ // Line 7, Pos 46
+#10 Missing 'use strict' statement.
+    var userListView = Backbone.View.extend({ // Line 8, Pos 3
+#11 Expected 'var' at column 5, not column 3.
+    var userListView = Backbone.View.extend({ // Line 8, Pos 3
+#12 Expected 'el' at column 13, not column 5.
+    el: $("#page"), // Line 9, Pos 5
+#13 Expected 'initialize' at column 13, not column 5.
+    initialize: function(){ // Line 10, Pos 5
+#14 Expected exactly one space between 'function' and '('.
+    initialize: function(){ // Line 10, Pos 25
+#15 Expected exactly one space between ')' and '{'.
+    initialize: function(){ // Line 10, Pos 27
+#16 Missing space between ')' and '{'.
+    initialize: function(){ // Line 10, Pos 27
+#17 Expected '}' at column 13, not column 5.
+    }, // Line 11, Pos 5
+#18 Expected 'render' at column 13, not column 5.
+    render: function(){ // Line 12, Pos 5
+#19 Expected exactly one space between 'function' and '('.
+    render: function(){ // Line 12, Pos 21
+#20 Expected exactly one space between ')' and '{'.
+    render: function(){ // Line 12, Pos 23
+#21 Missing space between ')' and '{'.
+    render: function(){ // Line 12, Pos 23
+#22 Expected 'var' at column 17, not column 7.
+    var data = {}; // Line 13, Pos 7
+#23 Expected 'var' at column 17, not column 7.
+    var compiledTemplate = _.template( userListTemplate, data ); // Line 14, Pos 7
+#24 Combine this with the previous 'var' statement.
+    var compiledTemplate = _.template( userListTemplate, data ); // Line 14, Pos 11
+#25 Unexpected dangling '_' in '_'.
+    var compiledTemplate = _.template( userListTemplate, data ); // Line 14, Pos 30
+#26 Unexpected space between '(' and 'userListTemplate'.
+    var compiledTemplate = _.template( userListTemplate, data ); // Line 14, Pos 42
+#27 Unexpected space between 'data' and ')'.
+    var compiledTemplate = _.template( userListTemplate, data ); // Line 14, Pos 65
+#28 Expected 'this' at column 17, not column 7.
+    this.el.html( compiledTemplate );  // Line 15, Pos 7
+#29 Unexpected space between '(' and 'compiledTemplate'.
+    this.el.html( compiledTemplate );  // Line 15, Pos 21
+#30 Unexpected space between 'compiledTemplate' and ')'.
+    this.el.html( compiledTemplate );  // Line 15, Pos 38
+#31 Unexpected '(space)'.
+    this.el.html( compiledTemplate );  // Line 15, Pos 40
+#32 Expected '}' at column 13, not column 5.
+    } // Line 16, Pos 5
+#33 Expected '}' at column 9, not column 3.
+    }); // Line 17, Pos 3
+#34 Expected 'return' at column 5, not column 3.
+    return new userListView; // Line 18, Pos 3
+#35 A constructor name 'userListView' should start with an uppercase letter.
+    return new userListView; // Line 18, Pos 14
+#36 Missing '()'.
+    return new userListView; // Line 18, Pos 26
+
+./script/widget/epaper.js
+ #1 'define' was used before it was defined.
+    define(function(require) { // Line 66, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    define(function(require) { // Line 66, Pos 16
+ #3 Missing 'use strict' statement.
+    var $ = require("jquery"), j = require('js/helper/order!js/lib/jtemplate'), $ui = require('js/lib/jquery-ui'), engine = require('js/helper/tpl_engine'); // Line 67, Pos 5
+ #4 Expected exactly one space between 'function' and '('.
+    $.fn.epaper = function(o) { // Line 68, Pos 27
+ #5 Expected exactly one space between 'function' and '('.
+    return this.each(function() { // Line 69, Pos 34
+ #6 '$e' was used before it was defined.
+    $(this).data('epaper', new $e(this, o)); // Line 70, Pos 40
+ #7 A constructor name '$e' should start with an uppercase letter.
+    $(this).data('epaper', new $e(this, o)); // Line 70, Pos 40
+ #8 Expected ';' and instead saw '}'.
+    }) // Line 72, Pos 11
+ #9 Expected ';' and instead saw '$'.
+    } // Line 73, Pos 6
+#10 Expected exactly one space between 'function' and '('.
+    $.epaper = function(e, o) { // Line 74, Pos 24
+#11 Combine this with the previous 'var' statement.
+    var opt = o || {}; // Line 76, Pos 13
+#12 Combine this with the previous 'var' statement.
+    var meta = $e.meta($(e)); // Line 77, Pos 13
+#13 '$e' was used before it was defined.
+    var meta = $e.meta($(e)); // Line 77, Pos 20
+#14 Expected exactly one space between 'if' and '('.
+    if(this.defaults.src === null) { // Line 98, Pos 11
+#15 Expected exactly one space between 'if' and '('.
+    if(this.defaults.update_on_resize == true) { // Line 109, Pos 11
+#16 Expected '===' and instead saw '=='.
+    if(this.defaults.update_on_resize == true) { // Line 109, Pos 43
+#17 'window' was used before it was defined.
+    $(window).resize(function() { // Line 110, Pos 15
+#18 Expected exactly one space between 'function' and '('.
+    $(window).resize(function() { // Line 110, Pos 38
+#19 Expected 'mousedown' at column 13, not column 9.
+    mousedown(function(e) { // Line 125, Pos 9
+#20 Expected exactly one space between 'function' and '('.
+    mousedown(function(e) { // Line 125, Pos 27
+#21 Expected 'return' at column 17, not column 13.
+    return me.drag_start(e); // Line 126, Pos 13
+#22 Expected '}' at column 13, not column 9.
+    }).mousemove(function(e) { // Line 127, Pos 9
+#23 Expected exactly one space between 'function' and '('.
+    }).mousemove(function(e) { // Line 127, Pos 30
+#24 Expected 'return' at column 17, not column 13.
+    return me.drag(e) // Line 128, Pos 13
+#25 Expected ';' and instead saw '}'.
+    return me.drag(e) // Line 128, Pos 30
+#26 Expected '}' at column 13, not column 9.
+    }).mouseup(function(e) { // Line 129, Pos 9
+#27 Expected exactly one space between 'function' and '('.
+    }).mouseup(function(e) { // Line 129, Pos 28
+#28 Expected 'return' at column 17, not column 13.
+    return me.drag_end(e) // Line 130, Pos 13
+#29 Expected ';' and instead saw '}'.
+    return me.drag_end(e) // Line 130, Pos 34
+#30 Expected '}' at column 13, not column 9.
+    }).click(function(e) { // Line 131, Pos 9
+#31 Expected exactly one space between 'function' and '('.
+    }).click(function(e) { // Line 131, Pos 26
+#32 Expected 'return' at column 17, not column 13.
+    return me.click(e) // Line 132, Pos 13
+#33 Expected ';' and instead saw '}'.
+    return me.click(e) // Line 132, Pos 31
+#34 Expected '}' at column 13, not column 9.
+    }).mouseleave(function(e) { // Line 133, Pos 9
+#35 Expected exactly one space between 'function' and '('.
+    }).mouseleave(function(e) { // Line 133, Pos 31
+#36 Expected 'return' at column 17, not column 13.
+    return me.drag_end(e) // Line 134, Pos 13
+#37 Expected ';' and instead saw '}'.
+    return me.drag_end(e) // Line 134, Pos 34
+#38 Expected '}' at column 13, not column 9.
+    }).mousewheel(function(ev, delta) { // Line 135, Pos 9
+#39 Expected exactly one space between 'function' and '('.
+    }).mousewheel(function(ev, delta) { // Line 135, Pos 31
+#40 Expected 'var' at column 17, not column 13.
+    var zoom = (delta > 0) ? 1 : -1; // Line 138, Pos 13
+#41 Expected 'me' at column 17, not column 13.
+    me.zoom_by(zoom); // Line 139, Pos 13
+#42 Expected 'me' at column 17, not column 13.
+    me.update_bar_pos(); // Line 140, Pos 13
+#43 Expected 'return' at column 17, not column 13.
+    return false; // Line 141, Pos 13
+#44 Expected '}' at column 13, not column 9.
+    }); // Line 142, Pos 9
+#45 Expected exactly one space between 'if' and '('.
+    if(!this.defaults.ui_disabled) { // Line 147, Pos 11
+#46 Expected exactly one space between 'if' and '('.
+    if(this.defaults.initCallback) { // Line 151, Pos 11
+#47 Expected ';' and instead saw '$e'.
+    } // Line 154, Pos 6
+#48 '$e' was used before it was defined.
+    $e = $.epaper; // Line 155, Pos 5
+#49 Unescaped '{'.
+    metaReg : /({.*})/, // Line 180, Pos 21
+#50 Insecure '.'.
+    metaReg : /({.*})/, // Line 180, Pos 22
+#51 Too many errors. (21% scanned).
+     // Line 180, Pos 22
+
+./script/widget/video_player.js
+ #1 Expected exactly one space between 'function' and '('.
+    (function() { // Line 1, Pos 10
+ #2 Missing 'use strict' statement.
+    var _base; // Line 2, Pos 3
+ #3 Expected 'var' at column 5, not column 3.
+    var _base; // Line 2, Pos 3
+ #4 Unexpected dangling '_' in '_base'.
+    var _base; // Line 2, Pos 7
+ #5 Expected 'var' at column 5, not column 3.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 3
+ #6 Unexpected dangling '_' in '__bind'.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 7
+ #7 Combine this with the previous 'var' statement.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 7
+ #8 Expected exactly one space between 'function' and '('.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 24
+ #9 Expected exactly one space between ')' and '{'.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 32
+#10 Missing space between ')' and '{'.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 32
+#11 Expected exactly one space between 'function' and '('.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 49
+#12 Expected exactly one space between ')' and '{'.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 51
+#13 Missing space between ')' and '{'.
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }; // Line 3, Pos 51
+#14 Expected '(' at column 5, not column 3.
+    (_base = ET.School.UI.Common).VideoPlayer || (_base.VideoPlayer = { // Line 4, Pos 3
+#15 Unexpected dangling '_' in '_base'.
+    (_base = ET.School.UI.Common).VideoPlayer || (_base.VideoPlayer = { // Line 4, Pos 4
+#16 'ET' was used before it was defined.
+    (_base = ET.School.UI.Common).VideoPlayer || (_base.VideoPlayer = { // Line 4, Pos 12
+#17 Unexpected dangling '_' in '_base'.
+    (_base = ET.School.UI.Common).VideoPlayer || (_base.VideoPlayer = { // Line 4, Pos 49
+#18 Expected 'Settings' at column 9, not column 5.
+    "Settings": {}, // Line 5, Pos 5
+#19 Expected 'Models' at column 9, not column 5.
+    "Models": {}, // Line 6, Pos 5
+#20 Expected 'Events' at column 9, not column 5.
+    "Events": {}, // Line 7, Pos 5
+#21 Expected 'Handlers' at column 9, not column 5.
+    "Handlers": {}, // Line 8, Pos 5
+#22 Expected 'Behaviors' at column 9, not column 5.
+    "Behaviors": {} // Line 9, Pos 5
+#23 Expected '}' at column 5, not column 3.
+    }); // Line 10, Pos 3
+#24 Expected a conditional expression and instead saw an assignment.
+    (_base = ET.School.UI.Common).VideoPlayer || (_base.VideoPlayer = { // Line 4, Pos 67
+#25 Expected an assignment or function call and instead saw an expression.
+    }); // Line 10, Pos 4
+#26 Expected 'ET' at column 5, not column 3.
+    ET.School.UI.Common.VideoPlayer.Handlers = { // Line 11, Pos 3
+#27 Expected 'loadstart' at column 9, not column 5.
+    'loadstart': null, // Line 12, Pos 5
+#28 Expected 'progress' at column 9, not column 5.
+    'progress': null, // Line 13, Pos 5
+#29 Expected 'suspend' at column 9, not column 5.
+    'suspend': null, // Line 14, Pos 5
+#30 Expected 'abort' at column 9, not column 5.
+    'abort': null, // Line 15, Pos 5
+#31 Expected 'error' at column 9, not column 5.
+    'error': null, // Line 16, Pos 5
+#32 Expected 'emptied' at column 9, not column 5.
+    'emptied': null, // Line 17, Pos 5
+#33 Expected 'stalled' at column 9, not column 5.
+    'stalled': null, // Line 18, Pos 5
+#34 Expected 'play' at column 9, not column 5.
+    'play': null, // Line 19, Pos 5
+#35 Expected 'pause' at column 9, not column 5.
+    'pause': null, // Line 20, Pos 5
+#36 Expected 'loadedmetadata' at column 9, not column 5.
+    'loadedmetadata': null, // Line 21, Pos 5
+#37 Expected 'loadeddata' at column 9, not column 5.
+    'loadeddata': null, // Line 22, Pos 5
+#38 Expected 'waiting' at column 9, not column 5.
+    'waiting': null, // Line 23, Pos 5
+#39 Expected 'playing' at column 9, not column 5.
+    'playing': null, // Line 24, Pos 5
+#40 Expected 'canplay' at column 9, not column 5.
+    'canplay': null, // Line 25, Pos 5
+#41 Expected 'canplaythrough' at column 9, not column 5.
+    'canplaythrough': null, // Line 26, Pos 5
+#42 Expected 'seeking' at column 9, not column 5.
+    'seeking': null, // Line 27, Pos 5
+#43 Expected 'seeked' at column 9, not column 5.
+    'seeked': null, // Line 28, Pos 5
+#44 Expected 'timeupdate' at column 9, not column 5.
+    'timeupdate': null, // Line 29, Pos 5
+#45 Expected 'ended' at column 9, not column 5.
+    'ended': null, // Line 30, Pos 5
+#46 Expected 'ratechange' at column 9, not column 5.
+    'ratechange': null, // Line 31, Pos 5
+#47 Expected 'durationchange' at column 9, not column 5.
+    'durationchange': null, // Line 32, Pos 5
+#48 Expected 'volumechange' at column 9, not column 5.
+    'volumechange': null, // Line 33, Pos 5
+#49 Expected 'fullscreen' at column 9, not column 5.
+    'fullscreen': null, // Line 35, Pos 5
+#50 Expected 'playBtnClickHandler' at column 9, not column 5.
+    'playBtnClickHandler': null, // Line 36, Pos 5
+#51 Too many errors. (9% scanned).
+     // Line 36, Pos 5
+
+./script/router.js
+ #1 'define' was used before it was defined.
+    define([ // Line 3, Pos 1
+ #2 Expected 'jquery' at column 5, not column 3.
+    'jquery', // Line 4, Pos 3
+ #3 Expected 'underscore' at column 5, not column 3.
+    'underscore', // Line 5, Pos 3
+ #4 Expected 'backbone' at column 5, not column 3.
+    'backbone', // Line 6, Pos 3
+ #5 Expected 'views/home/main' at column 5, not column 3.
+    'views/home/main', // Line 7, Pos 3
+ #6 Expected 'views/projects/list' at column 5, not column 3.
+    'views/projects/list', // Line 8, Pos 3
+ #7 Expected 'views/users/list' at column 5, not column 3.
+    'views/users/list' // Line 9, Pos 3
+ #8 Expected exactly one space between 'function' and '('.
+    ], function($, _, Backbone, mainHomeView, projectListView, userListView){ // Line 10, Pos 12
+ #9 Unexpected dangling '_' in '_'.
+    ], function($, _, Backbone, mainHomeView, projectListView, userListView){ // Line 10, Pos 16
+#10 Expected exactly one space between ')' and '{'.
+    ], function($, _, Backbone, mainHomeView, projectListView, userListView){ // Line 10, Pos 73
+#11 Missing space between ')' and '{'.
+    ], function($, _, Backbone, mainHomeView, projectListView, userListView){ // Line 10, Pos 73
+#12 Missing 'use strict' statement.
+    var AppRouter = Backbone.Router.extend({ // Line 12, Pos 3
+#13 Expected 'var' at column 5, not column 3.
+    var AppRouter = Backbone.Router.extend({ // Line 12, Pos 3
+#14 Expected 'routes' at column 13, not column 5.
+    routes: { // Line 13, Pos 5
+#15 Expected '/projects' at column 17, not column 7.
+    '/projects': 'showProjects', // Line 15, Pos 7
+#16 Expected '/users' at column 17, not column 7.
+    '/users': 'showUsers', // Line 16, Pos 7
+#17 Expected '*actions' at column 17, not column 7.
+    '*actions': 'defaultAction' // Line 18, Pos 7
+#18 Expected '}' at column 13, not column 5.
+    }, // Line 19, Pos 5
+#19 Expected 'showProjects' at column 13, not column 5.
+    showProjects: function(){ // Line 20, Pos 5
+#20 Expected exactly one space between 'function' and '('.
+    showProjects: function(){ // Line 20, Pos 27
+#21 Expected exactly one space between ')' and '{'.
+    showProjects: function(){ // Line 20, Pos 29
+#22 Missing space between ')' and '{'.
+    showProjects: function(){ // Line 20, Pos 29
+#23 Expected 'projectListView' at column 17, not column 7.
+    projectListView.render(); // Line 23, Pos 7
+#24 Expected '}' at column 13, not column 5.
+    }, // Line 24, Pos 5
+#25 Expected 'showUsers' at column 13, not column 5.
+    showUsers: function(){ // Line 27, Pos 5
+#26 Expected exactly one space between 'function' and '('.
+    showUsers: function(){ // Line 27, Pos 24
+#27 Expected exactly one space between ')' and '{'.
+    showUsers: function(){ // Line 27, Pos 26
+#28 Missing space between ')' and '{'.
+    showUsers: function(){ // Line 27, Pos 26
+#29 Expected 'userListView' at column 17, not column 7.
+    userListView.render(); // Line 28, Pos 7
+#30 Expected '}' at column 13, not column 5.
+    }, // Line 29, Pos 5
+#31 Expected 'defaultAction' at column 13, not column 5.
+    defaultAction: function(actions){ // Line 30, Pos 5
+#32 Expected exactly one space between 'function' and '('.
+    defaultAction: function(actions){ // Line 30, Pos 28
+#33 Expected exactly one space between ')' and '{'.
+    defaultAction: function(actions){ // Line 30, Pos 37
+#34 Missing space between ')' and '{'.
+    defaultAction: function(actions){ // Line 30, Pos 37
+#35 Expected 'console' at column 17, not column 7.
+    console.log('No route:', actions); // Line 32, Pos 7
+#36 Expected '}' at column 13, not column 5.
+    } // Line 33, Pos 5
+#37 Expected '}' at column 9, not column 3.
+    }); // Line 34, Pos 3
+#38 Expected 'var' at column 5, not column 3.
+    var initialize = function(){ // Line 36, Pos 3
+#39 Combine this with the previous 'var' statement.
+    var initialize = function(){ // Line 36, Pos 7
+#40 Expected exactly one space between 'function' and '('.
+    var initialize = function(){ // Line 36, Pos 28
+#41 Expected exactly one space between ')' and '{'.
+    var initialize = function(){ // Line 36, Pos 30
+#42 Missing space between ')' and '{'.
+    var initialize = function(){ // Line 36, Pos 30
+#43 Expected 'var' at column 13, not column 5.
+    var app_router = new AppRouter; // Line 37, Pos 5
+#44 Missing '()'.
+    var app_router = new AppRouter; // Line 37, Pos 35
+#45 Expected 'Backbone' at column 13, not column 5.
+    Backbone.history.start(); // Line 38, Pos 5
+#46 Expected '}' at column 9, not column 3.
+    }; // Line 39, Pos 3
+#47 Expected 'return' at column 5, not column 3.
+    return { // Line 40, Pos 3
+#48 Expected 'initialize' at column 9, not column 5.
+    initialize: initialize // Line 41, Pos 5
+#49 Expected '}' at column 5, not column 3.
+    }; // Line 42, Pos 3
+
+./script/lib/backbone.js
+ #1 Expected exactly one space between 'function' and '('.
+    (function(){ // Line 7, Pos 10
+ #2 Expected exactly one space between ')' and '{'.
+    (function(){ // Line 7, Pos 12
+ #3 Missing space between ')' and '{'.
+    (function(){ // Line 7, Pos 12
+ #4 Missing 'use strict' statement.
+    var root = this; // Line 13, Pos 3
+ #5 Expected 'var' at column 5, not column 3.
+    var root = this; // Line 13, Pos 3
+ #6 Expected 'var' at column 5, not column 3.
+    var previousBackbone = root.Backbone; // Line 16, Pos 3
+ #7 Combine this with the previous 'var' statement.
+    var previousBackbone = root.Backbone; // Line 16, Pos 7
+ #8 Expected 'var' at column 5, not column 3.
+    var Backbone; // Line 20, Pos 3
+ #9 Combine this with the previous 'var' statement.
+    var Backbone; // Line 20, Pos 7
+#10 Expected 'if' at column 5, not column 3.
+    if (typeof exports !== 'undefined') { // Line 21, Pos 3
+#11 Expected 'Backbone' at column 9, not column 5.
+    Backbone = exports; // Line 22, Pos 5
+#12 Expected '}' at column 5, not column 3.
+    } else { // Line 23, Pos 3
+#13 Expected 'Backbone' at column 9, not column 5.
+    Backbone = root.Backbone = {}; // Line 24, Pos 5
+#14 Expected '}' at column 5, not column 3.
+    } // Line 25, Pos 3
+#15 Expected 'Backbone' at column 5, not column 3.
+    Backbone.VERSION = '0.5.3'; // Line 28, Pos 3
+#16 Expected 'var' at column 5, not column 3.
+    var _ = root._; // Line 31, Pos 3
+#17 Unexpected dangling '_' in '_'.
+    var _ = root._; // Line 31, Pos 7
+#18 Combine this with the previous 'var' statement.
+    var _ = root._; // Line 31, Pos 7
+#19 Unexpected dangling '_' in '_'.
+    var _ = root._; // Line 31, Pos 16
+#20 Expected 'if' at column 5, not column 3.
+    if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._; // Line 32, Pos 3
+#21 Unexpected dangling '_' in '_'.
+    if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._; // Line 32, Pos 8
+#22 Unexpected dangling '_' in '_'.
+    if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._; // Line 32, Pos 47
+#23 Expected '{' and instead saw '_'.
+    if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._; // Line 32, Pos 47
+#24 Unexpected dangling '_' in '_'.
+    if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._; // Line 32, Pos 73
+#25 Expected 'var' at column 5, not column 3.
+    var $ = root.jQuery || root.Zepto; // Line 35, Pos 3
+#26 Combine this with the previous 'var' statement.
+    var $ = root.jQuery || root.Zepto; // Line 35, Pos 7
+#27 Expected 'Backbone' at column 5, not column 3.
+    Backbone.noConflict = function() { // Line 39, Pos 3
+#28 Expected exactly one space between 'function' and '('.
+    Backbone.noConflict = function() { // Line 39, Pos 33
+#29 Expected 'root' at column 9, not column 5.
+    root.Backbone = previousBackbone; // Line 40, Pos 5
+#30 Expected 'return' at column 9, not column 5.
+    return this; // Line 41, Pos 5
+#31 Expected '}' at column 5, not column 3.
+    }; // Line 42, Pos 3
+#32 Expected 'Backbone' at column 5, not column 3.
+    Backbone.emulateHTTP = false; // Line 47, Pos 3
+#33 Expected 'Backbone' at column 5, not column 3.
+    Backbone.emulateJSON = false; // Line 53, Pos 3
+#34 Expected 'Backbone' at column 5, not column 3.
+    Backbone.Events = { // Line 67, Pos 3
+#35 Expected 'bind' at column 9, not column 5.
+    bind : function(ev, callback, context) { // Line 71, Pos 5
+#36 Expected exactly one space between 'function' and '('.
+    bind : function(ev, callback, context) { // Line 71, Pos 20
+#37 Expected 'var' at column 13, not column 7.
+    var calls = this._callbacks || (this._callbacks = {}); // Line 72, Pos 7
+#38 Unexpected dangling '_' in '_callbacks'.
+    var calls = this._callbacks || (this._callbacks = {}); // Line 72, Pos 24
+#39 Unexpected dangling '_' in '_callbacks'.
+    var calls = this._callbacks || (this._callbacks = {}); // Line 72, Pos 44
+#40 Expected a conditional expression and instead saw an assignment.
+    var calls = this._callbacks || (this._callbacks = {}); // Line 72, Pos 55
+#41 Expected 'var' at column 13, not column 7.
+    var list  = calls[ev] || (calls[ev] = []); // Line 73, Pos 7
+#42 Combine this with the previous 'var' statement.
+    var list  = calls[ev] || (calls[ev] = []); // Line 73, Pos 11
+#43 Expected a conditional expression and instead saw an assignment.
+    var list  = calls[ev] || (calls[ev] = []); // Line 73, Pos 43
+#44 Expected 'list' at column 13, not column 7.
+    list.push([callback, context]); // Line 74, Pos 7
+#45 Expected 'return' at column 13, not column 7.
+    return this; // Line 75, Pos 7
+#46 Expected '}' at column 9, not column 5.
+    }, // Line 76, Pos 5
+#47 Expected 'unbind' at column 9, not column 5.
+    unbind : function(ev, callback) { // Line 81, Pos 5
+#48 Expected exactly one space between 'function' and '('.
+    unbind : function(ev, callback) { // Line 81, Pos 22
+#49 Expected 'var' at column 13, not column 7.
+    var calls; // Line 82, Pos 7
+#50 Expected 'if' at column 13, not column 7.
+    if (!ev) { // Line 83, Pos 7
+#51 Too many errors. (7% scanned).
+     // Line 83, Pos 7
+
+./script/lib/modernizr-2.0.6.js
+ #1 'window' was used before it was defined.
+    window.Modernizr = (function( window, document, undefined ) { // Line 25, Pos 1
+ #2 Expected exactly one space between 'function' and '('.
+    window.Modernizr = (function( window, document, undefined ) { // Line 25, Pos 29
+ #3 Unexpected space between '(' and 'window'.
+    window.Modernizr = (function( window, document, undefined ) { // Line 25, Pos 31
+ #4 Unexpected space between 'undefined' and ')'.
+    window.Modernizr = (function( window, document, undefined ) { // Line 25, Pos 59
+ #5 Missing 'use strict' statement.
+    var version = '2.0.6', // Line 27, Pos 5
+ #6 Expected 'Modernizr' at column 9, not column 5.
+    Modernizr = {}, // Line 29, Pos 5
+ #7 Unexpected '(space)'.
+     // Line 30, Pos 1
+ #8 Expected 'enableClasses' at column 9, not column 5.
+    enableClasses = true, // Line 32, Pos 5
+ #9 Expected 'docElement' at column 9, not column 5.
+    docElement = document.documentElement, // Line 34, Pos 5
+#10 Expected 'docHead' at column 9, not column 5.
+    docHead = document.head || document.getElementsByTagName('head')[0], // Line 35, Pos 5
+#11 Expected 'mod' at column 9, not column 5.
+    mod = 'modernizr', // Line 40, Pos 5
+#12 Expected 'modElem' at column 9, not column 5.
+    modElem = document.createElement(mod), // Line 41, Pos 5
+#13 Expected 'mStyle' at column 9, not column 5.
+    mStyle = modElem.style, // Line 42, Pos 5
+#14 Expected 'inputElem' at column 9, not column 5.
+    inputElem = document.createElement('input'), // Line 47, Pos 5
+#15 Expected 'smile' at column 9, not column 5.
+    smile = ':)', // Line 49, Pos 5
+#16 Expected 'toString' at column 9, not column 5.
+    toString = Object.prototype.toString, // Line 51, Pos 5
+#17 Expected 'prefixes' at column 9, not column 5.
+    prefixes = ' -webkit- -moz- -o- -ms- -khtml- '.split(' '), // Line 54, Pos 5
+#18 Use the array literal notation [].
+    prefixes = ' -webkit- -moz- -o- -ms- -khtml- '.split(' '), // Line 54, Pos 52
+#19 Expected 'domPrefixes' at column 9, not column 5.
+    domPrefixes = 'Webkit Moz O ms Khtml'.split(' '), // Line 66, Pos 5
+#20 Use the array literal notation [].
+    domPrefixes = 'Webkit Moz O ms Khtml'.split(' '), // Line 66, Pos 43
+#21 Expected 'ns' at column 9, not column 5.
+    ns = {'svg': 'http://www.w3.org/2000/svg'}, // Line 68, Pos 5
+#22 Expected 'tests' at column 9, not column 5.
+    tests = {}, // Line 70, Pos 5
+#23 Expected 'inputs' at column 9, not column 5.
+    inputs = {}, // Line 71, Pos 5
+#24 Expected 'attrs' at column 9, not column 5.
+    attrs = {}, // Line 72, Pos 5
+#25 Expected 'classes' at column 9, not column 5.
+    classes = [], // Line 74, Pos 5
+#26 Expected 'featureName' at column 9, not column 5.
+    featureName, // used in testing loop // Line 76, Pos 5
+#27 Expected 'injectElementWithStyles' at column 9, not column 5.
+    injectElementWithStyles = function( rule, callback, nodes, testnames ) { // Line 80, Pos 5
+#28 Expected exactly one space between 'function' and '('.
+    injectElementWithStyles = function( rule, callback, nodes, testnames ) { // Line 80, Pos 39
+#29 Unexpected space between '(' and 'rule'.
+    injectElementWithStyles = function( rule, callback, nodes, testnames ) { // Line 80, Pos 41
+#30 Unexpected space between 'testnames' and ')'.
+    injectElementWithStyles = function( rule, callback, nodes, testnames ) { // Line 80, Pos 74
+#31 Expected 'var' at column 13, not column 7.
+    var style, ret, node, // Line 82, Pos 7
+#32 Expected 'div' at column 17, not column 11.
+    div = document.createElement('div'); // Line 83, Pos 11
+#33 Expected 'if' at column 13, not column 7.
+    if ( parseInt(nodes, 10) ) { // Line 85, Pos 7
+#34 Unexpected space between '(' and 'parseInt'.
+    if ( parseInt(nodes, 10) ) { // Line 85, Pos 12
+#35 Unexpected space between ')' and ')'.
+    if ( parseInt(nodes, 10) ) { // Line 85, Pos 32
+#36 Expected 'while' at column 17, not column 11.
+    while ( nodes-- ) { // Line 88, Pos 11
+#37 Unexpected space between '(' and 'nodes'.
+    while ( nodes-- ) { // Line 88, Pos 19
+#38 Unexpected '--'.
+    while ( nodes-- ) { // Line 88, Pos 24
+#39 Unexpected space between '--' and ')'.
+    while ( nodes-- ) { // Line 88, Pos 27
+#40 Expected 'node' at column 21, not column 15.
+    node = document.createElement('div'); // Line 89, Pos 15
+#41 Expected 'node' at column 21, not column 15.
+    node.id = testnames ? testnames[nodes] : mod + (nodes + 1); // Line 90, Pos 15
+#42 Expected 'div' at column 21, not column 15.
+    div.appendChild(node); // Line 91, Pos 15
+#43 Expected '}' at column 17, not column 11.
+    } // Line 92, Pos 11
+#44 Expected '}' at column 13, not column 7.
+    } // Line 93, Pos 7
+#45 Expected 'style' at column 13, not column 7.
+    style = ['&shy;', '<style>', rule, '</style>'].join(''); // Line 99, Pos 7
+#46 Expected 'div' at column 13, not column 7.
+    div.id = mod; // Line 100, Pos 7
+#47 Expected 'div' at column 13, not column 7.
+    div.innerHTML += style; // Line 101, Pos 7
+#48 Expected 'docElement' at column 13, not column 7.
+    docElement.appendChild(div); // Line 102, Pos 7
+#49 Expected 'ret' at column 13, not column 7.
+    ret = callback(div, rule); // Line 104, Pos 7
+#50 Expected 'div' at column 13, not column 7.
+    div.parentNode.removeChild(div); // Line 105, Pos 7
+#51 Too many errors. (9% scanned).
+     // Line 105, Pos 7
+
+./script/lib/require.js
+ #1 Unexpected 'strict'.
+    /*jslint strict: false, plusplus: false, sub: true */ // Line 6, Pos 10
+ #2 Stopping.  (0% scanned).
+     // Line 6, Pos 10
+
+./script/lib/cs.js
+ #1 Unexpected 'strict'.
+    /*jslint evil: true, strict: false, plusplus: false, regexp: false */ // Line 12, Pos 22
+ #2 Stopping.  (0% scanned).
+     // Line 12, Pos 22
+
+./script/lib/jquery.js
+ #1 Expected exactly one space between 'function' and '('.
+    (function( window, undefined ) { // Line 16, Pos 10
+ #2 Unexpected space between '(' and 'window'.
+    (function( window, undefined ) { // Line 16, Pos 12
+ #3 Unexpected space between 'undefined' and ')'.
+    (function( window, undefined ) { // Line 16, Pos 30
+ #4 Missing 'use strict' statement.
+    var document = window.document, // Line 19, Pos 1
+ #5 Expected 'var' at column 5, not column 1.
+    var document = window.document, // Line 19, Pos 1
+ #6 Expected 'navigator' at column 9, not column 5.
+    navigator = window.navigator, // Line 20, Pos 5
+ #7 Expected 'location' at column 9, not column 5.
+    location = window.location; // Line 21, Pos 5
+ #8 Expected 'var' at column 5, not column 1.
+    var jQuery = (function() { // Line 22, Pos 1
+ #9 Combine this with the previous 'var' statement.
+    var jQuery = (function() { // Line 22, Pos 5
+#10 Expected exactly one space between 'function' and '('.
+    var jQuery = (function() { // Line 22, Pos 23
+#11 Expected 'var' at column 13, not column 1.
+    var jQuery = function( selector, context ) { // Line 25, Pos 1
+#12 Expected exactly one space between 'function' and '('.
+    var jQuery = function( selector, context ) { // Line 25, Pos 22
+#13 Unexpected space between '(' and 'selector'.
+    var jQuery = function( selector, context ) { // Line 25, Pos 24
+#14 Unexpected space between 'context' and ')'.
+    var jQuery = function( selector, context ) { // Line 25, Pos 42
+#15 Expected 'return' at column 21, not column 9.
+    return new jQuery.fn.init( selector, context, rootjQuery ); // Line 27, Pos 9
+#16 Unexpected space between '(' and 'selector'.
+    return new jQuery.fn.init( selector, context, rootjQuery ); // Line 27, Pos 36
+#17 'rootjQuery' was used before it was defined.
+    return new jQuery.fn.init( selector, context, rootjQuery ); // Line 27, Pos 55
+#18 Unexpected space between 'rootjQuery' and ')'.
+    return new jQuery.fn.init( selector, context, rootjQuery ); // Line 27, Pos 66
+#19 Expected '}' at column 17, not column 5.
+    }, // Line 28, Pos 5
+#20 Unexpected dangling '_' in '_jQuery'.
+    _jQuery = window.jQuery, // Line 31, Pos 5
+#21 Expected '_jQuery' at column 17, not column 5.
+    _jQuery = window.jQuery, // Line 31, Pos 5
+#22 Unexpected dangling '_' in '_$'.
+    _$ = window.$, // Line 34, Pos 5
+#23 Expected '_$' at column 17, not column 5.
+    _$ = window.$, // Line 34, Pos 5
+#24 Expected 'rootjQuery' at column 17, not column 5.
+    rootjQuery, // Line 37, Pos 5
+#25 Expected 'quickExpr' at column 17, not column 5.
+    quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/, // Line 41, Pos 5
+#26 Insecure '^'.
+    quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/, // Line 41, Pos 23
+#27 Insecure '^'.
+    quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/, // Line 41, Pos 40
+#28 Expected 'rnotwhite' at column 17, not column 5.
+    rnotwhite = /\S/, // Line 44, Pos 5
+#29 Expected 'trimLeft' at column 17, not column 5.
+    trimLeft = /^\s+/, // Line 47, Pos 5
+#30 Expected 'trimRight' at column 17, not column 5.
+    trimRight = /\s+$/, // Line 48, Pos 5
+#31 Expected 'rsingleTag' at column 17, not column 5.
+    rsingleTag = /^<(\w+)\s*\/?>(?:<\/\1>)?$/, // Line 51, Pos 5
+#32 Expected 'rvalidchars' at column 17, not column 5.
+    rvalidchars = /^[\],:{}\s]*$/, // Line 54, Pos 5
+#33 Expected 'rvalidescape' at column 17, not column 5.
+    rvalidescape = /\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, // Line 55, Pos 5
+#34 Expected 'rvalidtokens' at column 17, not column 5.
+    rvalidtokens = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, // Line 56, Pos 5
+#35 Insecure '^'.
+    rvalidtokens = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, // Line 56, Pos 23
+#36 Expected 'rvalidbraces' at column 17, not column 5.
+    rvalidbraces = /(?:^|:|,)(?:\s*\[)+/g, // Line 57, Pos 5
+#37 Expected 'rwebkit' at column 17, not column 5.
+    rwebkit = /(webkit)[ \/]([\w.]+)/, // Line 60, Pos 5
+#38 Expected 'ropera' at column 17, not column 5.
+    ropera = /(opera)(?:.*version)?[ \/]([\w.]+)/, // Line 61, Pos 5
+#39 Insecure '.'.
+    ropera = /(opera)(?:.*version)?[ \/]([\w.]+)/, // Line 61, Pos 25
+#40 Expected 'rmsie' at column 17, not column 5.
+    rmsie = /(msie) ([\w.]+)/, // Line 62, Pos 5
+#41 Expected 'rmozilla' at column 17, not column 5.
+    rmozilla = /(mozilla)(?:.*? rv:([\w.]+))?/, // Line 63, Pos 5
+#42 Insecure '.'.
+    rmozilla = /(mozilla)(?:.*? rv:([\w.]+))?/, // Line 63, Pos 29
+#43 Expected 'rdashAlpha' at column 17, not column 5.
+    rdashAlpha = /-([a-z]|[0-9])/ig, // Line 66, Pos 5
+#44 Expected 'rmsPrefix' at column 17, not column 5.
+    rmsPrefix = /^-ms-/, // Line 67, Pos 5
+#45 Expected 'fcamelCase' at column 17, not column 5.
+    fcamelCase = function( all, letter ) { // Line 70, Pos 5
+#46 Expected exactly one space between 'function' and '('.
+    fcamelCase = function( all, letter ) { // Line 70, Pos 26
+#47 Unexpected space between '(' and 'all'.
+    fcamelCase = function( all, letter ) { // Line 70, Pos 28
+#48 Unexpected space between 'letter' and ')'.
+    fcamelCase = function( all, letter ) { // Line 70, Pos 40
+#49 Expected 'return' at column 21, not column 9.
+    return ( letter + "" ).toUpperCase(); // Line 71, Pos 9
+#50 Unexpected space between '(' and 'letter'.
+    return ( letter + "" ).toUpperCase(); // Line 71, Pos 18
+#51 Too many errors. (0% scanned).
+     // Line 71, Pos 18
+
+./script/helper/require-jquery.js
+ #1 Unexpected 'strict'.
+    /*jslint strict: false, plusplus: false, sub: true */ // Line 6, Pos 10
+ #2 Stopping.  (0% scanned).
+     // Line 6, Pos 10
+
+./script/lib/jquery-ui.js
+ #1 Expected exactly one space between 'function' and '('.
+    (function( $, undefined ) { // Line 10, Pos 10
+ #2 Unexpected space between '(' and '$'.
+    (function( $, undefined ) { // Line 10, Pos 12
+ #3 Unexpected space between 'undefined' and ')'.
+    (function( $, undefined ) { // Line 10, Pos 25
+ #4 Missing 'use strict' statement.
+    $.ui = $.ui || {}; // Line 15, Pos 1
+ #5 Expected '$' at column 5, not column 1.
+    $.ui = $.ui || {}; // Line 15, Pos 1
+ #6 Expected 'if' at column 5, not column 1.
+    if ( $.ui.version ) { // Line 16, Pos 1
+ #7 Unexpected space between '(' and '$'.
+    if ( $.ui.version ) { // Line 16, Pos 6
+ #8 Unexpected space between 'version' and ')'.
+    if ( $.ui.version ) { // Line 16, Pos 19
+ #9 Expected 'return' at column 9, not column 5.
+    return; // Line 17, Pos 5
+#10 Expected '}' at column 5, not column 1.
+    } // Line 18, Pos 1
+#11 Expected '$' at column 5, not column 1.
+    $.extend( $.ui, { // Line 20, Pos 1
+#12 Unexpected space between '(' and '$'.
+    $.extend( $.ui, { // Line 20, Pos 11
+#13 Expected 'version' at column 9, not column 5.
+    version: "1.8.14", // Line 21, Pos 5
+#14 Expected 'keyCode' at column 9, not column 5.
+    keyCode: { // Line 23, Pos 5
+#15 Expected 'ALT' at column 13, not column 9.
+    ALT: 18, // Line 24, Pos 9
+#16 Expected 'BACKSPACE' at column 13, not column 9.
+    BACKSPACE: 8, // Line 25, Pos 9
+#17 Expected 'CAPS_LOCK' at column 13, not column 9.
+    CAPS_LOCK: 20, // Line 26, Pos 9
+#18 Expected 'COMMA' at column 13, not column 9.
+    COMMA: 188, // Line 27, Pos 9
+#19 Expected 'COMMAND' at column 13, not column 9.
+    COMMAND: 91, // Line 28, Pos 9
+#20 Expected 'COMMAND_LEFT' at column 13, not column 9.
+    COMMAND_LEFT: 91, // COMMAND // Line 29, Pos 9
+#21 Expected 'COMMAND_RIGHT' at column 13, not column 9.
+    COMMAND_RIGHT: 93, // Line 30, Pos 9
+#22 Expected 'CONTROL' at column 13, not column 9.
+    CONTROL: 17, // Line 31, Pos 9
+#23 Expected 'DELETE' at column 13, not column 9.
+    DELETE: 46, // Line 32, Pos 9
+#24 Expected 'DOWN' at column 13, not column 9.
+    DOWN: 40, // Line 33, Pos 9
+#25 Expected 'END' at column 13, not column 9.
+    END: 35, // Line 34, Pos 9
+#26 Expected 'ENTER' at column 13, not column 9.
+    ENTER: 13, // Line 35, Pos 9
+#27 Expected 'ESCAPE' at column 13, not column 9.
+    ESCAPE: 27, // Line 36, Pos 9
+#28 Expected 'HOME' at column 13, not column 9.
+    HOME: 36, // Line 37, Pos 9
+#29 Expected 'INSERT' at column 13, not column 9.
+    INSERT: 45, // Line 38, Pos 9
+#30 Expected 'LEFT' at column 13, not column 9.
+    LEFT: 37, // Line 39, Pos 9
+#31 Expected 'MENU' at column 13, not column 9.
+    MENU: 93, // COMMAND_RIGHT // Line 40, Pos 9
+#32 Expected 'NUMPAD_ADD' at column 13, not column 9.
+    NUMPAD_ADD: 107, // Line 41, Pos 9
+#33 Expected 'NUMPAD_DECIMAL' at column 13, not column 9.
+    NUMPAD_DECIMAL: 110, // Line 42, Pos 9
+#34 Expected 'NUMPAD_DIVIDE' at column 13, not column 9.
+    NUMPAD_DIVIDE: 111, // Line 43, Pos 9
+#35 Expected 'NUMPAD_ENTER' at column 13, not column 9.
+    NUMPAD_ENTER: 108, // Line 44, Pos 9
+#36 Expected 'NUMPAD_MULTIPLY' at column 13, not column 9.
+    NUMPAD_MULTIPLY: 106, // Line 45, Pos 9
+#37 Expected 'NUMPAD_SUBTRACT' at column 13, not column 9.
+    NUMPAD_SUBTRACT: 109, // Line 46, Pos 9
+#38 Expected 'PAGE_DOWN' at column 13, not column 9.
+    PAGE_DOWN: 34, // Line 47, Pos 9
+#39 Expected 'PAGE_UP' at column 13, not column 9.
+    PAGE_UP: 33, // Line 48, Pos 9
+#40 Expected 'PERIOD' at column 13, not column 9.
+    PERIOD: 190, // Line 49, Pos 9
+#41 Expected 'RIGHT' at column 13, not column 9.
+    RIGHT: 39, // Line 50, Pos 9
+#42 Expected 'SHIFT' at column 13, not column 9.
+    SHIFT: 16, // Line 51, Pos 9
+#43 Expected 'SPACE' at column 13, not column 9.
+    SPACE: 32, // Line 52, Pos 9
+#44 Expected 'TAB' at column 13, not column 9.
+    TAB: 9, // Line 53, Pos 9
+#45 Expected 'UP' at column 13, not column 9.
+    UP: 38, // Line 54, Pos 9
+#46 Expected 'WINDOWS' at column 13, not column 9.
+    WINDOWS: 91 // COMMAND // Line 55, Pos 9
+#47 Expected '}' at column 9, not column 5.
+    } // Line 56, Pos 5
+#48 Expected '}' at column 5, not column 1.
+    }); // Line 57, Pos 1
+#49 Expected '$' at column 5, not column 1.
+    $.fn.extend({ // Line 60, Pos 1
+#50 Unexpected dangling '_' in '_focus'.
+    _focus: $.fn.focus, // Line 61, Pos 5
+#51 Too many errors. (0% scanned).
+     // Line 61, Pos 5
+
+./script/lib/r.js
+ #1 Unexpected 'strict'.
+    /*jslint strict: false, evil: true, nomen: false */ // Line 14, Pos 10
+ #2 Stopping.  (0% scanned).
+     // Line 14, Pos 10
