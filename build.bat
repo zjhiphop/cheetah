@@ -1,8 +1,7 @@
 
 @echo off                                                                  
 setlocal enabledelayedexpansion                                            
-set PATH=%PATH%;C:Program Files
-odejs;                                   
+set PATH=%PATH%;C:/Program Files/nodejs;                                   
 rd  /s /q build-client                                                     
 cd /d .                                                                    
 call :coffee                                                               

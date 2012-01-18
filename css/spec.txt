@@ -1,0 +1,97 @@
+1.所有的css命名以'ets-'开头，各段之间以'-'连接
+  如：
+  组件类：ets-checkbox-XX
+          ets-radiobox-XX
+  widegt：ets-widegt-XXX
+  activity:
+		  ets-act-XXX
+  js调用的selector：
+          ets-fn-XXX
+  模块：  ets-modulename-XX
+2.尽可能组件化css/html结构,这样便于日后维护
+  如：
+  ets-module1
+  ets-module1-status1
+  ets-module1 ets-item1
+3.能用css实现的坚决不用js实现,不到万不得已不用inline style
+  如：
+  label > input[type=checkbox] 可以通过input自身的特性获取checked状态
+4.布局元素要注意语义化，行内元素中不要套用块元素布局，如：span > p
+5.尽可能采用html自带的语义标签，比如checkbox可以直接使用input[type=checkbox]实现
+6.在高级浏览器中可以尝试使用css3中的渲染属性，如：渐变，多背景，圆角等。
+  （布局属性暂时不考虑，如：border-box，flex-box这样的新型盒模型）
+7.在书写css属性的顺序时
+  *布局在前，展现在后
+  如：
+  .ets-demo{
+			/*布局类的属性*/
+			margin:10em 5em 15em 10em;
+			width:100px;
+			height:auto;
+			/*展现类的属性*/
+            font:italic small-caps bold 1em/140% "Lucida Grande",sans-serif;
+			color:black;
+   }
+   *浏览器私有写法在前，标准写法在后
+	   -moz-box-shadow: 1px2px3px#ddd;
+		-webkit-box-shadow: 1px2px3px#ddd;
+		box-shadow: 1px2px3px#ddd;
+8. 关于hack
+   *通用hack
+	.all-IE{property:value\9;}
+	:root .IE-9{property:value\0/;}
+	.gte-IE-8{property:value\0;}
+	.lte-IE-7{*property:value;}
+	.IE-7{+property:value;}
+	.IE-6{_property:value;}
+	.not-IE{property//:value;}
+	@-moz-document url-prefix() { .firefox{property:value;} }
+	@media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
+	@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
+	@media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }
+  * 尽量不使用hack，如果使用时，通常放在文件的最底部并加上前缀标示
+	 /*===================================
+	 IE FIXes
+	 ==================================*/
+  * 使用更优雅的方式代替，如在ie6/7中有很多bug都是因为没有出发haslayout属性导致的，这时只要设置可以触发layout的属性即可
+    拥有 haslayout 的元素，通常显示为“haslayout = -1”。
+		负责组织自身内容的元素将默认有一个布局，主要包括以下元素（不完全列表）：
+		* body and html
+		* table, tr, th, td
+		* img
+		* hr
+		* input, button, file, select, textarea, fieldset
+		* marquee
+		* frameset, frame, iframe
+		* objects, applets, embed
+    通过设置以下 css 属性即可触发元素的haslayout：
+		* display: inline-block
+		* height: (任何值除了auto)
+		* float: (left 或 right)
+		* position: absolute
+		* width: (任何值除了auto)
+		* writing-mode: tb-rl
+		* zoom: (除 normal 外任意值)
+		Internet Explorer 7 还有一些额外的属性(不完全列表):
+		* min-height: (任意值)
+		* max-height: (除 none 外任意值)
+		* min-width: (任意值)
+		* max-width: (除 none 外任意值)
+		* overflow: (除 visible 外任意值)
+		* overflow-x: (除 visible 外任意值)
+		* overflow-y: (除 visible 外任意值)
+		* position: fixed
+9.关于文件的注释
+	 /*///////////////////////////////////////////////////////////////////////////////////////
+	 //
+	 //  Hierarchy:     Englishtown > School > Base Styles  层级关系
+	 //  File:          ets-base.css						文件名
+	 //  Images:        ets-buttons.png						用到的图片
+	 //  Dependencies:  None							    依赖关系
+	 //  Description:   Base styles including: CSS Reset, Common Styles, Buttons
+	 //                 Must be referenced in all school content !important
+	 //
+	 //////////////////////////////////////////////////////////////////////////////////////*/
+10.其他
+   *使用Less来进行代码组织
+   *使用统一的build工具
