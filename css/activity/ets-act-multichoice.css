@@ -1,0 +1,72 @@
+/*///////////////////////////////////////////////////////////////////////////////////////
+ //
+ //  Hierarchy:     Englishtown > School > Course > Activity > Multiple Choice New
+ //  File:          ets-multichoice.css
+ //  Images:        none
+ //  Dependencies:  ets-base.css, ets-course.css
+ //  Description:   Style for the new multiple choice activity
+ //
+ //////////////////////////////////////////////////////////////////////////////////////*/
+
+#ets-act-multichoice {
+	width: 920px;
+	margin: 0 auto;
+}
+#ets-act-multichoice h1 {
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1.6;
+}
+#ets-act-mc-box {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background: #fff;
+	height: 450px;
+}
+#ets-act-mc-content {
+	height: 450px;
+	width: 68%;
+	overflow: auto;
+	float: left;
+}
+#ets-act-mc-content-bd {
+	padding: 15px;
+}
+#ets-act-mc-form {
+	background: #f7f7f7;
+	height: 450px;
+	width: 32%;
+	float: right;
+}
+#ets-act-mc-form-hd {
+	padding: 10px 0 0 0;
+}
+#ets-act-mc-form-hd h2{
+	font-size: 1.3em;
+	font-weight: 700;
+	text-align: center;
+}
+#ets-act-mc-form-bd {
+	margin: 10px 12px;
+	height: 340px;
+}
+#ets-act-mc-form-question {
+	font-weight: 700;
+}
+#ets-act-mc-form-options {
+	margin: 15px 0 0 0;
+}
+#ets-act-mc-form-options .ets-checkbox-b {
+	display: block;
+	margin-bottom: 5px;
+}
+#ets-act-mc-form-ft {
+	margin: 10px 12px;
+}
+#ets-act-mc-form-ft .ets-btn-prev{
+	float: left;
+}
+#ets-act-mc-form-ft .ets-btn-next{
+	float: right;
+}

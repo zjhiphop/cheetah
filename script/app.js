@@ -1,4 +1,4 @@
-// Filename: app.js
+// : app.js
 define([
   'jquery',
   'underscore',
@@ -13,4 +13,5 @@ define([
   return {
     initialize: initialize
   };
+
 });

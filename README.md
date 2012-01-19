@@ -1,47 +1,22 @@
-# Client Structure  
-### 1.script -- coffee script  
-### 2.css -- Less/Stylus   
-### 3.lib -- some tools/scripts used to build  
-### 4.tpl -- HTML template  
+# Cheetah Structure  
+![Front End Architec](imgs/project_architec.png)  
 
 File Structure  
 ├── imgs  
-├── css  
-│   └── style.css   
-├── templates  
-│   ├── projects  
-│   │   ├── list.html  
-│   │   └── edit.html  
-│   └── users  
-│       ├── list.html  
-│       └── edit.html  
+├── css   
+├── tpl
 ├── js  
 │   ├── libs  
-│   │   ├── jquery  
-│   │   │   ├── jquery.min.js  
-│   │   │   └── jquery.js // jQuery Library Wrapper  
+│   │   ├── jquery   
 │   │   ├── backbone  
-│   │   │   ├── backbone.min.js  
-│   │   │   └── backbone.js // Backbone Library Wrapper  
 │   │   └── underscore  
-│   │   │   ├── underscore.min.js  
-│   │   │   └── underscore.js // Underscore Library Wrapper  
-│   ├── models  
-│   │   ├── users.js  
-│   │   └── projects.js  
-│   ├── collections  
-│   │   ├── users.js  
-│   │   └── projects.js  
-│   ├── views  
-│   │   ├── projects  
-│   │   │   ├── list.js  
-│   │   │   └── edit.js  
-│   │   └── users  
-│   │       ├── list.js  
-│   │       └── edit.js  
+│   ├── models   
+│   ├── collections    
+│   ├── views   
 │   ├── router.js  
 │   ├── app.js  
-│   ├── main.js  // Bootstrap  
-│   ├── order.js //Require.js plugin  
+│   ├── main.js  // Bootstrap    
+│   ├── order.js //Require.js plugin    
 │   └── text.js  //Require.js plugin  
+├── app.build.js 
 └── index.html  

@@ -20,9 +20,10 @@
 		"views": "script/views",
 		"collections": "script/collections"
 	},
-	dir: "../build-client",
+	dir: "../build",
 	locale: "en-us",
 	optimize: "uglify",
+  modules : [
 	{
 		name: "script/helper/require-jquery"
 	},

@@ -1,6 +1,6 @@
-define(function(require) {
+define(['require','jquery'],function(require,$) {
     return function(type, tpl, data,cb) {
-        var type = type || "jtemplate", $ = require('jquery');
+        var type = type || "jtemplate";
         switch(type) {
             case "jtemplate":
                 var $ = require('jquery'), jtem = 'js/helper/order!lib/jtemplate', tem = $.createTemplateURL(tpl);

@@ -1,0 +1,2 @@
+这里主要用于存放用于模块化的UI组件相关JS
+/script/collections/modules/

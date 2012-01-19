@@ -1,0 +1,304 @@
+/*///////////////////////////////////////////////////////////////////////////////////////
+ //
+ //  Hierarchy:     Englishtown > School > Course Common Styles
+ //  File:          ets-course.css
+ //  Images:        ets-breadcrumb.png, ets-breadcrumb-ie6.png
+ //                 ets-act-comsrc.png, ets-act-pattern.png
+ //  Dependencies:  ets-base.css
+ //  Description:   Common styles for course, including BreadCrumb and activity commons
+ //
+ //////////////////////////////////////////////////////////////////////////////////////*/
+
+/*===================================
+ Course Commons
+ ==================================*/
+#ets-breadcrumb,
+#ets-bc-level,
+#ets-bc-level-arr,
+#ets-bc-unit,
+.ets-bc-step-active,
+.ets-bc-step-active .ets-bc-step-bd,
+.ets-bc-step,
+.ets-bc-act,
+#ets-bc-btn-uno,
+#ets-bc-btn-uno span {
+	background-image: url(imgs/ets-breadcrumb.png);
+	background-repeat: no-repeat;
+}
+#ets-course {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/*===================================
+ BreadCrumb
+ ==================================*/
+/* BreadCrumb: Level Selector */
+#ets-breadcrumb {
+	height: 44px;
+	background-position: 0 -132px;
+	background-repeat: repeat-x;
+}
+#ets-bc-level {
+	height: 44px;
+	background-position: right 0;
+	float: left;
+	cursor: pointer;
+	padding: 0 0 0 10px;
+	position: relative;
+}
+
+#ets-bc-level:active {
+	background-position: right -44px;
+}
+
+#ets-bc-level-bd {
+	float: left;
+	height: 44px;
+}
+#ets-bc-level-name {
+	color: #AFAFAF;
+	font-size: 1.6em;
+	text-shadow: 0 1px 0 #fff;
+	line-height: 1;
+}
+#ets-bc-level-no {
+	font-size: 1.4em;
+	font-weight: 700;
+	margin: 0 0 0 3px;
+	font-style: italic;
+	line-height: 1;
+}
+#ets-bc-level-stage {
+	color: #AFAFAF;
+	text-shadow: 0 1px 0 #fff;
+	line-height: 1;
+}
+#ets-bc-level-arr {
+	width: 12px;
+	height: 7px;
+	background-position: 0 -380px;
+	float: left;
+	margin: 18px 10px 0 8px;
+}
+#ets-bc-level:active #ets-bc-level-name,
+#ets-bc-level:active #ets-bc-level-no,
+#ets-bc-level:active #ets-bc-level-stage {
+	color: #fff;
+	text-shadow: -1px -1px 0px #555;
+}
+#ets-bc-level:active #ets-bc-level-arr {
+	background-position: 0 -390px;
+}
+
+/* BreadCrumb: Unit */
+#ets-bc-unit {
+	height: 44px;
+	background-position: right -88px;
+	float: left;
+	padding: 0 18px 0 15px;
+	cursor: pointer;
+}
+#ets-bc-unit:active {
+	background-position: right -44px;
+}
+#ets-bc-unit-name {
+	color: #fff;
+	font-size: 1.6em;
+	text-shadow: -1px -1px 0px #555;
+	line-height: 1;
+	line-height: 44px;
+}
+#ets-bc-unit-no {
+	font-size: 1.4em;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 1;
+	margin: 0 0 0 6px;
+}
+#ets-bc-unit-title {
+	line-height: 44px;
+	font-size: 1.4em;
+	color: #fff;
+	padding: 0 10px;
+	float: left;
+}
+#ets-bc-unit-score {
+	float: right;
+	line-height: 44px;
+	font-size: 1.4em;
+	color: #fff;
+	padding: 0 10px;
+}
+#ets-bc-unit-score strong {
+	font-weight: 700;
+}
+#ets-bc-btn-uno {
+	margin: 9px 10px 0 10px;
+	float: right;
+	padding-left: 32px;
+	height: 27px;
+	background-position: 0 -300px;
+	cursor: pointer;
+}
+#ets-bc-btn-uno span{
+	display: block;
+	line-height: 26px;
+	height: 27px;
+	background-position: right -300px;
+	padding: 0 15px 0 0;
+	color: #555;
+	text-shadow: 0 1px 0 #fff;
+}
+#ets-bc-btn-uno:active {
+	background-position-y: -332px;
+}
+#ets-bc-btn-uno:active span{
+	background-position-y: -332px;
+	color: #fff;
+	text-shadow: none;
+}
+/* BreadCrumb: Lesson */
+#ets-bc-lesson {
+	padding: 4px 10px 0 10px;
+	height: 40px;
+	float: left;
+	color: #fff;
+}
+#ets-bc-lesson-name {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+#ets-bc-lesson-desc {
+	
+}
+/* BreadCrumb: Steps */
+#ets-bc-steps {
+	float: right;
+}
+
+.ets-bc-step-wrap {
+	height: 33px;
+	margin: 5px 8px 0 0;
+	float: left;
+}
+.ets-bc-step-bd {
+	height: 33px;
+	padding: 5px 0;
+}
+.ets-bc-step-active {
+	padding: 0 0 0 5px;
+	background-position: 0 -195px;
+}
+.ets-bc-step-active .ets-bc-step-bd {
+	background-position: right -245px;
+	padding: 5px 8px 5px 4px;
+}
+.ets-bc-step {
+	width: 23px;
+	height: 23px;
+	background-position: -110px -380px;
+	cursor: pointer;
+	float: left;
+}
+.ets-bc-step-finish {
+	background-position-x: -40px;
+}
+.ets-bc-step-half {
+	background-position-x: -64px;
+}
+.ets-bc-step-fail {
+	background-position-x: -87px;
+}
+.ets-bc-acts {
+	float: left;
+}
+.ets-bc-act {
+	margin: 0 0 0 4px;
+	width: 20px;
+	height: 21px;
+	float: left;
+	background-position: -160px -394px;
+	cursor: pointer;
+}
+.ets-bc-act-finish {
+	background-position-x: -220px;
+}
+.ets-bc-act-fail {
+	background-position-x: -190px;
+}
+.ets-bc-act-active {
+	background-position-y: -370px;
+}
+
+/*===================================
+ Activity Commons
+ ==================================*/
+#ets-activity {
+	background: #e9e9e9 url(imgs/ets-act-pattern.png) repeat;
+	min-height: 200px;
+	padding: 0 0 30px 0;
+}
+
+#ets-act-hd {
+	float: none;
+	clear: both;
+}
+
+#ets-act-comsrc {
+	position: relative;
+}
+
+#ets-act-comsrc-info {
+	width: 700px;
+	float: left;
+	padding: 20px 0;
+	line-height: 1.4;
+}
+#ets-act-comsrc-img {
+	float: right;
+	width: 137px;
+	height: 100px;
+	background: url(imgs/ets-act-comsrc.png) 0 0 no-repeat;
+	padding: 6px 0 0 13px
+}
+#ets-act-comsrc-img img {
+	width: 128px;
+	height: 88px;
+}
+#ets-act-comsrc-bd {
+	background: #2B3F5A url(imgs/ets-act-comsrc-bg.jpg) 0 bottom no-repeat;
+	padding: 10px 40px;
+	color: #fff;
+	font-size: 1.2em;
+}
+#ets-act-comsrc-ft {
+	height: 13px;
+	background: url(imgs/ets-act-comsrc.png) 0 bottom no-repeat;
+}
+#ets-act-comsrc-expand {
+	position: absolute;
+	bottom: 4px;
+	left: 35px;
+}
+#ets-build-version {
+	position: absolute;
+	right: 2px;
+	bottom: 12px;
+	visibility: hidden;
+}
+
+#ets-act-bd {
+	float: none;
+	clear: both;
+}
+
+#ets-act-ft {
+    width: 920px;
+    margin: 15px auto 0;
+    
+  }
+/*===================================
+ IE FIXes
+ ==================================*/
+

@@ -3,9 +3,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'help/text!tpl/underscore/users/list.html'
-], function($, _, Backbone, userListTemplate){
-  var userListView = Backbone.View.extend({
+  'help/text!tpl/mustache/common/vertical_question.tpl'
+], function($, _, Backbone, vertical_question){
+  var Vertical_Question_View = Backbone.View.extend({
     el: $("#page"),
     initialize: function(){
     },
