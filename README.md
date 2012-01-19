@@ -1,5 +1,5 @@
 # Cheetah Structure  
-![Front End Architec](cheetah/imgs/project_architec.png)  
+![Front End Architec](cheetah/raw/master/imgs/project_architec.png)  
 
 File Structure  
 ├── imgs  
