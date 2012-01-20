@@ -2,18 +2,19 @@
 define([
   'jquery',
   'underscore',
-  'backbone',
-  'help/text!tpl/mustache/common/vertical_question.tpl'
-], function($, _, Backbone, vertical_question){
-  var Vertical_Question_View = Backbone.View.extend({
-    el: $("#page"),
-    initialize: function(){
+  'backbone'
+], function($, _, Backbone){
+  var vq_model= Backbone.Model.extend({
+    initialize:function(options){
+      this.items=options.items;
     },
-    render: function(){
-      var data = {};
-      var compiledTemplate = _.template( userListTemplate, data );
-      this.el.html( compiledTemplate ); 
+    validate:function(options){
+      if(!options){
+        throw new Error("You must specify a data!");
+      }else if(!options.items){
+        throw new Error("Data must have a 'items' node!");
+      }
     }
   });
-  return new userListView;
+  return new vq_model;
 });

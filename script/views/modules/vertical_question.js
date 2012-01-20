@@ -3,17 +3,17 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'mustache',
   'help/text!tpl/mustache/common/vertical_question.tpl'
-], function($, _, Backbone, vertical_question){
+], function($, _, Backbone,$$, vq_tpl){
   var Vertical_Question_View = Backbone.View.extend({
-    el: $("#page"),
+    el: $("#ets-act-mc-form-options"),
     initialize: function(){
     },
-    render: function(){
-      var data = {};
-      var compiledTemplate = _.template( userListTemplate, data );
+    render: function(data){
+      var compiledTemplate = $$.render( vq_tpl, data );
       this.el.html( compiledTemplate ); 
     }
   });
-  return new userListView;
+  return new Vertical_Question_View;
 });

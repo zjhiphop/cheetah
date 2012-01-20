@@ -22,7 +22,7 @@
 .ets-bc-act,
 #ets-bc-btn-uno,
 #ets-bc-btn-uno span {
-	background-image: url(imgs/ets-breadcrumb.png);
+	background-image: url(../imgs/ets-breadcrumb.png);
 	background-repeat: no-repeat;
 }
 #ets-course {
@@ -235,7 +235,7 @@
  Activity Commons
  ==================================*/
 #ets-activity {
-	background: #e9e9e9 url(imgs/ets-act-pattern.png) repeat;
+	background: #e9e9e9 url(../imgs/ets-act-pattern.png) repeat;
 	min-height: 200px;
 	padding: 0 0 30px 0;
 }
@@ -259,7 +259,7 @@
 	float: right;
 	width: 137px;
 	height: 100px;
-	background: url(imgs/ets-act-comsrc.png) 0 0 no-repeat;
+	background: url(../imgs/ets-act-comsrc.png) 0 0 no-repeat;
 	padding: 6px 0 0 13px
 }
 #ets-act-comsrc-img img {
@@ -267,14 +267,14 @@
 	height: 88px;
 }
 #ets-act-comsrc-bd {
-	background: #2B3F5A url(imgs/ets-act-comsrc-bg.jpg) 0 bottom no-repeat;
+	background: #2B3F5A url(../imgs/ets-act-comsrc-bg.jpg) 0 bottom no-repeat;
 	padding: 10px 40px;
 	color: #fff;
 	font-size: 1.2em;
 }
 #ets-act-comsrc-ft {
 	height: 13px;
-	background: url(imgs/ets-act-comsrc.png) 0 bottom no-repeat;
+	background: url(../imgs/ets-act-comsrc.png) 0 bottom no-repeat;
 }
 #ets-act-comsrc-expand {
 	position: absolute;

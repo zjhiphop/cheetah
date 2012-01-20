@@ -9,7 +9,6 @@ define([
     initialize: function(){
 
     }
-
   });
  
   return new projectsCollection;

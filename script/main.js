@@ -23,13 +23,15 @@ require.config({
     locale : "fr-fr"
 });
 
+/*
 require(['js/widget/epaper'], function(epaper) {
     epaper.init({
         epaper_wrapper : '#epaper_container',
         src : "imgs/eg_epaper.jpg",
         engine : 'jtemplate'
     });
-});
+});*/
+
 require([
 // Load our app module and pass it to our definition function
 //@off

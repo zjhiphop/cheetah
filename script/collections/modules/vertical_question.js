@@ -5,15 +5,8 @@ define([
   'backbone',
   'help/text!tpl/mustache/common/vertical_question.tpl'
 ], function($, _, Backbone, vertical_question){
-  var Vertical_Question_View = Backbone.View.extend({
-    el: $("#page"),
-    initialize: function(){
-    },
-    render: function(){
-      var data = {};
-      var compiledTemplate = _.template( userListTemplate, data );
-      this.el.html( compiledTemplate ); 
-    }
+  var vq_collection = Backbone.Collection.extend({
+   
   });
-  return new userListView;
+  return new vq_collection;
 });

@@ -3,12 +3,15 @@ define([
   'backbone'
 ], function(_, Backbone) {
   var projectsModel = Backbone.Model.extend({
-    defaults: {
-      score: 10
-    },
-    initialize: function(){
-    }
-    
+     defaults:{
+       
+     },
+     initalize:function(){
+       
+     },
+     validate:function(){
+       
+     }    
   });
   return projectsModel;
 

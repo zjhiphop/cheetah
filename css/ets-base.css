@@ -175,7 +175,7 @@ legend {
 .ets-btn-close,
 .ets-btn-close-s,
 .ets-btn-expand {
-	background-image: url(imgs/ets-buttons.png);
+	background-image: url(../imgs/ets-buttons.png);
 	background-repeat: no-repeat;
 	display: block;
 	text-decoration: none!important;
@@ -644,7 +644,7 @@ legend {
 
 /* Checkbox */
 .ets-checkbox {
-	background-image: url(imgs/ets-form.png);
+	background-image: url(../imgs/ets-form.png);
 	background-repeat: no-repeat;
 	background-position: 0 -80px;
 	overflow: hidden;
@@ -672,7 +672,7 @@ legend {
 	position: relative;
 	padding: 0 0 0 18px;
 	line-height: 16px;
-	background: transparent url(imgs/ets-form.png) -750px -80px no-repeat;
+	background: transparent url(../../imgs/ets-form.png) -750px -80px no-repeat;
 }
 .ets-radio:active {
 	background-position-y: -110px;
@@ -693,7 +693,7 @@ legend {
 	height: 47px;
 	max-width: 390px;
 	padding: 0 0 0 10px;
-	background: transparent url(imgs/ets-form.png) 0 -300px no-repeat;
+	background: transparent url(../imgs/ets-form.png) 0 -300px no-repeat;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -706,7 +706,7 @@ legend {
 	display: block;
 	height: 47px;
 	padding: 0 12px 0 0;
-	background: transparent url(imgs/ets-form.png) right -300px no-repeat;
+	background: transparent url(../imgs/ets-form.png) right -300px no-repeat;
 	position: relative;
 }
 .ets-checkbox-b-wrapper span {
@@ -717,7 +717,7 @@ legend {
 	font-weight: 700;
 	padding: 0 0 0 52px;
 	text-align: center;
-	background: transparent url(imgs/ets-form.png) 0 -170px no-repeat;
+	background: transparent url(../imgs/ets-form.png) 0 -170px no-repeat;
 }
 .ets-checkbox-b-checked .ets-checkbox-b-wrapper span {
 	background-position-y: -230px;
@@ -729,7 +729,7 @@ legend {
 	height: 47px;
 	max-width: 390px;
 	padding: 0 0 0 10px;
-	background: transparent url(imgs/ets-form.png) 0 -300px no-repeat;
+	background: transparent url(../imgs/ets-form.png) 0 -300px no-repeat;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -742,7 +742,7 @@ legend {
 	display: block;
 	height: 47px;
 	padding: 0 12px 0 0;
-	background: transparent url(imgs/ets-form.png) right -300px no-repeat;
+	background: transparent url(../imgs/ets-form.png) right -300px no-repeat;
 	position: relative;
 }
 .ets-radio-b-wrapper span {
@@ -753,7 +753,7 @@ legend {
 	font-weight: 700;
 	padding: 0 0 0 40px;
 	text-align: center;
-	background: transparent url(imgs/ets-form.png) -750px -172px no-repeat;
+	background: transparent url(../imgs/ets-form.png) -750px -172px no-repeat;
 }
 .ets-radio-b-checked .ets-radio-b-wrapper span {
 	background-position-y: -232px;
@@ -761,7 +761,7 @@ legend {
 
 /* Search */
 .ets-search {
-	background: url(imgs/ets-form.png) 0 -420px no-repeat;
+	background: url(../imgs/ets-form.png) 0 -420px no-repeat;
 	display: inline-block;
  	*display: inline;
 	*zoom: 1;
@@ -774,7 +774,7 @@ legend {
 	margin: 0;
 	padding: 0 12px 0 0;
 	height: 29px;
-	background: url(imgs/ets-form.png) right -420px no-repeat;
+	background: url(../imgs/ets-form.png) right -420px no-repeat;
 }
 .ets-search span input{
 	border: none;
@@ -801,7 +801,7 @@ legend {
 .ets-popbox-hd,
 .ets-popbox-bd,
 .ets-popbox-ft {
-	background-image: url(imgs/ets-popbox.png);
+	background-image: url(../imgs/ets-popbox.png);
 	background-repeat: no-repeat;
 }
 
@@ -883,11 +883,11 @@ legend {
 .ets-btn-close,
 .ets-btn-close-s,
 .ets-btn-expand {
-	_background-image: url(imgs/ets-buttons-ie6.png); /* use png8 for ie6 */
+	_background-image: url(../imgs/ets-buttons-ie6.png); /* use png8 for ie6 */
 }
 
 .ets-popbox-hd,
 .ets-popbox-bd,
 .ets-popbox-ft {
-	_background-image: url(imgs/ets-popbox-ie6.png); /* use png8 for ie6 */
+	_background-image: url(../imgs/ets-popbox-ie6.png); /* use png8 for ie6 */
 }

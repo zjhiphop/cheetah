@@ -1,41 +1,131 @@
-																													  
-<!DOCTYPE HTML>                                                                                                     
-<html lang="en-US">                                                                                                 
-<head>                                                                                                              
-	<meta charset="UTF-8">                                                                                            
-	<title>ET standard index HTML</title>                                                                             
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8"/> 
-</head>                                                                                                             
-<body>                                                                               
- <div id="container">																				
-        <div id="logo">                                                                           
-            <h1>ET benchmark Store, make it!</h1>   
-        </div>                                                                                    
-        <div id="menu">                                                                           
-            <ul>                                                                                  
-                <li>                                                                              
-                    <a href="#/main">Home</a>                                                          
-                </li>                                                                             
-                <li>                                                                              
-                    <a href="#/projects">Project List</a>                                         
-                </li>                                                                             
-                <li>                                                                              
-                    <a href="#/users">User List</a>                                               
-                </li>                                                                             
-            </ul>                                                                                 
-        </div>                                                                                    
-        <div id="page">                                                                           
-           <p>Welcome to ET Store Stanrard Page!<br/>Please click <a href="https://github.com/zjhiphop/ET-Refactor">home page</a> to see detail!</p>   
-           <p>This project is a benchmark for u to use requireJS/backbone/Jquery/underscore to manage your website!<br/>
-           You can use any HTML template: jade/coffeekup/mustache/underscore.. to build your page.<br/>
-           You can use any CSS template : less/stylus.. to build your css,this is amazing!<br/>
-           <br/><br/>
-           Build your dream,Come on!</p> 
-        </div>                                                                                    
-        <div id="footer">                                                                         
-           If u have any problem,please contact <a href="mailto:zjhiphop@gmail.com">Jade.Z</a>                                                                                
-        </div>                                                                                    
-    </div>                                                                                        
-	<script data-main="script/main" src="script/helper/require-jquery.js"></script>                                   
-</body>                                                                                                             
-</html>                                                                                                             
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>ET standard index HTML</title>
+        <link rel="stylesheet" href="css/ets-base.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <link rel="stylesheet" href="css/ets-course.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <link rel="stylesheet" href="css/activity/ets-act-multichoice.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    </head>
+    <body>
+        <div id="ets-course" class="ets">
+            <div id="ets-course-bd">
+                <div id="ets-breadcrumb">
+                    <div id="ets-bc-level">
+                        <div id="ets-bc-level-bd">
+                            <div id="ets-bc-level-name">
+                                Level<span id="ets-bc-level-no">2</span>
+                            </div>
+                            <div id="ets-bc-level-stage">
+                                Intermediate
+                            </div>
+                        </div>
+                        <div id="ets-bc-level-arr"></div>
+                    </div>
+                    <div id="ets-bc-unit">
+                        <div id="ets-bc-unit-name">
+                            Unit<span id="ets-bc-unit-no">1</span>
+                        </div>
+                    </div>
+                    <div id="ets-bc-unit-title" class="ets-hidden">
+                        Time and dates
+                    </div>
+                    <div id="ets-bc-unit-score" class="ets-hidden">
+                        Unit score: <strong>2%</strong>
+                    </div>
+                    <div id="ets-bc-btn-uno" class="ets-hidden">
+                        <span>Unit Overview</span>
+                    </div>
+                    <div id="ets-bc-lesson">
+                        <div id="ets-bc-lesson-name">
+                            Listening
+                        </div>
+                        <div id="ets-bc-lesson-desc">
+                            Making a schedule for the weekend
+                        </div>
+                    </div>
+                    <div id="ets-bc-steps">
+                        <div class="ets-bc-step-wrap">
+                            <div class="ets-bc-step-bd">
+                                <div class="ets-bc-step"></div>
+                                <div class="ets-bc-acts ets-hidden">
+                                    <ul>
+                                        <li class="ets-bc-act"></li>
+                                        <li class="ets-bc-act"></li>
+                                        <li class="ets-bc-act"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ets-bc-step-wrap ets-bc-step-active">
+                            <div class="ets-bc-step-bd">
+                                <div class="ets-bc-step ets-bc-step-finish"></div>
+                                <div class="ets-bc-acts">
+                                    <ul>
+                                        <li class="ets-bc-act ets-bc-act"></li>
+                                        <li class="ets-bc-act ets-bc-act-finish ets-bc-act-active"></li>
+                                        <li class="ets-bc-act ets-bc-act-fail"></li>
+                                        <li class="ets-bc-act ets-bc-act"></li>
+                                        <li class="ets-bc-act ets-bc-act-fail"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ets-bc-step-wrap">
+                            <div class="ets-bc-step-bd">
+                                <div class="ets-bc-step ets-bc-step-fail"></div>
+                                <div class="ets-bc-acts ets-hidden">
+                                    <ul>
+                                        <li class="ets-bc-act ets-bc-act"></li>
+                                        <li class="ets-bc-act ets-bc-act-finish ets-bc-act-active"></li>
+                                        <li class="ets-bc-act ets-bc-act-fail"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ets-bc-step-wrap">
+                            <div class="ets-bc-step-bd">
+                                <div class="ets-bc-step ets-bc-step-half"></div>
+                                <div class="ets-bc-acts ets-hidden">
+                                    <ul>
+                                        <li class="ets-bc-act"></li>
+                                        <li class="ets-bc-act"></li>
+                                        <li class="ets-bc-act"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ets-activity">
+                    <div id="ets-act-hd">
+                        <div id="ets-act-comsrc">
+                            <div id="ets-act-comsrc-bd" class="ets-cf">
+                                <div id="ets-act-comsrc-info">
+                                    Match the movie genres to their definitions. Drag the word strips to the correct positions. Click 'Try more' for extra practice.
+                                </div>
+                                <div id="ets-act-comsrc-img"><img src="http://ak1.englishtown.com/Juno/school/imgs/1.1.1.2.2_informal_greeting_s.jpg" alt="">
+                                </div>
+                            </div>
+                            <div id="ets-act-comsrc-ft"></div>
+                            <div id="ets-act-comsrc-expand" class="ets-btn-expand ets-btn-expand-up"></div>
+                            <div id="ets-build-version">
+                                2012.01.01.001
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ets-act-bd" class="ets-cf">
+                        <div id="ets-act-multichoice" class="ets-act-wrap">
+                        </div>
+                    </div>
+                    <div id="ets-act-ft">
+                        <div class="ets-btn-skip">
+                            <span>Skip Activity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script data-main="script/main" src="script/helper/require-jquery.js"></script>
+    </body>
+</html>

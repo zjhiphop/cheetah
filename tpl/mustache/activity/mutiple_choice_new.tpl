@@ -8,7 +8,7 @@
         </div>
         <div id="ets-act-mc-form">
             <div id="ets-act-mc-form-hd">
-                <h2>Question {{cunrrent}} of {{total}}</h2>
+                <h2>Question <span class="ets-act-mc-fn-curr">{{cunrrent}}</span> of <span class="ets-act-mc-fn-total">{{total}}</span></h2>
             </div>
             <div id="ets-act-mc-form-bd">
                 <div id="ets-act-mc-form-question">
