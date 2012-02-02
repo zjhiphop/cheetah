@@ -1,21 +1,25 @@
 // Filename: views/projects/list
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'mustache',
-  'models/activity/mutiple_choice_new',
-  'help/text!tpl/mustache/activity/mutiple_choice_new.tpl'
-], function($, _, Backbone,$$, model,tpl){
-  var mutiple_choice_new = Backbone.View.extend({
-    el: $("#ets-act-multichoice"),
-    initialize: function(){
-    },
-    render: function(data){
-      var data=model.toJSON();
-      var compiledTemplate = $$.to_html( tpl, data );
-      this.el.html( compiledTemplate ); 
-    }
-  });
-  return new mutiple_choice_new;
+//off
+define(['jquery', 'underscore', 'backbone', 'mustache', 
+       'models/activity/mutiple_choice_new', 
+       'help/text!tpl/mustache/activity/mutiple_choice_new.tpl', 
+       'views/modules/vertical_question', 'models/modules/vertical_question'], 
+//on
+function($, _, Backbone, $$, model, tpl, vq, vq_model) {
+    var mutiple_choice_new = Backbone.View.extend({
+        el : $("#ets-act-multichoice"),
+        initialize : function() {
+        },
+        render : function(page) {
+            var _model = new model();
+            var data = _model.toJSON();
+            var compiledTemplate = $$.to_html(tpl, data);
+            this.el.html(compiledTemplate);
+            var ques = new vq({
+                model : vq_model
+            });
+            $("#ets-act-mc-form").prepend(ques.render(page).el);
+        }
+    });
+    return new mutiple_choice_new;
 });

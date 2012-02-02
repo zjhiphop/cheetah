@@ -14,10 +14,7 @@ require.config({
         "jquery" : "script/lib/jquery/_jquery",
         "models" : "script/models",
         "views" : "script/views",
-        "collections" : "script/collections",
-        "activity":"script/activity",
-        "widegt":"script/widegt",
-        "module":"script/modules"
+        "collections" : "script/collections"
     },
     waitSeconds : 15,
     locale : "fr-fr"

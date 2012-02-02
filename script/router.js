@@ -4,24 +4,19 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/activity/mutiple_choice_new'
-], function($, _, Backbone, mutichoice){
+  'js/activityRouters'
+], function($, _, Backbone,actRouter){
 //@on
-  var AppRouter = Backbone.Router.extend({
+  var AppRouter = Backbone.Router.extend(_.extend({
     routes: {
-      // Define some URL routes
-      'mutichoice': 'showMutiChoice',
       // Default
       '*actions': 'defaultAction'
-    },
-    showMutiChoice:function(){
-      mutichoice.render();
     },
     defaultAction: function(actions){
       // We have no matching route, lets just log what the URL was
      $("#ets-activity").append("Not implement!");
     }
-  });
+  },actRouter));
 
   var initialize = function(){
     var app_router = new AppRouter;
