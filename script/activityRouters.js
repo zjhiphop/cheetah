@@ -9,8 +9,8 @@ function(_, Backbone, mutichoice) {
         MutipleChoiceNewRouter : {
             routes : {
                 // Define some URL routes
-                'mutichoice' : 'showMutiChoice',
-                'mutichoice/q:page' : 'showQuestion'
+                'multichoice' : 'showMutiChoice',
+                'multichoice/q:page' : 'showQuestion'
             },
             showMutiChoice : function() {
                 mutichoice.render(1);
