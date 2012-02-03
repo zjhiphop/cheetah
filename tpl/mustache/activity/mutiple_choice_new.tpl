@@ -1,12 +1,9 @@
 <h1>{{act_title}}</h1>
 <div id="ets-act-mc-box">
-    <div id="ets-act-mc-box-bd">
-        <div id="ets-act-mc-content">
-            <div id="ets-act-mc-content-bd">
-                {{epaper_content}}
-            </div>
+    <div id="ets-act-mc-box-bd" class="ets-question-twocols ets-cf">
+        <div class="ets-question-tips">
         </div>
-        <div id="ets-act-mc-form">
+        <div id="ets-act-mc-form" class="ets-question-content">
         </div>
     </div>
 </div>

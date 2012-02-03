@@ -826,12 +826,12 @@ legend {
 	background-position: 0 -48px;
 }
 
-.ets-popbox-bd .ets-popbox-links{
+.ets-popbox-bd .ets-popbox-links {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.ets-popbox-bd .ets-popbox-links li{
+.ets-popbox-bd .ets-popbox-links li {
 	width: auto;
 	float: none;
 	clear:both;
@@ -839,7 +839,7 @@ legend {
 	padding: 0;
 	margin:0;
 }
-.ets-popbox-bd .ets-popbox-links li a{
+.ets-popbox-bd .ets-popbox-links li a {
 	display: block;
 	margin:0;
 	padding: 0 10px;
@@ -847,14 +847,39 @@ legend {
 	text-decoration: none;
 	color: #666;
 }
-.ets-popbox-bd .ets-popbox-links li:last-of-type{
+.ets-popbox-bd .ets-popbox-links li:last-of-type {
 	border-bottom: none;
 }
-.ets-popbox-bd .ets-popbox-links li:hover{
+.ets-popbox-bd .ets-popbox-links li:hover {
 	background: #e9e9e9;
 }
-.ets-popbox-bd .ets-popbox-links li:active{
+.ets-popbox-bd .ets-popbox-links li:active {
 	background: #e0e0e0;
+}
+
+/*===================================
+ active question box 
+ ==================================*/
+.ets-question-fullwidth .ets-question-tips {
+    display: none;
+}
+.ets-question-twocols .ets-question-tips {
+    width: 68%;
+	height: 450px;
+	border-radius: 10px 0 0 10px;
+}
+.ets-question-fullwidth .ets-question-content {
+	height: 450px;
+	width: 100%;
+	border-radius: 10px;
+}
+.ets-question-twocols .ets-question-content {
+	height: 450px;
+	width: 32%;
+	border-radius: 0 10px 10px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 /*===================================

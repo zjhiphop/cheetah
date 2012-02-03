@@ -24,6 +24,9 @@
 	background: #fff;
 	height: 450px;
 }
+#ets-act-mc-box-bd {
+	position: relative;
+}
 #ets-act-mc-content {
 	height: 450px;
 	width: 68%;
@@ -35,9 +38,6 @@
 }
 #ets-act-mc-form {
 	background: #f7f7f7;
-	height: 450px;
-	width: 32%;
-	float: right;
 }
 #ets-act-mc-form-hd {
 	padding: 10px 0 0 0;

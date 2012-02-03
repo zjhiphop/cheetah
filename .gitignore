@@ -1,0 +1,8 @@
+*.log
+*.project
+*.swp
+*.swo
+*.*~
+test.js
+csslint-result.txt
+jslint-result.txt
