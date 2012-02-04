@@ -69,6 +69,10 @@
 .ets-question-fullwidth #ets-epaper-handler {
 	width: 36px;
 	right: -36px;
+	border-radius: 10px 0 0 10px;
+}
+.ets-epaper-open #ets-epaper-handler {
+	border-radius: 0;
 }
 .ets-epaper-btn-expand,
 .ets-epaper-btn-collapse {

@@ -3,7 +3,9 @@ define([
   'underscore',
   'backbone',
   'mustache',
-  'help/text!tpl/mustache/common/ets_epaper.tpl',], function($, _, Backbone, $$, epaper_tpl) {
+  'help/jquery_plugins_manager',
+  'help/text!tpl/mustache/common/ets_epaper.tpl',
+  'models/widget/epaper'], function($, _, Backbone, $$, jq_plugin, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
         el: '#ets-epaper',
@@ -18,26 +20,25 @@ define([
             'click .ets-epaper-btn-collapse': 'collaspeEaper'
         },
     
-        view: {
-            'epaper_btn': false,
-        },
-
         render: function(opt) {
-            var $root = $(this.el),
-                $box = $root.parents('#ets-act-mc-box');
-            
-            if($box.hasClass('ets-question-twocols')) {
-            } else if($box.hasClass('ets-question-fullwidth')) {
-                _.extend(this.view, {
+            var $root = $(this.el);
+			this.$box = $root.parents('#ets-act-mc-box');
+
+			var view = model.toJSON();
+
+            if(this.$box.hasClass('ets-question-twocols')) {
+            } else if(this.$box.hasClass('ets-question-fullwidth')) {
+                _.extend(view, {
                     'epaper_btn': true
                 });
             }
             
-            var compiledTemplate = $$.to_html(this.template, this.view);
+            var compiledTemplate = $$.to_html(this.template, view);
             $root.html(compiledTemplate);
 
             //call jquery plugin lionbars
-            $("#ets-epaper-main").lionbars();
+			$("#ets-epaper-main").lionbars();
+			/*console.log(jq_plugin);*/
 
             return this;
         },
@@ -46,6 +47,7 @@ define([
             $(this.el).animate({left: 0}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-collapse');
             });
+			this.$box.addClass('ets-epaper-open');
             $('#ets-act-overlay').fadeIn(400);
         },
 
@@ -53,6 +55,7 @@ define([
             $(this.el).animate({left: -600}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-expand');
             });
+			this.$box.removeClass('ets-epaper-open');
             $('#ets-act-overlay').fadeOut(400);
         }
     });
