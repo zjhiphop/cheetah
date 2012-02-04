@@ -26,6 +26,7 @@
 }
 #ets-act-mc-box-bd {
 	position: relative;
+    overflow: hidden;
 }
 #ets-act-mc-content {
 	height: 450px;

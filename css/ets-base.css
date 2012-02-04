@@ -860,14 +860,6 @@ legend {
 /*===================================
  active question box 
  ==================================*/
-.ets-question-fullwidth .ets-question-tips {
-    display: none;
-}
-.ets-question-twocols .ets-question-tips {
-    width: 68%;
-	height: 450px;
-	border-radius: 10px 0 0 10px;
-}
 .ets-question-fullwidth .ets-question-content {
 	height: 450px;
 	width: 100%;
