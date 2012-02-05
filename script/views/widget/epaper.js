@@ -20,11 +20,17 @@ define([
             'click .ets-epaper-btn-collapse': 'collaspeEaper'
         },
     
-        render: function(opt) {
+		render: function(opt) {
             var $root = $(this.el);
+			var view = model.toJSON();
+
 			this.$box = $root.parents('#ets-act-mc-box');
 
-			var view = model.toJSON();
+			this.setTemplate($root, view);
+            return this;
+        },
+
+		setTemplate: function($root, view) {
 
             if(this.$box.hasClass('ets-question-twocols')) {
             } else if(this.$box.hasClass('ets-question-fullwidth')) {
@@ -37,11 +43,8 @@ define([
             $root.html(compiledTemplate);
 
             //call jquery plugin lionbars
-			$("#ets-epaper-main").lionbars();
-			/*console.log(jq_plugin);*/
-
-            return this;
-        },
+			/*$("#ets-epaper-main").lionbars();*/
+		},
 
         expandEpaper: function(e) {
             $(this.el).animate({left: 0}, 400, function() {
