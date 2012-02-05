@@ -43,7 +43,7 @@ define([
             $root.html(compiledTemplate);
 
             //call jquery plugin lionbars
-			/*$("#ets-epaper-main").lionbars();*/
+			$("#ets-epaper-main").lionbars();
 		},
 
         expandEpaper: function(e) {
