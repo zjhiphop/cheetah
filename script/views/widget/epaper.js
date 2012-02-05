@@ -3,8 +3,9 @@ define([
   'underscore',
   'backbone',
   'mustache',
+  'help/jquery_plugins_manager',
   'help/text!tpl/mustache/common/ets_epaper.tpl',
-  'models/widget/epaper'], function($, _, Backbone, $$, epaper_tpl, model) {
+  'models/widget/epaper'], function($, _, Backbone, $$, jq_plugin, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
         el: '#ets-epaper',
@@ -21,15 +22,9 @@ define([
     
         render: function(opt) {
             var $root = $(this.el);
-			var view = model.toJSON();
-
 			this.$box = $root.parents('#ets-act-mc-box');
 
-			this.setTemplate($root, view);
-            return this;
-        },
-
-		setTemplate: function($root, view) {
+			var view = model.toJSON();
 
             if(this.$box.hasClass('ets-question-twocols')) {
             } else if(this.$box.hasClass('ets-question-fullwidth')) {
@@ -42,8 +37,11 @@ define([
             $root.html(compiledTemplate);
 
             //call jquery plugin lionbars
-			/*$("#ets-epaper-main").lionbars();*/
-		},
+			$("#ets-epaper-main").lionbars();
+			/*console.log(jq_plugin);*/
+
+            return this;
+        },
 
         expandEpaper: function(e) {
             $(this.el).animate({left: 0}, 400, function() {
