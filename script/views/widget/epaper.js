@@ -3,9 +3,9 @@ define([
   'underscore',
   'backbone',
   'mustache',
-  'help/jquery_plugins_manager',
   'help/text!tpl/mustache/common/ets_epaper.tpl',
-  'models/widget/epaper'], function($, _, Backbone, $$, jq_plugin, epaper_tpl, model) {
+  'models/widget/epaper',
+  'help/jquery.lionbars.0.3'], function($, _, Backbone, $$, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
         el: '#ets-epaper',
