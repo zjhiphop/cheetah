@@ -7,7 +7,7 @@ define(['jquery', 'underscore', 'backbone', 'mustache',
        'models/modules/vertical_question',
        'views/widget/epaper'],
 //on
-function($, _, Backbone, $$, model, tpl, vq, vq_model, epaper) {
+function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
     var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
         initialize : function() {
@@ -17,7 +17,7 @@ function($, _, Backbone, $$, model, tpl, vq, vq_model, epaper) {
             var data = _model.toJSON();
             var compiledTemplate = $$.to_html(tpl, data);
             this.el.html(compiledTemplate);
-            var ques = new vq({
+            var ques = new vq_view({
                 model : vq_model
             });
             $("#ets-act-mc-form").prepend(ques.render(page).el);
