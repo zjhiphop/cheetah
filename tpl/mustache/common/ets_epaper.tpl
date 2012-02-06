@@ -1,8 +1,8 @@
 <div id="ets-epaper-main-hd"></div>
 <div id="ets-epaper-main-ft"></div>
 <div id="ets-epaper-main">
-    <div id="epaper-content" style="height: 800px;"> 
-        <img style="margin: 15px 0px 15px 25px;" alt="" src="imgs/_temp/article.gif" />
+    <div id="epaper-content"> 
+        {{{epaper_content}}}
     </div>
 </div>
 {{#expandable}}
