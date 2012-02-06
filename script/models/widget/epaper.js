@@ -12,6 +12,7 @@ define(['jquery',
     return new model({
         'width': 600,
         'hasOverlay': true,
+        'expandable': false,
         'epaper_content': ''
     });
 });

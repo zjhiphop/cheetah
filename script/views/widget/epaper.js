@@ -25,13 +25,16 @@ define([
          * options inputs
          *  @width: number,
          *  @hasOverlay: boolean
+         *  @expandable: boolean
          *  @epaper_content: string, (HTML accept)
          */
 		render: function(opt) {
             _.extend(this.defaultsSetting, opt);
 
+            console.log(this.defaultsSetting);
+
             var $root = $(this.el);
-            $root.wrap('<div id="ets-epaper-outer">');
+            $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
 			this.$box = $root.parents('#ets-epaper-outer');
             
             // generate overlay
@@ -40,11 +43,12 @@ define([
             }
 
 			this.setTemplate($root);
+
             return this;
         },
 
         setOverlay: function() {
-            this.$box.after("<div id='ets-act-overlay'>");
+            this.$box.prepend("<div id='ets-act-overlay'>");
         },
 
 		setTemplate: function($root) {
@@ -52,8 +56,12 @@ define([
             var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
 
-            $root.css("left", - this.defaultsSetting.width);
-            $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
+            if(this.defaultsSetting.expandable) {
+                $root.css("left", - this.defaultsSetting.width);
+                $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
+            } else {
+
+            }
 
             //call jquery plugin lionbars
 			$("#ets-epaper-main").lionbars();
@@ -63,7 +71,6 @@ define([
             $(this.el).animate({left: 0}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-collapse');
             });
-            this.$box.addClass('ets-epaper-open');
             $('#ets-act-overlay').fadeIn(400);
         },
 
@@ -71,15 +78,18 @@ define([
             $(this.el).animate({left: -this.defaultsSetting.width}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-expand');
             });
-            this.$box.removeClass('ets-epaper-open');
             $('#ets-act-overlay').fadeOut(400);
         }
     });
 
     return {
-        render: function(opt) {
+        render: function(opt, callback) {
             var epaper_view = new Epaper_View();
             epaper_view.render(opt);
+
+            if(_.isFunction(callback)) {
+                callback();
+            }
         }
     };
 });
