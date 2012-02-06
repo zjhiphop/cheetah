@@ -1,12 +1,14 @@
 // Filename: views/projects/list
 //off
 define(['jquery', 'underscore', 'backbone', 'mustache', 
-       'models/activity/mutiple_choice_new', 
-       'help/text!tpl/mustache/activity/mutiple_choice_new.tpl', 
-       'views/modules/vertical_question', 'models/modules/vertical_question'], 
+       'models/activity/multiple_choice_new', 
+       'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 
+       'views/modules/vertical_question', 
+       'models/modules/vertical_question',
+       'views/widget/epaper'],
 //on
-function($, _, Backbone, $$, model, tpl, vq, vq_model) {
-    var mutiple_choice_new = Backbone.View.extend({
+function($, _, Backbone, $$, model, tpl, vq, vq_model, epaper) {
+    var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
         initialize : function() {
         },
@@ -19,7 +21,9 @@ function($, _, Backbone, $$, model, tpl, vq, vq_model) {
                 model : vq_model
             });
             $("#ets-act-mc-form").prepend(ques.render(page).el);
+            
+            epaper.render();
         }
     });
-    return new mutiple_choice_new;
+    return new multiple_choice_new;
 });
