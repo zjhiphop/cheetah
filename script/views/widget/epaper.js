@@ -53,7 +53,11 @@ define(['jquery', 'underscore', 'backbone', 'mustache', 'help/text!tpl/mustache/
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
             }
             //call jquery plugin lionbars
-			$("#ets-epaper-main").lionbars();
+            // if browser is not lower than IE9,
+            // then use lionbars plugin
+            if(!($.browser.msie && ($.browser.version || 0) < 9)) {
+                $("#ets-epaper-main").lionbars();
+            }
 		},
 
         expandEpaper: function(e) {
