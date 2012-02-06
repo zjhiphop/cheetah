@@ -6,7 +6,7 @@ define(['underscore',
         //@on
 function(_, Backbone, multichoice) {
     var activityRouter = {
-        MutipleChoiceNewRouter : {
+        MultipleChoiceNewRouter : {
             routes : {
                 // Define some URL routes
                 'multichoice' : 'showMultiChoice',
@@ -20,9 +20,14 @@ function(_, Backbone, multichoice) {
             }
         }
     };
-    var routers = {};
-    _.map(activityRouter, function(item) {
-        _.extend(routers, item);
+    var _r = {"routes":{},"method":{}};
+    _.map(activityRouter, function(items) {
+        _.extend(_r.routes,items.routes);
+        _.each(items,function(item,key){
+          if(_.isFunction(item)){
+            _r.method[key]=item;
+          }
+        });        
     });
-    return routers;
+    return _.extend({},_r.method,_r);
 });

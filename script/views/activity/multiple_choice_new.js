@@ -22,7 +22,14 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
             });
             $("#ets-act-mc-form").prepend(ques.render(page).el);
             
-            epaper.render();
+            epaper.render({
+                'width': 600,
+                'hasOverlay': true,
+                'expandable': true,
+                'epaper_content': data.epaper_content
+            }, function() {
+                console.log('epaper callback');
+            });
         }
     });
     return new multiple_choice_new;
