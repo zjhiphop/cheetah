@@ -27,7 +27,6 @@ function($, _, Backbone, $$, vq_tpl, model) {
             data = _.extend(data, _.filter(data.content,function(item){
                return item.page==page;
             })[0]);
-            console.log(data);
             var compiledTemplate = $$.to_html(this.template, data);
             $(this.el).html(compiledTemplate);
             return this;
