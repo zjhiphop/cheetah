@@ -1,22 +1,22 @@
 //@off
 define(['underscore', 
         'backbone',
-        'views/activity/mutiple_choice_new'
+        'views/activity/multiple_choice_new'
         ],
         //@on
-function(_, Backbone, mutichoice) {
+function(_, Backbone, multichoice) {
     var activityRouter = {
         MutipleChoiceNewRouter : {
             routes : {
                 // Define some URL routes
-                'mutichoice' : 'showMutiChoice',
-                'mutichoice/q:page' : 'showQuestion'
+                'multichoice' : 'showMultiChoice',
+                'multichoice/q:page' : 'showQuestion'
             },
-            showMutiChoice : function() {
-                mutichoice.render(1);
+            showMultiChoice : function() {
+                multichoice.render(1);
             },
             showQuestion : function(page) {
-                mutichoice.render(page);
+                multichoice.render(page);
             }
         }
     };
