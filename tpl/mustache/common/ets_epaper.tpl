@@ -6,8 +6,5 @@
     </div>
 </div>
 <div id="ets-epaper-handler">
-    {{#epaper_btn}}
     <div class="ets-epaper-btn-expand"></div>
-    {{/epaper_btn}}
 </div>
-{{epaper_btn}}

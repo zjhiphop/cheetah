@@ -71,6 +71,9 @@
 	right: -36px;
 	border-radius: 10px 0 0 10px;
 }
+.ets-question-twocols #ets-epaper-handler div {
+    display: none;
+}
 .ets-epaper-open #ets-epaper-handler {
 	border-radius: 0;
 }
