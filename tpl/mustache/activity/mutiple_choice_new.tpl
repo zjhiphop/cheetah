@@ -3,7 +3,7 @@
     <div id="ets-act-mc-box-bd">
         <div id="ets-act-mc-content">
             <div id="ets-act-mc-content-bd">
-                {{epaper_content}}
+                {{{epaper_content}}}
             </div>
         </div>
         <div id="ets-act-mc-form">

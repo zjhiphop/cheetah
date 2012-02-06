@@ -1,8 +1,8 @@
 // : app.js
 define([
-  'jquery',
-  'underscore',
-  'backbone',
+  'help/order!jquery',
+  'help/order!underscore',
+  'help/order!backbone',
   'js/router', // Request router.js
 ], function($, _, Backbone, Router){
   var initialize = function(){

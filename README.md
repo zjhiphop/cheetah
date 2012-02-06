@@ -51,4 +51,8 @@ File Structure
 TODO  
 1.add activity_app controls?  
 2.add unit test for all routers   
-3.find a better solution to solve to many router   
+3.find a better solution to solve too many router   
+4.js&css minify related work   
+
+
+
