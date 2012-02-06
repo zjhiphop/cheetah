@@ -60,7 +60,7 @@ define([
                 $root.css("left", - this.defaultsSetting.width);
                 $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
             } else {
-
+                // todo
             }
 
             //call jquery plugin lionbars
@@ -68,17 +68,19 @@ define([
 		},
 
         expandEpaper: function(e) {
+            this.$box.width('100%');
             $(this.el).animate({left: 0}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-collapse');
             });
-            $('#ets-act-overlay').fadeIn(400);
+            $('#ets-act-overlay').animate({opacity:0.5},400);
         },
 
         collaspeEaper: function(e) {
             $(this.el).animate({left: -this.defaultsSetting.width}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-expand');
+                $('#ets-epaper-outer').width('36px');
             });
-            $('#ets-act-overlay').fadeOut(400);
+            $('#ets-act-overlay').animate({opacity:0},400);
         }
     });
 
