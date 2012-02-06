@@ -22,7 +22,11 @@ function($, _, Backbone, $$, model, tpl, vq, vq_model, epaper) {
             });
             $("#ets-act-mc-form").prepend(ques.render(page).el);
             
-            epaper.render();
+            epaper.render({
+                'epaper_content': data.epaper_content,
+                'width': 600,
+                'hasOverlay': true 
+            });
         }
     });
     return new multiple_choice_new;

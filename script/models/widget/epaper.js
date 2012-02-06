@@ -10,6 +10,8 @@ define(['jquery',
         }
     });
     return new model({
-		'epaper_btn': false
+        'width': 600,
+        'hasOverlay': true,
+        'epaper_content': ''
     });
 });

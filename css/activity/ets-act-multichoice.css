@@ -26,10 +26,7 @@
 }
 #ets-act-mc-box-bd {
 	position: relative;
-    overflow: hidden;
-}
-.ets-question-twocols #ets-act-mc-box-bd {
-    overflow: visible;
+    height: 100%;
 }
 #ets-act-mc-content {
 	height: 450px;

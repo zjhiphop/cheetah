@@ -13,6 +13,7 @@ define([
         template: epaper_tpl,
 
         initialize: function() {
+            this.defaultsSetting = model.toJSON();
         },
 
         events: {
@@ -20,27 +21,39 @@ define([
             'click .ets-epaper-btn-collapse': 'collaspeEaper'
         },
     
+        /* 
+         * options inputs
+         *  @width: number,
+         *  @hasOverlay: boolean
+         *  @epaper_content: string, (HTML accept)
+         */
 		render: function(opt) {
+            _.extend(this.defaultsSetting, opt);
+
             var $root = $(this.el);
-			var view = model.toJSON();
+            $root.wrap('<div id="ets-epaper-outer">');
+			this.$box = $root.parents('#ets-epaper-outer');
+            
+            // generate overlay
+            if (this.defaultsSetting.hasOverlay) {
+                this.setOverlay();
+            }
 
-			this.$box = $root.parents('#ets-act-mc-box');
-
-			this.setTemplate($root, view);
+			this.setTemplate($root);
             return this;
         },
 
-		setTemplate: function($root, view) {
+        setOverlay: function() {
+            this.$box.after("<div id='ets-act-overlay'>");
+        },
 
-            if(this.$box.hasClass('ets-question-twocols')) {
-            } else if(this.$box.hasClass('ets-question-fullwidth')) {
-                _.extend(view, {
-                    'epaper_btn': true
-                });
-            }
+		setTemplate: function($root) {
             
-            var compiledTemplate = $$.to_html(this.template, view);
+            var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
+
+            $root.css("left", - this.defaultsSetting.width);
+            $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
 
             //call jquery plugin lionbars
 			$("#ets-epaper-main").lionbars();
@@ -50,15 +63,15 @@ define([
             $(this.el).animate({left: 0}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-collapse');
             });
-			this.$box.addClass('ets-epaper-open');
+            this.$box.addClass('ets-epaper-open');
             $('#ets-act-overlay').fadeIn(400);
         },
 
         collaspeEaper: function(e) {
-            $(this.el).animate({left: -600}, 400, function() {
+            $(this.el).animate({left: -this.defaultsSetting.width}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-expand');
             });
-			this.$box.removeClass('ets-epaper-open');
+            this.$box.removeClass('ets-epaper-open');
             $('#ets-act-overlay').fadeOut(400);
         }
     });

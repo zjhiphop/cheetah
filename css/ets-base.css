@@ -860,20 +860,10 @@ legend {
 /*===================================
  active question box 
  ==================================*/
-.ets-question-fullwidth .ets-question-content {
-	height: 450px;
+.ets-question-content {
+	height: 100%;
 	width: 100%;
-	border-radius: 10px;
 }
-.ets-question-twocols .ets-question-content {
-	height: 450px;
-	width: 32%;
-	border-radius: 0 10px 10px 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-
 /*===================================
  IE FIXes
  ==================================*/
