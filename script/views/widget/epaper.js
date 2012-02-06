@@ -60,7 +60,7 @@ define([
                 $root.css("left", - this.defaultsSetting.width);
                 $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
             } else {
-                // todo
+                this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
             }
 
             //call jquery plugin lionbars
