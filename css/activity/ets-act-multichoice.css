@@ -39,6 +39,8 @@
 }
 #ets-act-mc-form {
 	background: #f7f7f7;
+	width:320px;
+	float:right;
 }
 #ets-act-mc-form-hd {
 	padding: 10px 0 0 0;
@@ -53,6 +55,8 @@
 	height: 340px;
 }
 #ets-act-mc-form-question {
+  margin:0 auto;
+  text-align: center;
 	font-weight: 700;
 }
 #ets-act-mc-form-options {
