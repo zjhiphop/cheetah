@@ -25,7 +25,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
             epaper.render({
                 'width': 600,
                 'hasOverlay': false,
-                'expandable': false,
+                'expandable': true,
                 'epaper_content': data.epaper_content
             }, function() {
                 console.log('epaper callback');
