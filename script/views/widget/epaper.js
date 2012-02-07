@@ -1,4 +1,13 @@
-define(['jquery', 'underscore', 'backbone', 'mustache', 'help/text!tpl/mustache/common/ets_epaper.tpl', 'models/widget/epaper', 'help/jquery.lionbars.0.3'], function($, _, Backbone, $$, epaper_tpl, model) {
+/*
+ * this epaper widget is depand on jquery plugin lionbars.
+ */
+define(['jquery', 
+'underscore', 
+'backbone', 
+'mustache', 
+'help/text!tpl/mustache/common/ets_epaper.tpl',
+'models/widget/epaper', 
+'help/jquery.lionbars.0.3'], function($, _, Backbone, $$, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
         el : '#ets-epaper',
@@ -29,35 +38,45 @@ define(['jquery', 'underscore', 'backbone', 'mustache', 'help/text!tpl/mustache/
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');
 
-            // generate overlay
-            if(this.defaultsSetting.hasOverlay) {
-                this.setOverlay();
-            }
-
             this.setTemplate($root);
 
             return this;
         },
-        setOverlay : function() {
-            this.$box.prepend("<div id='ets-act-overlay'>");
-        },
-        setTemplate : function($root) {
 
+        setTemplate : function($root) {
             var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
+
+            $(this.el).find("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
 
             if(this.defaultsSetting.expandable) {
                 $root.css("left", - this.defaultsSetting.width);
                 $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
+
+                // generate overlay
+                if(this.defaultsSetting.hasOverlay) {
+                    this.setOverlay();
+                    this.outerWidth = '100%';
+                } else {
+                    this.outerWidth = this.defaultsSetting.width + 36;
+                }
             } else {
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
             }
             //call jquery plugin lionbars
-			$("#ets-epaper-main").lionbars();
+            // if browser is not lower than IE9,
+            // then use lionbars plugin
+            if(!($.browser.msie && ($.browser.version || 0) < 9)) {
+                $("#ets-epaper-main").lionbars();
+            }
 		},
 
+        setOverlay : function() {
+            this.$box.prepend("<div id='ets-act-overlay'>");
+        },
+
         expandEpaper: function(e) {
-            this.$box.width('100%');
+            this.$box.width(this.outerWidth);
             $(this.el).animate({left: 0}, 400, function() {
                 $(e.target).removeClass().addClass('ets-epaper-btn-collapse');
             });
