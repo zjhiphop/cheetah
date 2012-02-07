@@ -10,7 +10,7 @@ function(_, Backbone, multichoice) {
             routes : {
                 // Define some URL routes
                 'multichoice' : 'showMultiChoice',
-                'multichoice/q:page' : 'showQuestion'
+                'multichoice/q:current' : 'showQuestion'
             },
             showMultiChoice : function() {
                 multichoice.render(1);

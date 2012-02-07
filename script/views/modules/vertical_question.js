@@ -21,12 +21,18 @@ function($, _, Backbone, $$, vq_tpl, model) {
             'click .ets-btn-prev' : "prevClick",
             'click .ets-btn-next' : "nextClick"
         },
-        render : function(page) {
-            var data = this.model.toJSON();
-            page=data.page||page;
-            data = _.extend(data, _.filter(data.content,function(item){
-               return item.page==page;
-            })[0]);
+        render : function(current) {
+            data=this.model.toJSON();
+            current =parseInt(current) || data.current;
+            if(current > data.total) {
+                current = data.total;
+            }
+            else
+            if(current < 1) {
+                current = 1;
+            }
+            data.current=current;
+            _.extend(data, data.Questions[current - 1]);
             var compiledTemplate = $$.to_html(this.template, data);
             $(this.el).html(compiledTemplate);
             return this;
@@ -38,12 +44,16 @@ function($, _, Backbone, $$, vq_tpl, model) {
             $(this.el).remove();
         },
         prevClick : function(e) {
-            var curr=Math.max(this.model.toJSON().current-1,1);
-            this.model.set({"page":curr,"current":curr});
+            var curr = Math.max(this.model.toJSON().current - 1, 1);
+            this.model.set({
+                "current" : curr
+            });
         },
         nextClick : function() {
-          var curr=Math.min(this.model.toJSON().current+1,this.model.toJSON().total);
-          this.model.set({"page":curr,"current":curr});
+            var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
+            this.model.set({
+                "current" : curr
+            });
         }
     });
     return Vertical_Question_View;

@@ -95,4 +95,8 @@
     filter:alpha(opacity=0);
 	/*display: none;*/
 }
+#ets-epaper-content{
+  padding: 20px;
+  overflow: hidden;
+}
 

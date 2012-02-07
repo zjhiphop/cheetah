@@ -1,97 +1,100 @@
-1.ËùÓĞµÄcssÃüÃûÒÔ'ets-'¿ªÍ·£¬¸÷¶ÎÖ®¼äÒÔ'-'Á¬½Ó
-  Èç£º
-  ×é¼şÀà£ºets-checkbox-XX
+1.æ‰€æœ‰çš„csså‘½åä»¥'ets-'å¼€å¤´ï¼Œå„æ®µä¹‹é—´ä»¥'-'è¿æ¥
+  å¦‚ï¼š
+  ç»„ä»¶ç±»ï¼šets-checkbox-XX
           ets-radiobox-XX
-  widegt£ºets-widegt-XXX
+  widegtï¼šets-widegt-XXX
   activity:
-		  ets-act-XXX
-  jsµ÷ÓÃµÄselector£º
+      ets-act-XXX
+  jsè°ƒç”¨çš„selectorï¼š
           ets-fn-XXX
-  Ä£¿é£º  ets-modulename-XX
-2.¾¡¿ÉÄÜ×é¼ş»¯css/html½á¹¹,ÕâÑù±ãÓÚÈÕºóÎ¬»¤
-  Èç£º
+  æ¨¡å—ï¼š  ets-modulename-XX
+2.å°½å¯èƒ½ç»„ä»¶åŒ–css/htmlç»“æ„,è¿™æ ·ä¾¿äºæ—¥åç»´æŠ¤
+  å¦‚ï¼š
   ets-module1
   ets-module1-status1
   ets-module1 ets-item1
-3.ÄÜÓÃcssÊµÏÖµÄ¼á¾ö²»ÓÃjsÊµÏÖ,²»µ½Íò²»µÃÒÑ²»ÓÃinline style
-  Èç£º
-  label > input[type=checkbox] ¿ÉÒÔÍ¨¹ıinput×ÔÉíµÄÌØĞÔ»ñÈ¡checked×´Ì¬
-4.²¼¾ÖÔªËØÒª×¢ÒâÓïÒå»¯£¬ĞĞÄÚÔªËØÖĞ²»ÒªÌ×ÓÃ¿éÔªËØ²¼¾Ö£¬Èç£ºspan > p
-5.¾¡¿ÉÄÜ²ÉÓÃhtml×Ô´øµÄÓïÒå±êÇ©£¬±ÈÈçcheckbox¿ÉÒÔÖ±½ÓÊ¹ÓÃinput[type=checkbox]ÊµÏÖ
-6.ÔÚ¸ß¼¶ä¯ÀÀÆ÷ÖĞ¿ÉÒÔ³¢ÊÔÊ¹ÓÃcss3ÖĞµÄäÖÈ¾ÊôĞÔ£¬Èç£º½¥±ä£¬¶à±³¾°£¬Ô²½ÇµÈ¡£
-  £¨²¼¾ÖÊôĞÔÔİÊ±²»¿¼ÂÇ£¬Èç£ºborder-box£¬flex-boxÕâÑùµÄĞÂĞÍºĞÄ£ĞÍ£©
-7.ÔÚÊéĞ´cssÊôĞÔµÄË³ĞòÊ±
-  *²¼¾ÖÔÚÇ°£¬Õ¹ÏÖÔÚºó
-  Èç£º
+3.èƒ½ç”¨csså®ç°çš„åšå†³ä¸ç”¨jså®ç°,ä¸åˆ°ä¸‡ä¸å¾—å·²ä¸ç”¨inline style
+  å¦‚ï¼š
+  label > input[type=checkbox] å¯ä»¥é€šè¿‡inputè‡ªèº«çš„ç‰¹æ€§è·å–checkedçŠ¶æ€
+4.å¸ƒå±€å…ƒç´ è¦æ³¨æ„è¯­ä¹‰åŒ–ï¼Œè¡Œå†…å…ƒç´ ä¸­ä¸è¦å¥—ç”¨å—å…ƒç´ å¸ƒå±€ï¼Œå¦‚ï¼šspan > p
+5.å°½å¯èƒ½é‡‡ç”¨htmlè‡ªå¸¦çš„è¯­ä¹‰æ ‡ç­¾ï¼Œæ¯”å¦‚checkboxå¯ä»¥ç›´æ¥ä½¿ç”¨input[type=checkbox]å®ç°
+6.åœ¨é«˜çº§æµè§ˆå™¨ä¸­å¯ä»¥å°è¯•ä½¿ç”¨css3ä¸­çš„æ¸²æŸ“å±æ€§ï¼Œå¦‚ï¼šæ¸å˜ï¼Œå¤šèƒŒæ™¯ï¼Œåœ†è§’ç­‰ã€‚
+  ï¼ˆå¸ƒå±€å±æ€§æš‚æ—¶ä¸è€ƒè™‘ï¼Œå¦‚ï¼šborder-boxï¼Œflex-boxè¿™æ ·çš„æ–°å‹ç›’æ¨¡å‹ï¼‰
+7.åœ¨ä¹¦å†™csså±æ€§çš„é¡ºåºæ—¶
+  *å¸ƒå±€åœ¨å‰ï¼Œå±•ç°åœ¨å
+  å¦‚ï¼š
   .ets-demo{
-			/*²¼¾ÖÀàµÄÊôĞÔ*/
-			margin:10em 5em 15em 10em;
-			width:100px;
-			height:auto;
-			/*Õ¹ÏÖÀàµÄÊôĞÔ*/
+      /*å¸ƒå±€ç±»çš„å±æ€§*/
+      margin:10em 5em 15em 10em;
+      width:100px;
+      height:auto;
+      /*å±•ç°ç±»çš„å±æ€§*/
             font:italic small-caps bold 1em/140% "Lucida Grande",sans-serif;
-			color:black;
+      color:black;
    }
-   *ä¯ÀÀÆ÷Ë½ÓĞĞ´·¨ÔÚÇ°£¬±ê×¼Ğ´·¨ÔÚºó
-	   -moz-box-shadow: 1px2px3px#ddd;
-		-webkit-box-shadow: 1px2px3px#ddd;
-		box-shadow: 1px2px3px#ddd;
-8. ¹ØÓÚhack
-   *Í¨ÓÃhack
-	.all-IE{property:value\9;}
-	:root .IE-9{property:value\0/;}
-	.gte-IE-8{property:value\0;}
-	.lte-IE-7{*property:value;}
-	.IE-7{+property:value;}
-	.IE-6{_property:value;}
-	.not-IE{property//:value;}
-	@-moz-document url-prefix() { .firefox{property:value;} }
-	@media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
-	@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
-	@media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }
-  * ¾¡Á¿²»Ê¹ÓÃhack£¬Èç¹ûÊ¹ÓÃÊ±£¬Í¨³£·ÅÔÚÎÄ¼şµÄ×îµ×²¿²¢¼ÓÉÏÇ°×º±êÊ¾
-	 /*===================================
-	 IE FIXes
-	 ==================================*/
-  * Ê¹ÓÃ¸üÓÅÑÅµÄ·½Ê½´úÌæ£¬ÈçÔÚie6/7ÖĞÓĞºÜ¶àbug¶¼ÊÇÒòÎªÃ»ÓĞ³ö·¢haslayoutÊôĞÔµ¼ÖÂµÄ£¬ÕâÊ±Ö»ÒªÉèÖÃ¿ÉÒÔ´¥·¢layoutµÄÊôĞÔ¼´¿É
-    ÓµÓĞ haslayout µÄÔªËØ£¬Í¨³£ÏÔÊ¾Îª¡°haslayout = -1¡±¡£
-		¸ºÔğ×éÖ¯×ÔÉíÄÚÈİµÄÔªËØ½«Ä¬ÈÏÓĞÒ»¸ö²¼¾Ö£¬Ö÷Òª°üÀ¨ÒÔÏÂÔªËØ£¨²»ÍêÈ«ÁĞ±í£©£º
-		* body and html
-		* table, tr, th, td
-		* img
-		* hr
-		* input, button, file, select, textarea, fieldset
-		* marquee
-		* frameset, frame, iframe
-		* objects, applets, embed
-    Í¨¹ıÉèÖÃÒÔÏÂ css ÊôĞÔ¼´¿É´¥·¢ÔªËØµÄhaslayout£º
-		* display: inline-block
-		* height: (ÈÎºÎÖµ³ıÁËauto)
-		* float: (left »ò right)
-		* position: absolute
-		* width: (ÈÎºÎÖµ³ıÁËauto)
-		* writing-mode: tb-rl
-		* zoom: (³ı normal ÍâÈÎÒâÖµ)
-		Internet Explorer 7 »¹ÓĞÒ»Ğ©¶îÍâµÄÊôĞÔ(²»ÍêÈ«ÁĞ±í):
-		* min-height: (ÈÎÒâÖµ)
-		* max-height: (³ı none ÍâÈÎÒâÖµ)
-		* min-width: (ÈÎÒâÖµ)
-		* max-width: (³ı none ÍâÈÎÒâÖµ)
-		* overflow: (³ı visible ÍâÈÎÒâÖµ)
-		* overflow-x: (³ı visible ÍâÈÎÒâÖµ)
-		* overflow-y: (³ı visible ÍâÈÎÒâÖµ)
-		* position: fixed
-9.¹ØÓÚÎÄ¼şµÄ×¢ÊÍ
-	 /*///////////////////////////////////////////////////////////////////////////////////////
-	 //
-	 //  Hierarchy:     Englishtown > School > Base Styles  ²ã¼¶¹ØÏµ
-	 //  File:          ets-base.css						ÎÄ¼şÃû
-	 //  Images:        ets-buttons.png						ÓÃµ½µÄÍ¼Æ¬
-	 //  Dependencies:  None							    ÒÀÀµ¹ØÏµ
-	 //  Description:   Base styles including: CSS Reset, Common Styles, Buttons
-	 //                 Must be referenced in all school content !important
-	 //
-	 //////////////////////////////////////////////////////////////////////////////////////*/
-10.ÆäËû
-   *Ê¹ÓÃLessÀ´½øĞĞ´úÂë×éÖ¯
-   *Ê¹ÓÃÍ³Ò»µÄbuild¹¤¾ß
+   *æµè§ˆå™¨ç§æœ‰å†™æ³•åœ¨å‰ï¼Œæ ‡å‡†å†™æ³•åœ¨å
+     -moz-box-shadow: 1px2px3px#ddd;
+    -webkit-box-shadow: 1px2px3px#ddd;
+    box-shadow: 1px2px3px#ddd;
+8. å…³äºhack
+   *é€šç”¨hack
+  .all-IE{property:value\9;}
+  :root .IE-9{property:value\0/;}
+  .gte-IE-8{property:value\0;}
+  .lte-IE-7{*property:value;}
+  .IE-7{+property:value;}
+  .IE-6{_property:value;}
+  .not-IE{property//:value;}
+  @-moz-document url-prefix() { .firefox{property:value;} }
+  @media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
+  @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
+  @media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }
+  * å°½é‡ä¸ä½¿ç”¨hackï¼Œå¦‚æœä½¿ç”¨æ—¶ï¼Œé€šå¸¸æ”¾åœ¨æ–‡ä»¶çš„æœ€åº•éƒ¨å¹¶åŠ ä¸Šå‰ç¼€æ ‡ç¤º
+   /*===================================
+   IE FIXes
+   ==================================*/
+  * ä½¿ç”¨æ›´ä¼˜é›…çš„æ–¹å¼ä»£æ›¿ï¼Œå¦‚åœ¨ie6/7ä¸­æœ‰å¾ˆå¤šbugéƒ½æ˜¯å› ä¸ºæ²¡æœ‰å‡ºå‘haslayoutå±æ€§å¯¼è‡´çš„ï¼Œè¿™æ—¶åªè¦è®¾ç½®å¯ä»¥è§¦å‘layoutçš„å±æ€§å³å¯
+    æ‹¥æœ‰ haslayout çš„å…ƒç´ ï¼Œé€šå¸¸æ˜¾ç¤ºä¸ºâ€œhaslayout = -1â€ã€‚
+    è´Ÿè´£ç»„ç»‡è‡ªèº«å†…å®¹çš„å…ƒç´ å°†é»˜è®¤æœ‰ä¸€ä¸ªå¸ƒå±€ï¼Œä¸»è¦åŒ…æ‹¬ä»¥ä¸‹å…ƒç´ ï¼ˆä¸å®Œå…¨åˆ—è¡¨ï¼‰ï¼š
+    * body and html
+    * table, tr, th, td
+    * img
+    * hr
+    * input, button, file, select, textarea, fieldset
+    * marquee
+    * frameset, frame, iframe
+    * objects, applets, embed
+    é€šè¿‡è®¾ç½®ä»¥ä¸‹ css å±æ€§å³å¯è§¦å‘å…ƒç´ çš„haslayoutï¼š
+    * display: inline-block
+    * height: (ä»»ä½•å€¼é™¤äº†auto)
+    * float: (left æˆ– right)
+    * position: absolute
+    * width: (ä»»ä½•å€¼é™¤äº†auto)
+    * writing-mode: tb-rl
+    * zoom: (é™¤ normal å¤–ä»»æ„å€¼)
+    Internet Explorer 7 è¿˜æœ‰ä¸€äº›é¢å¤–çš„å±æ€§(ä¸å®Œå…¨åˆ—è¡¨):
+    * min-height: (ä»»æ„å€¼)
+    * max-height: (é™¤ none å¤–ä»»æ„å€¼)
+    * min-width: (ä»»æ„å€¼)
+    * max-width: (é™¤ none å¤–ä»»æ„å€¼)
+    * overflow: (é™¤ visible å¤–ä»»æ„å€¼)
+    * overflow-x: (é™¤ visible å¤–ä»»æ„å€¼)
+    * overflow-y: (é™¤ visible å¤–ä»»æ„å€¼)
+    * position: fixed
+9.å…³äºæ–‡ä»¶çš„æ³¨é‡Š
+   /*///////////////////////////////////////////////////////////////////////////////////////
+   //
+   //  Hierarchy:     Englishtown > School > Base Styles  å±‚çº§å…³ç³»
+   //  File:          ets-base.css            æ–‡ä»¶å
+   //  Images:        ets-buttons.png           ç”¨åˆ°çš„å›¾ç‰‡
+   //  Dependencies:  None                  ä¾èµ–å…³ç³»
+   //  Description:   Base styles including: CSS Reset, Common Styles, Buttons
+   //                 Must be referenced in all school content !important
+   //
+   //////////////////////////////////////////////////////////////////////////////////////*/
+10.å…¶ä»–
+   *ä½¿ç”¨Lessæ¥è¿›è¡Œä»£ç ç»„ç»‡
+   *ä½¿ç”¨ç»Ÿä¸€çš„buildå·¥å…·
+   
+notes:
+1.ffä¸æ”¯æŒbackground-position-Xçš„å†™æ³•ï¼Œä½¿ç”¨background-positionä»£æ›¿

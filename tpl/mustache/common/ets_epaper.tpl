@@ -1,7 +1,7 @@
 <div id="ets-epaper-main-hd"></div>
 <div id="ets-epaper-main-ft"></div>
 <div id="ets-epaper-main">
-    <div id="epaper-content"> 
+    <div id="ets-epaper-content"> 
         {{{epaper_content}}}
     </div>
 </div>
