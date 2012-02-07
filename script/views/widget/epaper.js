@@ -47,6 +47,8 @@ define(['jquery',
             var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
 
+            $(this.el).find("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
+
             if(this.defaultsSetting.expandable) {
                 $root.css("left", - this.defaultsSetting.width);
                 $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
