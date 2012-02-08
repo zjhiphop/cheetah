@@ -17,7 +17,6 @@ define([
      $("#ets-activity").append("Not implement!");
     }
   },actRouter));
-
   var initialize = function(){
     var app_router = new AppRouter;
     Backbone.history.start();

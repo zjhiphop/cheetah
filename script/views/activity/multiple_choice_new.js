@@ -13,8 +13,8 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
             //get data from url
             jsonData = _model.jsonData;
             compiledTemplate = $$.to_html(tpl, data);
-            
-            this.el.html(compiledTemplate);
+
+            this.$el.html(compiledTemplate);
             this.q_con = $(data.vq_container);
 
             //render vertical question
@@ -30,9 +30,9 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
 
             //load epaper widegt
             epaper.render({
-                'width': 600,
-                'expandable': false,
-                'epaper_content': data.epaper_content
+                'width' : 600,
+                'expandable' : false,
+                'epaper_content' : data.epaper_content
             }, function() {
                 console.log('epaper callback');
             });

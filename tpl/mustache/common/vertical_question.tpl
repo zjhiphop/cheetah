@@ -5,7 +5,7 @@
   <div id="ets-act-mc-form-question">
       {{Ques}}
   </div>
-  <div id="ets-act-mc-form-options">
+  <ul id="ets-act-mc-form-options">
     {{#Options}}
       <label class="ets-checkbox-b ets-act-mc-checkbox" for="{{id}}"> 
         <span class="ets-checkbox-b-wrapper">
@@ -16,7 +16,7 @@
         </span> 
       </label>
     {{/Options}}
-  </div>
+  </ul>
 </div>
 <div id="ets-act-mc-form-ft" class="ets-cf">
   <div class="ets-btn-prev">
