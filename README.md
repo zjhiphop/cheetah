@@ -53,6 +53,7 @@ TODO
 2.add unit test for all routers   
 3.find a better solution to solve too many router   
 4.js&css minify related work   
-
-
+5.the latest backbone has changed API el--reference to html element   
+                                     $el--reference to jQuery element
+6.how to test?  
 

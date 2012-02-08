@@ -1,7 +1,12 @@
-// Filename: views/projects/list
-//off
-define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question', 'views/widget/epaper'],
-//on
+// Filename: views/activity/multiple_choice_new
+//@off
+define(['jquery', 'underscore', 'backbone', 'mustache',
+         'models/activity/multiple_choice_new', 
+         'help/text!tpl/mustache/activity/multiple_choice_new.tpl',
+         'views/modules/vertical_question', 'models/modules/vertical_question',
+         'views/widget/epaper'
+         ],
+//@on
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
     var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
@@ -13,8 +18,8 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
             //get data from url
             jsonData = _model.jsonData;
             compiledTemplate = $$.to_html(tpl, data);
-            
-            this.el.html(compiledTemplate);
+
+            this.$el.html(compiledTemplate);
             this.q_con = $(data.vq_container);
 
             //render vertical question
@@ -30,9 +35,9 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
 
             //load epaper widegt
             epaper.render({
-                'width': 600,
-                'expandable': false,
-                'epaper_content': data.epaper_content
+                'width' : 600,
+                'expandable' : false,
+                'epaper_content' : data.epaper_content
             }, function() {
                 console.log('epaper callback');
             });
