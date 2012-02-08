@@ -1,0 +1,35 @@
+/*///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Component Styles > buttom_button
+//  File:          ets-base
+/  Images:        						
+//  Dependencies:  ets-base
+//  Description:   Defined the various button at the bottom for activity
+//
+//////////////////////////////////////////////////////////////////////////////////////*/
+
+.ets-act-bottom-button {
+    width: 100%;
+    position: relative;
+    line-height: 2.917em;
+}
+
+.ets-act-bottom-button .ets-btn-skip {
+    margin-top: 4px;
+    float: left;
+}
+
+.ets-act-bottom-button .ets-btn-next,
+.ets-act-bottom-button .ets-btn-back,
+.ets-act-bottom-button .ets-btn-submit {
+    float: right;
+}
+.ets-act-bottom-button #act-question_counter {
+    color: #9A9A9A;
+    font-size: 1.167em;
+    font-weight: bold;
+    float: right;
+    margin: 0 20px;
+    width: 140px;
+    text-align: center;
+}
