@@ -18,7 +18,7 @@
     {{/Options}}
   </div>
 </div>
-<div id="ets-act-mc-form-ft">
+<div id="ets-act-mc-form-ft" class="ets-cf">
   <div class="ets-btn-prev">
       <span>{{Prev}}</span>
   </div>
