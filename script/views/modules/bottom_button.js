@@ -2,19 +2,16 @@ define(['jquery',
 'underscore',
 'backbone',
 'mustache',
-'help/text!tpl/mustache/common/bottom_button.tpl'],function($,_,Backbone,$$,tpl){
+'models/modules/bottom_button',
+'help/text!tpl/mustache/common/bottom_button.tpl'],function($,_,Backbone,$$,model,tpl) {
 
     var View = Backbone.View.extend({
         initialize: function() {
-            console.log('bb view initialize');
         },
 
         render: function(el) {
-            var data = {
-                'prev': 'Prev',
-                'next': 'Next',
-                'skipActivity': 'Skip Activity'
-            };
+            var data = (new model()).toJSON();
+            console.log(data);
             var temp = $(this.el).addClass('ets-act-bottom-button').append($$.to_html(tpl, data));
             $(el).append(temp);
         }

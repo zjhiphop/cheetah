@@ -1,11 +1,11 @@
     <!--Skip button-->
-    <div class="ets-btn-skip">
-        <span>{{skipActivity}}</span>
+    <div class="ets-btn-skip {{#skipBtn.disable}}ets-btn-skip-disabled{{/skipBtn.disable}}">
+        <span>{{skipBtn.text}}</span>
     </div>
 
     <!--Next button-->
-    <div class="ets-btn-next" >
-        <span>{{next}}</span>
+    <div class="ets-btn-next {{#nextBtn.disable}}ets-btn-next-disabled{{/nextBtn.disable}}" >
+        <span>{{nextBtn.text}}</span>
     </div>
     <!--Question counter-->
     <div id="act-question_counter">    
@@ -15,8 +15,8 @@
         <span id="act-current_total">6</span>
     </div>
     <!--Back button-->
-    <div class="ets-btn-back">
-        <span>{{prev}}</span>
+    <div class="ets-btn-back {{#prevBtn.disable}}ets-btn-back-disabled{{/prevBtn.disable}}">
+        <span>{{prevBtn.text}}</span>
     </div>
 
     <!--Submit button-->
