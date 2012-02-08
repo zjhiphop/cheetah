@@ -7,7 +7,7 @@ define(['underscore',
                 'text':'Skip Activity'
             },
             'prevBtn': {
-                'disable': true,
+                'disable': false,
                 'text': 'Prev'
             },
             'nextBtn': {
