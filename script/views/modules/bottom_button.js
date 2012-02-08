@@ -11,6 +11,22 @@ define(['jquery',
 
         render: function(el) {
             var data = (new model()).toJSON();
+            $.extend(true,data, {
+                skipBtn: {
+                    show: true
+                },
+                prevBtn: {
+                    show: true,
+                    disable: true
+                },
+                nextBtn: {
+                    show: true
+                },
+                questionCounter: {
+                    show: true 
+                }
+            });
+
             console.log(data);
             var temp = $(this.el).addClass('ets-act-bottom-button').append($$.to_html(tpl, data));
             $(el).append(temp);
