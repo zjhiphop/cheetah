@@ -2,18 +2,22 @@ define(['underscore',
 'backbone'],function(_,Backbone) {
     var model = Backbone.Model.extend({
         defaults: {
-            'skipBtn': { 
-                'disable': false,
-                'text':'Skip Activity'
+            skipBtn: { 
+                disable: false,
+                text:'Skip Activity'
             },
-            'prevBtn': {
-                'disable': false,
-                'text': 'Prev'
+            prevBtn: {
+                disable: false,
+                text: 'Prev'
             },
-            'nextBtn': {
-                'disable': false,
-                'text': 'Next'
+            nextBtn: {
+                disable: false,
+                text: 'Next'
             },
+            submitBtn: {
+                disable: false,
+                text: 'Subtmi'
+            }
         }
     });
 

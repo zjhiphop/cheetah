@@ -20,6 +20,6 @@
     </div>
 
     <!--Submit button-->
-    <div class="ets-btn-submit">
-        <span>Submit</span>
+    <div class="ets-btn-submit {{#submitBtn.disable}}ets-btn-submit-disabled{{/submitBtn.disable}}">
+        <span>{{submitBtn.text}}</span>
     </div>
