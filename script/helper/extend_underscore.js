@@ -41,6 +41,21 @@ define(function(require) {
          */
         uuid:function(prefix){
           return prefix+extend.method._uuid++;
+        },
+        deepClone:function(a){
+            var f=function(){};
+            f.prototype=a;
+            var o=new f();
+            for(var i in a){
+              if(a.hasOwnProperty(i)){
+                if(typeof a[i]==='object'||typeof a[i]==='array'||typeof a[i]==='function'){
+                  o[i]=deepClone(a[i]);
+                }else{
+                  o[i]=a[i];  
+                }                 
+              }
+            }
+            return o;
         }
     };
     extend.prototype = {

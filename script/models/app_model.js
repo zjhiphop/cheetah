@@ -6,8 +6,9 @@ define([
   //@on
   var appModel = Backbone.Model.extend({
      defaults:{
-       activity:[],
-       
+       activity:{},
+       comsrc:{},
+       sidebar:{}
      },
      initalize:function(){
        
