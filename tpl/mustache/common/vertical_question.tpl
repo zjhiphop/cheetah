@@ -8,6 +8,7 @@
     <ul id="ets-act-mc-form-options"></ul>
 </div>
 <div id="ets-act-mc-form-ft">
+<!--
     <div class="ets-btn-prev"  tabindex="0">
         <span>{{Prev}}</span>
     </div>
@@ -17,4 +18,5 @@
     <div class="ets-btn-submit ets-none" tabindex="1">
         <span>Submit</span>
     </div>
+-->
 </div>

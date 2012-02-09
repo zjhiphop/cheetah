@@ -32,8 +32,6 @@ define(['jquery',
         render : function(opt) {
             _.extend(this.defaultsSetting, opt);
 
-            console.log(this.defaultsSetting);
-
             var $root = $(this.el);
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');

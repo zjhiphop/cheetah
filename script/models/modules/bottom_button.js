@@ -34,7 +34,23 @@ define(['underscore',
                 }
                 return false;
             }
+        },
+
+        initialize: function() {
+            var args = [].slice.call(arguments,0), that = this;
+            _.each(args,function(opt) {
+
+               for ( var p in opt) {
+                   if(typeof that.attributes[p] === 'object') {
+                       that.attributes[p] = _.extend({},that.defaults[p],opt[p]);
+                   } else {
+                       that.attributes[p] = opt[p];
+                   }
+               }
+
+            });
         }
+
     });
 
     return model;

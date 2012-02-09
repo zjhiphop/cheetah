@@ -41,22 +41,10 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 //console.log('epaper callback');
             });
 
+            //call bottom button module
             bb_view.render("#ets-act-ft", {
                 skipBtn: {
                     show: true
-                },
-                prevBtn: {
-                    show: true,
-                    disable: true
-                },
-                nextBtn: {
-                    show: true
-                },
-                questionCounter: {
-                    show: true 
-                },
-                submitBtn: {
-                    //show: true
                 }
             });
         }

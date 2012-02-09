@@ -43,3 +43,7 @@
 .ets-act-bottom-button .ets-reduce-right-margin {
     margin-right: 0;
 }
+
+#ets-act-mc-form-ft .ets-act-bottom-button .ets-btn-back {
+    float: left;
+}

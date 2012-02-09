@@ -9,10 +9,10 @@ define([
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
-  'collections/modules/option_box'
-],
+  'collections/modules/option_box',
+  'views/modules/bottom_button'],
 //@on
-function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
+function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
     var Vertical_Question_View = Backbone.View.extend({
         template : vq_tpl,
         opx_con:"#ets-act-mc-form-options",
@@ -54,6 +54,16 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
             //load option box
             _.each(data.Questions[current - 1].Options,function(opt){
               opxes.add(new opx_model({content:opt.Txt}));
+            });
+
+            //call bottom button module
+            bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
+                prevBtn: {
+                    show: true
+                },
+                nextBtn: {
+                    show: true
+                },
             });
             
             return this;

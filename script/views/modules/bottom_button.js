@@ -10,11 +10,25 @@ define(['jquery',
         },
 
         render: function(el, data) {
-            var viewData = (new model()).toJSON();
-            $.extend(true ,viewData, data);
+            var viewData = (new model(data)).toJSON();
+            //$.extend(true ,viewData, data);
+            
+            //var _model = new model(data);
+            //var
 
-            var template = $(this.el).addClass('ets-act-bottom-button').append($$.to_html(tpl, viewData));
-            $(el).append(template);
+            //console.log(_model);
+
+            //console.log(viewData);
+
+            var template = $(this.el).addClass('ets-act-bottom-button ets-cf').append($$.to_html(tpl, viewData));
+
+            if (typeof el === 'string') {
+                $(el).append(template);
+            } else if(el instanceof jQuery) {
+                el.append(template);
+            }
+
+            return this;
         }
 
     });
