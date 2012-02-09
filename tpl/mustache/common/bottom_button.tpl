@@ -31,7 +31,7 @@
 
     {{#prevBtn.show}}
     <!--Back button-->
-    <div class="ets-btn-back {{#prevBtn.disable}}ets-btn-back-disabled{{/prevBtn.disable}} {{#prevBtnAtRight}}ets-reduce-right-margin{{/prevBtnAtRight}}">
+    <div class="ets-btn-prev{{#prevBtn.disable}}ets-btn-prev-disabled{{/prevBtn.disable}} {{#prevBtnAtRight}}ets-reduce-right-margin{{/prevBtnAtRight}}">
         <span>{{prevBtn.text}}</span>
     </div>
     {{/prevBtn.show}}

@@ -20,7 +20,7 @@
 }
 
 .ets-act-bottom-button .ets-btn-next,
-.ets-act-bottom-button .ets-btn-back,
+.ets-act-bottom-button .ets-btn-prev,
 .ets-act-bottom-button .ets-btn-submit {
     float: right;
 }
@@ -28,7 +28,7 @@
 .ets-act-bottom-button .ets-btn-submit {
     margin-left: 20px;
 }
-.ets-act-bottom-button .ets-btn-back {
+.ets-act-bottom-button .ets-btn-prev {
     margin-right: 20px;
 }
 .ets-act-bottom-button #act-question_counter {
@@ -44,6 +44,6 @@
     margin-right: 0;
 }
 
-#ets-act-mc-form-ft .ets-act-bottom-button .ets-btn-back {
+#ets-act-mc-form-ft .ets-act-bottom-button .ets-btn-prev {
     float: left;
 }

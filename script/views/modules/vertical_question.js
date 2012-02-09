@@ -75,12 +75,14 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             this.$el.remove();
         },
         prevClick : function(e) {
+            console.log(this);
             var curr = Math.max(this.model.toJSON().current - 1, 1);
             this.model.set({
                 "current" : curr
             });
         },
         nextClick : function() {
+            console.log(this);
             var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
             if(curr===data.total){
               
