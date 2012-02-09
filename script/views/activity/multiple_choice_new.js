@@ -12,7 +12,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
             var _model = new model(), data = _model.toJSON(),
             //get data from url
             jsonData = _model.jsonData;
-            compiledTemplate = $$.to_html(tpl, data);
+            compiledTemplate = $$.render(tpl, data);
 
             this.$el.html(compiledTemplate);
             this.q_con = $(data.vq_container);
@@ -23,10 +23,14 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 Next : "Next",
                 current : 1,
                 total : jsonData.Activity.Questions.length
-            }), ques = new vq_view({
+            }), _vq_view = (new vq_view({
                 model : _vq_model
-            });
-            this.q_con.prepend(ques.render(page).el);
+            })).render(page);
+            //cache small view in verticle question view 
+            _vq_view.$next=_vq_view.$el.find('ets-btn-next');
+            _vq_view.$prev=_vq_view.$el.find('ets-btn-prev');
+            _vq_view.$submit=_vq_view.$el.find('ets-btn-submit');
+            this.q_con.prepend(_vq_view.el);
 
             //load epaper widegt
             epaper.render({

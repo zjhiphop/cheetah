@@ -56,4 +56,4 @@ TODO
 5.the latest backbone has changed API el--reference to html element   
                                      $el--reference to jQuery element
 6.how to test?  
-
+7.refactor code  

@@ -1,4 +1,5 @@
 // Filename: views/project/list
+//@off
 define([
   'jquery',
   'underscore',
@@ -8,6 +9,7 @@ define([
   // which will be used as our views primary template
   'help/text!tpl/underscore/template_name'
 ], function($, _, Backbone,$$,template){
+  //@on
   var templateView = Backbone.View.extend({
     el: $('#container'),
     render: function(){

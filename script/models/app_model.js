@@ -4,8 +4,9 @@ define([
   'backbone'
 ], function(_, Backbone) {
   //@on
-  var projectsModel = Backbone.Model.extend({
+  var appModel = Backbone.Model.extend({
      defaults:{
+       activity:[],
        
      },
      initalize:function(){
@@ -15,6 +16,5 @@ define([
        
      }    
   });
-  return projectsModel;
-
+  return appModel;
 });

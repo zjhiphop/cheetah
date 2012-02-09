@@ -116,7 +116,7 @@ legend {
   content: ".";
   display: block;
   height: 0;
-  visibility: hidden
+  visibility: hidden;
 }
 .ets-cf {
   *zoom: 1
@@ -912,6 +912,10 @@ legend {
 }
 
 /* Common: Display */
+.ets-hidden {
+  visibility: hidden;
+}
+.ets-none,
 .ets-hidden {
   display: none;
 }
