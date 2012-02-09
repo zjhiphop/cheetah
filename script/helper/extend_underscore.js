@@ -39,8 +39,8 @@ define(function(require) {
          * Generate sequence number
          * @return {Number}
          */
-        uuid:function(){
-          return this._uuid++;
+        uuid:function(prefix){
+          return prefix+extend.method._uuid++;
         }
     };
     extend.prototype = {
