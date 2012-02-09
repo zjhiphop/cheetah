@@ -23,8 +23,6 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             opxes.bind('add',this.addOne,this);
         },
         events : {
-            //'click .ets-btn-prev' : "prevClick",
-            //'click .ets-btn-next' : "nextClick"
         },
         addOne:function(opx){
           var view = new opx_view({model:opx});
@@ -39,9 +37,7 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             //fix error data            
             if(current > data.total) {
                 current = data.total;
-            }
-            else
-            if(current < 1) {
+            } else if(current < 1) {
                 current = 1;
             }
             //update attributes
@@ -56,13 +52,17 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
               opxes.add(new opx_model({content:opt.Txt}));
             });
 
+            console.log(data);
+
             //call bottom button module
             bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
                 prevBtn: {
-                    show: true
+                    show: true,
+                    text: data.Prev
                 },
                 nextBtn: {
-                    show: true
+                    show: true,
+                    text: data.Next
                 }
             },{
                 prevClick: _.bind(function() {
@@ -84,43 +84,12 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             
             return this;
         },
+
         clearOpts:function(){
             this.$el.find("li").remove();
         },
         remove : function() {
             this.$el.remove();
-        },
-        prevClick : function(e) {
-            var el = e.target;
-            if(e.target.tagName !== 'DIV') {
-                el = e.target.parentNode;
-            }
-
-            if(el.className.indexOf('disabled') > -1) {
-                return;
-            }
-
-            var curr = Math.max(this.model.toJSON().current - 1, 1);
-            this.model.set({
-                "current" : curr
-            });
-        },
-        nextClick : function(e) {
-            var el = e.target;
-            if(e.target.tagName !== 'DIV') {
-                el = e.target.parentNode;
-            }
-
-            if(el.className.indexOf('disabled') > -1) {
-                return;
-            }
-            var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
-            if(curr===data.total){
-              
-            }
-            this.model.set({
-                "current" : curr
-            });            
         }
     });
     return Vertical_Question_View;
