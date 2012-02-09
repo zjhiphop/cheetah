@@ -23,8 +23,8 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             opxes.bind('add',this.addOne,this);
         },
         events : {
-            'click .ets-btn-prev' : "prevClick",
-            'click .ets-btn-next' : "nextClick"
+            //'click .ets-btn-prev' : "prevClick",
+            //'click .ets-btn-next' : "nextClick"
         },
         addOne:function(opx){
           var view = new opx_view({model:opx});
@@ -63,7 +63,23 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
                 },
                 nextBtn: {
                     show: true
-                },
+                }
+            },{
+                prevClick: _.bind(function() {
+                    var curr = Math.max(this.model.toJSON().current - 1, 1);
+                    this.model.set({
+                        "current" : curr
+                    });
+                }, this),
+                nextClick: _.bind(function() {
+                    var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
+                    if(curr===data.total){
+
+                    }
+                    this.model.set({
+                        "current" : curr
+                    });            
+                },this)
             });
             
             return this;
@@ -75,14 +91,29 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
             this.$el.remove();
         },
         prevClick : function(e) {
-            console.log(this);
+            var el = e.target;
+            if(e.target.tagName !== 'DIV') {
+                el = e.target.parentNode;
+            }
+
+            if(el.className.indexOf('disabled') > -1) {
+                return;
+            }
+
             var curr = Math.max(this.model.toJSON().current - 1, 1);
             this.model.set({
                 "current" : curr
             });
         },
-        nextClick : function() {
-            console.log(this);
+        nextClick : function(e) {
+            var el = e.target;
+            if(e.target.tagName !== 'DIV') {
+                el = e.target.parentNode;
+            }
+
+            if(el.className.indexOf('disabled') > -1) {
+                return;
+            }
             var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
             if(curr===data.total){
               
