@@ -7,8 +7,11 @@ define([
   var appModel = Backbone.Model.extend({
      defaults:{
        activity:{},
-       comsrc:{},
-       sidebar:{}
+       comsrc:{
+         
+         epaper:{},
+         audio:{}
+       }
      },
      initalize:function(){
        

@@ -43,12 +43,17 @@ define(function(require) {
           return prefix+extend.method._uuid++;
         },
         deepClone:function(a){
-            var f=function(){};
+            var plainType=['number','string'];
+            if(!a||~plainType.indexOf(typeof a)){
+              return a;
+            }
+            var refType=['object','array','function','date'],
+                f=function(){};
             f.prototype=a;
             var o=new f();
             for(var i in a){
               if(a.hasOwnProperty(i)){
-                if(typeof a[i]==='object'||typeof a[i]==='array'||typeof a[i]==='function'){
+                if(~refType.indexOf(typeof a[i])){
                   o[i]=this.deepClone(a[i]);
                 }else{
                   o[i]=a[i];  
@@ -57,7 +62,7 @@ define(function(require) {
             }
             return o;
         }
-    };
+    }; 
     extend.prototype = {
 
     };
