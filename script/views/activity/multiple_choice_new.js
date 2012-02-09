@@ -34,10 +34,27 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 'expandable' : false,
                 'epaper_content' : data.epaper_content
             }, function() {
-                console.log('epaper callback');
+                //console.log('epaper callback');
             });
 
-            bb_view.render("#ets-act-ft");
+            bb_view.render("#ets-act-ft", {
+                skipBtn: {
+                    show: true
+                },
+                prevBtn: {
+                    show: true,
+                    disable: true
+                },
+                nextBtn: {
+                    show: true
+                },
+                questionCounter: {
+                    show: true 
+                },
+                submitBtn: {
+                    //show: true
+                }
+            });
         }
     });
     return new multiple_choice_new;

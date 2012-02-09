@@ -1,7 +1,7 @@
 /*///////////////////////////////////////////////////////////////////////////////////////
 //
-//  Hierarchy:     Englishtown > School > Component Styles > buttom_button
-//  File:          ets-base
+//  Hierarchy:     Englishtown > School > Component Styles  
+//  File:          ets-bottom_button
 /  Images:        						
 //  Dependencies:  ets-base
 //  Description:   Defined the various button at the bottom for activity
@@ -24,12 +24,22 @@
 .ets-act-bottom-button .ets-btn-submit {
     float: right;
 }
+.ets-act-bottom-button .ets-btn-next,
+.ets-act-bottom-button .ets-btn-submit {
+    margin-left: 20px;
+}
+.ets-act-bottom-button .ets-btn-back {
+    margin-right: 20px;
+}
 .ets-act-bottom-button #act-question_counter {
     color: #9A9A9A;
     font-size: 1.167em;
     font-weight: bold;
     float: right;
-    margin: 0 20px;
     width: 140px;
     text-align: center;
+}
+
+.ets-act-bottom-button .ets-reduce-right-margin {
+    margin-right: 0;
 }

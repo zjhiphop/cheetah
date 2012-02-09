@@ -12,6 +12,13 @@
     </div>
     {{/nextBtn.show}}
 
+    {{#submitBtn.show}}
+    <!--Submit button-->
+    <div class="ets-btn-submit {{#submitBtn.disable}}ets-btn-submit-disabled{{/submitBtn.disable}}">
+        <span>{{submitBtn.text}}</span>
+    </div>
+    {{/submitBtn.show}}
+
     <!--Question counter-->
     {{#questionCounter.show}}
     <div id="act-question_counter">    
@@ -24,14 +31,7 @@
 
     {{#prevBtn.show}}
     <!--Back button-->
-    <div class="ets-btn-back {{#prevBtn.disable}}ets-btn-back-disabled{{/prevBtn.disable}}">
+    <div class="ets-btn-back {{#prevBtn.disable}}ets-btn-back-disabled{{/prevBtn.disable}} {{#prevBtnAtRight}}ets-reduce-right-margin{{/prevBtnAtRight}}">
         <span>{{prevBtn.text}}</span>
     </div>
     {{/prevBtn.show}}
-
-    {{#submitBtn.show}}
-    <!--Submit button-->
-    <div class="ets-btn-submit {{#submitBtn.disable}}ets-btn-submit-disabled{{/submitBtn.disable}}">
-        <span>{{submitBtn.text}}</span>
-    </div>
-    {{/submitBtn.show}}
