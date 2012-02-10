@@ -7,9 +7,9 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model,audioPlayer_view) {
         el : $("#ets-act-multichoice"),
         initialize : function() {
         },
-        render : function(data,next) {
+        render : function(data, next, viewMode, viewBox) {
             //load multiple_choice_new activity framework
-            var _model = new model(data), 
+            var _model = new model(data),
             //get data from url
             json = _model.toJSON();
             compiledTemplate = $$.render(tpl, json);
@@ -22,7 +22,9 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model,audioPlayer_view) {
                 Prev : "Prev",
                 Next : "Next",
                 current : 1,
-                total : json.jsonData.Activity.Questions.length
+                total : json.jsonData.Activity.Questions.length,
+                type : viewMode,
+                boxType : viewBox
             }), _vq_view = (new vq_view({
                 model : _vq_model
             })).render();
@@ -37,8 +39,34 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model,audioPlayer_view) {
              * end
              */
             this.q_con.prepend(_vq_view.el);
-            if(_.isFunction(next)){
-              next();
+
+            //render bottom_button
+            bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
+                prevBtn : {
+                    show : true,
+                    text : data.Prev
+                },
+                nextBtn : {
+                    show : true,
+                    text : data.Next
+                }
+            }, {
+                prevClick : _.bind(function() {
+                    var curr = Math.max(this.model.toJSON().current - 1, 1);
+                    this.model.set({
+                        "current" : curr
+                    });
+                }, _vq_view),
+                nextClick : _.bind(function() {
+                    var data = this.model.toJSON(), curr = Math.min(data.current + 1, data.total);
+                    this.model.set({
+                        "current" : curr
+                    });
+                }, _vq_view)
+            });
+            
+            if(_.isFunction(next)) {
+                next();
             }
 
             // call audio player view

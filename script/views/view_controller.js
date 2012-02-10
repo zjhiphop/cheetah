@@ -5,7 +5,7 @@ define(function(require) {
          * activity views
          */
         act : {
-            mcn : 'views/activity/multiple_choice_new'
+            MultipleChoice : 'views/activity/multiple_choice_new'
         },
         /**
          * modules views

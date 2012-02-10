@@ -185,7 +185,7 @@ define([
                         'skipClick' : null
                     }
                 }
-            });
+            });            
         },
         render : function(act_id) {
             this.init(act_id);

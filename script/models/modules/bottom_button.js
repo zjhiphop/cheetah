@@ -1,7 +1,6 @@
 define(['jquery',
 'underscore',
-'backbone',
-'help/extend_underscore'],function($,_,Backbone,extend) {
+'backbone'],function($,_,Backbone,extend) {
     var model = Backbone.Model.extend({
         defaults: {
             skipBtn: { 
@@ -39,11 +38,9 @@ define(['jquery',
         },
 
         initialize: function() {
-            var arg = arguments[0], that = this;
-            var _defaults = extend.method.deepClone(this.defaults);
-            this.attributes = $.extend(true,_defaults, arg);
+            var arg = arguments[0];
+            this.attributes = _.deepExtend(this.defaults,arg);
         }
-
     });
 
     return model;

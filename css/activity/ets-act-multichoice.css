@@ -84,3 +84,6 @@
   height:100%;
   display: inline-block;
 }
+#ets-act-mc-form-options label{
+  width:98%;
+}
