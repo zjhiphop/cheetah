@@ -915,8 +915,7 @@ legend {
 .ets-hidden {
   visibility: hidden;
 }
-.ets-none,
-.ets-hidden {
+.ets-none{
   display: none;
 }
 .ets-block {
