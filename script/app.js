@@ -164,18 +164,34 @@ define([
                         'act_box_fullwidth' : false,
                         'width' : 600,
                         'expandable' : false,
-                        'container':"#ets-epaper-container"
+                        'container' : "#ets-epaper-container"
                     },
                     'audio' : {}
                 },
                 'activity' : {
                     'jsonData' : jsonData
+                },
+                'bb' : {
+                    'container' : "#ets-act-ft",
+                    'config' : {
+                       'skipBtn': {
+                         'show':true
+                       }
+                    },
+                    'events' : {
+                        'prevClick' : null,
+                        'nextClick' : null,
+                        'submitClick' : null,
+                        'skipClick' : null
+                    }
                 }
             });
         },
         render : function(act_id) {
             this.init(act_id);
-            (new view({model:this.model})).render();
+            (new view({
+                model : this.model
+            })).render();
         }
     };
     return appController;

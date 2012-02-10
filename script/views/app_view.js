@@ -22,16 +22,19 @@ define([
                       this.setTemplate(this.$el);
                     }
                 });
+                //this is reference to bottom_botton
+                _.viewWrapper("mod:bb",data.bb.container,data.bb.config,data.bb.events);
             });
             this.loadComsrc(data);
         },
         loadActivity : function(data,next) {
+            //load view
             _.viewWrapper("act:mcn", data.activity,next);
         },
         loadComsrc : function(data) {
             //load header
             //load audio
-        }
+        }        
     });
     // Our module now returns an instantiated view
     // Sometimes you might return an un-instantiated view e.g. return

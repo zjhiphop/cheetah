@@ -14,6 +14,19 @@ define([
             },
             jsonData : {
 
+            },
+            //bottom button model
+            bb : {
+                'container' : "#ets-act-ft",
+                'config' : {
+
+                },
+                'events' : {
+                    'prevClick' : null,
+                    'nextClick' : null,
+                    'submitClick' : null,
+                    'skipClick' : null
+                }
             }
         },
         initalize : function(opt) {
