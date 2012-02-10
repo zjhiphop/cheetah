@@ -12,7 +12,8 @@ define(function(require) {
          */
         mod : {
             vq : 'views/modules/vertical_question',
-            optbx : 'views/modules/option_box'
+            optbx : 'views/modules/option_box',
+            bb:'views/modules/bottom_button'
         },
         /**
          * widget views

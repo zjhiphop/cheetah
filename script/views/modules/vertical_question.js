@@ -9,10 +9,10 @@ define([
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
-  'collections/modules/option_box'
-],
+  'collections/modules/option_box',
+  'views/modules/bottom_button'],
 //@on
-function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
+function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
     var Vertical_Question_View = Backbone.View.extend({
         template : vq_tpl,
         opx_con:"#ets-act-mc-form-options",
@@ -23,8 +23,6 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
             opxes.bind('add',this.addOne,this);
         },
         events : {
-            'click .ets-btn-prev' : "prevClick",
-            'click .ets-btn-next' : "nextClick"
         },
         addOne:function(opx){
           var view = new opx_view({model:opx});
@@ -39,9 +37,7 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
             //fix error data            
             if(current > data.total) {
                 current = data.total;
-            }
-            else
-            if(current < 1) {
+            } else if(current < 1) {
                 current = 1;
             }
             //update attributes
@@ -55,29 +51,45 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes) {
             _.each(data.Questions[current - 1].Options,function(opt){
               opxes.add(new opx_model({content:opt.Txt}));
             });
+
+            console.log(data);
+
+            //call bottom button module
+            bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
+                prevBtn: {
+                    show: true,
+                    text: data.Prev
+                },
+                nextBtn: {
+                    show: true,
+                    text: data.Next
+                }
+            },{
+                prevClick: _.bind(function() {
+                    var curr = Math.max(this.model.toJSON().current - 1, 1);
+                    this.model.set({
+                        "current" : curr
+                    });
+                }, this),
+                nextClick: _.bind(function() {
+                    var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
+                    if(curr===data.total){
+
+                    }
+                    this.model.set({
+                        "current" : curr
+                    });            
+                },this)
+            });
             
             return this;
         },
+
         clearOpts:function(){
             this.$el.find("li").remove();
         },
         remove : function() {
             this.$el.remove();
-        },
-        prevClick : function(e) {
-            var curr = Math.max(this.model.toJSON().current - 1, 1);
-            this.model.set({
-                "current" : curr
-            });
-        },
-        nextClick : function() {
-            var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
-            if(curr===data.total){
-              
-            }
-            this.model.set({
-                "current" : curr
-            });            
         }
     });
     return Vertical_Question_View;
