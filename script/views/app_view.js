@@ -22,6 +22,7 @@ define([
                         this.setTemplate(this.$el);
                     }
                 });
+                
                 //this is reference to bottom_botton
                 _.viewWrapper("mod:bb", data.bb.container, data.bb.config, data.bb.events);
             });
