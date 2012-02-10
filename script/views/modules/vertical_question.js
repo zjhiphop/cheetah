@@ -52,8 +52,6 @@ function($, _, Backbone, $$, vq_tpl, model,opx_model,opx_view,opxes,bb_view) {
               opxes.add(new opx_model({content:opt.Txt}));
             });
 
-            console.log(data);
-
             //call bottom button module
             bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
                 prevBtn: {
