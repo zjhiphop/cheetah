@@ -32,19 +32,19 @@ require(['js/widget/epaper'], function(epaper) {
 require([
 // Load our app module and pass it to our definition function
 //@off
-  'js/app',
   // Some plugins have to be loaded in order due to there non AMD compliance
   // Because these scripts are not "modules" they do not pass any values to the
   // definition function below
   'help/order!jquery', 
   'help/order!underscore', 
-  'help/order!backbone'
+  'help/order!backbone',
+  'js/router'
 //@on
-], function(App) {
+], function($,_,Backbone,Router) {
     // The "app" dependency is passed in as "App"
     // Again, the other dependencies passed in are not "AMD" therefore don't pass
     // a parameter to this function
-    App.initialize();
+    Router.initialize();
 });
 /*
  *locale

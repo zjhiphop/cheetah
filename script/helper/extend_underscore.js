@@ -21,7 +21,7 @@ define(function(require) {
                 viewName=view.split(':')[1];
           //@on
             require([views[viewType][viewName]], function(view) {
-                view.render(args);
+                view.render.apply(view,args);
             })
         },
         /**
@@ -34,35 +34,56 @@ define(function(require) {
                 return v.toString(16);
             }).toUpperCase();
         },
-        _uuid:0,
+        _uuid : 0,
         /**
          * Generate sequence number
          * @return {Number}
          */
-        uuid:function(prefix){
-          return prefix+extend.method._uuid++;
+        uuid : function(prefix) {
+            return prefix + extend.method._uuid++;
         },
-        deepClone:function(a){
-            var plainType=['number','string'];
-            if(!a||~plainType.indexOf(typeof a)){
-              return a;
+        /**
+         * Deep clone Object
+         * @param {Object} source object
+         * @return {Object}
+         */
+        deepClone : function(a) {
+            var plainType = ['number', 'string'];
+            if(!a || ~plainType.indexOf( typeof a)) {
+                return a;
             }
-            var refType=['object','array','function','date'],
-                f=function(){};
-            f.prototype=a;
-            var o=new f();
-            for(var i in a){
-              if(a.hasOwnProperty(i)){
-                if(~refType.indexOf(typeof a[i])){
-                  o[i]=this.deepClone(a[i]);
-                }else{
-                  o[i]=a[i];  
-                }                 
-              }
+            var refType = ['object', 'array', 'function', 'date'], f = function() {
+            };
+            f.prototype = a;
+            var o = new f();
+            for(var i in a) {
+                if(a.hasOwnProperty(i)) {
+                    if(~refType.indexOf( typeof a[i])) {
+                        o[i] = this.deepClone(a[i]);
+                    }
+                    else {
+                        o[i] = a[i];
+                    }
+                }
             }
             return o;
+        },
+        /**
+         * Deep extend Object
+         * @param {Object} source object
+         * @return {Object}
+         */
+        deepExtend : function(src) {
+            //use jquery deep extend method
+            var $ = require('jquery'), args = [].slice.call(arguments, 1),that=this;
+            args = this.map(args, function(arg) {
+                return that.deepClone(arg);
+            });
+            args.unshift(true,src);
+            $.extend.apply($,args);
+            return src;
         }
-    }; 
+    };
     extend.prototype = {
 
     };

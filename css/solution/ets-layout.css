@@ -1,0 +1,24 @@
+/*common self-adaption layout*/
+/*
+ *
+ 使用display:table-cell
+
+ <div class="ets-cf">
+   <div class="ets-cell">
+     <div class="ets-left"></div>
+     <div class="ets-cell-bk"></div>
+   </div>
+ </div>
+ */
+.ets-cell {
+  display: table-cell; *
+  display: inline-block;
+  width: 2000px; *
+  width: auto;
+}
+.ets-cell-bk {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}

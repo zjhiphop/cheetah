@@ -76,6 +76,11 @@
 #ets-act-mc-form-ft .ets-btn-next{
 	float: right;
 }
-.ets-act-mc-checkbox{
-  cursor: pointer;
+.ets-act-mc-checkbox {
+    cursor: pointer;
+}
+#ets-epaper-container {
+  width:590px;
+  height:100%;
+  display: inline-block;
 }
