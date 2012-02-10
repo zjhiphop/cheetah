@@ -75,3 +75,8 @@
 #ets-act-mc-form-ft .ets-btn-next{
 	float: right;
 }
+#ets-epaper-container{
+  width:590px;
+  height:100%;
+  display: inline-block;
+}

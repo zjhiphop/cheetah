@@ -12,39 +12,33 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper) {
         el : $("#ets-act-multichoice"),
         initialize : function() {
         },
-        render : function(page) {
+        render : function(data,next) {
             //load multiple_choice_new activity framework
-            var _model = new model(), data = _model.toJSON(),
+            var _model = new model(data), 
             //get data from url
-            jsonData = _model.jsonData;
-            compiledTemplate = $$.render(tpl, data);
+            json = _model.toJSON();
+            compiledTemplate = $$.render(tpl, json);
 
             this.$el.html(compiledTemplate);
-            this.q_con = $(data.vq_container);
+            this.q_con = $(json.vq_container);
 
             //render vertical question
-            var _vq_model = new vq_model(jsonData.Activity, {
+            var _vq_model = new vq_model(json.jsonData.Activity, {
                 Prev : "Prev",
                 Next : "Next",
                 current : 1,
-                total : jsonData.Activity.Questions.length
+                total : json.jsonData.Activity.Questions.length
             }), _vq_view = (new vq_view({
                 model : _vq_model
-            })).render(page);
+            })).render();
             //cache small view in verticle question view 
             _vq_view.$next=_vq_view.$el.find('ets-btn-next');
             _vq_view.$prev=_vq_view.$el.find('ets-btn-prev');
             _vq_view.$submit=_vq_view.$el.find('ets-btn-submit');
             this.q_con.prepend(_vq_view.el);
-
-            //load epaper widegt
-            epaper.render({
-                'width' : 600,
-                'expandable' : false,
-                'epaper_content' : data.epaper_content
-            }, function() {
-                console.log('epaper callback');
-            });
+            if(_.isFunction(next)){
+              next();
+            }
         }
     });
     return new multiple_choice_new;

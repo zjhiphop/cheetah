@@ -2,37 +2,22 @@
 define([
         'require',
         'underscore', 
-        'backbone'
+        'backbone',
+        'js/app'
         ],
         //@on
-function(require ,_ , Backbone) {
+function(require, _, Backbone, app) {
     var activityRouter = {
         //multiple_choice_new
-        MCNRouter : {
-            routes : {
-                // Define some URL routes
-                'multichoice' : 'showMultiChoice',
-                'multichoice/q:current' : 'showQuestion'
-            },
-            showMultiChoice : function() {
-              _.viewWrapper('act:mcn',1);
-            },
-            showQuestion : function(page) {
-              _.viewWrapper('act:mcn',page);
-            }
+        routes : {
+            // Define some URL routes
+            '/:mode/:type/:id' : 'loadURL'
+        },
+        loadURL : function(mode, type, id) {
+            app.render(mode, type, id);
         }
     };
-    var _r = {
-        "routes" : {},
-        "method" : {}
-    };
-    _.map(activityRouter, function(items) {
-        _.extend(_r.routes, items.routes);
-        _.each(items, function(item, key) {
-            if(_.isFunction(item)) {
-                _r.method[key] = item;
-            }
-        });
-    });
-    return _.extend({}, _r.method, _r);
+
+    return activityRouter;
+
 });

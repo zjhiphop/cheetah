@@ -35,14 +35,16 @@ define(['jquery',
             console.log(this.defaultsSetting);
 
             var $root = $(this.el);
+            
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');
-
-            this.setTemplate($root);
-
+            if(!this.defaultsSetting.container){
+              this.setTemplate($root);  
+            }           
+            
             return this;
         },
-
+        
         setTemplate : function($root) {
             var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
@@ -97,9 +99,8 @@ define(['jquery',
         render : function(opt, callback) {
             var epaper_view = new Epaper_View();
             epaper_view.render(opt);
-
             if(_.isFunction(callback)) {
-                callback();
+                callback.apply(epaper_view);
             }
         }
     };

@@ -4,21 +4,24 @@ define([
   'backbone'
 ], function(_, Backbone) {
   //@on
-  var appModel = Backbone.Model.extend({
-     defaults:{
-       activity:{},
-       comsrc:{
-         
-         epaper:{},
-         audio:{}
-       }
-     },
-     initalize:function(){
-       
-     },
-     validate:function(){
-       
-     }    
-  });
-  return appModel;
+    var appModel = Backbone.Model.extend({
+        defaults : {
+            template_id : 0,
+            comsrc : {
+                content : {},
+                epaper : {},
+                audio : {}
+            },
+            jsonData : {
+
+            }
+        },
+        initalize : function(opt) {
+            this.attributes = _.deepExtend(this.defaults, opt);
+        },
+        validate : function() {
+
+        }
+    });
+    return appModel;
 });
