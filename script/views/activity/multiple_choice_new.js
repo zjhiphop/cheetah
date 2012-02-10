@@ -1,8 +1,8 @@
 // Filename: views/projects/list
 //off
-define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question', 'views/widget/epaper', 'views/modules/bottom_button'],
+define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/widget/audio_player'],
 //on
-function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
+function($, _, Backbone, $$, model, tpl, vq_view, vq_model,audioPlayer_view) {
     var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
         initialize : function() {
@@ -27,13 +27,27 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 model : _vq_model
             })).render();
             //cache small view in verticle question view 
-            _vq_view.$next=_vq_view.$el.find('ets-btn-next');
-            _vq_view.$prev=_vq_view.$el.find('ets-btn-prev');
-            _vq_view.$submit=_vq_view.$el.find('ets-btn-submit');
+            /*
+             * are the below still useful?
+             */
+            //_vq_view.$next=_vq_view.$el.find('ets-btn-next');
+            //_vq_view.$prev=_vq_view.$el.find('ets-btn-prev');
+            //_vq_view.$submit=_vq_view.$el.find('ets-btn-submit');
+            /*
+             * end
+             */
             this.q_con.prepend(_vq_view.el);
             if(_.isFunction(next)){
               next();
             }
+
+            // call audio player view
+            audioPlayer_view.render({
+                containerId: 'au_launchBtn',
+                id: 'au_launchBtn_audio',
+                audioUrl: '/Juno/school/audios/5.1.1%201o3.4.mp3',
+                size: '50'
+            });
         }
     });
     return new multiple_choice_new;
