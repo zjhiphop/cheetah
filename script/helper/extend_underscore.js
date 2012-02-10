@@ -17,11 +17,18 @@ define(function(require) {
             //@off
             var args = [].slice.call(arguments, 1),
                 views = require('views/view_controller'),
-                viewType = view.split(':')[0],
-                viewName=view.split(':')[1];
+                _temp=view.split(':'),
+                viewType = _temp[0],
+                viewName=_temp[1],
+                viewMode=_temp[2],//txt/img
+                viewBox=_temp[3]//checkbox/radiobox
+                ;
+                if(viewMode||viewBox){
+                  args.push(viewMode,viewBox);  
+                }                
           //@on
             require([views[viewType][viewName]], function(view) {
-                view.render.apply(view,args);
+                view.render.apply(view, args);
             })
         },
         /**
@@ -75,12 +82,12 @@ define(function(require) {
          */
         deepExtend : function(src) {
             //use jquery deep extend method
-            var $ = require('jquery'), args = [].slice.call(arguments, 1),that=this;
+            var $ = require('jquery'), args = [].slice.call(arguments, 1), that = this;
             args = this.map(args, function(arg) {
                 return that.deepClone(arg);
             });
-            args.unshift(true,src);
-            $.extend.apply($,args);
+            args.unshift(true, src);
+            $.extend.apply($, args);
             return src;
         }
     };
