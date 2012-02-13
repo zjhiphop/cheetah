@@ -10,7 +10,7 @@
 .act-player_icon {
     width: 68px;
     height: 68px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_1-png8.png) no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_1-png8.png) no-repeat;
     display: block;
     cursor: pointer;
 }
@@ -18,7 +18,7 @@
 .act-player_icon16 {
     width: 16px;
     height: 16px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/player_icons_16x17-png8.png) no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/player_icons_16x17-png8.png) no-repeat;
     display: block;
     cursor: pointer;
 }
@@ -26,7 +26,7 @@
 .act-player_icon29 {
     width: 40px;
     height: 40px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_29x29-png8.png) no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_29x29-png8.png) no-repeat;
     display: block;
     cursor: pointer;
 }
@@ -34,7 +34,7 @@
 .act-player_icon42 {
     width: 58px;
     height: 58px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_42x42-png8.png) no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/player_icon_42x42-png8.png) no-repeat;
     display: block;
     cursor: pointer;
 }
@@ -208,7 +208,7 @@
 .act-player_ps_panel {
     width: 156px;
     height: 47px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px 0px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px 0px no-repeat;
     padding: 0 9px 0 9px;
     left: -50px;
     top: -38px;
@@ -218,14 +218,14 @@
 }
 .act-player_ps_panel.act-player_ps_panel_left
 {
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px -131px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px -131px no-repeat;
     height:50px;
     left:8px;
 }
 .act-player_ps_total {
     width: 149px;
     height: 10px;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -9px -60px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -9px -60px no-repeat;
     position: absolute;
     top: 11px;
     display: block;
@@ -237,7 +237,7 @@
     width: 0px;
     height: 10px;
     display: block;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -9px -81px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -9px -81px no-repeat;
     top: 11px;
     position: absolute;
     z-index: 101;
@@ -248,7 +248,7 @@
     width: 20px;
     height: 20px;
     display: block;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px -100px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) 0px -100px no-repeat;
     top: 7px;
     left: 9px;
     position: absolute;
@@ -261,7 +261,7 @@
     height: 28px;
     display: block;
     cursor: pointer;
-    background: url(test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -30px -93px no-repeat;
+    background: url(http://test-ak.englishtown.com/_imgs/ui/courseware/study/audio_progress_v1-png8.png) -30px -93px no-repeat;
     position: absolute;
     top: -12px;
     left: 150px;
