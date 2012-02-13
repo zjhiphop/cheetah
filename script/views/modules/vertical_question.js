@@ -9,9 +9,10 @@ define([
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
+  'views/modules/bottom_button',
   'collections/modules/option_box'],
 //@on
-function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
+function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, bb_view, opxes) {
     var Vertical_Question_View = Backbone.View.extend({
         template : vq_tpl,
         opx_con : "#ets-act-mc-form-options",

@@ -1,8 +1,8 @@
 // Filename: views/projects/list
 //off
-define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/widget/audio_player'],
+define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player'],
 //on
-function($, _, Backbone, $$, model, tpl, vq_view, vq_model,audioPlayer_view) {
+function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer_view) {
     var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
         initialize : function() {
