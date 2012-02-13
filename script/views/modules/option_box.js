@@ -15,23 +15,34 @@ define([
             "click input" : "toggleShow"
         },
         render : function() {
-            var compiledTemplate = $$.render(template, this.model.toJSON());
+            var data=this.model.toJSON(),compiledTemplate = $$.render(template,data );
+            this._type=data.type;
+            this._checkCls= "ets-" + data.type + "-b-checked";
             this.$el.append(compiledTemplate);
+            this.$label=this.$el.find('label');
+            this.$input=this.$el.find('input');
+            this.checkShow();
             return this;
         },
         toggleShow : function(e) {
-            var type=this.model.toJSON().type,cls = "ets-" + type + "-b-checked";
             //@off
-            if(~type.indexOf("radio")){
-                this.$el.parent().find('label')
-                .removeClass(cls).end()
+            if(~this._type.indexOf("radio")){
+                this.$label
+                .removeClass(this._checkCls);
+                this.$el
                 .find(":checked")
                 .parents('label')
-                .addClass(cls);
+                .addClass(this._checkCls);
             }else{
                 $(e.currentTarget).parents("label").toggleClass(cls);
             }           
             //@on
+        },
+        checkShow:function(isChecked){
+          if(this.model.toJSON().checked){
+           this.$label.addClass(this._checkCls);
+           this.$input.attr('checked',true);
+          }
         }
     });
     return optionBoxView;

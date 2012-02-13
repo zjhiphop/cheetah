@@ -23,7 +23,7 @@ define([
                     }
                 });
                 
-                //this is reference to bottom_botton
+                //load bottom_botton
                 _.viewWrapper("mod:bb", data.bb.container, data.bb.config, data.bb.events);
             });
             this.loadComsrc(data);

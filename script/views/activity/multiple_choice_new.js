@@ -9,7 +9,7 @@ define(['jquery',
         'views/modules/vertical_question', 
         'models/modules/vertical_question', 
         'views/widget/epaper',
-  'views/modules/bottom_button'],
+        'views/modules/bottom_button'],
 //@on
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
     var multiple_choice_new = Backbone.View.extend({
@@ -56,19 +56,28 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 }
             }, {
                 prevClick : _.bind(function() {
-                    var curr = Math.max(this.model.toJSON().current - 1, 1);
+                    var _preCurr = this.model.toJSON().current;
+                    if(_preCurr === 1)
+                        return;
+                    console.log(_preCurr);
+                    var curr = Math.max(_preCurr - 1, 1);
+                    this.setSelection();
                     this.model.set({
                         "current" : curr
                     });
                 }, _vq_view),
                 nextClick : _.bind(function() {
-                    var data = this.model.toJSON(), curr = Math.min(data.current + 1, data.total);
+                    var data = this.model.toJSON();
+                    if(data.current === data.total)
+                        return;
+                    var curr = Math.min(data.current + 1, data.total);
+                    this.setSelection();
                     this.model.set({
                         "current" : curr
                     });
                 }, _vq_view)
             });
-            
+
             if(_.isFunction(next)) {
                 next();
             }
