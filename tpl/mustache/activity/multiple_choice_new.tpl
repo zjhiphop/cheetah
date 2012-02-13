@@ -1,4 +1,5 @@
 <h1><a id="ets-mc_fn_audio" class="ets-mc_q_audio"> </a>{{act_title}}</h1>
+<div id="au_launchBtn"></div>
 <div id="ets-act-mc-box">
     <div id="ets-act-mc-box-bd" class="ets-cf">
         <div id="ets-epaper-container"></div>

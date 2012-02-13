@@ -16,6 +16,7 @@ define(['jquery',
         initialize : function(options) {
             this.attributes = _.extend(this.attributes, options);
         }
+
     });
     return model;
 });

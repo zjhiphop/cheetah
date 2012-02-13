@@ -1,11 +1,15 @@
 define(['jquery', 
 'underscore', 
 'backbone',
+'mustache',
 'lib/swfobject',
 'lib/json2',
-'models/widget/audio_player'], function($, _, Backbone, swfobjct, JSON, model) {
+'help/text!tpl/mustache/common/audio_player_flash.tpl',
+'models/widget/audio_player'], function($, _, Backbone, $$, swfobjct, JSON, tpl, model) {
 
     var View = Backbone.View.extend({
+        template: tpl,
+
         initialize: function() {
             this.model = new model;
         },
@@ -53,6 +57,11 @@ define(['jquery',
             //use flash method to add audio
             opt.flashId = opt.id + "_flash";
             this.loadFlashVersion(opt);
+            $("#" + opt.containerId).keydown(function(e) {
+                if(e.which === 9 || e.which === 11) {
+                    return false;
+                }
+            });
             
         },
 
@@ -108,7 +117,15 @@ define(['jquery',
 
             var flashWidth = 175 * parseInt(opt.size, 10) / 49,
                 flashHeight = 105 * parseInt(opt.size,10) / 49;
-            $("#" + opt.containerId).html('<div id="' + opt.id + '" class="act-player act-player_flash' + opt.size + ' act-player_flash' + opt.size + '_ps_bar_' + opt.display + '"><div id="' + opt.flashId + '"></div></div>');
+
+            var compiledTemplate = $$.render(this.template, {
+                id: opt.id,
+                size: opt.size,
+                display: opt.display,
+                flashId: opt.flashId
+            });
+            console.log(this.template);
+            $("#" + opt.containerId).html(compiledTemplate);
 
             var _audioSwfPath = "_imgs/ui/courseware/study/EFAudio_v1.610.swf";
             if(opt.display && opt.display === "left") {
@@ -124,6 +141,8 @@ define(['jquery',
                 _audioSwfPath = window.cacheSvr + "/" + _audioSwfPath;
             }
 
+
+            var model = this.model;
             swfobject.embedSWF(_audioSwfPath, opt.flashId, flashWidth, flashHeight, "9.0.0", "_scripts/expressInstall.swf", {
                 audioPath: opt.audioUrl,
                 totalWidth: 52 * parseInt(opt.size, 10) / 49,
@@ -135,8 +154,8 @@ define(['jquery',
                 controllable: 1,
                 id: opt.flashId,
                 timeArr: _timesValue,
-                onPlayFunction: "ET.School.UI.Common.Player.onPlayCallback4Flash",
-                onCompleteFunction: "ET.School.UI.Common.Player.onCompleteCallback4Flash",
+                onPlayFunction: "model.onPlayCallback4Flash",
+                onCompleteFunction: "model.onCompleteCallback4Flash",
                 stopFunction: "stopFunction",
                 closeBarFunction: "closeBarFunction",
                 playFunction: "playFunction",
@@ -160,6 +179,7 @@ define(['jquery',
                 }
             }
         }
+
 
     });
 

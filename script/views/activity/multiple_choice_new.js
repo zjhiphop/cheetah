@@ -73,8 +73,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             audioPlayer_view.render({
                 containerId: 'au_launchBtn',
                 id: 'au_launchBtn_audio',
-                audioUrl: '/Juno/school/audios/5.1.1%201o3.4.mp3',
-                size: '50'
+                audioUrl: 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3'
             });
         }
     });
