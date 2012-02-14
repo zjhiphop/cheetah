@@ -9,15 +9,14 @@ define([
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
-  'views/modules/bottom_button',
   'collections/modules/option_box'],
 //@on
-function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, bb_view, opxes) {
+function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
     var Vertical_Question_View = Backbone.View.extend({
         template : vq_tpl,
         opx_con : "#ets-act-mc-form-options",
         initialize : function() {
-            this.model.bind('change', this.render, this);
+            this.model.bind('change:current', this.render, this);
             this.model.bind('destroy', this.remove, this);
 
             opxes.bind('add', this.addOne, this);
@@ -27,7 +26,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, bb_view, opxes)
         addOne : function(opx) {
             var view = new opx_view({
                 model : opx
-            });
+            }),data = this.model.toJSON(), _curr = data['current'];;
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
@@ -52,40 +51,15 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, bb_view, opxes)
             var compiledTemplate = $$.render(this.template, data);
             $(this.el).html(compiledTemplate);
             //load option box
-            _.each(data.Questions[current - 1].Options, function(opt) {
+            var sel=data.selection[current - 1];
+            _.each(data.Questions[current - 1].Options, function(opt,index) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
-                    type : data.boxType
+                    type : data.boxType,
+                    checked:sel&&~sel.indexOf(index)?true:false
                 }));
             });
 
-            //call bottom button module
-            bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
-                prevBtn: {
-                    show: true,
-                    text: data.Prev
-                },
-                nextBtn: {
-                    show: true,
-                    text: data.Next
-                }
-            },{
-                prevClick: _.bind(function() {
-                    var curr = Math.max(this.model.toJSON().current - 1, 1);
-                    this.model.set({
-                        "current" : curr
-                    });
-                }, this),
-                nextClick: _.bind(function() {
-                    var data=this.model.toJSON(),curr = Math.min(data.current + 1, data.total);
-                    if(curr===data.total){
-
-                    }
-                    this.model.set({
-                        "current" : curr
-                    });            
-                },this)
-            });
             return this;
         },
         clearOpts : function() {
@@ -93,6 +67,15 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, bb_view, opxes)
         },
         remove : function() {
             this.$el.remove();
+        },
+        setSelection : function() {
+            var sels = [], data = this.model.toJSON(), _curr = data['current'];
+            this.$el.find("input").each(function(index, item) {
+                if($(this)[0].checked) {
+                    sels.push(index);
+                }
+            });
+            this.model.attributes.selection[_curr - 1] = sels;
         }
     });
     return Vertical_Question_View;

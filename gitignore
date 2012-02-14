@@ -1,8 +1,0 @@
-*.log
-*.project
-*.swp
-*.js~
-test.js
-csslint-result.txt
-jslint-result.txt
-.settings/

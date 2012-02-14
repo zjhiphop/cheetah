@@ -1,4 +1,3 @@
-// Filename: views/projects/list
 //off
 define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player'],
 //on
@@ -52,19 +51,28 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
                 }
             }, {
                 prevClick : _.bind(function() {
-                    var curr = Math.max(this.model.toJSON().current - 1, 1);
+                    var _preCurr = this.model.toJSON().current;
+                    if(_preCurr === 1)
+                        return;
+                    console.log(_preCurr);
+                    var curr = Math.max(_preCurr - 1, 1);
+                    this.setSelection();
                     this.model.set({
                         "current" : curr
                     });
                 }, _vq_view),
                 nextClick : _.bind(function() {
-                    var data = this.model.toJSON(), curr = Math.min(data.current + 1, data.total);
+                    var data = this.model.toJSON();
+                    if(data.current === data.total)
+                        return;
+                    var curr = Math.min(data.current + 1, data.total);
+                    this.setSelection();
                     this.model.set({
                         "current" : curr
                     });
                 }, _vq_view)
             });
-            
+
             if(_.isFunction(next)) {
                 next();
             }
