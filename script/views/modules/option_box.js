@@ -27,7 +27,7 @@ define([
         toggleShow : function(e) {
             //@off
             if(~this._type.indexOf("radio")){
-                this.$label
+                this.$el.parent().find('label')
                 .removeClass(this._checkCls);
                 this.$el
                 .find(":checked")

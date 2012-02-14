@@ -4,13 +4,13 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         defaults : {
             content : "",
             type : "checkbox",            
-            _name:_.uuid('optbx_name')
+            _name:_.uuid('optbx_')
         },
         initialize : function(option) {
           var attr=this.attributes;
             _.extend(attr,option);
             if(!~attr.type.indexOf('radio')){
-              attr._name=_.uuid('optbx_name');
+              attr._name=_.uuid('optbx_');
             }
             attr._id=_.uuid('optbx');
         },

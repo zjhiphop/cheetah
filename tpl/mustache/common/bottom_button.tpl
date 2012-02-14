@@ -12,12 +12,10 @@
     </div>
     {{/nextBtn.show}}
 
-    {{#submitBtn.show}}
     <!--Submit button-->
-    <div class="ets-btn-submit {{#submitBtn.disable}}ets-btn-submit-disabled{{/submitBtn.disable}}">
+    <div class="ets-btn-submit {{#submitBtn.disable}}ets-btn-submit-disabled{{/submitBtn.disable}} {{^submitBtn.show}}ets-none{{/submitBtn.show}}">
         <span>{{submitBtn.text}}</span>
     </div>
-    {{/submitBtn.show}}
 
     <!--Question counter-->
     {{#questionCounter.show}}

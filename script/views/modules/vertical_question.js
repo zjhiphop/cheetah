@@ -26,7 +26,8 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
         addOne : function(opx) {
             var view = new opx_view({
                 model : opx
-            }),data = this.model.toJSON(), _curr = data['current'];;
+            }), data = this.model.toJSON(), _curr = data['current'];
+            ;
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
@@ -34,7 +35,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             this.clearOpts();
             //get data from model
             var data = this.model.toJSON();
-            current = parseInt(current) || data.current;
+            current = parseInt(current, 10) || data.current;
             //fix error data
             if(current > data.total) {
                 current = data.total;
@@ -51,17 +52,17 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             var compiledTemplate = $$.render(this.template, data);
             $(this.el).html(compiledTemplate);
             //load option box
-            var sel=data.selection[current - 1];
+            var sel = data.selection[current - 1];
             console.log(data.selection);
-            _.each(data.Questions[current - 1].Options, function(opt,index) {
+            _.each(data.Questions[current - 1].Options, function(opt, index) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
                     type : data.boxType,
-                    checked:sel&&~sel.indexOf(index)?true:false
+                    checked : sel && ~sel.indexOf(index) ? true : false
                 }));
             });
             return this;
-        },
+        },     
         clearOpts : function() {
             this.$el.find("li").remove();
         },
@@ -69,13 +70,18 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             this.$el.remove();
         },
         setSelection : function() {
-            var sels = [], data = this.model.toJSON(), _curr = data['current'];
+            var sels = [], data = this.model.toJSON(), _curr = data['current'], _attr = this.model.attributes;
             this.$el.find("input").each(function(index, item) {
                 if($(this)[0].checked) {
                     sels.push(index);
                 }
             });
-            this.model.attributes.selection[_curr - 1] = sels;
+            _attr.selection[_curr - 1] = sels;
+            _attr.result[_curr - 1] = (_.difference(data.rightAns[_curr - 1], sels)).length !== 0;
+        },
+        getScore : function() {
+            var data = this.model.toJSON();
+            return Math.round(_.compact(data.result).length*100 / data.total);
         }
     });
     return Vertical_Question_View;
