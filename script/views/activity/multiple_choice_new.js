@@ -1,7 +1,7 @@
 //off
-define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player'],
+define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player_controller'],
 //on
-function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer_view) {
+function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayerController) {
     var multiple_choice_new = Backbone.View.extend({
         el : $("#ets-act-multichoice"),
         initialize : function() {
@@ -88,11 +88,12 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             }
 
             // call audio player view
-            audioPlayer_view.render({
+            audioPlayerController({
                 containerId: 'au_launchBtn',
                 id: 'au_launchBtn_audio',
                 audioUrl: 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3',
-                size: '50'
+                size: '50',
+                display: 'left'
             });
         },
         checkDis : function(opr, curr, total) {

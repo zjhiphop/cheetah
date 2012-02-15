@@ -297,6 +297,12 @@ define(['jquery',
             _audio.bind('play', function() {
                 $target.addClass('act-player_pl_l').removeClass('act-player_pl_n');
             });
+
+
+            if($target.hasClass('act-player_pl_c') || $target.hasClass('act-player_pl_l')) {
+                this.findAudio()[0].pause();
+                this.clearProgressInterval();
+            }
         },
 
         findAudio: function() {
