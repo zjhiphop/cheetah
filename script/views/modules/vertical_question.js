@@ -4,8 +4,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'mustache',
-  'help/text!tpl/mustache/common/vertical_question.tpl',
+  'engine',
+  'help/text!tpl/underscore/common/vertical_question.tpl',
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
@@ -25,8 +25,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
         addOne : function(opx) {
             var view = new opx_view({
                 model : opx
-            }), data = this.model.toJSON(), _curr = data['current'];
-            ;
+            }), data = this.model.toJSON(), _curr = data.current;
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
@@ -50,7 +49,6 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             $(this.el).html(compiledTemplate);
             //load option box
             var sel = data.selection[current - 1];
-            console.log(data.selection);
             _.each(data.Questions[current - 1].Options, function(opt, index) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
@@ -61,14 +59,14 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             return this;
         },
         setSelection : function() {
-            var sels = [], data = this.model.toJSON(), _curr = data['current'], _attr = this.model.attributes;
+            var sels = [], data = this.model.toJSON(), _curr = data.current, _attr = this.model.attributes;
             this.$el.find("input").each(function(index, item) {
                 if($(this)[0].checked) {
                     sels.push(index);
                 }
             });
             _attr.selection[_curr - 1] = sels;
-            _attr.result[_curr - 1] = (_.difference(data.rightAns[_curr - 1], sels)).length === 0;
+            _attr.result[_curr - 1] = !(_.difference(data.rightAns[_curr - 1], sels)).length;
         },
         getScore : function() {
             var data = this.model.toJSON();

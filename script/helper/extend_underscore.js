@@ -32,11 +32,12 @@ define(function(require) {
                 view.render.apply(view, args);
             })
         },
-        cacheView:function(type,view){
-            if(typeof type!=="string") return;
+        cacheView : function(type, view) {
+            if( typeof type !== "string")
+                return;
             var _view = this.currView || (this.currView = {});
-            if(!_view[type]){
-              _view[type]=[];
+            if(!_view[type]) {
+                _view[type] = [];
             }
             _view[type].push(view);
         },
@@ -116,7 +117,8 @@ define(function(require) {
 
             // extend underscore itself if only one argument is passed
             if(length === i) {
-                target = this; --i;
+                target = this;
+                --i;
             }
 
             for(; i < length; i++) {
@@ -140,7 +142,9 @@ define(function(require) {
                                 clone = src && this.isPlainObject(src) ? src : {};
                             }
                             // Never move original objects, clone them
-                            target[name] = this.deepExtend(deep, clone, copy);
+                            target[name] = this.deepExtend(clone, copy);
+                            //this code has a bug which will extend array to
+                            // object
                             // Don't bring in undefined values
                         }
                         else
@@ -190,14 +194,16 @@ define(function(require) {
                 view.model.unbind();
             }
         },
-        globalDispose:function(){
-            var _view=this.currView,that=this;
-            if(!_view) return;
+        globalDispose : function() {
+            var _view = this.currView, that = this;
+            if(!_view)
+                return;
             //dispose activity,epaper,bottom_button view
-            that.each(_view, function(item,index) {
-              that.each(item,function(v,idx){
-                  that.dispose(v);  
-              });
+            that.each(_view, function(item, index) {
+                that.each(item, function(v, idx) {
+                    that.dispose(v);
+                    _view[index].splice(idx, 1);
+                });
             });
         }
     };

@@ -7,6 +7,7 @@ require.config({
         "tpl" : "tpl",
         "help" : "script/helper",
         "lib" : "script/lib",
+        "engine":"script/helper/tpl_engine",
         "backbone" : "script/lib/backbone/_backbone",
         "mustache" : "script/lib/mustache/_mustache",
         "modernizr" : "script/lib/modernizr/_modernizr",

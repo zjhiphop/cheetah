@@ -193,6 +193,7 @@ define([
                 }
             });
         },
+        tpl_engine:'underscore',
         render : function(act_id) {
             _.globalDispose();
             this.init(act_id);

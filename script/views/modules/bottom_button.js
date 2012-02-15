@@ -1,9 +1,9 @@
 define(['jquery',
 'underscore',
 'backbone',
-'mustache',
+'engine',
 'models/modules/bottom_button',
-'help/text!tpl/mustache/common/bottom_button.tpl'],function($,_,Backbone,$$,model,tpl) {
+'help/text!tpl/underscore/common/bottom_button.tpl'],function($,_,Backbone,$$,model,tpl) {
 
     var View = Backbone.View.extend({
         initialize: function() {
@@ -20,7 +20,7 @@ define(['jquery',
         render: function(el, data, events) {
             _.cacheView('bb',this);
             var viewData = (new model(data)).toJSON();
-            var template = $(this.el).addClass('ets-act-bottom-button ets-cf').append($$.to_html(tpl, viewData));
+            var template = $(this.el).addClass('ets-act-bottom-button ets-cf').append($$.render(tpl, viewData));
 
             if (typeof el === 'string') {
                 $(el).html(template);

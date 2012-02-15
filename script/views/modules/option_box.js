@@ -4,8 +4,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'mustache',
-  'help/text!tpl/mustache/common/option_box.tpl'
+  'engine',
+  'help/text!tpl/underscore/common/option_box.tpl'
 ], function($, _, Backbone,$$,template){
 //@on
     var optionBoxView = Backbone.View.extend({

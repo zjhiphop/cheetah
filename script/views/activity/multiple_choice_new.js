@@ -3,9 +3,9 @@
 define(['jquery', 
         'underscore', 
         'backbone', 
-        'mustache', 
+        'engine', 
         'models/activity/multiple_choice_new', 
-        'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 
+        'help/text!tpl/underscore/activity/multiple_choice_new.tpl', 
         'views/modules/vertical_question', 
         'models/modules/vertical_question', 
         'views/widget/epaper',
@@ -14,10 +14,10 @@ define(['jquery',
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
     var multiple_choice_new = Backbone.View.extend({
         tagName : 'div',
-        id:'ets-act-multichoice',
-        className:'ets-act-wrap',
+        id : 'ets-act-multichoice',
+        className : 'ets-act-wrap',
         initialize : function() {
-            _.cacheView('act',this);
+            _.cacheView('act', this);
         },
         render : function(data, next, viewMode, viewBox) {
             //load multiple_choice_new activity framework
@@ -74,7 +74,6 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                     that.checkDis('prev', _preCurr, _data.total);
                     if(_preCurr === 1)
                         return;
-                    console.log(_preCurr);
                     var curr = Math.max(_preCurr - 1, 1);
                     this.setSelection();
                     this.model.set({
@@ -97,7 +96,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                     alert('submit ' + json.jsonData.Activity.Id + ', score: ' + this.getScore());
                 }, _vq_view)
             });
-            
+
             if(_.isFunction(next)) {
                 next();
             }

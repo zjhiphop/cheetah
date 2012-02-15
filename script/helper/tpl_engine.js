@@ -1,26 +1,26 @@
-define(['require','jquery'],function(require,$) {
-    return function(type, tpl, data,cb) {
-        var type = type || "jtemplate";
-        switch(type) {
-            case "jtemplate":
-                var $ = require('jquery'), jtem = 'js/helper/order!lib/jtemplate', tem = $.createTemplateURL(tpl);
-                cb($.processTemplateToText(tem, data));
-                break;
-            case "mustache":
-                var Mustache = require('js/lib/mustache');
-                $.ajax({
-                    url : tpl,
-                    type:"GET",
-                    dataType:"json",
-                    complete:function(d){
-                      cb(Mustache.to_html(d.responseText,data));
-                    }
-                });
-                break;
-            case "coffeekup":
-                break;
-            default:
-                break;
+define(['require', 'jquery', 'js/app'], function(require, $, app) {
+    return {
+        render : function(tpl, data) {
+            var render;
+            type = app.tpl_engine;
+            switch(type) {
+                case "jtemplate":
+                    require('helpe/order!lib/jtemplate');
+                    var tem = $.createTemplateURL(tpl);
+                    return $.processTemplateToText(tem, data);
+                    break;
+                case "mustache":
+                    var $$ = require('mustache');
+                    return $$.render(tpl, data);
+                    break;
+                case "underscore":
+                    var _ = require('underscore');
+                    return _.template(tpl, data);
+                    break;
+                default:
+                    throw new Error('Template engine is not exists!')
+                    break;
+            }
         }
-    };
+    }
 });

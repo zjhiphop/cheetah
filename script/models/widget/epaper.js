@@ -1,5 +1,5 @@
 define(['jquery', 
-		'underscore',
+		  'underscore',
 	   	'backbone'], function($, _, Backbone) {
     var model = Backbone.Model.extend({
         initialize : function(options) {

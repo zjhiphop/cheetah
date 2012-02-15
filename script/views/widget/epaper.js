@@ -5,8 +5,8 @@
 define(['jquery', 
 'underscore', 
 'backbone', 
-'mustache', 
-'help/text!tpl/mustache/common/ets_epaper.tpl',
+'engine', 
+'help/text!tpl/underscore/common/ets_epaper.tpl',
 'models/widget/epaper', 
 'help/jquery.lionbars.0.3'],
 //@on
@@ -48,7 +48,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
         },
         
         setTemplate : function($root) {
-            var compiledTemplate = $$.to_html(this.template, this.defaultsSetting);
+            var compiledTemplate = $$.render(this.template, this.defaultsSetting);
             $root.html(compiledTemplate);
 
             $(this.el).find("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
