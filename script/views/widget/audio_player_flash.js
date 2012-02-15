@@ -2,11 +2,10 @@ define(['jquery',
 'underscore', 
 'backbone',
 'mustache',
-'modernizr',
 'lib/swfobject',
 'lib/json2',
 'help/text!tpl/mustache/common/audio_player_flash.tpl',
-'models/widget/audio_player'], function($, _, Backbone, $$, Modernizr, swfobjct, JSON, tpl, model) {
+'models/widget/audio_player'], function($, _, Backbone, $$, swfobjct, JSON, tpl, model) {
 
     var View = Backbone.View.extend({
         tagName: "div",
