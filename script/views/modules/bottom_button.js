@@ -18,14 +18,14 @@ define(['jquery',
         },
 
         render: function(el, data, events) {
+            _.cacheView('bb',this);
             var viewData = (new model(data)).toJSON();
-            
             var template = $(this.el).addClass('ets-act-bottom-button ets-cf').append($$.to_html(tpl, viewData));
 
             if (typeof el === 'string') {
-                $(el).append(template);
+                $(el).html(template);
             } else if(el instanceof jQuery) {
-                el.append(template);
+                el.html(template);
             }
 
             //console.log(events);

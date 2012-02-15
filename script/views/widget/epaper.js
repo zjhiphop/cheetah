@@ -1,21 +1,25 @@
 /*
  * this epaper widget is depand on jquery plugin lionbars.
  */
+//@off
 define(['jquery', 
 'underscore', 
 'backbone', 
 'mustache', 
 'help/text!tpl/mustache/common/ets_epaper.tpl',
 'models/widget/epaper', 
-'help/jquery.lionbars.0.3'], function($, _, Backbone, $$, epaper_tpl, model) {
+'help/jquery.lionbars.0.3'],
+//@on
+function($, _, Backbone, $$, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
-        el : '#ets-epaper',
-
+        tag : 'div',
+        id:'ets-epaper',
         template : epaper_tpl,
 
         initialize : function() {
             this.defaultsSetting = model.toJSON();
+            _.cacheView('epaper',this);
         },
         events : {
             'click .ets-epaper-btn-expand' : 'expandEpaper',
@@ -32,7 +36,7 @@ define(['jquery',
         render : function(opt) {
             _.extend(this.defaultsSetting, opt);
 
-            var $root = $(this.el);
+            var $root = this.$el;
             
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');

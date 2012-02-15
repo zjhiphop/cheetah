@@ -3,7 +3,7 @@ define(['jquery',
 	   	'backbone'], function($, _, Backbone) {
     var model = Backbone.Model.extend({
         initialize : function(options) {
-            this.attributes = _.extend(this.attributes, options);
+            this.attributes = _.deepExtend(this.attributes, options);
         },
         validate : function(options) {
 			// todo

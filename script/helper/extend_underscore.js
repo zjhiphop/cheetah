@@ -1,6 +1,7 @@
 /**
  * Window
  * @creator jade
+ * dependency requirejs
  */
 define(function(require) {
     /**
@@ -30,6 +31,14 @@ define(function(require) {
             require([views[viewType][viewName]], function(view) {
                 view.render.apply(view, args);
             })
+        },
+        cacheView:function(type,view){
+            if(typeof type!=="string") return;
+            var _view = this.currView || (this.currView = {});
+            if(!_view[type]){
+              _view[type]=[];
+            }
+            _view[type].push(view);
         },
         /**
          *  Generate Guid
@@ -122,7 +131,7 @@ define(function(require) {
                             continue;
                         }
                         // Recurse if we're merging plain objects or arrays
-                        if(deep && copy && ( this.isPlainObject(copy)|| ( copyIsArray = this.isArray(copy)) )) {
+                        if(deep && copy && (this.isPlainObject(copy) || ( copyIsArray = this.isArray(copy)) )) {
                             if(copyIsArray) {
                                 copyIsArray = false;
                                 clone = src && this.isArray(src) ? src : [];
@@ -155,6 +164,41 @@ define(function(require) {
             }
             for(var key in obj );
             return key === undefined || hasOwn.call(obj, key);
+        },
+        /**
+         *
+         * This object is solely responsible for managing the content
+         * of a specific DOM element, displaying what needs to be displayed
+         * and cleaning up anything that no longer needs to be there.
+         *
+         * dispose backbone views
+         * @param {Object} view is instance of backbone view
+         */
+        dispose : function(view) {
+            if(!view)
+                return;
+            //remove dom view
+            view.remove();
+            // unbind any events that our view triggers directly
+            view.unbind();
+            //unbind model events
+            if(view.onClose) {
+                view.onClose();
+            }
+            // unbind any events that our model triggers directly
+            if(view.model) {
+                view.model.unbind();
+            }
+        },
+        globalDispose:function(){
+            var _view=this.currView,that=this;
+            if(!_view) return;
+            //dispose activity,epaper,bottom_button view
+            that.each(_view, function(item,index) {
+              that.each(item,function(v,idx){
+                  that.dispose(v);  
+              });
+            });
         }
     };
     extend.prototype = {

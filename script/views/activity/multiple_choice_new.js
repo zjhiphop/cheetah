@@ -13,8 +13,11 @@ define(['jquery',
 //@on
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
     var multiple_choice_new = Backbone.View.extend({
-        el : $("#ets-act-multichoice"),
+        tagName : 'div',
+        id:'ets-act-multichoice',
+        className:'ets-act-wrap',
         initialize : function() {
+            _.cacheView('act',this);
         },
         render : function(data, next, viewMode, viewBox) {
             //load multiple_choice_new activity framework
@@ -28,6 +31,8 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
             _ans = [];
             //@on
             this.$el.html(compiledTemplate);
+            //add template to page
+            this.$el.appendTo(json.container);
             this.q_con = $(json.vq_container);
             //get right answer;
             _.map(_ques, function(vale, idx) {
@@ -92,7 +97,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                     alert('submit ' + json.jsonData.Activity.Id + ', score: ' + this.getScore());
                 }, _vq_view)
             });
-
+            
             if(_.isFunction(next)) {
                 next();
             }

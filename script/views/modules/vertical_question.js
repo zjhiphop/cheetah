@@ -12,13 +12,12 @@ define([
   'collections/modules/option_box'],
 //@on
 function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
-    var Vertical_Question_View = Backbone.View.extend({
+    var Vertical_Question_View =Backbone.View.extend({
         template : vq_tpl,
         opx_con : "#ets-act-mc-form-options",
         initialize : function() {
+            _.cacheView('vq',this);
             this.model.bind('change:current', this.render, this);
-            this.model.bind('destroy', this.remove, this);
-
             opxes.bind('add', this.addOne, this);
         },
         events : {
@@ -31,8 +30,6 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
-            //clear current options box view
-            this.clearOpts();
             //get data from model
             var data = this.model.toJSON();
             current = parseInt(current, 10) || data.current;
@@ -62,12 +59,6 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
                 }));
             });
             return this;
-        },     
-        clearOpts : function() {
-            this.$el.find("li").remove();
-        },
-        remove : function() {
-            this.$el.remove();
         },
         setSelection : function() {
             var sels = [], data = this.model.toJSON(), _curr = data['current'], _attr = this.model.attributes;
@@ -77,7 +68,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
                 }
             });
             _attr.selection[_curr - 1] = sels;
-            _attr.result[_curr - 1] = (_.difference(data.rightAns[_curr - 1], sels)).length !== 0;
+            _attr.result[_curr - 1] = (_.difference(data.rightAns[_curr - 1], sels)).length === 0;
         },
         getScore : function() {
             var data = this.model.toJSON();

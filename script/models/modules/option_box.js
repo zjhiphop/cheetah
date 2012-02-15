@@ -8,7 +8,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         },
         initialize : function(option) {
           var attr=this.attributes;
-            _.extend(attr,option);
+            _.deepExtend(attr,option);
             if(!~attr.type.indexOf('radio')){
               attr._name=_.uuid('optbx_');
             }

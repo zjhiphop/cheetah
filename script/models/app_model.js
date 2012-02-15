@@ -2,7 +2,7 @@
 define([
   'underscore',
   'backbone'
-], function(_, Backbone) {
+], function(_, Backbone,undef) {
   //@on
     var appModel = Backbone.Model.extend({
         defaults : {
