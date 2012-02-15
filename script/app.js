@@ -23,7 +23,8 @@ define([
                         "ImgUrl" : "",
                         "Pause" : "1",
                         "Title" : "请看地图，并找出不同建筑物和地方的位置。  点击正确的选项。",
-                        "VideoUrl" : ""
+                        "VideoUrl" : "",
+                        "PapContent":""
                     },
                     "GraMode" : "3",
                     "HasComSrc" : "1",
@@ -174,18 +175,22 @@ define([
                 'bb' : {
                     'container' : "#ets-act-ft",
                     'config' : {
-                       'skipBtn': {
-                         'show':true
-                       }
+                        'skipBtn' : {
+                            'show' : true
+                        }
                     },
                     'events' : {
                         'prevClick' : null,
                         'nextClick' : null,
-                        'submitClick' : null,
-                        'skipClick' : null
+                        'submitClick' : function(id, score, content, onSucceed, onFailed) {
+                            alert('submit score : id' + id + ' score:' + score);
+                        },
+                        'skipClick' : function(id) {
+                            alert('skip activity: ' + id);
+                        }
                     }
                 }
-            });            
+            });
         },
         render : function(act_id) {
             this.init(act_id);

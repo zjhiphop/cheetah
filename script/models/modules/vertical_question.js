@@ -2,7 +2,9 @@
 define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
     var vq_model = Backbone.Model.extend({
         defaults:{
-           selection:[]
+           selection:[],
+           result:[],
+           rightAns:[]
         },
         initialize : function() {
             var args=[].slice.call(arguments,0),that=this;

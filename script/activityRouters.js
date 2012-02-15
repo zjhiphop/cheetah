@@ -17,7 +17,5 @@ function(require, _, Backbone, app) {
             app.render(mode, type, id);
         }
     };
-
     return activityRouter;
-
 });
