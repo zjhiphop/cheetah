@@ -92,9 +92,6 @@ define(function(require) {
          */
         deepExtend : function(src) {
             var args = [].slice.call(arguments, 1), that = this;
-            args = this.map(args, function(arg) {
-                return that.deepClone(arg);
-            });
             args.unshift(true, {}, src);
             return this._extend.apply(this, args);
         },
