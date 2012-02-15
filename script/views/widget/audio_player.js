@@ -10,6 +10,7 @@ define(['jquery',
 'models/widget/audio_player'], function($, _, Backbone, $$, Modernizr, swfobjct, JSON, flash_tpl, html5_tpl, model) {
 
     var View = Backbone.View.extend({
+        tagName: "div",
         flashTemplate: flash_tpl,
         html5Template: html5_tpl,
 
@@ -70,6 +71,8 @@ define(['jquery',
                     }
                 });
             }
+
+            return this;
         },
 
 
@@ -193,8 +196,8 @@ define(['jquery',
             }
 
             var _global_audio = $("#act_global_audio");
-            if(_global_audio.lenght === 0) {
-                $("<video id='act_global_audio' width='0' height='0' controls='controls' ><source src='" + audioUrl + "' /></video>").appendTo('body');
+            if(_global_audio.length === 0) {
+                $("<video id='act_global_audio' width='0' height='0' controls='controls' ><source src='" + opt.audioUrl + "' /></video>").appendTo('body');
             }
             
             var compiledTemplate = $$.render(this.html5Template, {
@@ -203,7 +206,8 @@ define(['jquery',
                 src: null, //_audioUrl
                 hidesrc: _hidesrc
             });
-            $("#" + opt.containerId).html(compiledTemplate);
+            //$("#" + opt.containerId).html(compiledTemplate);
+            $(this.el).html(compiledTemplate);
             
             if(opt.times) {
                 var _commonAudio = $("#" + opt.containerId + " video");
@@ -246,7 +250,8 @@ define(['jquery',
             }
 
             var _onCompleteCallBack = null;
-            this._regesterPlayIcon(_id);
+
+            this.opt = opt;
         },
 
         getTime: function(id) {
@@ -259,29 +264,54 @@ define(['jquery',
                 }
             }
         },
+        events: {
+            "mouseover .act-player_icon": 'mouseOverIcon',
+            "mouseout .act-player_icon": 'mouseOutIcon',
+            "click .act-player_icon": 'clickIcon',
+        },
 
-        _regesterPlayIcon: function(id) {
-            $(id + " .act-player_icon").bind("click", function (event) {
-                //ET.School.UI.Common.Player._onPlayIconTouch(event, $(this), id);
+        mouseOverIcon: function(e) {
+            if ($(e.target).hasClass("act-player_pl_n")) {
+                $(e.target).addClass("act-player_pl_h");
+            }
+        },
+
+        mouseOutIcon: function(e) {
+            $(e.target).removeClass("act-player_pl_h");
+        },
+
+        clickIcon: function(e) {
+            e.preventDefault();
+
+            $target = $(e.target);
+            if($target.hasClass("act-player_pl_d")) {
+                return;
+            }
+
+            var _audio = this.findAudio();
+            _audio.unbind("playing");
+            _audio.bind("playing", function() {
+                $target.addClass('act-player_pl_l').removeClass('act-player_pl_c');
             });
-            $(id + " .act-player_icon").hover(function () {
-                //if ($(this).hasClass("act-player_pl_n")) {
-                    //$(this).addClass("act-player_pl_h");
-                //}
-                //ET.School.UI.Common.Player._onMouseOver(id);
-            }, function () {
-                //$(this).removeClass("act-player_pl_h");
-                //ET.School.UI.Common.Player._onMouseOut(id);
+            _audio.unbind('play');
+            _audio.bind('play', function() {
+                $target.addClass('act-player_pl_l').removeClass('act-player_pl_n');
             });
+        },
+
+        findAudio: function() {
+            var _global_audio = $('#act_global_audio');
+            var _url = $(this.opt.id).find('.act-hide_audio').html();
+            _global_audio.find('souce').remove();
+            return _global_audio;
         }
-
 
     });
 
     return {
         render : function(opt) {
             var view = new View();
-            view.render(opt);
+            $("#"+opt.containerId).html(view.render(opt).el)
         }
     };
 });
