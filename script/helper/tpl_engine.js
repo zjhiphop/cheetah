@@ -1,13 +1,14 @@
-define(['require', 'jquery', 'js/app'], function(require, $, app) {
+define(function(require) {
+    var app=require('js/app');
     return {
         render : function(tpl, data) {
             var render;
-            type = app.tpl_engine;
+            type = app.tpl.tpl_engine;
             switch(type) {
                 case "jtemplate":
-                    require('helpe/order!lib/jtemplate');
-                    var tem = $.createTemplateURL(tpl);
-                    return $.processTemplateToText(tem, data);
+                    var $j=require('jtemplate'),
+                    tem = $j.createTemplate(tpl,null,app.tpl.config);
+                    return $j.processTemplateToText(tem, data);
                     break;
                 case "mustache":
                     var $$ = require('mustache');

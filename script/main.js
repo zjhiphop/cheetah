@@ -10,6 +10,7 @@ require.config({
         "engine":"script/helper/tpl_engine",
         "backbone" : "script/lib/backbone/_backbone",
         "mustache" : "script/lib/mustache/_mustache",
+        "jtemplate" : "script/lib/jtemplate/_jtemplate",
         "modernizr" : "script/lib/modernizr/_modernizr",
         "underscore" : "script/lib/underscore/_underscore",
         "jquery" : "script/lib/jquery/_jquery",

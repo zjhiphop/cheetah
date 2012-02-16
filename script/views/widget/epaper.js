@@ -6,7 +6,7 @@ define(['jquery',
 'underscore', 
 'backbone', 
 'engine', 
-'help/text!tpl/underscore/common/ets_epaper.tpl',
+'help/text!tpl/jtemplate/common/ets_epaper.tpl',
 'models/widget/epaper', 
 'help/jquery.lionbars.0.3'],
 //@on

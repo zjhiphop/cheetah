@@ -60,32 +60,6 @@ define(function(require) {
             return prefix + extend.method._uuid++;
         },
         /**
-         * Deep clone Object
-         * @param {Object} source object
-         * @return {Object}
-         */
-        deepClone : function(a) {
-            var plainType = ['number', 'string'];
-            if(!a || ~plainType.indexOf( typeof a)) {
-                return a;
-            }
-            var refType = ['object', 'array', 'function', 'date'], f = function() {
-            };
-            f.prototype = a;
-            var o = new f();
-            for(var i in a) {
-                if(a.hasOwnProperty(i)) {
-                    if(~refType.indexOf( typeof a[i])) {
-                        o[i] = this.deepClone(a[i]);
-                    }
-                    else {
-                        o[i] = a[i];
-                    }
-                }
-            }
-            return o;
-        },
-        /**
          * Deep extend Object
          * @param {Object} source object
          * @return {Object}
@@ -202,6 +176,13 @@ define(function(require) {
                     _view[index].splice(idx, 1);
                 });
             });
+        },
+        log:function(msg){
+          if(window.console){
+            console.log(msg);
+          }else if(window.status){
+            window.status=msg;
+          }
         }
     };
     extend.prototype = {

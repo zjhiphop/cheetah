@@ -5,18 +5,18 @@ define([
   'underscore',
   'backbone',
   'engine',
-  'help/text!tpl/underscore/common/vertical_question.tpl',
+  'help/text!tpl/jtemplate/common/vertical_question.tpl',
   'models/modules/vertical_question',
   'models/modules/option_box',
   'views/modules/option_box',
   'collections/modules/option_box'],
 //@on
 function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
-    var Vertical_Question_View =Backbone.View.extend({
+    var Vertical_Question_View = Backbone.View.extend({
         template : vq_tpl,
         opx_con : "#ets-act-mc-form-options",
         initialize : function() {
-            _.cacheView('vq',this);
+            _.cacheView('vq', this);
             this.model.bind('change:current', this.render, this);
             opxes.bind('add', this.addOne, this);
         },
@@ -48,12 +48,13 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             var compiledTemplate = $$.render(this.template, data);
             $(this.el).html(compiledTemplate);
             //load option box
-            var sel = data.selection[current - 1];
-            _.each(data.Questions[current - 1].Options, function(opt, index) {
+            var sel = data.selection[current - 1] || [];
+            //notes:key is type of string,so it's need to convert type
+            _.each(data.Questions[current - 1].Options, function(opt, key) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
                     type : data.boxType,
-                    checked : sel && ~sel.indexOf(index) ? true : false
+                    checked : ~sel.indexOf(parseInt(key,10)) ? true : false
                 }));
             });
             return this;
@@ -70,7 +71,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
         },
         getScore : function() {
             var data = this.model.toJSON();
-            return Math.round(_.compact(data.result).length*100 / data.total);
+            return Math.round(_.compact(data.result).length * 100 / data.total);
         }
     });
     return Vertical_Question_View;

@@ -5,7 +5,7 @@ define([
   'underscore',
   'backbone',
   'engine',
-  'help/text!tpl/underscore/common/option_box.tpl'
+  'help/text!tpl/jtemplate/common/option_box.tpl'
 ], function($, _, Backbone,$$,template){
 //@on
     var optionBoxView = Backbone.View.extend({

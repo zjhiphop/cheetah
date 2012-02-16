@@ -3,7 +3,7 @@ define(['jquery',
 'backbone',
 'engine',
 'models/modules/bottom_button',
-'help/text!tpl/underscore/common/bottom_button.tpl'],function($,_,Backbone,$$,model,tpl) {
+'help/text!tpl/jtemplate/common/bottom_button.tpl'],function($,_,Backbone,$$,model,tpl) {
 
     var View = Backbone.View.extend({
         initialize: function() {
@@ -22,11 +22,7 @@ define(['jquery',
             var viewData = (new model(data)).toJSON();
             var template = $(this.el).addClass('ets-act-bottom-button ets-cf').append($$.render(tpl, viewData));
 
-            if (typeof el === 'string') {
-                $(el).html(template);
-            } else if(el instanceof jQuery) {
-                el.html(template);
-            }
+            $(el).html(template);
 
             //console.log(events);
             this.bindEvents(events);
