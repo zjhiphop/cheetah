@@ -7,7 +7,7 @@ define([
   'models/app_model',
   'views/app_view'
   //@on
-], function($, _, Backbone, model, view) {
+], function($, _, Backbone, model, view, undef) {
     var appController = {
         init : function(act_id) {
             var jsonData = {
@@ -24,7 +24,7 @@ define([
                         "Pause" : "1",
                         "Title" : "请看地图，并找出不同建筑物和地方的位置。  点击正确的选项。",
                         "VideoUrl" : "",
-                        "PapContent":""
+                        "PapContent" : ""
                     },
                     "GraMode" : "3",
                     "HasComSrc" : "1",
@@ -170,6 +170,7 @@ define([
                     'audio' : {}
                 },
                 'activity' : {
+                    'container' : '#ets-act-bd',
                     'jsonData' : jsonData
                 },
                 'bb' : {
@@ -192,7 +193,12 @@ define([
                 }
             });
         },
+        tpl:{
+          tpl_engine:'jtemplate',
+          config:{filter_data:false}
+        },        
         render : function(act_id) {
+            _.globalDispose();
             this.init(act_id);
             (new view({
                 model : this.model

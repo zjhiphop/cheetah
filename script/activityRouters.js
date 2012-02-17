@@ -6,7 +6,7 @@ define([
         'js/app'
         ],
         //@on
-function(require, _, Backbone, app) {
+function(require, _, Backbone, app,base_view) {
     var activityRouter = {
         //multiple_choice_new
         routes : {

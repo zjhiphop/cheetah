@@ -4,16 +4,15 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'mustache',
   'models/app_model'
-], function($, _, Backbone,$$,model){
+], function($, _, Backbone,model){
   //@on
     var appView = Backbone.View.extend({
         el : $('#ets-activity'),
         intialize : function() {
         },
         render : function(mode, type, id) {
-            var data = this.model.toJSON();
+            var data = this.model.toJSON(), that = this;
             this.loadActivity(data, function() {
                 //load epaper
                 _.viewWrapper("wid:epaper", data.comsrc.epaper, function() {
@@ -22,7 +21,6 @@ define([
                         this.setTemplate(this.$el);
                     }
                 });
-                
                 //load bottom_botton
                 _.viewWrapper("mod:bb", data.bb.container, data.bb.config, data.bb.events);
             });
@@ -32,11 +30,12 @@ define([
             //get activity type
             var type = this._getActivityType(data.activity.jsonData);
             //load view
-            if(!type){
-              this.$el.append("Not implements!");
-            }else{
-              _.viewWrapper("act:"+type, data.activity, next);  
-            }            
+            if(!type) {
+                this.$el.append("Not implements!");
+            }
+            else {
+                _.viewWrapper("act:" + type, data.activity, next);
+            }
         },
         loadComsrc : function(data) {
             //load header
@@ -45,7 +44,7 @@ define([
         _getActivityType : function(data) {
             var template_id = parseInt(data.Activity['Template_id']);
             if(!template_id || template_id > 32) {
-                return ;
+                return;
             }
             if(template_id <= 11) {
                 switch (template_id) {
@@ -79,7 +78,7 @@ define([
                             return 'FlashCard_Excise';
                         }
                     default:
-                        return ;
+                        return;
                 }
             }
             if(template_id <= 20) {
@@ -87,13 +86,17 @@ define([
                     case 12:
                         return 'Grouping';
                     case 13:
-                        var type_mode=parseInt(data.Activity.TypMode);
-                        if(type_mode===2){
-                          return 'TypingGapFill';
-                        }else if(type_mode===3){
-                          return 'TypingTable';
-                        }else if(type_mode===1){
-                          return 'TypingParagraph';
+                        var type_mode = parseInt(data.Activity.TypMode);
+                        if(type_mode === 2) {
+                            return 'TypingGapFill';
+                        }
+                        else
+                        if(type_mode === 3) {
+                            return 'TypingTable';
+                        }
+                        else
+                        if(type_mode === 1) {
+                            return 'TypingParagraph';
                         }
                     case 14:
                         return 'TextSelectSingle';
@@ -132,7 +135,7 @@ define([
                     case 32:
                         return 'VideoRoleplay';
                     default:
-                        return ;
+                        return;
                 }
             }
         }

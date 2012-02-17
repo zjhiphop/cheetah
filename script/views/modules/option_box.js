@@ -4,8 +4,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'mustache',
-  'help/text!tpl/mustache/common/option_box.tpl'
+  'engine',
+  'help/text!tpl/jtemplate/common/option_box.tpl'
 ], function($, _, Backbone,$$,template){
 //@on
     var optionBoxView = Backbone.View.extend({
@@ -13,6 +13,9 @@ define([
         template : template,
         events : {
             "click input" : "toggleShow"
+        },
+        initialize:function(){
+          _.cacheView('opx',this);
         },
         render : function() {
             var data=this.model.toJSON(),compiledTemplate = $$.render(template,data );

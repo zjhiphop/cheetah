@@ -1,6 +1,7 @@
 /**
  * Window
  * @creator jade
+ * dependency requirejs
  */
 define(function(require) {
     /**
@@ -31,6 +32,15 @@ define(function(require) {
                 view.render.apply(view, args);
             })
         },
+        cacheView : function(type, view) {
+            if( typeof type !== "string")
+                return;
+            var _view = this.currView || (this.currView = {});
+            if(!_view[type]) {
+                _view[type] = [];
+            }
+            _view[type].push(view);
+        },
         /**
          *  Generate Guid
          * @return {String}
@@ -50,41 +60,12 @@ define(function(require) {
             return prefix + extend.method._uuid++;
         },
         /**
-         * Deep clone Object
-         * @param {Object} source object
-         * @return {Object}
-         */
-        deepClone : function(a) {
-            var plainType = ['number', 'string'];
-            if(!a || ~plainType.indexOf( typeof a)) {
-                return a;
-            }
-            var refType = ['object', 'array', 'function', 'date'], f = function() {
-            };
-            f.prototype = a;
-            var o = new f();
-            for(var i in a) {
-                if(a.hasOwnProperty(i)) {
-                    if(~refType.indexOf( typeof a[i])) {
-                        o[i] = this.deepClone(a[i]);
-                    }
-                    else {
-                        o[i] = a[i];
-                    }
-                }
-            }
-            return o;
-        },
-        /**
          * Deep extend Object
          * @param {Object} source object
          * @return {Object}
          */
         deepExtend : function(src) {
             var args = [].slice.call(arguments, 1), that = this;
-            args = this.map(args, function(arg) {
-                return that.deepClone(arg);
-            });
             args.unshift(true, {}, src);
             return this._extend.apply(this, args);
         },
@@ -107,7 +88,8 @@ define(function(require) {
 
             // extend underscore itself if only one argument is passed
             if(length === i) {
-                target = this; --i;
+                target = this;
+                --i;
             }
 
             for(; i < length; i++) {
@@ -122,7 +104,7 @@ define(function(require) {
                             continue;
                         }
                         // Recurse if we're merging plain objects or arrays
-                        if(deep && copy && ( this.isPlainObject(copy)|| ( copyIsArray = this.isArray(copy)) )) {
+                        if(deep && copy && (this.isPlainObject(copy) || ( copyIsArray = this.isArray(copy)) )) {
                             if(copyIsArray) {
                                 copyIsArray = false;
                                 clone = src && this.isArray(src) ? src : [];
@@ -131,7 +113,9 @@ define(function(require) {
                                 clone = src && this.isPlainObject(src) ? src : {};
                             }
                             // Never move original objects, clone them
-                            target[name] = this.deepExtend(deep, clone, copy);
+                            target[name] = this.deepExtend(clone, copy);
+                            //this code has a bug which will extend array to
+                            // object
                             // Don't bring in undefined values
                         }
                         else
@@ -155,6 +139,50 @@ define(function(require) {
             }
             for(var key in obj );
             return key === undefined || hasOwn.call(obj, key);
+        },
+        /**
+         *
+         * This object is solely responsible for managing the content
+         * of a specific DOM element, displaying what needs to be displayed
+         * and cleaning up anything that no longer needs to be there.
+         *
+         * dispose backbone views
+         * @param {Object} view is instance of backbone view
+         */
+        dispose : function(view) {
+            if(!view)
+                return;
+            //remove dom view
+            view.remove();
+            // unbind any events that our view triggers directly
+            view.unbind();
+            //unbind model events
+            if(view.onClose) {
+                view.onClose();
+            }
+            // unbind any events that our model triggers directly
+            if(view.model) {
+                view.model.unbind();
+            }
+        },
+        globalDispose : function() {
+            var _view = this.currView, that = this;
+            if(!_view)
+                return;
+            //dispose activity,epaper,bottom_button view
+            that.each(_view, function(item, index) {
+                that.each(item, function(v, idx) {
+                    that.dispose(v);
+                    _view[index].splice(idx, 1);
+                });
+            });
+        },
+        log:function(msg){
+          if(window.console){
+            console.log(msg);
+          }else if(window.status){
+            window.status=msg;
+          }
         }
     };
     extend.prototype = {

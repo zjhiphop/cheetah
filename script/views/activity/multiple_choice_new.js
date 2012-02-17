@@ -3,8 +3,11 @@ define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multipl
 //on
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayerController) {
     var multiple_choice_new = Backbone.View.extend({
-        el : $("#ets-act-multichoice"),
+        tagName : 'div',
+        id : 'ets-act-multichoice',
+        className : 'ets-act-wrap',
         initialize : function() {
+            _.cacheView('act', this);
         },
         render : function(data, next, viewMode, viewBox) {
             //load multiple_choice_new activity framework
@@ -18,6 +21,8 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             _ans = [];
             //@on
             this.$el.html(compiledTemplate);
+            //add template to page
+            this.$el.appendTo(json.container);
             this.q_con = $(json.vq_container);
             //get right answer;
             _.map(_ques, function(vale, idx) {
@@ -59,7 +64,6 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
                     that.checkDis('prev', _preCurr, _data.total);
                     if(_preCurr === 1)
                         return;
-                    console.log(_preCurr);
                     var curr = Math.max(_preCurr - 1, 1);
                     this.setSelection();
                     this.model.set({
