@@ -5,23 +5,12 @@ define(['jquery',
 'lib/swfobject',
 'lib/json2',
 'help/text!tpl/mustache/common/audio_player_html5.tpl',
-'models/widget/audio_player',
-'lib/jquery-ui'
-], function($, _, Backbone, $$, swfobjct, JSON, tpl, model) {
+'models/widget/audio_player'], function($, _, Backbone, $$, swfobjct, JSON, tpl, model) {
 
     var View = Backbone.View.extend({
         tagName: "div",
 
         template: tpl,
-
-        events: {
-            "mouseover .act-player_icon": 'mouseOverIcon',
-            "mouseout .act-player_icon": 'mouseOutIcon',
-            "click .act-player_icon": 'clickIcon',
-            "click .act-player_ps_close": 'clickCloseIcon',
-            "click .act-player_ps_total": 'clickProgressBar',
-            "click .act-player_ps_current": 'clickProgressBar'
-        },
 
         initialize: function() {
             this.model = new model;
@@ -66,7 +55,6 @@ define(['jquery',
                 callback: opt.onPlaycallback
             });
 
-
             this.setTemplate(opt);
 
             return this;
@@ -89,7 +77,7 @@ define(['jquery',
 
             var _global_audio = $("#act_global_audio");
             if(_global_audio.length === 0) {
-                $("<video id='act_global_audio' class='ets-hidden' width='0' height='0' controls='controls' ><source src='" + opt.audioUrl + "' /></video>").appendTo('body');
+                $("<video id='act_global_audio' width='0' height='0' controls='controls' ><source src='" + opt.audioUrl + "' /></video>").appendTo('body');
             }
 
             if(this.model.get('duration')["#" + opt.id] !== undef) {
@@ -126,8 +114,9 @@ define(['jquery',
             if(!opt.size) {
                 opt.size = "49";
             }
-            this.$(".act-player").addClass("act-player" + opt.size);
-            this.$(".act-player_icon").addClass("act-play_icon" + opt.size);
+            $("#" + opt.containerId + " .act-player").addClass("act-player" + opt.size);
+            $("#" + opt.containerId).find(".act-player_icon").addClass("act-play_icon" + opt.size);
+            $("#" + opt.containerId).append("&nbsp;");
             var _id = "#" + opt.id;
             if (!opt.display) {
                 opt.display = "show";
@@ -136,55 +125,127 @@ define(['jquery',
             this.model.attributes.display.push(_id + "_" + opt.display);
 
             if(opt.display && opt.display === "left") {
-                this.$(".act-player_ps_panel").addClass("act-player_ps_panel_left");
+                $(_id + " .act-player_ps_panel").addClass("act-player_ps_panel_left");
             } else {
                 if(opt.display === "hide") {
-                    this.$(".act-player_ps_panel").hide();
-                    this.$(".act-player_ps_panel *").hide();
+                    $(_id + " .act-player_ps_panel").hide();
+                    $(_id + " .act-player_ps_panel *").hide();
                 }
             }
 
             var _onCompleteCallBack = null;
 
             this.opt = opt;
-
-            this.registerDragable();
         },
 
-        registerDragable: function() {
+        events: {
+            "mouseover .act-player_icon": 'mouseOverIcon',
+            "mouseout .act-player_icon": 'mouseOutIcon',
+            "click .act-player_icon": 'clickIcon',
+            "click .act-player_ps_close": 'clickCloseIcon',
+            "click .act-player_ps_total": 'clickProgressBar',
+            "click .act-player_ps_current": 'clickProgressBar'
+        },
+
+        clickProgressBar: function(e) {
+            e.stopPropagation();
+            
             var that = this;
-            this.$(".act-player_ps_icon").draggable({
-                axis: 'x',
-                containment: "#" + that.opt.id + ' .act-player_ps_total',
-                start: function () {
-                    that.clearProgressInterval();
-                },
-                drag: function () {
-                    var _left = $(this).offset().left;
-                    var _width = that.getRelativePosition(_left, that.$(".act-player_ps_current"));
-                    that.updateProgressWidth(_width * that.model.get('progressWidth'));
-                    $("#act_global_audio")[0].currentTime = _width * (that.model.get('duration').id || 0);
-                },
-                stop: function () {
-                    that.setProgressInterval();
-                }
-            });
+            setTimeout(function () {
+                var _width = that.getRelativePosition(e.pageX, $("#" + that.opt.id + " .act-player_ps_current"));
+                that.updateProgressWidth(_width * that.progressWidth, "#" + that.opt.id);
+                $("#act_global_audio")[0].currentTime = _width * (that.model.get('duration').id || 0);
+            }, 50);
         },
 
-        findAudio: function() {
+        clickCloseIcon: function(e) {
+            $(e.target).parents(".act-player_ps_panel").fadeOut('slow');
+        },
+
+        mouseOverIcon: function(e) {
+            if ($(e.target).hasClass("act-player_pl_n")) {
+                $(e.target).addClass("act-player_pl_h");
+            }
+        },
+
+        mouseOutIcon: function(e) {
+            $(e.target).removeClass("act-player_pl_h");
+        },
+
+        clickIcon: function(e) {
+            e.preventDefault();
+            var that = this;
+
+            $target = $(e.target);
+            if($target.hasClass("act-player_pl_d")) {
+                return;
+            }
+
+            var _audio = this.findAudio($("#" + this.opt.id));
+            _audio.unbind("playing");
+            _audio.bind("playing", function() {
+                $target.removeClass('act-player_pl_l').addClass('act-player_pl_c');
+            });
+            _audio.unbind('play');
+            _audio.bind('play', function() {
+                $target.addClass('act-player_pl_l').removeClass('act-player_pl_n');
+            });
+
+            _audio.unbind("ended");
+            _audio.bind("ended", function() {
+                $("#" + that.opt.id + " .act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                $("#" + that.opt.id + " .act-player_ps_panel").fadeOut('slow');
+            });
+
+            if($target.hasClass('act-player_pl_c') || $target.hasClass('act-player_pl_l')) {
+                this.findAudio($("#" + this.opt.id))[0].pause();
+                this.clearProgressInterval();
+                $target.addClass('act-player_pl_n').removeClass('act-player_pl_c').removeClass('act-player_pl_l');
+                $('#' + this.opt.id + ' .act-player_ps_panel').fadeOut('show');
+            } else if($target.hasClass('act-player_pl_n')) {
+                //todo
+                //if (ET.School.UI.Common.Player.isRecording) {
+                    //if (ET.School.UI.Common.Touch.isiPad()) {
+                        //ET.NA.ASR.stopRecordingDelegate();
+                    //}
+                    //else {
+                        //ET.NA.ASR.stopRecording();
+                    //}
+                //}
+                var _id = this.opt.id;
+                var _onPlaycallback = this.getCallback(_id);
+                if (_onPlaycallback) {
+                    setTimeout(function () {
+                        _onPlaycallback(_id);
+                    }, 1);
+                }
+                var that = this;
+                setTimeout(function () {
+                    var _display = that.getDisplay("#" + _id);
+                    if (_display !== "hide") {
+                        $("#" + _id + " .act-player_ps_panel").fadeIn('slow');
+                    }
+                }, 1);
+                this.stopOthers(_id);
+                this.setStartTime('#' + this.opt.id);
+            }
+        },
+
+        findAudio: function($el) {
             var _global_audio = $('#act_global_audio');
-            var _url = this.$('.act-hide_audio').html();
+            var _url = $el.find('.act-hide_audio').html();
             _global_audio.find('souce').remove();
             return _global_audio;
         },
 
-        setStartTime: function() {
-            this.setStartTimeCallback();
+        setStartTime: function(id) {
+            this.setStartTimeCallback(id);
         },
 
-        setStartTimeCallback: function() {
-            var _times = this.getTime();
-            var _audio = this.findAudio();
+        setStartTimeCallback: function(id) {
+            var _id = id.substring(1, id.length);
+            var _times = this.getTime(_id);
+            var _audio = this.findAudio($(id));
             if (_times) {
                 var _startTime = _times[0].startTime;
                 var _endTime = _times[0].endTime;
@@ -194,7 +255,7 @@ define(['jquery',
                     }
                     else {
                         _audio[0].play();
-                        this.setProgressInterval();
+                        this.setProgressInterval(id);
                     }
                 }
                 else {
@@ -202,7 +263,7 @@ define(['jquery',
                     for (var i = 0; i < _times.length; i++) {
                         if (_times[i].status === 1) {
                             _audio[0].play();
-                            this.setProgressInterval();
+                            this.setProgressInterval(id);
                             _continue = true;
                             break;
                         }
@@ -211,13 +272,13 @@ define(['jquery',
                         this.setToStart(id, _audio[0], _startTime);
                     }
                 }
-                if (!this.$(".act-player_icon").hasClass("act-player_pl_c")) {
-                    this.$(".act-player_icon").addClass("act-player_pl_c");
+                if (!$(id + " .act-player_icon").hasClass("act-player_pl_c")) {
+                    $(id + " .act-player_icon").addClass("act-player_pl_c");
                 }
             }
             else {
-                if (this.$(".act-player_icon").hasClass("act-autoplay")) {
-                    this.$(".act-player_icon").removeClass("act-autoplay");
+                if ($(id + " .act-player_icon").hasClass("act-autoplay")) {
+                    $(id + " .act-player_icon").removeClass("act-autoplay");
                     _audio[0].load();
                 }
                 if (_audio.find("source").length === 0) {
@@ -230,15 +291,13 @@ define(['jquery',
                     _audio[0].load();
                 }        
                 this.hackForAudioPlayTimeout(_audio);
-                this.setProgressInterval();
+                this.setProgressInterval(id);
             }
 
         },
 
-        stopOthers: function() {
-            var _times = this.getTime();
-            var id = this.opt.id;
-
+        stopOthers: function(id) {
+            var _times = this.getTime(id);
             if (_times) {
                 var _playing = $(".act-player:not(#" + id + ") .act-player_pl_c");
                 if (_playing.length === 0) {
@@ -248,12 +307,12 @@ define(['jquery',
                     var _id = _playing.parent().attr("id");
                     _playing.nextAll(".act-player_ps_panel").hide();
                     _playing.removeClass("act-player_pl_c").addClass("act-player_pl_n");
-                    this.clearProgressInterval();
+                    this.clearProgressInterval("#" + _id);
                     return;
                 }
             }
             $(".act-player:not(#" + id + ")").each(function () {
-                var _audio = this.findAudio();
+                var _audio = this.findAudio($(this));
                 if (_audio.length > 0) {
                     if (_audio[0].buffered && _audio[0].buffered.length > 0 && !_audio[0].paused) {
                         var _id = $(this).attr("id");
@@ -261,17 +320,17 @@ define(['jquery',
                             _audio[0].currentTime = 0.01;
                         }
                         _audio[0].pause();
-                        this.clearProgressInterval();
-                        this.$(".act-player_ps_panel").hide();
-                        this.$(".act-player_icon").removeClass("act-player_pl_c").removeClass("act-player_pl_l").addClass("act-player_pl_n");
+                        this.clearProgressInterval("#" + _id);
+                        $(this).find(".act-player_ps_panel").hide();
+                        $(this).find(".act-player_icon").removeClass("act-player_pl_c").removeClass("act-player_pl_l").addClass("act-player_pl_n");
                         return;
                     }
-                    if (this.$(".act-player_icon").hasClass("act-player_pl_c")) {
-                        this.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                    if ($(this).find(".act-player_icon").hasClass("act-player_pl_c")) {
+                        $(this).find(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
                         return;
                     }
-                    if (this.$(".act-player_icon").hasClass("act-player_pl_l")) {
-                        this.$(".act-player_icon").removeClass("act-player_pl_l").addClass("act-player_pl_n");
+                    if ($(this).find(".act-player_icon").hasClass("act-player_pl_l")) {
+                        $(this).find(".act-player_icon").removeClass("act-player_pl_l").addClass("act-player_pl_n");
                         return;
                     }
                 }
@@ -279,36 +338,36 @@ define(['jquery',
 
         },
 
-        getCallback: function() {
+        getCallback: function(id) {
             var playCallbackFunction = this.model.get('onPlayCallbackFunction');
             var length = playCallbackFunction.length;
             for (var i = 0; i < length; i++) {
                 var temp = playCallbackFunction[i];
-                if( temp.id === this.opt.id) {
+                if( temp.id === id) {
                     return temp.callback;
                 }
             }
         },
 
-        getDisplay: function() {
+        getDisplay: function(id) {
             var _display = this.model.get('display');
             var _myDisplay = "auto";
             var lenght = _display.length - 1;
             for (var i = length; i >= 0; i--) {
                 var _displayItem = _display[i];
-                var _index = _displayItem.indexOf(this.opt.id);
+                var _index = _displayItem.indexOf(id);
                 if (_index !== -1) {
-                    _myDisplay = _displayItem.substring(this.opt.id.length + 2, _displayItem.length);
+                    _myDisplay = _displayItem.substring(id.length + 1, _displayItem.length);
                 }
             }
             return _myDisplay;
         },
 
-        getTime: function() {
+        getTime: function(id) {
             var _times = this.model.get('times');
             var length = _times.length;
             for (var i = 0; i < length; i++) {
-                if (_times[i].id === this.opt.id) {
+                if (_times[i].id === id) {
                     return _times[i].times;
                 }
             }
@@ -320,7 +379,7 @@ define(['jquery',
                     audio.currentTime = 0.01;
                 }
                 audio.play();
-                this.setProgressInterval();
+                this.setProgressInterval(id);
                 return;
             }
             if (audio.seekable === undefined || audio.seekable.length === 0) {
@@ -336,7 +395,7 @@ define(['jquery',
                 if (audio.seekable.end(0) > startTime) {
                     audio.currentTime = startTime;
                     audio.play();
-                    this.setProgressInterval();
+                    this.setProgressInterval(id);
                 }
                 else {
                     audio.currentTime = audio.seekable.end(0);
@@ -377,38 +436,48 @@ define(['jquery',
                 }
             }, 100);
         },
+        
+        setProgressInterval: function(id) {
+            var that = this;
+            $('#act_global_audio').unbind("timeupdate");
+            $('#act_global_audio').bind("timeupdate", function () { 
+                that.updatePlayProgress(id); 
+            });
+        },
 
-        updatePlayProgress: function() {
-            _times = this.getTime(),
+        updatePlayProgress: function(id) {
+            var _id = id.substring(1, id.length),
+            _times = this.getTime(_id),
             _audio = $('#act_global_audio')[0],
             _player = this.model.attributes;
             if (!_player.duration.id) {
                 _player.duration.id = _audio.duration;
             }
             if (!_times) {
-                if (this.$(".act-player_ps_panel").length === 0) {
-                    this.clearProgressInterval();
+                if ($(id + " .act-player_ps_panel").length === 0) {
+                    this.clearProgressInterval(id);
                     return;
                 }
-                var _progress = this.$(".act-player_ps_current");
+                var _progress = $(id + " .act-player_ps_current");
                 var _width = (_audio.currentTime / _player.duration.id) * (this.model.get('progressWidth'));
-                this.updateProgressWidth(_width);
+                this.updateProgressWidth(_width, id);
             } else {
-                this.changeTime(_audio);
+                this.changeTime(_audio, id);
             }
         },
 
-        updateProgressWidth: function(width) {
-            this.$(".act-player_ps_current").css("width", width + 10 + "px");
-            this.$(".act-player_ps_icon").css("left", width + 9 + "px");
+        updateProgressWidth: function(width, id) {
+            $(id + " .act-player_ps_current").css("width", width + 10 + "px");
+            $(id + " .act-player_ps_icon").css("left", width + 9 + "px");
         },
 
-        changeTime: function (audio) {
-            var _times = this.getTime();
+        changeTime: function (audio, id) {
+            var _id = id.substring(1, id.length);
+            var _times = this.getTime(_id);
             if (!_times) {
                 return;
             }
-            if (this.$(".act-player_pl_c").length === 0) {
+            if ($(id).find(".act-player_pl_c").length === 0) {
                 return;
             }
             if (_times.length === 1) {
@@ -416,8 +485,8 @@ define(['jquery',
                 if (audio.currentTime >= _endTime) {
                     audio.currentTime = _times[0].startTime;
                     audio.pause();
-                    this.clearProgressInterval();
-                    this.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                    this.clearProgressInterval(id);
+                    $(id + " .act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
                 }
             }
             else {
@@ -429,13 +498,13 @@ define(['jquery',
                         break;
                     }
                 }
-                var _callback = this.getCallback();
+                var _callback = this.getCallback(_id);
                 if (!_lastPlayingTime) {
                     _index = 0;
                     _lastPlayingTime = _times[0];
                     _lastPlayingTime.status = 1;
                     if (_callback) {
-                        _callback(0);
+                        _callback(_id, 0);
                     }
                 }
                 if (audio.currentTime >= _lastPlayingTime.endTime) {
@@ -444,14 +513,14 @@ define(['jquery',
                         audio.currentTime = _times[_index + 1].startTime;
                         _times[_index + 1].status = 1;
                         if (_callback) {
-                            _callback(_index + 1);
+                            _callback(_id, _index + 1);
                         }
                     }
                     else {
                         audio.currentTime = _times[0].startTime;
-                        this.clearProgressInterval();
+                        ET.School.UI.Common.Player._clearProgressInterval(id);
                         audio.pause();
-                        this.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                        $(id + " .act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
                     }
                 }
             }
@@ -461,115 +530,18 @@ define(['jquery',
             return Math.max(0, Math.min(1, (x - el.offset().left) / this.model.get('progressWidth')));
         },
 
-        resetProgressBarNIcon: function() {
-            this.$(".act-player_ps_current").width(0);
-            this.$(".act-player_ps_icon").css({left: 9});
-        },
-        
-        setProgressInterval: function() {
-            var that = this;
-            $('#act_global_audio').unbind("timeupdate");
-            $('#act_global_audio').bind("timeupdate", function () { 
-                that.updatePlayProgress(); 
-            });
-        },
-
-        clearProgressInterval: function() {
-            $('#act_global_audio').unbind("timeupdate");
-        },
-
-        // event handlers start 
-        clickProgressBar: function(e) {
-            e.stopPropagation();
-            
-            var that = this;
-            setTimeout(function () {
-                var _width = that.getRelativePosition(e.pageX, $("#" + that.opt.id + " .act-player_ps_current"));
-                that.updateProgressWidth(_width * that.progressWidth, "#" + that.opt.id);
-                $("#act_global_audio")[0].currentTime = _width * (that.model.get('duration').id || 0);
-            }, 50);
-        },
-
-        clickCloseIcon: function(e) {
-            $(e.target).parents(".act-player_ps_panel").fadeOut('slow');
-        },
-
-        mouseOverIcon: function(e) {
-            if ($(e.target).hasClass("act-player_pl_n")) {
-                $(e.target).addClass("act-player_pl_h");
-            }
-        },
-
-        mouseOutIcon: function(e) {
-            $(e.target).removeClass("act-player_pl_h");
-        },
-
-        clickIcon: function(e) {
-            e.preventDefault();
-            var that = this;
-
-            $target = $(e.target);
-            if($target.hasClass("act-player_pl_d")) {
-                return;
-            }
-
-            var _audio = this.findAudio();
-            _audio.unbind("playing");
-            _audio.bind("playing", function() {
-                $target.removeClass('act-player_pl_l').addClass('act-player_pl_c');
-            });
-            _audio.unbind('play');
-            _audio.bind('play', function() {
-                $target.addClass('act-player_pl_l').removeClass('act-player_pl_n');
-            });
-
-            _audio.unbind("ended");
-            _audio.bind("ended", function() {
-                that.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
-                that.$(".act-player_ps_panel").fadeOut('slow');
-            });
-
-            if($target.hasClass('act-player_pl_c') || $target.hasClass('act-player_pl_l')) {
-                this.findAudio()[0].pause();
-                this.clearProgressInterval();
-                $target.addClass('act-player_pl_n').removeClass('act-player_pl_c').removeClass('act-player_pl_l');
-                this.$('.act-player_ps_panel').fadeOut('show');
-            } else if($target.hasClass('act-player_pl_n')) {
-                //todo
-                //if (ET.School.UI.Common.Player.isRecording) {
-                    //if (ET.School.UI.Common.Touch.isiPad()) {
-                        //ET.NA.ASR.stopRecordingDelegate();
-                    //}
-                    //else {
-                        //ET.NA.ASR.stopRecording();
-                    //}
-                //}
-                
-                // reset progress bar and icon
-                this.resetProgressBarNIcon();
-                var _onPlaycallback = this.getCallback();
-                if (_onPlaycallback) {
-                    setTimeout(function () {
-                        _onPlaycallback();
-                    }, 1);
-                }
-                setTimeout(function () {
-                    var _display = that.getDisplay();
-                    if (_display !== "hide") {
-                        that.$(".act-player_ps_panel").fadeIn('slow');
-                    }
-                }, 1);
-                this.stopOthers();
-                this.setStartTime();
-            }
+        clearProgressInterval: function(id) {
         }
-        // event handlers end
     });
 
     return {
         render : function(opt) {
             var view = new View();
             $("#"+opt.containerId).html(view.render(opt).el)
+            view.render(opt);
         }
     };
 });
+
+
+
