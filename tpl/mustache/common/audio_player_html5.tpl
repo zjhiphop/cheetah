@@ -7,7 +7,7 @@
   <div class="act-player_ps_panel">
     <span class="act-player_ps_total"></span>
     <span class="act-player_ps_current"></span>
-    <span class="act-player_ps_icon" draggable="true"></span>
+    <span class="act-player_ps_icon"></span>
     <span class="act-player_ps_close"></span>
   </div>
   {{#src}}
