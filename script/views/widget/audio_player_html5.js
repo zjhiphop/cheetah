@@ -145,7 +145,7 @@ define(['jquery',
             "click .act-player_ps_close": 'clickCloseIcon',
             "click .act-player_ps_total": 'clickProgressBar',
             "click .act-player_ps_current": 'clickProgressBar'
-        }
+        },
 
         clickProgressBar: function(e) {
             e.stopPropagation();
@@ -174,6 +174,7 @@ define(['jquery',
 
         clickIcon: function(e) {
             e.preventDefault();
+            var that = this;
 
             $target = $(e.target);
             if($target.hasClass("act-player_pl_d")) {
@@ -183,13 +184,18 @@ define(['jquery',
             var _audio = this.findAudio($("#" + this.opt.id));
             _audio.unbind("playing");
             _audio.bind("playing", function() {
-                $target.addClass('act-player_pl_l').removeClass('act-player_pl_c');
+                $target.removeClass('act-player_pl_l').addClass('act-player_pl_c');
             });
             _audio.unbind('play');
             _audio.bind('play', function() {
                 $target.addClass('act-player_pl_l').removeClass('act-player_pl_n');
             });
 
+            _audio.unbind("ended");
+            _audio.bind("ended", function() {
+                $("#" + that.opt.id + " .act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                $("#" + that.opt.id + " .act-player_ps_panel").fadeOut('slow');
+            });
 
             if($target.hasClass('act-player_pl_c') || $target.hasClass('act-player_pl_l')) {
                 this.findAudio($("#" + this.opt.id))[0].pause();
@@ -522,6 +528,9 @@ define(['jquery',
 
         getRelativePosition: function(x, el) {
             return Math.max(0, Math.min(1, (x - el.offset().left) / this.model.get('progressWidth')));
+        },
+
+        clearProgressInterval: function(id) {
         }
     });
 
