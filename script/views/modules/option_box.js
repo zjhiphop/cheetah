@@ -15,7 +15,6 @@ define([
             "click input" : "toggleShow"
         },
         initialize:function(){
-          _.cacheView('opx',this);
         },
         render : function() {
             var data=this.model.toJSON(),compiledTemplate = $$.render(template,data );

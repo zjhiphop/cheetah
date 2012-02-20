@@ -16,8 +16,10 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
         template : vq_tpl,
         opx_con : "#ets-act-mc-form-options",
         initialize : function() {
-            _.cacheView('vq', this);
-            this.model.bind('change:current', this.render, this);
+            _.initView('vq', this);
+            this.model.bind('change:current', this.render, this);            
+            this.model.bind('destroy', this.destory, this);
+            opxes.reset();
             opxes.bind('add', this.addOne, this);
         },
         events : {
@@ -26,6 +28,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             var view = new opx_view({
                 model : opx
             }), data = this.model.toJSON(), _curr = data.current;
+            _.cacheView('vq_opx',view);
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
@@ -49,12 +52,14 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             $(this.el).html(compiledTemplate);
             //load option box
             var sel = data.selection[current - 1] || [];
+            //dispose opx first
+            _.dispose('vq_opx');
             //notes:key is type of string,so it's need to convert type
             _.each(data.Questions[current - 1].Options, function(opt, key) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
                     type : data.boxType,
-                    checked : ~sel.indexOf(parseInt(key,10)) ? true : false
+                    checked : ~_.indexOf(sel,parseInt(key,10)) ? true : false
                 }));
             });
             return this;

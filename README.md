@@ -57,3 +57,4 @@ TODO
                                      $el--reference to jQuery element
 6.how to test?  
 7.refactor code  
+8.object weak reference problem  

@@ -17,7 +17,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
         id : 'ets-act-multichoice',
         className : 'ets-act-wrap',
         initialize : function() {
-            _.cacheView('act', this);
+            _.initView('act', this);
         },
         render : function(data, next, viewMode, viewBox) {
             //load multiple_choice_new activity framework
@@ -43,6 +43,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                     }
                 })
             })
+
             //render vertical question
             var _vq_model = new vq_model(json.jsonData.Activity, {
                 Prev : "Prev",
@@ -56,9 +57,10 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
                 model : _vq_model
             })).render();
 
-            //cache small view in verticle question view
-            this.q_con.prepend(_vq_view.el);
+            //cache small view in vertical question view
+            this.q_con.prepend(_vq_view.el);            
             //render bottom_button
+            _.dispose('bb');
             bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
                 prevBtn : {
                     show : true,

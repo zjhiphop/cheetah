@@ -5,7 +5,7 @@ define([
   'underscore',
   'backbone',
   'models/app_model'
-], function($, _, Backbone,model){
+], function($, _, Backbone,model){   
   //@on
     var appView = Backbone.View.extend({
         el : $('#ets-activity'),

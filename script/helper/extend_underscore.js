@@ -39,7 +39,7 @@ define(function(require) {
             if(!_view[type]) {
                 _view[type] = [];
             }
-            _view[type].push(view);
+            _view[type][_view[type].length]=view;
         },
         /**
          *  Generate Guid
@@ -149,9 +149,10 @@ define(function(require) {
          * dispose backbone views
          * @param {Object} view is instance of backbone view
          */
-        dispose : function(view) {
-            if(!view)
+        _dispose : function(view) {
+            if(!view){
                 return;
+            }              
             //remove dom view
             view.remove();
             // unbind any events that our view triggers directly
@@ -163,19 +164,40 @@ define(function(require) {
             // unbind any events that our model triggers directly
             if(view.model) {
                 view.model.unbind();
-            }
+                view.model.destory&&view.model.destory();
+            }            
+        },
+        dispose : function(type) {
+            if(!this.currView||!this.currView[type]){
+              return;
+            } 
+            var _view=this.currView[type],that=this;
+            this.each(_view,function(v){
+              that._dispose(v);
+            })
+            
+            //remove reference
+            this.currView[type]=null;
+            //make ie release memory immediately
+            if(window.CollectGarbage){window.CollectGarbage();}
         },
         globalDispose : function() {
             var _view = this.currView, that = this;
-            if(!_view)
+            if(!_view){
                 return;
+            }              
             //dispose activity,epaper,bottom_button view
-            that.each(_view, function(item, index) {
+            this.each(_view, function(item, index) {
                 that.each(item, function(v, idx) {
-                    that.dispose(v);
-                    _view[index].splice(idx, 1);
+                    that._dispose(v);
+                    that.currView[index]=null;
+                    if(window.CollectGarbage){window.CollectGarbage();}
                 });
             });
+        },
+        initView:function(type,view){
+          this.dispose(type);
+          this.cacheView(type,view);
         },
         log:function(msg){
           if(window.console){
@@ -183,6 +205,13 @@ define(function(require) {
           }else if(window.status){
             window.status=msg;
           }
+        },
+        /*
+         * PreCache resourse by url. such as :img,flash
+         * @param {String} resourse url         
+         */
+        preCache:function(src){
+          (this._g||(this._g=new Image())).src=src;
         }
     };
     extend.prototype = {
