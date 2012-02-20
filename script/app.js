@@ -1,13 +1,10 @@
 // : app.js
 //@off
 define([
-  'jquery',
-  'underscore',
-  'backbone',
   'models/app_model',
   'views/app_view'
+], function(model, view) {
   //@on
-], function($, _, Backbone, model, view, undef) {
     var appController = {
         init : function(act_id) {
             var jsonData = {
