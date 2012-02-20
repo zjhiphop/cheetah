@@ -29,7 +29,7 @@
 
     {#if $T.prevBtn.show}
     <!--Back button-->
-    <div class="ets-btn-prev{#if $T.prevBtn.disable}ets-btn-prev-disabled{#/if} {#if $T.prevBtnAtRight}ets-reduce-right-margin{#/if}">
+    <div class="ets-btn-prev {#if $T.prevBtn.disable}ets-btn-prev-disabled{#/if} {#if $T.prevBtnAtRight}ets-reduce-right-margin{#/if}">
         <span>{$T.prevBtn.text}</span>
     </div>
     {#/if}

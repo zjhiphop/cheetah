@@ -54,6 +54,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
                 prevBtn : {
                     show : true,
+                    disable: true,
                     text : data.Prev
                 },
                 nextBtn : {
@@ -71,6 +72,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
                     this.model.set({
                         "current" : curr
                     });
+                    that.checkFirstQueston(curr);
                 }, _vq_view),
                 nextClick : _.bind(function() {
                     var _data = this.model.toJSON();
@@ -82,6 +84,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
                     this.model.set({
                         "current" : curr
                     });
+                    that.checkFirstQueston(curr);
                 }, _vq_view),
                 submitClick : _.bind(function() {
                     this.setSelection();
@@ -106,11 +109,17 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             if(opr === 'next' && (curr + 1 === total)) {
                 this.$el.find('.ets-btn-next').addClass('ets-none');
                 this.$el.find('.ets-btn-submit').removeClass('ets-none');
-            }
-            else
-            if(opr === 'prev' && (curr === total)) {
+            } else if(opr === 'prev' && (curr === total)) {
                 this.$el.find('.ets-btn-next').removeClass('ets-none');
                 this.$el.find('.ets-btn-submit').addClass('ets-none');
+            }
+        },
+        checkFirstQueston: function(curr) {
+            if(curr === 1) {
+                this.$el.find('.ets-btn-prev').addClass('ets-btn-prev-disabled');
+            }
+            if(curr > 1) {
+                this.$el.find('.ets-btn-prev').removeClass('ets-btn-prev-disabled');
             }
         }
     });
