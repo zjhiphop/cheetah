@@ -77,7 +77,7 @@ define(['jquery',
 
             var _global_audio = $("#act_global_audio");
             if(_global_audio.length === 0) {
-                $("<video id='act_global_audio' width='0' height='0' controls='controls' ><source src='" + opt.audioUrl + "' /></video>").appendTo('body');
+                $("<video id='act_global_audio' class='ets-none' width='0' height='0' controls='controls' ><source src='" + opt.audioUrl + "' /></video>").appendTo('body');
             }
 
             if(this.model.get('duration')["#" + opt.id] !== undef) {
