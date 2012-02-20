@@ -70,6 +70,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
             //call jquery plugin lionbars
             // if browser is not lower than IE9,
             // then use lionbars plugin
+            console.log(window.$ === $);
             if(!($.browser.msie && ($.browser.version || 0) < 9)) {
                 $("#ets-epaper-main").lionbars();
             }
