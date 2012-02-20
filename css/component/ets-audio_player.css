@@ -315,7 +315,7 @@
 
 .act-player_pl_l{background-position:-234px 0;}
 .act-player_pl_l img{width:41px!important;height:41px!important;display:block;position:relative;}
-.act-player_pl_l .act-player_loading{top:15px!important;left:15px!important;}
+.act-player_pl_l .act-player_loading{position: relative; top:15px!important;left:15px!important;}
 
 .act-player_icon42.act-player_pl_l{background-position:-200px 0;}
 .act-player_icon42.act-player_pl_l img{width:36px!important;height:36px!important;}
