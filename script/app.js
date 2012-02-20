@@ -21,7 +21,7 @@ define([
                         "Pause" : "1",
                         "Title" : "请看地图，并找出不同建筑物和地方的位置。  点击正确的选项。",
                         "VideoUrl" : "",
-                        "PapContent" : ""
+                        "PapContent" : '<div class="ep-blog" style="display: block; clear: both; font-size: 12px; font-family: Arial, Helvetica, sans-serif; color: #333; text-align: left;"> Blue Cruise Alaska</div>                                      <div class="ep-blog-content" style="clear: both; font-size: 14px; font-family: Georgia, "Times New Roman", Times, serif; color: #444; line-height: 1.5;"><p>Alaska is a land of xtremes and on our cruise you will see firsthand the spectacular flourish of nature and wildlife that is of unique to Alaska. Our ship will take you right up to the dazzling array of wild animals living on the untouched coastline of western Alaska. You will see bald eagles, dolphins, puffins and even bears and moose.</p><div class="ep-blog-photo" style="margin: 10px 0; text-align: center;"> <img src="imgs/temp-1.jpg" alt="Blue Cruise Alaska" />  </div> <p>Our cruise vessels are cosy and comfortable with excellent care taken to ensure your safety throughout the entire trip. Your captain will be attentive to your needs and will ensure that you have a smooth and exciting trip.</p><p> Our cruise will provide you with a trip like no other at an unmatched price. Our package includes all expenses, so there is no need to worry about extra charges along the way.</p> </div></div>'
                     },
                     "GraMode" : "3",
                     "HasComSrc" : "1",
@@ -152,13 +152,19 @@ define([
                     "xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance"
                 }
             };
+            //precache epaper imgs
+            var _eContent = jsonData.Activity.ComSrc.PapContent;
+            _eContent.replace(/img\s+src="([^"]+)/mg, function($$, $1) {
+              _.preCache($1);
+            });
+            
             //get activity data
             this.model = new model({
                 'template_id' : jsonData.Activity.Template_id,
                 'comsrc' : {
                     'content' : jsonData.Activity.ComSrc.Title,
                     'epaper' : {
-                        'epaper_content' : '<div id="lipsum">' + '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce adipiscing ultricies sem, vitae congue felis dictum hendrerit. Duis pretium quam risus, at sodales dui. Duis vehicula tristique erat, at dapibus enim rhoncus at. Morbi ut sem turpis, dapibus adipiscing quam. Vestibulum volutpat iaculis faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et lorem eu eros gravida ultrices.</p>' + '<p>Nunc tempor condimentum eros commodo fermentum. Donec adipiscing pharetra purus, sit amet dapibus tortor pretium sed. In accumsan commodo neque at vulputate. Sed in nulla a erat consequat hendrerit eu vel lorem. Nulla lacus enim, tempor nec vehicula nec, vestibulum laoreet tellus. Vivamus vehicula, risus nec varius adipiscing, turpis diam iaculis ante, id dignissim ligula velit quis lacus. Suspendisse arcu urna, tincidunt vitae accumsan eu, rutrum at ligula. Vestibulum et urna vel neque placerat iaculis eu vitae ipsum. Vivamus in lobortis diam. Nulla fringilla eleifend laoreet. Mauris pretium adipiscing nisi sed eleifend. Sed tristique felis vitae ante luctus condimentum. Vivamus id eros non eros laoreet viverra.</p>' + '<p>Duis mollis dui ac nisl commodo venenatis. Nunc in varius neque. Suspendisse dignissim accumsan elit. Praesent vitae nunc purus, convallis suscipit nisl. Nulla quis lacus leo. Vivamus hendrerit cursus elit, sit amet feugiat velit fermentum eget. Nam consequat neque ac lectus tincidunt ut fermentum neque varius. Nam porta lorem posuere turpis interdum sit amet facilisis tortor gravida. Duis non metus non nulla dignissim pellentesque ut quis mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>' + '<p>Sed feugiat eros sed sem placerat tincidunt. Fusce at semper massa. Etiam viverra gravida erat, ac posuere arcu pulvinar id. Aenean sed ultricies est. Morbi mollis, lorem sed mattis dictum, metus enim sollicitudin eros, id imperdiet lacus ante in libero. Donec ut tellus libero. In ac placerat sapien. Sed ut auctor eros. Donec sagittis, lacus nec viverra placerat, enim turpis imperdiet ligula, ac feugiat odio mi vitae tellus. Integer et bibendum erat. Duis nisl arcu, vestibulum tempor accumsan hendrerit, pulvinar sed velit. Fusce euismod elit vel orci adipiscing eu feugiat libero vulputate.</p>' + '<p> Cras eu luctus ligula. Nunc consectetur dolor sit amet leo dictum tincidunt. Fusce faucibus elementum molestie. Nulla sed risus quis est vehicula pretium dictum eget mi. Aenean vel elit dolor. Cras sit amet facilisis est. Proin semper imperdiet quam, eget congue massa auctor ut. Vivamus ipsum nisl, facilisis in porta quis, commodo non massa. Fusce cursus, nisi dapibus gravida ultrices, est diam adipiscing sem, in ultrices sapien neque id massa.</p></div>',
+                        'epaper_content' : _eContent,
                         'act_box_fullwidth' : false,
                         'width' : 600,
                         'expandable' : false,
@@ -190,10 +196,12 @@ define([
                 }
             });
         },
-        tpl:{
-          tpl_engine:'jtemplate',
-          config:{filter_data:false}
-        },        
+        tpl : {
+            tpl_engine : 'jtemplate',
+            config : {
+                filter_data : false
+            }
+        },
         render : function(act_id) {
             _.globalDispose();
             this.init(act_id);

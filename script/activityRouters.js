@@ -3,10 +3,10 @@ define([
         'require',
         'underscore', 
         'backbone',
-        'js/app'
+        'help/order!js/app'
         ],
         //@on
-function(require, _, Backbone, app,base_view) {
+function(require, _, Backbone, app) {
     var activityRouter = {
         //multiple_choice_new
         routes : {

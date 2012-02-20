@@ -7,7 +7,7 @@ define(['jquery',
 
     var View = Backbone.View.extend({
         initialize: function() {
-
+          
         },
 
         events : {
@@ -92,7 +92,6 @@ define(['jquery',
             }
             return true;
         }
-
     });
 
     return {

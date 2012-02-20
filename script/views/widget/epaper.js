@@ -8,18 +8,17 @@ define(['jquery',
 'engine', 
 'help/text!tpl/jtemplate/common/ets_epaper.tpl',
 'models/widget/epaper', 
-'help/jquery.lionbars.0.3'],
+'lionbars'],
 //@on
 function($, _, Backbone, $$, epaper_tpl, model) {
 
     var Epaper_View = Backbone.View.extend({
-        tag : 'div',
         id:'ets-epaper',
         template : epaper_tpl,
 
         initialize : function() {
+            _.initView('epaper', this);
             this.defaultsSetting = model.toJSON();
-            _.cacheView('epaper',this);
         },
         events : {
             'click .ets-epaper-btn-expand' : 'expandEpaper',
@@ -67,7 +66,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
             } else {
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
             }
-            //call jquery plugin lionbars
+              //call jquery plugin lionbars
             // if browser is not lower than IE9,
             // then use lionbars plugin
             if(!($.browser.msie && ($.browser.version || 0) < 9)) {

@@ -10,10 +10,12 @@ require.config({
         "engine":"script/helper/tpl_engine",
         "backbone" : "script/lib/backbone/_backbone",
         "mustache" : "script/lib/mustache/_mustache",
-        "jtemplate" : "script/lib/jtemplate/_jtemplate",
         "modernizr" : "script/lib/modernizr/_modernizr",
         "underscore" : "script/lib/underscore/_underscore",
         "jquery" : "script/lib/jquery/_jquery",
+        /*jquery plugins*/
+        "jtemplate" : "script/lib/jtemplate/_jtemplate",
+        "lionbars" : "script/lib/lionbars/_lionbars",
         "models" : "script/models",
         "views" : "script/views",
         "collections" : "script/collections"
