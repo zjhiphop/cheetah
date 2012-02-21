@@ -1,17 +1,7 @@
-// Filename: views/projects/list
-//@off
-define(['jquery', 
-        'underscore', 
-        'backbone', 
-        'engine', 
-        'models/activity/multiple_choice_new', 
-        'help/text!tpl/jtemplate/activity/multiple_choice_new.tpl', 
-        'views/modules/vertical_question', 
-        'models/modules/vertical_question', 
-        'views/widget/epaper',
-        'views/modules/bottom_button'],
-//@on
-function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
+//off
+define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player_controller'],
+//on
+function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayerController) {
     var multiple_choice_new = Backbone.View.extend({
         tagName : 'div',
         id : 'ets-act-multichoice',
@@ -102,6 +92,15 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, epaper, bb_view) {
             if(_.isFunction(next)) {
                 next();
             }
+
+            // call audio player view
+            audioPlayerController({
+                containerId: 'au_launchBtn',
+                id: 'au_launchBtn_audio',
+                audioUrl: 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3',
+                size: '50',
+                display: 'left'
+            });
         },
         checkDis : function(opr, curr, total) {
             if(opr === 'next' && (curr + 1 === total)) {

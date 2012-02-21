@@ -17,6 +17,11 @@ define(['jquery',
             'click .ets-btn-skip': 'skipClkEvt'
         },
 
+        /*
+         * @el: element name, class name, id, or jquery object
+         * @data: object, key/value
+         * @events: object, key/function
+         */
         render: function(el, data, events) {
             _.cacheView('bb',this);
             var viewData = (new model(data)).toJSON();
@@ -24,7 +29,6 @@ define(['jquery',
 
             $(el).html(template);
 
-            //console.log(events);
             this.bindEvents(events);
 
             return this;

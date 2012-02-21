@@ -70,13 +70,16 @@
 #ets-act-mc-form-ft {
 	margin: 10px 12px;
 }
-#ets-act-mc-form-ft .ets-btn-prev{
+#ets-act-mc-form-ft .ets-btn-prev { 
 	float: left;
 }
-#ets-act-mc-form-ft .ets-btn-next{
+#ets-act-mc-form-ft .ets-btn-next {
 	float: right;
 }
-#ets-epaper-container{
+.ets-act-mc-checkbox {
+    cursor: pointer;
+}
+#ets-epaper-container {
   width:590px;
   height:100%;
   display: inline-block;

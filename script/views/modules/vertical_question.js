@@ -62,6 +62,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
                     checked : ~_.indexOf(sel,parseInt(key,10)) ? true : false
                 }));
             });
+
             return this;
         },
         setSelection : function() {
