@@ -17,7 +17,7 @@ define(function(require) {
         viewWrapper : function(view) {
             //@off
             var args = [].slice.call(arguments, 1),
-                views = require('views/view_controller'),
+                vctrl = require('views/view_controller'),
                 _temp=view.split(':'),
                 viewType = _temp[0],
                 viewName=_temp[1],
@@ -28,8 +28,8 @@ define(function(require) {
                   args.push(viewMode,viewBox);  
                 }                
           //@on
-            require([views[viewType][viewName]], function(view) {
-                view.render.apply(view, args);
+            require([vctrl[viewType][viewName]], function(v) {
+                v.render.apply(v, args);
             })
         },
         cacheView : function(type, view) {

@@ -23,22 +23,27 @@
     locale : "en-us",
     optimize : "uglify",
     uglify : {
-        toplevel : true,
-        ascii_only : true,
-        beautify : true
+        toplevel : false,
+        ascii_only : false,
+        beautify : false
     },
     optimizeCss : "standard",
     cssImportIgnore : null,
     inlineText : true,
     optimizeAllPluginResources : false,
-    findNestedDependencies : true,
+    findNestedDependencies : false,
     modules : [{
-        name : "script/lib/require"
-    }, {
-        name : "script/main"
-    }, {
-        name : "script/views/activity/multiple_choice_new",
-        exclude : ["jquery", "backbone", "underscore"]
+        name : "script/main",
+        //@off
+        include:["mustache","jtemplate","modernizr",
+                 "engine","help/text","lib/swfobject",
+                 "lib/json2","lib/jquery-ui",
+                 "views/modules/bottom_button","views/modules/option_box",
+                 "views/modules/vertical_question","views/widget/audio_player_controller",
+                 "views/widget/audio_player_flash","views/widget/audio_player_html5",
+                 "views/widget/epaper"
+                 ]
+        //@on
     }],
-    fileExclusionRegExp : /^\.|unittest|tpl\.js|app\.build\.js|package\.json|\.(exe|bat|coffee|less|styl|markdown|md|txt)$/
+    fileExclusionRegExp : /^\.|css_tpl|unittest|tpl\.js|solution|lab|app\.build\.js|package\.json|\.(exe|bat|coffee|less|styl|markdown|md|txt)$/
 })
