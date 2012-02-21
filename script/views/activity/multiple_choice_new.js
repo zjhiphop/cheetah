@@ -1,6 +1,15 @@
-//off
-define(['jquery', 'underscore', 'backbone', 'mustache', 'models/activity/multiple_choice_new', 'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 'views/modules/vertical_question', 'models/modules/vertical_question' , 'views/modules/bottom_button', 'views/widget/audio_player_controller'],
-//on
+//@off
+define(['jquery', 
+        'underscore',
+        'backbone', 
+        'engine', 
+        'models/activity/multiple_choice_new', 
+        'help/text!tpl/mustache/activity/multiple_choice_new.tpl', 
+        'views/modules/vertical_question', 
+        'models/modules/vertical_question' , 
+        'views/modules/bottom_button', 
+        'views/widget/audio_player_controller'],
+//@on
 function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayerController) {
     var multiple_choice_new = Backbone.View.extend({
         tagName : 'div',
@@ -32,8 +41,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
                         _ans[idx].push(index);
                     }
                 })
-            })
-
+            });
             //render vertical question
             var _vq_model = new vq_model(json.jsonData.Activity, {
                 Prev : "Prev",
@@ -48,7 +56,7 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
             })).render();
 
             //cache small view in vertical question view
-            this.q_con.prepend(_vq_view.el);            
+            this.q_con.prepend(_vq_view.el);
             //render bottom_button
             _.dispose('bb');
             bb_view.render($(this.el).find("#ets-act-mc-form-ft"), {
@@ -95,11 +103,11 @@ function($, _, Backbone, $$, model, tpl, vq_view, vq_model, bb_view, audioPlayer
 
             // call audio player view
             audioPlayerController({
-                containerId: 'au_launchBtn',
-                id: 'au_launchBtn_audio',
-                audioUrl: 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3',
-                size: '50',
-                display: 'left'
+                containerId : 'au_launchBtn',
+                id : 'au_launchBtn_audio',
+                audioUrl : 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3',
+                size : '50',
+                display : 'left'
             });
         },
         checkDis : function(opr, curr, total) {

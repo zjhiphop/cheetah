@@ -4,9 +4,9 @@ set PATH=%PATH%;C:/Program Files/nodejs;
 set jdt=\\cns-812\E$\Project\blitz\Lib\jsdoc_toolkit-2.4.0\
 set tpm=%jdt%templates/jsdoc/
 set doc=docs/
-set js=script/              
-rd  /s /q build                                              
-rd  /s /q docs   
+set js=script/           
+::rd  /s /q build                                              
+rd  /s /q %doc%   
 cd /d .         
 echo -----------------------------------------  Start works ----------------------------------------                                                        
 echo ----------------------  You must install java and node   --------------------------------------
@@ -18,10 +18,15 @@ echo build less ...
 call :less
 echo build stylus ...        
 call :stylus       
-echo start optimize js&css files ...                                                             
-call :optimize
+echo start optimize js/css files ...                                                             
+::call :optimize
 echo start generate docs ...                                                                     
 ::call :docs  
+::remove some dirs which is only used in developement environment
+cd /d build/css
+rd  /s /q tpl
+rd  /s /q solution
+rd  /s /q lab
 echo -----------------------------------------  End  works -----------------------------------------  
 pause  
 
