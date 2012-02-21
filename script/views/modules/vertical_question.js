@@ -17,7 +17,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
         opx_con : "#ets-act-mc-form-options",
         initialize : function() {
             _.initView('vq', this);
-            this.model.bind('change:current', this.render, this);            
+            this.model.bind('change:current', this.render, this);
             this.model.bind('destroy', this.destory, this);
             opxes.unbind();
             opxes.bind('add', this.addOne, this);
@@ -28,7 +28,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             var view = new opx_view({
                 model : opx
             }), data = this.model.toJSON(), _curr = data.current;
-            _.cacheView('vq_opx',view);
+            _.cacheView('vq_opx', view);
             this.$el.find(this.opx_con).append(view.render().el);
         },
         render : function(current) {
@@ -59,10 +59,9 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
                 opxes.add(new opx_model({
                     content : opt.Txt,
                     type : data.boxType,
-                    checked : ~_.indexOf(sel,parseInt(key,10)) ? true : false
+                    checked : ~_.indexOf(sel, parseInt(key, 10)) ? true : false
                 }));
             });
-
             return this;
         },
         setSelection : function() {
