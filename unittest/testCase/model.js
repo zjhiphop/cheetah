@@ -57,34 +57,51 @@ define(function(require) {
                 });
             });
             describe("Bottom button model", function() {
+
             });
             describe("Episode", function() {
-
                 beforeEach(function() {
                     this.server = sinon.fakeServer.create();
                 });
-               
-                it("should make the correct server request", function() {
-
-                    var episode = new Backbone.Model({
-                        title : "Hollywood - Part 2",
-                        url : "/episodes/1",
-                        urlRoot:""
+                afterEach(function() {
+                    this.server.restore();
+                });
+                it("should fire the change event", function() {
+                    var callback = sinon.spy();
+                    var Episode = Backbone.Model.extend({
+                        url : function() {
+                            return "/episode/" + this.id;
+                        }
                     });
 
-                    // Spy on jQuery's ajax method
-                    var spy = sinon.spy(jQuery, 'ajax');
+                    // Set how the fake server will respond
+                    // This reads: a GET request for /episode/123
+                    // will return a 200 response of type
+                    // application/json with the given JSON response body
+                    this.server.respondWith("GET", "/episode/123", [200, {
+                        "Content-Type" : "application/json"
+                    }, '{"id":123,"title":"Hollywood - Part 2"}']);
 
-                    // Save the model
-                    episode.save();
+                    var episode = new Episode({
+                        id : 123
+                    });
 
-                    // Spy was called
-                    expect(spy).toHaveBeenCalled();
-                    // Check url property of first argument
-                    expect(spy.getCall(0).args[0].url).toEqual("/episodes/1");
+                    // Bind to the change event on the model
+                    episode.bind('change', callback);
 
-                    // Restore jQuery.ajax to normal
-                    jQuery.ajax.restore();
+                    // makes an ajax request to the server
+                    episode.fetch();
+
+                    // Fake server responds to the request
+                    this.server.respond();
+
+                    // Expect that the spy was called with the new model
+                    expect(callback.called).toBeTruthy();
+                    expect(callback.getCall(0).args[0].attributes).toEqual({
+                        id : 123,
+                        title : "Hollywood - Part 2"
+                    });
+
                 });
             });
         }

@@ -160,7 +160,8 @@ body {
   left: 0px;
   z-index: 10;
 }
-.epaper .epaper_zoom .zoom_in, .epaper .epaper_zoom .zoom_out {
+.epaper .epaper_zoom .zoom_in,
+.epaper .epaper_zoom .zoom_out {
   float: left;
   height: 18px;
   display: block;
@@ -168,17 +169,20 @@ body {
   background: url("../../imgs/epaper_zoom.png") no-repeat 0 0;
   margin: 0 10px;
 }
-.epaper .epaper_zoom .zoom_in img, .epaper .epaper_zoom .zoom_out img {
+.epaper .epaper_zoom .zoom_in img,
+.epaper .epaper_zoom .zoom_out img {
   width: 18px;
   height: 18px;
 }
 .epaper .epaper_zoom .zoom_out {
   background-position: 0 -25px;
 }
-.epaper .epaper_zoom .zoom_in:hover, .epaper .epaper_zoom .zoom_in.touched {
+.epaper .epaper_zoom .zoom_in:hover,
+.epaper .epaper_zoom .zoom_in.touched {
   background-position: 0 -50px;
 }
-.epaper .epaper_zoom .zoom_out:hover, .epaper .epaper_zoom .zoom_out.touched {
+.epaper .epaper_zoom .zoom_out:hover,
+.epaper .epaper_zoom .zoom_out.touched {
   background-position: 0 -75px;
 }
 .epaper .epaper_zoom .audio_progressBar {
@@ -236,7 +240,8 @@ body {
   padding: 0;
   height: 34px;
 }
-.epaper a.alert_cls:link, .epaper a.alert_cls:visited {
+.epaper a.alert_cls:link,
+.epaper a.alert_cls:visited {
   display: block;
   float: left;
   width: 35px;

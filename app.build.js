@@ -1,33 +1,37 @@
-/**
- * Require build JS.
- */
-
-( {
+({
     appDir : ".",
     baseUrl : ".",
     paths : {
-        "jquery" : "script/lib/jquery/_jquery",
         "js" : "script",
         "css" : "css",
         "tpl" : "tpl",
         "help" : "script/helper",
         "lib" : "script/lib",
+        "engine":"script/helper/tpl_engine",
         "backbone" : "script/lib/backbone/_backbone",
         "mustache" : "script/lib/mustache/_mustache",
         "modernizr" : "script/lib/modernizr/_modernizr",
         "underscore" : "script/lib/underscore/_underscore",
+        "jquery" : "script/lib/jquery/_jquery",
+        "jtemplate" : "script/lib/jtemplate/_jtemplate",
+        "lionbars" : "script/lib/lionbars/_lionbars",
         "models" : "script/models",
         "views" : "script/views",
         "collections" : "script/collections"
     },
-    dir : "../build",
+    dir : "./build",
     locale : "en-us",
     optimize : "uglify",
+    findNestedDependencies : true,
+    optimizeCss:"standard",
+    cssImportIgnore : null,
     modules : [{
-        name : "script/helper/require-jquery"
+        name : "script/lib/require"
     }, {
-        name : "script/main",
-        exclude : ["jquery"]
+        name : "script/main"
+    },{
+      name:"script/views/activity/multiple_choice_new",
+      exclude:["jquery","backbone","underscore"]
     }],
     fileExclusionRegExp : /^.|app.build.js|.(exe|bat|coffee|less|styl|markdown)$/
 })
