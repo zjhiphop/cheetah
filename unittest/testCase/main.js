@@ -25,7 +25,9 @@ require.config({
     locale : "fr-fr"
 });
 
-require(['model', 'view', 'collection'], function(m, v, c) {
+require(['help/order!jquery', 
+  'help/order!underscore', 
+  'help/order!backbone','model', 'view', 'collection'], function($,_,bb,m, v, c) {
     m.run();
     v.run();
     c.run();
