@@ -213,12 +213,26 @@ define(function(require) {
         preCache:function(src){
             (this._g||(this._g=new Image())).src=src;
         },
+        /*
+         * Check whether it's in ipad
+         */
         ipad: function() {
             return !!navigator.userAgent.match(/ipad/i);
         },
+        /*
+         * Check whether it supports mp3
+         * @return {string} true, maybe, false
+         */
         mp3: function() {
-            var elem = document.createElement('audio');
-            return elem.canPlayType('audio/mpeg');
+            var bool = false,
+            elem = document.createElement('audio');
+            try {
+                if(bool = !!elem.canPlayType) {
+                    bool = elem.canPlayType('audio/mpeg');
+                }
+            } catch(e) {
+            }
+            return bool;
         }
 
     };
