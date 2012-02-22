@@ -65,6 +65,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
                 }
             } else {
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
+                $(this.defaultsSetting.container).css('float', 'left');
             }
               //call jquery plugin lionbars
             // if browser is not lower than IE9,

@@ -25,6 +25,7 @@
 #ets-epaper-main {
 	height: 100%;
 	overflow: auto;
+	overflow-x: hidden;
 	text-align: left;
 	background: #fff;
     border-radius: 10px 0 0 10px;
