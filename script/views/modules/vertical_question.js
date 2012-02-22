@@ -19,7 +19,7 @@ function($, _, Backbone, $$, vq_tpl, model, opx_model, opx_view, opxes) {
             _.initView('vq', this);
             this.model.bind('change:current', this.render, this);            
             this.model.bind('destroy', this.destory, this);
-            opxes.reset();
+            opxes.unbind();
             opxes.bind('add', this.addOne, this);
         },
         events : {
