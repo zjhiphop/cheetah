@@ -4,9 +4,9 @@ set PATH=%PATH%;C:/Program Files/nodejs;
 set jdt=\\cns-812\E$\Project\blitz\Lib\jsdoc_toolkit-2.4.0\
 set tpm=%jdt%templates/jsdoc/
 set doc=docs/
-set js=script/              
+set js=script/           
 rd  /s /q build                                              
-rd  /s /q docs   
+rd  /s /q %doc%   
 cd /d .         
 echo -----------------------------------------  Start works ----------------------------------------                                                        
 echo ----------------------  You must install java and node   --------------------------------------
@@ -18,7 +18,7 @@ echo build less ...
 call :less
 echo build stylus ...        
 call :stylus       
-echo start optimize js&css files ...                                                             
+echo start optimize js/css files ...                                                             
 call :optimize
 echo start generate docs ...                                                                     
 ::call :docs  
@@ -38,5 +38,5 @@ goto :eof
 for /r script %%i in (*.js) do if exist %%i java -jar %jdt%jsrun.jar %jdt%app/run.js  -t=%tpm% -d=%doc% %%i                         
 goto :eof
 :optimize
-node script/lib/r.js -o app.build.js   
+node script/lib/r.js -o app.build.js  
 goto :eof

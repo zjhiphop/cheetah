@@ -8951,7 +8951,7 @@ function (lang,   logger,   file,          parse,    optimize,   pragma,
 
 
             //All module layers are done, write out the build.txt file.
-            file.saveUtf8File(config.dir + "build.txt", buildFileContents);
+            //file.saveUtf8File(config.dir + "build.txt", buildFileContents);
         }
 
         //If just have one CSS file to optimize, do that here.

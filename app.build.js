@@ -1,4 +1,4 @@
-({
+( {
     appDir : ".",
     baseUrl : ".",
     paths : {
@@ -7,7 +7,7 @@
         "tpl" : "tpl",
         "help" : "script/helper",
         "lib" : "script/lib",
-        "engine":"script/helper/tpl_engine",
+        "engine" : "script/helper/tpl_engine",
         "backbone" : "script/lib/backbone/_backbone",
         "mustache" : "script/lib/mustache/_mustache",
         "modernizr" : "script/lib/modernizr/_modernizr",
@@ -22,16 +22,28 @@
     dir : "./build",
     locale : "en-us",
     optimize : "uglify",
-    findNestedDependencies : true,
-    optimizeCss:"standard",
+    uglify : {
+        toplevel : false,
+        ascii_only : false,
+        beautify : false
+    },
+    optimizeCss : "standard",
     cssImportIgnore : null,
+    inlineText : true,
+    optimizeAllPluginResources : false,
+    findNestedDependencies : false,
     modules : [{
-        name : "script/lib/require"
-    }, {
-        name : "script/main"
-    },{
-      name:"script/views/activity/multiple_choice_new",
-      exclude:["jquery","backbone","underscore"]
+        name : "script/main",
+        //@off
+        include:["mustache","jtemplate","modernizr",
+                 "engine","help/text","lib/swfobject",
+                 "lib/json2","lib/jquery-ui",
+                 "views/modules/bottom_button","views/modules/option_box",
+                 "views/modules/vertical_question","views/widget/audio_player_controller",
+                 "views/widget/audio_player_flash","views/widget/audio_player_html5",
+                 "views/widget/epaper"
+                 ]
+        //@on
     }],
-    fileExclusionRegExp : /^.|app.build.js|.(exe|bat|coffee|less|styl|markdown)$/
+    fileExclusionRegExp : /^\.|css_tpl|unittest|tpl\.js|solution|lab|app\.build\.js|package\.json|\.(exe|bat|coffee|less|styl|markdown|md|txt)$/
 })

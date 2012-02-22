@@ -21,7 +21,8 @@ require.config({
         "collections" : "script/collections"
     },
     waitSeconds : 15,
-    locale : "fr-fr"
+    locale : "fr-fr",
+    urlArgs:"site-version"
 });
 
 /*
