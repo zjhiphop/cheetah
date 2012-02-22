@@ -1,8 +1,10 @@
 define(['jquery', 
 'underscore', 
 'backbone',
-'mustache',
-'help/text!tpl/mustache/common/audio_player_html5.tpl',
+//'mustache',
+//'help/text!tpl/mustache/common/audio_player_html5.tpl',
+'engine',
+'help/text!tpl/jtemplate/common/audio_player_html5.tpl',
 'models/widget/audio_player',
 'lib/jquery-ui'], function($, _, Backbone, $$, tpl, model) {
 
@@ -234,7 +236,8 @@ define(['jquery',
 
         stopOthers: function() {
             var _times = this.getTime();
-            var id = this.opt.id;
+            id = this.opt.id,
+            that = this;
 
             if (_times) {
                 var _playing = $(".act-player:not(#" + id + ") .act-player_pl_c");
@@ -250,7 +253,7 @@ define(['jquery',
                 }
             }
             $(".act-player:not(#" + id + ")").each(function () {
-                var _audio = this.findAudio();
+                var _audio = that.findAudio();
                 if (_audio.length > 0) {
                     if (_audio[0].buffered && _audio[0].buffered.length > 0 && !_audio[0].paused) {
                         var _id = $(this).attr("id");
@@ -258,17 +261,17 @@ define(['jquery',
                             _audio[0].currentTime = 0.01;
                         }
                         _audio[0].pause();
-                        this.clearProgressInterval();
-                        this.$(".act-player_ps_panel").hide();
-                        this.$(".act-player_icon").removeClass("act-player_pl_c").removeClass("act-player_pl_l").addClass("act-player_pl_n");
+                        that.clearProgressInterval();
+                        that.$(".act-player_ps_panel").hide();
+                        that.$(".act-player_icon").removeClass("act-player_pl_c").removeClass("act-player_pl_l").addClass("act-player_pl_n");
                         return;
                     }
-                    if (this.$(".act-player_icon").hasClass("act-player_pl_c")) {
-                        this.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
+                    if (that.$(".act-player_icon").hasClass("act-player_pl_c")) {
+                        that.$(".act-player_icon").removeClass("act-player_pl_c").addClass("act-player_pl_n");
                         return;
                     }
-                    if (this.$(".act-player_icon").hasClass("act-player_pl_l")) {
-                        this.$(".act-player_icon").removeClass("act-player_pl_l").addClass("act-player_pl_n");
+                    if (that.$(".act-player_icon").hasClass("act-player_pl_l")) {
+                        that.$(".act-player_icon").removeClass("act-player_pl_l").addClass("act-player_pl_n");
                         return;
                     }
                 }

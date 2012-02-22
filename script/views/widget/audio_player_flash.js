@@ -1,10 +1,12 @@
 define(['jquery', 
 'underscore', 
 'backbone',
-'mustache',
+//'mustache',
+'engine',
 'lib/swfobject',
 'lib/json2',
-'help/text!tpl/mustache/common/audio_player_flash.tpl',
+//'help/text!tpl/mustache/common/audio_player_flash.tpl',
+'help/text!tpl/jtemplate/common/audio_player_flash.tpl',
 'models/widget/audio_player'], function($, _, Backbone, $$, swfobjct, JSON, tpl, model) {
 
     var View = Backbone.View.extend({
