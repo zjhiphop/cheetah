@@ -211,11 +211,18 @@ define(function(require) {
          * @param {String} resourse url         
          */
         preCache:function(src){
-          (this._g||(this._g=new Image())).src=src;
+            (this._g||(this._g=new Image())).src=src;
+        },
+        ipad: function() {
+            return !!navigator.userAgent.match(/ipad/i);
+        },
+        mp3: function() {
+            var elem = document.createElement('audio');
+            return elem.canPlayType('audio/mpeg');
         }
+
     };
     extend.prototype = {
-
     };
     return extend;
 });
