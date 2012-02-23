@@ -60,6 +60,7 @@
 #ets-epaper-handler {
 	width: 36px;
 	right: -36px;
+    position: absolute;
 }
 #ets-epaper-right-border {
 	width: 5px;
@@ -67,10 +68,13 @@
 }
 .ets-epaper-btn-expand,
 .ets-epaper-btn-collapse {
-	margin: 152px 0 0 0;
+	/*margin: 152px 0 0 0;*/
+    top: 50%;
+    margin-top: -50px;
 	width: 30px;
 	height: 100px;
 	cursor: pointer;
+    position: absolute;
 }
 .ets-epaper-btn-expand {
 	background: url(../../imgs/epaper-handler.png) -67px 42px no-repeat;

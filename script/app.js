@@ -167,7 +167,7 @@ define([
                         'epaper_content' : _eContent,
                         'act_box_fullwidth' : false,
                         'width' : 600,
-                        'expandable' : false,
+                        'expandable' : true,
                         'container' : "#ets-epaper-container"
                     },
                     'audio' : {}
