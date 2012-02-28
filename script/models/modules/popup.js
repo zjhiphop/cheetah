@@ -11,13 +11,17 @@ define(['jquery',
             noBtn: {
                 show: false,
                 disable: false,
-                text: 'Prev'
+                text: 'No'
             },
             yesBtn: {
                 show: false,
                 disable: false,
-                text: 'Next'
-            }
+                text: 'Yes'
+            },
+            content: "You have not finished the activity. Are you sure you want to skip and go to the next one?",
+            closeBtn: true,
+            width: 498,
+            height: 230
         },
 
         initialize: function() {

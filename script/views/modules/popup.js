@@ -6,31 +6,127 @@ define(['jquery',
 'help/text!tpl/mustache/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
 
     var View = Backbone.View.extend({
-        el: $('ets-activity'),
+        tagName: 'div',
 
         template: tpl,
 
         events: {
+            'click #act-popup_close': 'clickClose',
+            'click #act-popup_btnno': 'clickBtnNo',
+            'click #act-popup_btnyes': 'clickBtnYes',
+            'click #act-popup_btnskip': 'clickBtnSkip'
         },
 
         initialize: function() {
-          
+            _.initView('popup', this);
         },
 
-        render: function() {
-            console.log('render');
-            
-            $$.render(this.template, {});
+        render: function(root, data, events) {
+            this.model = new model(data);
+
+            var $container = $(this.el);
+                $root = $(root),
+                rootWidth = $root.innerWidth(), 
+                rootHeight = $root.innerHeight(),
+                popupWidth = this.model.get('width'),
+                popupHeight = this.model.get('height');
+
+            $container.attr('id', 'act-popup_repository');
+
+            var compliedTemplate = $$.render(this.template, this.model.toJSON());
+
+            $container.append(compliedTemplate);
+
+            $container.find('#act-popup').css({
+                'margin-left': - popupWidth/2,
+                'margin-top': - popupHeight/2,
+                'width': popupWidth,
+                'height': popupHeight
+            });
+
+            this.bindEvents(events);
+
+            window.popup = this;
 
             return this;
         },
 
+        bindEvents: function(events) {
+            if(typeof events === 'object') {
+                var props = ['closeClick', 'btnNoClick', 'btnYesClick', 'btnSkipClick'];
+                var that = this;
+                _.each(props, function(prop) {
+                    that[prop] = events[prop];
+                });
+            }
+        },
+
+        onClose: function() {
+            $(this.el).remove();
+        },
+
+        clickClose: function(e) {
+            if(_.isFunction(this.closeClick)) {
+                this.closeClick();
+            }
+
+            this.onClose();
+
+            return false;
+        },
+        
+        clickBtnNo: function(e) {
+            if(!this.checkDisabled(e)) {
+                return false;
+            }
+            
+            if(_.isFunction(this.btnNoClick)) {
+                this.btnNoClick();
+            }
+
+            return false;
+        },
+
+        clickBtnYes: function(e) {
+            if(!this.checkDisabled(e)) {
+                return false;
+            }
+            
+            if(_.isFunction(this.btnYesClick)) {
+                this.btnYesClick();
+            }
+            return false;
+        },
+
+        clickBtnSkip: function(e) {
+            if(!this.checkDisabled(e)) {
+                return false;
+            }
+            
+            if(_.isFunction(this.btnSkipClick)) {
+                this.btnYesClick();
+            }
+            return false;
+        },
+
+        checkDisabled: function(e) {
+            var el = e.target;
+            if(e.target.tagName !== 'A') {
+                el = e.target.parentNode;
+            }
+
+            if(el.className.indexOf('disabled') > -1) {
+                return false;
+            }
+            return true;
+        }
+
     });
 
     return {
-        render: function() {
+        render: function(root, data, events) {
             var view = new View();
-            view.render();
+            $(root).append(view.render(root, data, events).el);
         }
     };
 });

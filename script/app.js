@@ -191,8 +191,22 @@ define([
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
-                            //alert('skip activity: ' + id);
-                            console.log(popup);
+                            popup.render("#ets-activity",{
+                                noBtn: {
+                                    show: true
+                                },
+                                yesBtn: {
+                                    show: true 
+                                },
+                                closeBtn: true
+                            },{
+                                btnNoClick: function() {
+                                    alert('button no clicked');
+                                },
+                                btnYesClick: function() {
+                                    alert('button yes clicked');
+                                }
+                            });
                         }
                     }
                 }
