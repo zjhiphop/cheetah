@@ -22,7 +22,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
         },
         events : {
             'click .ets-epaper-btn-expand' : 'expandEpaper',
-            'click .ets-epaper-btn-collapse' : 'collaspeEaper'
+            'click .ets-epaper-btn-collapse' : 'collapseEaper'
         },
 
         /*
@@ -40,7 +40,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');
             if(!this.defaultsSetting.container){
-              this.setTemplate($root);  
+                this.setTemplate($root);  
             }           
             
             return this;
@@ -73,6 +73,8 @@ function($, _, Backbone, $$, epaper_tpl, model) {
             if(!($.browser.msie && ($.browser.version || 0) < 9)) {
                 $("#ets-epaper-main").lionbars();
             }
+
+            this.clickOutOfEpaperInner();
 		},
 
         setOverlay : function() {
@@ -86,7 +88,7 @@ function($, _, Backbone, $$, epaper_tpl, model) {
             });
             $('#ets-act-overlay').animate({opacity:0.5},400);
         },
-        collaspeEaper : function(e) {
+        collapseEaper : function(e) {
             $(this.el).animate({
                 left : -this.defaultsSetting.width
             }, 400, function() {
@@ -94,6 +96,14 @@ function($, _, Backbone, $$, epaper_tpl, model) {
                 $('#ets-epaper-outer').width('36px');
             });
             $('#ets-act-overlay').animate({opacity:0},400);
+        },
+
+        clickOutOfEpaperInner: function() {
+            $('body').bind('click', function(e) {
+                if($(e.target).closest('#ets-epaper-inner').length === 0) {
+                    $('.ets-epaper-btn-collapse').trigger('click');
+                }
+            });
         }
     });
 

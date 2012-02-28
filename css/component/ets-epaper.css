@@ -54,7 +54,6 @@
 #ets-epaper-right-border {
 	background: url(../../imgs/epaper-handler.png) 0 center no-repeat;
 	height: 100%;
-	position: absolute;
 	top: 0;
 }
 #ets-epaper-handler {

@@ -2,8 +2,9 @@
 //@off
 define([
   'models/app_model',
-  'views/app_view'
-], function(model, view) {
+  'views/app_view',
+  'views/modules/popup'
+], function(model, view, popup) {
   //@on
     var appController = {
         init : function(act_id) {
@@ -190,7 +191,8 @@ define([
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
-                            alert('skip activity: ' + id);
+                            //alert('skip activity: ' + id);
+                            console.log(popup);
                         }
                     }
                 }
