@@ -3,7 +3,8 @@ define(['jquery',
 'backbone',
 'mustache',
 'models/modules/popup',
-'help/text!tpl/mustache/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
+'help/text!tpl/jtemplate/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
+    "use strict"
 
     var View = Backbone.View.extend({
         tagName: 'div',
@@ -57,7 +58,7 @@ define(['jquery',
             $container.find(".act-popup_bg_topleft, .act-popup_bg_bottomleft").width(this.model.get('width') - 20);
         },
 
-        // bind customerized events
+        //bind customerized events
         bindEvents: function(events) {
             if(typeof events === 'object') {
                 var props = ['closeClick', 'btnNoClick', 'btnYesClick', 'btnSkipClick'];
@@ -69,9 +70,9 @@ define(['jquery',
         },
 
         onClose: function() {
-            // unbind all events
+            //unbind all events
             $(this.el).unbind();
-            // remove this dom
+            //remove this dom
             $(this.el).remove();
         },
 
