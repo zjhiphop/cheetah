@@ -5,8 +5,8 @@ set jdt=\\cns-812\E$\Project\blitz\Lib\jsdoc_toolkit-2.4.0\
 set tpm=%jdt%templates/jsdoc/
 set doc=docs/
 set js=script/           
-rd  /s /q build                                              
-rd  /s /q %doc%   
+if exist build rd  /s /q build                                              
+if exist %doc% rd  /s /q %doc%  
 cd /d .         
 echo -----------------------------------------  Start works ----------------------------------------                                                        
 echo ----------------------  You must install java and node   --------------------------------------

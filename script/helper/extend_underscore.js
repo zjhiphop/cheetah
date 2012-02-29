@@ -100,7 +100,7 @@ define(function(require) {
                         src = target[name];
                         copy = options[name];
                         // Prevent never-ending loop
-                        if(target === copy) {
+                        if(target === copy|| !this.has(options, name)) {//remove prototype extend
                             continue;
                         }
                         // Recurse if we're merging plain objects or arrays

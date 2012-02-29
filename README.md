@@ -58,3 +58,5 @@ TODO
 6.how to test?  
 7.refactor code  
 8.object weak reference problem  
+9.script# 中会扩展ie中dom所具有的行为，如attachEvent。如果用此类属性进行判断浏览器时，会适的其反  
+10.script#中扩展了Array 原型方法，而underscore在迭代数组元素的时候并没有判断，导致额外的元素操作。  

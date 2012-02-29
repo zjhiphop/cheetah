@@ -5,7 +5,6 @@ define(['jquery',
 'help/text!tpl/mustache/common/audio_player_html5.tpl',
 'models/widget/audio_player',
 'lib/jquery-ui'], function($, _, Backbone, $$, tpl, model) {
-
     var View = Backbone.View.extend({
         tagName: "div",
 
