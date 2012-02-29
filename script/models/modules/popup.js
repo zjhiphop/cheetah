@@ -21,7 +21,7 @@ define(['jquery',
             content: "You have not finished the activity. Are you sure you want to skip and go to the next one?",
             closeBtn: true,
             width: 498,
-            height: 230
+            height: 205
         },
 
         initialize: function() {

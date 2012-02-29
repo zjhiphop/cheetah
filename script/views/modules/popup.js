@@ -23,8 +23,9 @@ define(['jquery',
 
         render: function(root, data, events) {
             this.model = new model(data);
+            window.popupModel = this.model;
 
-            var $container = $(this.el);
+            var $container = $(this.el),
                 $root = $(root),
                 rootWidth = $root.innerWidth(), 
                 rootHeight = $root.innerHeight(),
@@ -37,6 +38,14 @@ define(['jquery',
 
             $container.append(compliedTemplate);
 
+            this.setStyle($container);
+
+            this.bindEvents(events);
+
+            return this;
+        },
+
+        setStyle: function($container) {
             $container.find('#act-popup').css({
                 'margin-left': - popupWidth/2,
                 'margin-top': - popupHeight/2,
@@ -44,13 +53,11 @@ define(['jquery',
                 'height': popupHeight
             });
 
-            this.bindEvents(events);
-
-            window.popup = this;
-
-            return this;
+            $container.find(".act-popup_bg_topleft, .act-popup_bg_topright").height(this.model.get('height') - 10);
+            $container.find(".act-popup_bg_topleft, .act-popup_bg_bottomleft").width(this.model.get('width') - 20);
         },
 
+        // bind customerized events
         bindEvents: function(events) {
             if(typeof events === 'object') {
                 var props = ['closeClick', 'btnNoClick', 'btnYesClick', 'btnSkipClick'];
@@ -62,6 +69,9 @@ define(['jquery',
         },
 
         onClose: function() {
+            // unbind all events
+            $(this.el).unbind();
+            // remove this dom
             $(this.el).remove();
         },
 

@@ -8,10 +8,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
 @cacheSvr: "http://test-ak.englishtown.com/";
+@localSvr: "";
 .bg-img(@img: "") {
     background-image :e(%("url(%s%s)", @cacheSvr, @img)) ; 
  }
-
+.bg-img2(@img: "") {
+    background-image :e(%("url(%s%s)", @localSvr, @img)) ; 
+ }
 
 #act-popup_repository{
     position:absolute;
@@ -32,15 +35,42 @@
     margin-left: -249px;
 }
 
-.act-popup_bg {
-    .bg-img("_imgs/ui/courseware/study/popup-v1-png8.png");
-    background-repeat: no-repeat;
-    height: 230px;
-    width: 498px;
-    /*margin-left: 0px;
-    margin-top: 40px;*/
-    float: left;
+.act-popup_inner {
 }
+.act-popup_bg_topleft {
+    height: 200px;
+    width: 478px;
+    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    float: left;
+    position:relative;
+}
+.act-popup_bg_topright {
+    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    width: 20px;
+    float: left;
+    height: 200px;
+}
+.act-popup_bg_bottomleft {
+    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 10px;
+    float: left;
+    width: 478px;
+}
+.act-popup_bg_bottomright {
+    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    height: 10px;
+    float: left;
+    width: 20px;
+}
+
 
 #act-popup_close {
     .bg-img("_imgs/ui/courseware/study/close-png8.png");
@@ -55,20 +85,17 @@
 
 #act-popup_btnno {
     display: block;
-    margin: 0 0 30px 20px;
+    margin: 0 0 0 20px;
     float: left;
 }
 
 #act-popup_btnyes {
     display: block;
-    margin: 0 20px 30px;
     float: right;
 }
 
 .act-popup_content {
-    height: 120px;
-    width: 440px;
-    margin: 20px auto;
+    margin: 20px 0 20px 20px;
     display: block;
     font-family: Helvetica, Arial, Verdana;
     font-size: 18px;
@@ -164,8 +191,13 @@
     left:-10px;
     position:absolute;
 }
+#act-popup_btns {
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+}
 #act-popup_btnskip {
     float: left;
-    margin: 0 0 30px 20px;
+    margin: 0 0 0 20px;
 }
 
