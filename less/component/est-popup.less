@@ -8,12 +8,9 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
 @cacheSvr: "http://test-ak.englishtown.com/";
-@localSvr: "";
+/*@cacheSvr: "#cacheSvr/";*/
 .bg-img(@img: "") {
     background-image :e(%("url(%s%s)", @cacheSvr, @img)) ; 
- }
-.bg-img2(@img: "") {
-    background-image :e(%("url(%s%s)", @localSvr, @img)) ; 
  }
 
 #act-popup_repository{
@@ -40,14 +37,14 @@
 .act-popup_bg_topleft {
     height: 200px;
     width: 478px;
-    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: left top;
     float: left;
     position:relative;
 }
 .act-popup_bg_topright {
-    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: right top;
     width: 20px;
@@ -55,7 +52,7 @@
     height: 200px;
 }
 .act-popup_bg_bottomleft {
-    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: left bottom;
     height: 10px;
@@ -63,7 +60,7 @@
     width: 478px;
 }
 .act-popup_bg_bottomright {
-    .bg-img2("_imgs/ui/courseware/study/popup-v2.png");
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: right bottom;
     height: 10px;

@@ -3,7 +3,7 @@ define(['jquery',
 'backbone',
 'mustache',
 'models/modules/popup',
-'help/text!tpl/jtemplate/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
+'help/text!tpl/mustache/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
     "use strict"
 
     var View = Backbone.View.extend({
@@ -26,12 +26,7 @@ define(['jquery',
             this.model = new model(data);
             window.popupModel = this.model;
 
-            var $container = $(this.el),
-                $root = $(root),
-                rootWidth = $root.innerWidth(), 
-                rootHeight = $root.innerHeight(),
-                popupWidth = this.model.get('width'),
-                popupHeight = this.model.get('height');
+            var $container = $(this.el);
 
             $container.attr('id', 'act-popup_repository');
 
@@ -47,6 +42,8 @@ define(['jquery',
         },
 
         setStyle: function($container) {
+            var popupWidth = this.model.get('width'),
+                popupHeight = this.model.get('height');
             $container.find('#act-popup').css({
                 'margin-left': - popupWidth/2,
                 'margin-top': - popupHeight/2,

@@ -1,6 +1,8 @@
 define(['jquery',
 'underscore',
 'backbone'],function($,_,Backbone) {
+    "use strict"
+
     var model = Backbone.Model.extend({
         defaults: {
             skipBtn: { 
