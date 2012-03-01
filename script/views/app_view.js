@@ -23,6 +23,8 @@ define([
                 });
                 //load bottom_botton
                 _.viewWrapper("mod:bb", data.bb.container, data.bb.config, data.bb.events);
+                //load popup
+                //_.viewWrapper("mod:pop", data.popup.container, data.popup.config, data.popup.events);
             });
             this.loadComsrc(data);
         },

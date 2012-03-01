@@ -191,14 +191,15 @@ define([
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
-                            popup.render("#ets-activity",{
+                            popup.init("#ets-activity",{
                                 noBtn: {
                                     show: true
                                 },
                                 yesBtn: {
                                     show: true 
                                 },
-                                closeBtn: true
+                                closeBtn: true,
+                                height: 400
                             },{
                                 btnNoClick: function() {
                                     alert('button no clicked');

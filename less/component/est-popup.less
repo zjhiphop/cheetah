@@ -22,7 +22,7 @@
 }
 
 #act-popup {
-    height: 230px;
+    /*height: 230px;*/
     width: 498px;
     z-index: 9000;
     position: absolute;
@@ -33,39 +33,32 @@
 }
 
 .act-popup_inner {
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-left: 10px;
 }
-.act-popup_bg_topleft {
-    height: 200px;
+.act-popup_inner .act-popup_bg_left {
     width: 478px;
     .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: left top;
-    float: left;
-    position:relative;
+    margin-left: -10px;
 }
-.act-popup_bg_topright {
-    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
-    background-repeat: no-repeat;
-    background-position: right top;
-    width: 20px;
-    float: left;
-    height: 200px;
-}
-.act-popup_bg_bottomleft {
-    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    height: 10px;
-    float: left;
-    width: 478px;
-}
-.act-popup_bg_bottomright {
+.act-popup_footer {
     .bg-img("_imgs/ui/courseware/study/popup-v2.png");
     background-repeat: no-repeat;
     background-position: right bottom;
-    height: 10px;
-    float: left;
-    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+.act-popup_footer .act-popup_bg_left {
+    width: 478px;
+    .bg-img("_imgs/ui/courseware/study/popup-v2.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 20px;
+    margin-left: -10px;
 }
 
 
@@ -92,7 +85,7 @@
 }
 
 .act-popup_content {
-    margin: 20px 0 20px 20px;
+    padding: 20px 0 20px 20px;
     display: block;
     font-family: Helvetica, Arial, Verdana;
     font-size: 18px;
@@ -189,9 +182,7 @@
     position:absolute;
 }
 #act-popup_btns {
-    position:absolute;
     width: 100%;
-    bottom: 0;
 }
 #act-popup_btnskip {
     float: left;

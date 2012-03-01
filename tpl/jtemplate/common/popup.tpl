@@ -1,17 +1,17 @@
     <div id="act-popup_shadow"></div>
-    <div id="act-popup" class="act-box ets-cf">
+    <div id="act-popup" class="act-box">
 
         {#if $T.closeBtn}
         <a href="#" id="act-popup_close"></a>
         {/endif}
 
-        <div class="act-popup_inner ets-cf">
-            <div class="act-popup_bg_topleft ets-cf">
+        <div class="act-popup_inner">
+            <div class="act-popup_bg_left">
                 <span class="act-popup_content">
                     {$T.content}
                 </span>
 
-                <div id="act-popup_btns">
+                <div id="act-popup_btns" class="ets-cf">
                     {#if $T.noBtn.show}
                     <a href="#" id="act-popup_btnno" class="ets-btn-no {#if $T.noBtn.disable}ets-btn-no-disabled{/endif}">
                         <span>{$T.noBtn.text}</span>
@@ -32,10 +32,9 @@
                 </div>
 
             </div>      
-            <div class="act-popup_bg_topright">
-            </div>
         </div>
 
-        <div class="act-popup_bg_bottomleft"></div>
-        <div class="act-popup_bg_bottomright"></div>
+        <div class="act-popup_footer">
+            <div class="act-popup_bg_left"></div>
+        </div>
     </div>

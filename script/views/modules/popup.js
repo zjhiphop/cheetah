@@ -18,25 +18,20 @@ define(['jquery',
             'click #act-popup_btnskip': 'clickBtnSkip'
         },
 
-        initialize: function() {
+        initialize: function(data, events) {
+            this.model = new model(data);
             _.initView('popup', this);
+
+            this.bindEvents(events);
         },
 
-        render: function(root, data, events) {
-            this.model = new model(data);
-            window.popupModel = this.model;
-
-            var $container = $(this.el);
-
-            $container.attr('id', 'act-popup_repository');
-
-            var compliedTemplate = $$.render(this.template, this.model.toJSON());
+        render: function() {
+            var $container = $(this.el).attr('id', 'act-popup_repository'),
+                compliedTemplate = $$.render(this.template, this.model.toJSON());
 
             $container.append(compliedTemplate);
 
             this.setStyle($container);
-
-            this.bindEvents(events);
 
             return this;
         },
@@ -44,6 +39,7 @@ define(['jquery',
         setStyle: function($container) {
             var popupWidth = this.model.get('width'),
                 popupHeight = this.model.get('height');
+
             $container.find('#act-popup').css({
                 'margin-left': - popupWidth/2,
                 'margin-top': - popupHeight/2,
@@ -51,8 +47,9 @@ define(['jquery',
                 'height': popupHeight
             });
 
-            $container.find(".act-popup_bg_topleft, .act-popup_bg_topright").height(this.model.get('height') - 10);
-            $container.find(".act-popup_bg_topleft, .act-popup_bg_bottomleft").width(this.model.get('width') - 20);
+            if(typeof popupHeight === 'number') {
+                this.$('.act-popup_content').height(popupHeight - 93);
+            }
         },
 
         //bind customerized events
@@ -132,9 +129,9 @@ define(['jquery',
     });
 
     return {
-        render: function(root, data, events) {
-            var view = new View();
-            $(root).append(view.render(root, data, events).el);
+        init: function(root, data, events) {
+            var view = new View(data, events);
+            $(root).append(view.render().el);
         }
     };
 });

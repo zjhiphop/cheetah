@@ -27,6 +27,16 @@ define([
                     'submitClick' : null,
                     'skipClick' : null
                 }
+            },
+            popup : {
+                'container' : "#ets-activity",
+                'config' : {},
+                'events' : {
+                    'clickClose' : null,
+                    'clickBtnNo' : null,
+                    'clickBtnYes' : null,
+                    'clickBtnSkip' : null
+                }
             }
         },
         initalize : function(opt) {
