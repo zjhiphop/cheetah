@@ -6,7 +6,7 @@ define(['jquery',
 'help/text!tpl/mustache/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
     "use strict"
 
-    var View = Backbone.View.extend({
+    var PopupView = Backbone.View.extend({
         tagName: 'div',
 
         template: tpl,
@@ -18,38 +18,48 @@ define(['jquery',
             'click #act-popup_btnskip': 'clickBtnSkip'
         },
 
-        initialize: function(data, events) {
-            this.model = new model(data);
-            _.initView('popup', this);
-
-            this.bindEvents(events);
+        initialize: function() {
+            this.model = new model();
+            this.model.bind('change', this.render, this);
         },
 
+
         render: function() {
+            // if root element is not specified, then return
+            if(this.model.get('root') === null) {
+                return;
+            }
+
+
             var $container = $(this.el).attr('id', 'act-popup_repository'),
                 compliedTemplate = $$.render(this.template, this.model.toJSON());
 
             $container.append(compliedTemplate);
 
+            $(this.model.get('root')).append(this.el);
             this.setStyle($container);
+
+            this.bindEvents(this.model.events);
 
             return this;
         },
 
-        setStyle: function($container) {
+        setStyle: function() {
             var popupWidth = this.model.get('width'),
                 popupHeight = this.model.get('height');
 
-            $container.find('#act-popup').css({
+            if(typeof popupHeight === 'number') {
+                this.$('.act-popup_content').height(popupHeight - 93);
+            } else {
+                popupHeight = this.$('#act-popup').height();
+            } 
+
+            this.$('#act-popup').css({
                 'margin-left': - popupWidth/2,
                 'margin-top': - popupHeight/2,
                 'width': popupWidth,
                 'height': popupHeight
             });
-
-            if(typeof popupHeight === 'number') {
-                this.$('.act-popup_content').height(popupHeight - 93);
-            }
         },
 
         //bind customerized events
@@ -64,6 +74,8 @@ define(['jquery',
         },
 
         onClose: function() {
+            //reset root
+            //this.model.set({root:null});
             //unbind all events
             $(this.el).unbind();
             //remove this dom
@@ -128,11 +140,13 @@ define(['jquery',
 
     });
 
-    return {
-        init: function(root, data, events) {
-            var view = new View(data, events);
-            $(root).append(view.render().el);
-        }
-    };
+    //return {
+        //init: function(root, data, events) {
+            //var view = new View(data, events);
+            //$(root).append(view.render().el);
+        //}
+    //};
+    //
+    return new PopupView();
 });
 

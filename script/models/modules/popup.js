@@ -5,8 +5,9 @@ define(['jquery',
 
     var model = Backbone.Model.extend({
         defaults: {
+            root: null,
             skipBtn: { 
-                show: false,
+                show: true,
                 disable: false,
                 text:'Skip Activity'
             },
@@ -16,9 +17,16 @@ define(['jquery',
                 text: 'No'
             },
             yesBtn: {
-                show: false,
+                show: true,
                 disable: false,
                 text: 'Yes'
+            },
+            clickClose: null,
+            clickBtnNo: function() {
+                alert('button no clicked');
+            },
+            clickBtnYes: function() {
+                alert('button yes clicked');
             },
             content: "You have not finished the activity. Are you sure you want to skip and go to the next one?",
             closeBtn: true,
