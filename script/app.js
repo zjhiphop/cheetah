@@ -191,8 +191,16 @@ define([
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
-                            popup.model.set({
-                                root: '#ets-activity'
+                            popup.set({
+                                guid: _.guid(),
+                                noBtn: {
+                                    show: true,
+                                    text: 'No'
+                                },
+                                yesBtn: {
+                                    show: true,
+                                    text: 'Yes'
+                                }
                             });
 
                         }

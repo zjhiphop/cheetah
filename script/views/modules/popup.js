@@ -12,34 +12,21 @@ define(['jquery',
         template: tpl,
 
         events: {
-            'click #act-popup_close': 'clickClose',
-            'click #act-popup_btnno': 'clickBtnNo',
-            'click #act-popup_btnyes': 'clickBtnYes',
-            'click #act-popup_btnskip': 'clickBtnSkip'
+            'click #act-popup_close': 'onClickClose',
+            'click #act-popup_btnno': 'onClickBtnNo',
+            'click #act-popup_btnyes': 'onClickBtnYes',
+            'click #act-popup_btnskip': 'onClickBtnSkip'
         },
 
         initialize: function() {
             this.model = new model();
-            this.model.bind('change', this.render, this);
+            this.model.bind('change', this.popup, this);
         },
 
 
         render: function() {
-            // if root element is not specified, then return
-            if(this.model.get('root') === null) {
-                return;
-            }
-
-
-            var $container = $(this.el).attr('id', 'act-popup_repository'),
-                compliedTemplate = $$.render(this.template, this.model.toJSON());
-
-            $container.append(compliedTemplate);
-
+            var $container = $(this.el).attr('id', 'act-popup_repository');
             $(this.model.get('root')).append(this.el);
-            this.setStyle($container);
-
-            this.bindEvents(this.model.events);
 
             return this;
         },
@@ -62,10 +49,24 @@ define(['jquery',
             });
         },
 
+        popup: function() {
+            var $container = $(this.el);
+            var compliedTemplate = $$.render(this.template, this.model.toJSON());
+
+            $container.html(compliedTemplate);
+            this.setStyle($container);
+            this.bindEvents(this.model.get('events'));
+            $container.show();
+        },
+
+        hide: function() {
+            $(this.el).hide();
+        },
+
         //bind customerized events
         bindEvents: function(events) {
             if(typeof events === 'object') {
-                var props = ['closeClick', 'btnNoClick', 'btnYesClick', 'btnSkipClick'];
+                var props = ['clickClose', 'clickBtnNo', 'clickBtnYes', 'clickBtnSkip'];
                 var that = this;
                 _.each(props, function(prop) {
                     that[prop] = events[prop];
@@ -74,54 +75,52 @@ define(['jquery',
         },
 
         onClose: function() {
-            //reset root
-            //this.model.set({root:null});
-            //unbind all events
-            $(this.el).unbind();
-            //remove this dom
+            this.model.unbind();
+            this.model.destory();
+            this.unbind();
             $(this.el).remove();
         },
 
-        clickClose: function(e) {
-            if(_.isFunction(this.closeClick)) {
-                this.closeClick();
+        onClickClose: function(e) {
+            if(_.isFunction(this.clickClose)) {
+                this.clickClose();
             }
 
-            this.onClose();
+            this.hide();
 
             return false;
         },
         
-        clickBtnNo: function(e) {
+        onClickBtnNo: function(e) {
             if(!this.checkDisabled(e)) {
                 return false;
             }
             
-            if(_.isFunction(this.btnNoClick)) {
-                this.btnNoClick();
+            if(_.isFunction(this.clickBtnNo)) {
+                this.clickBtnNo();
             }
 
             return false;
         },
 
-        clickBtnYes: function(e) {
+        onClickBtnYes: function(e) {
             if(!this.checkDisabled(e)) {
                 return false;
             }
             
-            if(_.isFunction(this.btnYesClick)) {
-                this.btnYesClick();
+            if(_.isFunction(this.clickBtnYes)) {
+                this.clickBtnYes();
             }
             return false;
         },
 
-        clickBtnSkip: function(e) {
+        onClickBtnSkip: function(e) {
             if(!this.checkDisabled(e)) {
                 return false;
             }
             
-            if(_.isFunction(this.btnSkipClick)) {
-                this.btnYesClick();
+            if(_.isFunction(this.clickBtnSkip)) {
+                this.clickBtnSkip();
             }
             return false;
         },
@@ -140,13 +139,6 @@ define(['jquery',
 
     });
 
-    //return {
-        //init: function(root, data, events) {
-            //var view = new View(data, events);
-            //$(root).append(view.render().el);
-        //}
-    //};
-    //
-    return new PopupView();
+    return (new PopupView()).render().model;
 });
 

@@ -9,6 +9,7 @@
 //////////////////////////////////////////////////////////////////////////////////////*/
 /*@cacheSvr: "http://test-ak.englishtown.com/";*/
 #act-popup_repository {
+    display: none;
   position: absolute;
   width: 100%;
   left: 0;
