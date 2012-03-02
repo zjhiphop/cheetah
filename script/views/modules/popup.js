@@ -75,9 +75,6 @@ define(['jquery',
         },
 
         onClose: function() {
-            this.model.unbind();
-            this.model.destory();
-            this.unbind();
             $(this.el).remove();
         },
 
@@ -139,6 +136,15 @@ define(['jquery',
 
     });
 
-    return (new PopupView()).render().model;
+    var popupView = (new PopupView()).render();
+
+    return {
+        show: function(key, value, options) {
+            popupView.model.set(key, value, options);
+        },
+        hide: function() {
+            popupView.hide();
+        }
+    };
 });
 

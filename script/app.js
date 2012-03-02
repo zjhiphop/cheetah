@@ -191,8 +191,8 @@ define([
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
-                            popup.set({
-                                guid: _.guid(),
+                            popup.show({
+                                guid: _.uuid('popup'),
                                 noBtn: {
                                     show: true,
                                     text: 'No'
@@ -202,7 +202,6 @@ define([
                                     text: 'Yes'
                                 }
                             });
-
                         }
                     }
                 }
