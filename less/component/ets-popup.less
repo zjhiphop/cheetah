@@ -7,8 +7,8 @@
 //  Description:   Defined the various button at the bottom for activity
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-@cacheSvr: "http://test-ak.englishtown.com/";
-/*@cacheSvr: "#cacheSvr/";*/
+/*@cacheSvr: "http://test-ak.englishtown.com/";*/
+@cacheSvr: "#cacheSvr/";
 .bg-img(@img: "") {
     background-image :e(%("url(%s%s)", @cacheSvr, @img)) ; 
  }
@@ -23,7 +23,6 @@
 }
 
 #act-popup {
-    /*height: 230px;*/
     width: 498px;
     z-index: 9000;
     position: absolute;

@@ -17,8 +17,6 @@
     height: 100%;
 }
 #act-popup {
-    /*height: 230px;*/
-
     width: 498px;
     z-index: 9000;
     position: absolute;

@@ -1,1 +1,178 @@
-lessc: ENOENT, no such file or directory 'D:\wamp\www\cheetah\less\component\ets-popup.less'
+/*///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Component Styles  
+//  File:          ets-popup
+/  Images:        						
+//  Dependencies:  ets-base
+//  Description:   Defined the various button at the bottom for activity
+//
+//////////////////////////////////////////////////////////////////////////////////////*/
+/*@cacheSvr: "http://test-ak.englishtown.com/";*/
+#act-popup_repository {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: none;
+}
+#act-popup {
+  width: 498px;
+  z-index: 9000;
+  position: absolute;
+  top: 50%;
+  margin-top: -115px;
+  left: 50%;
+  margin-left: -249px;
+}
+.act-popup_inner {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/popup-v2.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  margin-left: 10px;
+}
+.act-popup_inner .act-popup_bg_left {
+  width: 478px;
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/popup-v2.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin-left: -10px;
+}
+.act-popup_footer {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/popup-v2.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 20px;
+  margin-left: 10px;
+}
+.act-popup_footer .act-popup_bg_left {
+  width: 478px;
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/popup-v2.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  height: 20px;
+  margin-left: -10px;
+}
+#act-popup_close {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/close-png8.png);
+  height: 34px;
+  width: 34px;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: -17px;
+  right: -17px;
+}
+#act-popup_btnno {
+  display: block;
+  margin: 0 0 0 20px;
+  float: left;
+}
+#act-popup_btnyes {
+  display: block;
+  float: right;
+}
+.act-popup_content {
+  padding: 20px 0 20px 20px;
+  display: block;
+  font-family: Helvetica, Arial, Verdana;
+  font-size: 18px;
+}
+#act-popup_shadow {
+  z-index: 4000;
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.25;
+  width: 100%;
+  height: 100%;
+}
+.act-asr_noti_wrap {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti-png8.png);
+  background-color: #258DDD;
+  background-repeat: repeat-x;
+  width: 225px;
+  padding: 10px 7px;
+  font-size: 14px;
+  position: absolute;
+  border-radius: 6px;
+  left: -237px;
+  z-index: 9000;
+}
+.act-asr_noti_arrow {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti-png8.png);
+  background-repeat: no-repeat;
+  background-position: 100% -82px;
+  width: 8px;
+  height: 15px;
+  right: -8px;
+  position: absolute;
+}
+.act-bar_highlight_tp {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 371px;
+  height: 6px;
+}
+.act-bar_highlight_mid {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti_bg-png8.png);
+  background-repeat: repeat-y;
+  background-position: 0 -17px;
+  width: 341px;
+  padding: 10px 15px;
+  color: #fff;
+}
+.act-bar_highlight_bt {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
+  background-repeat: repeat-y;
+  background-position: 0 -45px;
+  width: 371px;
+  height: 5px;
+}
+.act-bar_prompt {
+  /* Yongwei.chen: hide the check box in Apr.13 release */
+
+  display: none;
+  float: right;
+  margin-top: 15px;
+}
+.act-bar_close {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
+  background-repeat: repeat-y;
+  background-position: -23px -17px;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  cursor: pointer;
+}
+.act-bar_message {
+  font-weight: bold;
+}
+.act-bar_highlight_wrap {
+  width: 371px;
+  font-size: 14px;
+  font-family: Arial;
+  position: absolute;
+  border-radius: 6px;
+  left: 75px;
+  z-index: 9000;
+  top: 320px;
+}
+.act-bar_arrow {
+  background-image: url(#cacheSvr/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
+  background-repeat: no-repeat;
+  background-position: left -18px;
+  width: 13px;
+  height: 14px;
+  left: -10px;
+  position: absolute;
+}
+#act-popup_btns {
+  width: 100%;
+}
+#act-popup_btnskip {
+  float: left;
+  margin: 0 0 0 20px;
+}
