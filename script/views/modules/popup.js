@@ -25,7 +25,7 @@ define(['jquery',
 
 
         render: function() {
-            var $container = $(this.el).attr('id', 'act-popup_repository');
+            var $container = $(this.el).attr('id', 'act-popup_layer');
             $(this.model.get('root')).append(this.el);
 
             return this;
