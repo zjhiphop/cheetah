@@ -3,9 +3,9 @@ define(['jquery',
 'backbone'],function($,_,Backbone) {
     "use strict"
 
-    var model = Backbone.Model.extend({
+    var PopupModel = Backbone.Model.extend({
         defaults: {
-            root: '#ets-activity',
+            root: '',
             skipBtn: { 
                 show: false,
                 disable: false,
@@ -45,6 +45,6 @@ define(['jquery',
         }
     });
 
-    return model;
+    return PopupModel;
 });
 

@@ -3,8 +3,11 @@ define(['jquery',
 'backbone',
 'mustache',
 'models/modules/popup',
-'help/text!tpl/mustache/common/popup.tpl'],function($,_,Backbone,$$,model,tpl) {
+'collections/modules/popup',
+'help/text!tpl/mustache/common/popup.tpl'],function($, _, Backbone, $$, PopupModel, popups, tpl) {
     "use strict"
+
+    var views = [];
 
     var PopupView = Backbone.View.extend({
         tagName: 'div',
@@ -19,16 +22,36 @@ define(['jquery',
         },
 
         initialize: function() {
-            this.model = new model();
-            this.model.bind('change', this.popup, this);
         },
 
+        render: function() {          
+            var $container = $(this.el).attr('id', 'act-popup_layer'),
+            $root = $(this.model.get('root'));
+            $root.append(this.el);
 
-        render: function() {
-            var $container = $(this.el).attr('id', 'act-popup_layer');
-            $(this.model.get('root')).append(this.el);
+            this.popup();
 
             return this;
+        },
+
+        popup: function() {
+            var $container = $(this.el);
+            var compliedTemplate = $$.render(this.template, this.model.toJSON());
+
+            var $root = $(this.model.get('root')),
+            rootWidth = $root.innerWidth(),
+            rootHeight = $root.innerHeight();
+
+            $(this.el).css({
+                width: rootWidth,
+                height: rootHeight
+            });
+
+
+            $container.html(compliedTemplate);
+            $container.show();
+            this.setStyle($container);
+            this.bindEvents(this.model.get('events'));
         },
 
         setStyle: function() {
@@ -49,18 +72,9 @@ define(['jquery',
             });
         },
 
-        popup: function() {
-            var $container = $(this.el);
-            var compliedTemplate = $$.render(this.template, this.model.toJSON());
-
-            $container.html(compliedTemplate);
-            this.setStyle($container);
-            this.bindEvents(this.model.get('events'));
-            $container.show();
-        },
-
         hide: function() {
             $(this.el).hide();
+            this.unbind();
         },
 
         //bind customerized events
@@ -134,16 +148,41 @@ define(['jquery',
             return true;
         }
 
-    });
-
-    var popupView = (new PopupView()).render();
+    }); 
 
     return {
-        show: function(key, value, options) {
-            popupView.model.set(key, value, options);
+        show: function(data) {
+            if(typeof data !== 'object') {
+                throw 'The parameter should be an object';
+                return;
+            } else if(typeof data.root === 'undefined') {
+                throw "A 'root' property is expected";
+                return;
+            }
+
+            var newModel = new PopupModel(data);
+
+            var existedView = _.find(views, function(view) {
+                return view.model.get('root') === newModel.get('root');
+            });
+
+            if(typeof existedView !== 'undefined') {
+                existedView.popup();
+            } else {
+                var popupView = new PopupView({model: newModel});
+                popupView.render();
+                views.push(popupView);
+            }
         },
         hide: function() {
-            popupView.hide();
+            _.each(views, function(view) {
+                view.hide();
+            });
+        },
+        dispose: function() {
+            _.each(views, function(view) {
+                _._dispose(view);
+            })
         }
     };
 });

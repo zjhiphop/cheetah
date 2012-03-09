@@ -182,17 +182,47 @@ define([
                     'config' : {
                         'skipBtn' : {
                             'show' : true
+                        },
+                        'nextBtn': {
+                            'show': true
+                        },
+                        'prevBtn': {
+                            'show': true
                         }
                     },
                     'events' : {
-                        'prevClick' : null,
-                        'nextClick' : null,
+                        'nextClick' : function(id) {
+                            popup.show({
+                                root:'#ets-activity',
+                                noBtn: {
+                                    show: true,
+                                    text: 'Fuck'
+                                },
+                                yesBtn: {
+                                    show: true,
+                                    text: 'You'
+                                }
+                            });
+                        },
+                        'prevClick' : function(id) {
+                            popup.show({
+                                root:'#ets-activity',
+                                noBtn: {
+                                    show: true,
+                                    text: 'Fuck'
+                                },
+                                yesBtn: {
+                                    show: true,
+                                    text: 'You'
+                                }
+                            });
+                        },
                         'submitClick' : function(id, score, content, onSucceed, onFailed) {
                             alert('submit score : id' + id + ' score:' + score);
                         },
                         'skipClick' : function(id) {
                             popup.show({
-                                guid: _.uuid('popup'),
+                                root:'body',
                                 noBtn: {
                                     show: true,
                                     text: 'No'
