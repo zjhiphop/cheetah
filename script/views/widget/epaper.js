@@ -2,7 +2,8 @@
  * this epaper widget is depand on jquery plugin lionbars.
  */
 //@off
-define(['jquery', 
+define(['require',
+'jquery', 
 'underscore', 
 'backbone', 
 'engine', 
@@ -10,7 +11,8 @@ define(['jquery',
 'models/widget/epaper', 
 'lionbars'],
 //@on
-function($, _, Backbone, $$, epaper_tpl, model) {
+function(require, $, _, Backbone, $$, epaper_tpl, model) {
+    "use strict"
 
     var Epaper_View = Backbone.View.extend({
         id:'ets-epaper',
@@ -43,6 +45,12 @@ function($, _, Backbone, $$, epaper_tpl, model) {
                 this.setTemplate($root);  
             }           
             
+            var audioPlayerBar = require(['views/widget/audio_player_bar'], function(APB) {
+                console.log($root.find("#ets-epaper-content"));
+
+                $root.find("#ets-epaper-content").prepend((new APB).render().el);
+            });
+
             return this;
         },
         

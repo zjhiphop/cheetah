@@ -16,6 +16,7 @@ require.config({
         /*jquery plugins*/
         "jtemplate" : "script/lib/jtemplate/_jtemplate",
         "lionbars" : "script/lib/lionbars/_lionbars",
+        "mejs": "script/lib/mediaelement/_mediaelement",
         "models" : "script/models",
         "views" : "script/views",
         "collections" : "script/collections"
