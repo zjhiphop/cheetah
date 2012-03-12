@@ -19,9 +19,22 @@ define(['jquery',
 				controls: "controls"
 			});
 
-			console.log($(this.el).mediaelementplayer());
+			
 
 			return this;
+		},
+
+		insertDOM: function() {
+			$(this.el).mediaelementplayer({
+				audioWidth: 587,
+				audioHeight: 43,
+				autosizeProgress: false,
+				startVolume: 1,
+				loop: false,
+				enableAutosize: true,
+				features: ['playpause', 'progress','duration'],
+				pluginPath: cacheSvr + '_imgs/ui/courseware/study/'
+			});
 		}
 	});
 

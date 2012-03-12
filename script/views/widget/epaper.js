@@ -46,8 +46,6 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             }           
             
             var audioPlayerBar = require(['views/widget/audio_player_bar'], function(APB) {
-                console.log($root.find("#ets-epaper-content"));
-
                 $root.find("#ets-epaper-content").prepend((new APB).render().el);
             });
 
