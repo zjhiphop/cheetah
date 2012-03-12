@@ -7,16 +7,16 @@
 //  Description:   Defined the various button at the bottom for activity
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-/*@cacheSvr: "http://test-ak.englishtown.com/";*/
-#act-popup_layer {
+.act-popup_layer {
   position: absolute;
   width: 100%;
   left: 0;
   top: 0;
   height: 100%;
   display: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-#act-popup_layer #act-popup {
+.act-popup_layer .act-popup {
   width: 498px;
   z-index: 9000;
   position: absolute;
@@ -25,27 +25,27 @@
   left: 50%;
   margin-left: -249px;
 }
-#act-popup_layer .act-popup_inner {
+.act-popup_layer .act-popup_inner {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/popup-v2.png);
   background-repeat: no-repeat;
   background-position: right top;
   margin-left: 10px;
 }
-#act-popup_layer .act-popup_inner .act-popup_bg_left {
+.act-popup_layer .act-popup_inner .act-popup_bg_left {
   width: 478px;
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/popup-v2.png);
   background-repeat: no-repeat;
   background-position: left top;
   margin-left: -10px;
 }
-#act-popup_layer .act-popup_footer {
+.act-popup_layer .act-popup_footer {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/popup-v2.png);
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 20px;
   margin-left: 10px;
 }
-#act-popup_layer .act-popup_footer .act-popup_bg_left {
+.act-popup_layer .act-popup_footer .act-popup_bg_left {
   width: 478px;
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/popup-v2.png);
   background-repeat: no-repeat;
@@ -53,7 +53,8 @@
   height: 20px;
   margin-left: -10px;
 }
-#act-popup_layer #act-popup_close {
+.act-popup_layer .act-popup_close {
+  margin: 0;
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/close-png8.png);
   height: 34px;
   width: 34px;
@@ -63,22 +64,29 @@
   top: -17px;
   right: -17px;
 }
-#act-popup_layer #act-popup_btnno {
+.act-popup_layer .act-popup_btns {
+  width: 100%;
+}
+.act-popup_layer .ets-btn-skip {
+  float: left;
+  margin: 0 0 0 20px;
+}
+.act-popup_layer .ets-btn-no {
   display: block;
   margin: 0 0 0 20px;
   float: left;
 }
-#act-popup_layer #act-popup_btnyes {
+.act-popup_layer .ets-btn-yes {
   display: block;
   float: right;
 }
-#act-popup_layer .act-popup_content {
+.act-popup_layer .act-popup_content {
   padding: 20px 0 20px 20px;
   display: block;
   font-family: Helvetica, Arial, Verdana;
   font-size: 18px;
 }
-#act-popup_layer #act-popup_shadow {
+.act-popup_layer .act-popup_shadow {
   z-index: 4000;
   position: absolute;
   background-color: #000000;
@@ -86,7 +94,7 @@
   width: 100%;
   height: 100%;
 }
-#act-popup_layer .act-asr_noti_wrap {
+.act-popup_layer .act-asr_noti_wrap {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti-png8.png);
   background-color: #258DDD;
   background-repeat: repeat-x;
@@ -98,7 +106,7 @@
   left: -237px;
   z-index: 9000;
 }
-#act-popup_layer .act-asr_noti_arrow {
+.act-popup_layer .act-asr_noti_arrow {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti-png8.png);
   background-repeat: no-repeat;
   background-position: 100% -82px;
@@ -107,14 +115,14 @@
   right: -8px;
   position: absolute;
 }
-#act-popup_layer .act-bar_highlight_tp {
+.act-popup_layer .act-bar_highlight_tp {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   width: 371px;
   height: 6px;
 }
-#act-popup_layer .act-bar_highlight_mid {
+.act-popup_layer .act-bar_highlight_mid {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti_bg-png8.png);
   background-repeat: repeat-y;
   background-position: 0 -17px;
@@ -122,21 +130,21 @@
   padding: 10px 15px;
   color: #fff;
 }
-#act-popup_layer .act-bar_highlight_bt {
+.act-popup_layer .act-bar_highlight_bt {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
   background-repeat: repeat-y;
   background-position: 0 -45px;
   width: 371px;
   height: 5px;
 }
-#act-popup_layer .act-bar_prompt {
+.act-popup_layer .act-bar_prompt {
   /* Yongwei.chen: hide the check box in Apr.13 release */
 
   display: none;
   float: right;
   margin-top: 15px;
 }
-#act-popup_layer .act-bar_close {
+.act-popup_layer .act-bar_close {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
   background-repeat: repeat-y;
   background-position: -23px -17px;
@@ -147,10 +155,10 @@
   right: -10px;
   cursor: pointer;
 }
-#act-popup_layer .act-bar_message {
+.act-popup_layer .act-bar_message {
   font-weight: bold;
 }
-#act-popup_layer .act-bar_highlight_wrap {
+.act-popup_layer .act-bar_highlight_wrap {
   width: 371px;
   font-size: 14px;
   font-family: Arial;
@@ -160,7 +168,7 @@
   z-index: 9000;
   top: 320px;
 }
-#act-popup_layer .act-bar_arrow {
+.act-popup_layer .act-bar_arrow {
   background-image: url(#cacheSvr#/_imgs/ui/courseware/study/asr_noti_v2-png8.png);
   background-repeat: no-repeat;
   background-position: left -18px;
@@ -168,11 +176,4 @@
   height: 14px;
   left: -10px;
   position: absolute;
-}
-#act-popup_layer #act-popup_btns {
-  width: 100%;
-}
-#act-popup_layer #act-popup_btnskip {
-  float: left;
-  margin: 0 0 0 20px;
 }

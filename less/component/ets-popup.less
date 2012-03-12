@@ -7,21 +7,22 @@
 //  Description:   Defined the various button at the bottom for activity
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-@cacheSvr: "http://test-ak.englishtown.com/";
-/*@cacheSvr: "#cacheSvr#/";*/
+// @cacheSvr: "http://test-ak.englishtown.com/";
+@cacheSvr: "#cacheSvr#/";
 .bg-img(@img: "") {
     background-image :e(%("url(%s%s)", @cacheSvr, @img)) ; 
  }
 
-#act-popup_layer{
+.act-popup_layer{
     position:absolute;
     width:100%;
     left: 0;
     top: 0;
     height: 100%;
     display: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    #act-popup {
+    .act-popup {
         width: 498px;
         z-index: 9000;
         position: absolute;
@@ -36,32 +37,34 @@
         background-repeat: no-repeat;
         background-position: right top;
         margin-left: 10px;
+
+        .act-popup_bg_left {
+            width: 478px;
+            .bg-img("_imgs/ui/courseware/study/popup-v2.png");
+            background-repeat: no-repeat;
+            background-position: left top;
+            margin-left: -10px;
+        }
     }
-    .act-popup_inner .act-popup_bg_left {
-        width: 478px;
-        .bg-img("_imgs/ui/courseware/study/popup-v2.png");
-        background-repeat: no-repeat;
-        background-position: left top;
-        margin-left: -10px;
-    }
+    
     .act-popup_footer {
         .bg-img("_imgs/ui/courseware/study/popup-v2.png");
         background-repeat: no-repeat;
         background-position: right bottom;
         height: 20px;
         margin-left: 10px;
-    }
-    .act-popup_footer .act-popup_bg_left {
-        width: 478px;
-        .bg-img("_imgs/ui/courseware/study/popup-v2.png");
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        height: 20px;
-        margin-left: -10px;
+
+        .act-popup_bg_left {
+            width: 478px;
+            .bg-img("_imgs/ui/courseware/study/popup-v2.png");
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            height: 20px;
+            margin-left: -10px;
+        }
     }
 
-
-    #act-popup_close {
+    .act-popup_close {
         margin: 0;
         .bg-img("_imgs/ui/courseware/study/close-png8.png");
         height: 34px;
@@ -72,14 +75,19 @@
         top: -17px;
         right: -17px;
     }
-
-    #act-popup_btnno {
+    .act-popup_btns {
+        width: 100%;
+    }
+    .ets-btn-skip {
+        float: left;
+        margin: 0 0 0 20px;
+    }
+    .ets-btn-no  {
         display: block;
         margin: 0 0 0 20px;
         float: left;
     }
-
-    #act-popup_btnyes {
+    .ets-btn-yes {
         display: block;
         float: right;
     }
@@ -91,7 +99,7 @@
         font-size: 18px;
     }
 
-    #act-popup_shadow {
+    .act-popup_shadow {
         z-index: 4000;
         position: absolute;
         background-color: #000000;
@@ -181,13 +189,4 @@
         left:-10px;
         position:absolute;
     }
-    #act-popup_btns {
-        width: 100%;
-    }
-    #act-popup_btnskip {
-        float: left;
-        margin: 0 0 0 20px;
-    }
 }
-
-

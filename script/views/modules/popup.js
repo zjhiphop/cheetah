@@ -12,21 +12,24 @@ define(['jquery',
     var PopupView = Backbone.View.extend({
         tagName: 'div',
 
+        className: 'act-popup_layer',
+
         template: tpl,
 
         events: {
-            'click #act-popup_close': 'onClickClose',
-            'click #act-popup_btnno': 'onClickBtnNo',
-            'click #act-popup_btnyes': 'onClickBtnYes',
-            'click #act-popup_btnskip': 'onClickBtnSkip'
+            'click .act-popup_close': 'onClickClose',
+            'click .ets-btn-no': 'onClickBtnNo',
+            'click .ets-btn-yes': 'onClickBtnYes',
+            'click .ets-btn-skip': 'onClickBtnSkip'
         },
 
         initialize: function() {
         },
 
         render: function() {          
-            var $container = $(this.el).attr('id', 'act-popup_layer'),
+            var $container = $(this.el),
             $root = $(this.model.get('root'));
+            
             $root.append(this.el);
 
             this.popup();
