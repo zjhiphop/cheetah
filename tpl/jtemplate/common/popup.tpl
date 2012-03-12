@@ -1,8 +1,8 @@
-    <div id="act-popup_shadow"></div>
-    <div id="act-popup" class="act-box">
+    <div class="act-popup_shadow"></div>
+    <div class="ct-popup act-box">
 
         {#if $T.closeBtn}
-        <a href="#" id="act-popup_close"></a>
+        <a href="#" class="act-popup_close"></a>
         {/endif}
 
         <div class="act-popup_inner">
@@ -11,21 +11,21 @@
                     {$T.content}
                 </span>
 
-                <div id="act-popup_btns" class="ets-cf">
+                <div class="act-popup_btns ets-cf">
                     {#if $T.noBtn.show}
-                    <a href="#" id="act-popup_btnno" class="ets-btn-no {#if $T.noBtn.disable}ets-btn-no-disabled{/endif}">
+                    <a href="#" class="ets-btn-no {#if $T.noBtn.disable}ets-btn-no-disabled{/endif}">
                         <span>{$T.noBtn.text}</span>
                     </a>
                     {/endif}
 
                     {#if $T.yesBtn.show}
-                    <a id="act-popup_btnyes" href="#" class="ets-btn-yes {#if $T.yesBtn.disable}ets-btn-yes-disabled{/endif}">
+                    <a href="#" class="ets-btn-yes {#if $T.yesBtn.disable}ets-btn-yes-disabled{/endif}">
                         <span>{$T.yesBtn.text}</span>
                     </a>
                     {/endif}
 
                     {#if $T.skipBtn.show}
-                    <a href="#" id="act-popup_btnskip" class="ets-btn-skip {#if $T.skipBtn.disable}ets-btn-skip-disabled{/endif}">
+                    <a href="#" class="ets-btn-skip {#if $T.skipBtn.disable}ets-btn-skip-disabled{/endif}">
                         <span>{$T.skipBtn.text}</span>
                     </a>
                     {/endif}

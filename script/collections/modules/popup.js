@@ -5,13 +5,7 @@ define(['jquery',
     "use strict"
 
     var PopupCollection = Backbone.Collection.extend({
-        model: PopupModel,
-
-        hasDuplicated: function(root) {
-            return this.find(function(model) {
-                return model.get('root') === root;
-            });
-        }
+        model: PopupModel
     });
 
     return new PopupCollection;

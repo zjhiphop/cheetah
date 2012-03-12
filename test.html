@@ -2,13 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
-    <script type="text/javascript" src="script/lib/underscore.js"></script>
-    <script type="text/javascript" src="script/lib/backbone.js"></script>
-    <!--<script type="text/javascript" src="http://documentcloud.github.com/backbone/backbone.js"></script>-->
-    <script src="test.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" href="css/ets-base.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet" href="css/ets-course.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    
+    <link rel="stylesheet" href="css/lib/mediaelementplayer.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet/less" type="text/css" href="less/component/ets-audio_player_bar.less">
+    <script type="text/javascript" src="script/lib/less-1.2.2.min.js"></script>
+
+	
+    <script type="text/javascript" src="script/lib/jquery.js"></script>
+    <script type="text/javascript" src="script/lib/mediaelement-and-player.js"></script>
+	<title>test</title>
 </head>
 <body>
-	
+
+	<audio id="player2" src="http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3" type="audio/mp3" controls="controls"></audio>
+
+	<script type="text/javascript">
+		window.cacheSvr = "http://localhost:8888/cheetah/";
+	</script>
+
+	<script type="text/javascript">
+		$('#player2').mediaelementplayer({
+			audioWidth: 587,
+			audioHeight: 43,
+			autosizeProgress: false,
+			startVolume: 1,
+			loop: false,
+			enableAutosize: true,
+			features: ['playpause', 'progress','duration'],
+			pluginPath: cacheSvr + '_imgs/ui/courseware/study/'
+		});
+	</script>
+
 </body>
 </html>

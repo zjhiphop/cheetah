@@ -64,6 +64,7 @@
 #ets-epaper-right-border {
 	width: 5px;
 	right: -5px;
+	position: absolute;
 }
 .ets-epaper-btn-expand,
 .ets-epaper-btn-collapse {

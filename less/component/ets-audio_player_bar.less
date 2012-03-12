@@ -1,0 +1,108 @@
+@img: url(../../_imgs/ui/courseware/study/audio_player_bar.png);
+@time-bar-width: 465px;
+@time-bar-height: 9px;
+@time-color: #494949;
+@container-height: 43px;
+
+.mejs-container {
+	background: @img no-repeat 0 0 transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	.mejs-controls {
+		background: none;
+		height: @container-height;
+
+		div {
+			width: auto;
+			height: auto;
+		}
+
+
+		.mejs-button button{
+			background: @img 0 -180px no-repeat transparent;			
+			height: 36px;
+			width: 36px;
+			margin: 0;
+		}
+
+		.mejs-play {
+			margin-left: 15px;
+			padding-top: 2px;
+			height: 41px;
+			width: 36px;
+		}
+
+		.mejs-pause {
+			margin-left: 15px;
+			padding-top: 2px;
+			height: 41px;
+			width: 36px;
+
+			button {
+				background-position: -88px -180px;
+			}	
+		}
+
+		.mejs-time {
+			span {
+				color: @time-color;
+				line-height: @container-height;
+				height: @container-height;
+				margin: 0;
+			}
+		}
+
+		.mejs-duration-container {
+			padding: 0;
+			line-height: @container-height;
+			height: @container-height;
+			margin: 0 0 0 15px;
+		}
+
+		.mejs-time-rail {
+			width: @time-bar-width;
+			height: @time-bar-height;
+			padding: 17px 0 0 10px;
+
+			span {
+				height: @time-bar-height;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;
+			}
+			.mejs-time-total {
+				background: @img 0 -72px no-repeat transparent;
+				width: @time-bar-width;
+				margin: 0;
+			}
+
+			.mejs-time-loaded {
+				background: @img 0 -108px no-repeat transparent;
+			}
+
+			.mejs-time-current {
+				background: @img 0 -144px no-repeat transparent;
+			}
+
+			.mejs-time-float {
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+				height: 17px;
+			}
+
+			.mejs-time-handle {
+				display: block;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+				background: @img -216px -180px no-repeat transparent;
+				width: 20px;
+				height: 20px;
+				border: 0;
+				top: -6px;
+			}
+		}
+
+	}
+}

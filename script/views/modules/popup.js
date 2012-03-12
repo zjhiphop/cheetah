@@ -3,8 +3,7 @@ define(['jquery',
 'backbone',
 'mustache',
 'models/modules/popup',
-'collections/modules/popup',
-'help/text!tpl/mustache/common/popup.tpl'],function($, _, Backbone, $$, PopupModel, popups, tpl) {
+'help/text!tpl/mustache/common/popup.tpl'],function($, _, Backbone, $$, PopupModel, tpl) {
     "use strict"
 
     var views = [];
@@ -64,10 +63,10 @@ define(['jquery',
             if(typeof popupHeight === 'number') {
                 this.$('.act-popup_content').height(popupHeight - 93);
             } else {
-                popupHeight = this.$('#act-popup').height();
+                popupHeight = this.$('.act-popup').height();
             } 
 
-            this.$('#act-popup').css({
+            this.$('.act-popup').css({
                 'margin-left': - popupWidth/2,
                 'margin-top': - popupHeight/2,
                 'width': popupWidth,
