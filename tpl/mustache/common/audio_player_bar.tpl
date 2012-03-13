@@ -1,0 +1,1 @@
+<audio src="{{src}}" type="audio/mp3" controls="controls"></audio>

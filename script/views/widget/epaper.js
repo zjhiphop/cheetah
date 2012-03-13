@@ -42,27 +42,22 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             $root.wrap('<div id="ets-epaper-outer"><div id="ets-epaper-inner"></div></div>');
             this.$box = $root.parents('#ets-epaper-outer');
             if(!this.defaultsSetting.container){
-                this.setTemplate($root);  
-            }           
-            
-            var audioPlayerBar = require(['views/widget/audio_player_bar'], function(APB) {
-                console.log($root.find("#ets-epaper-content"));
-
-                $root.find("#ets-epaper-content").prepend((new APB).render().el);
-            });
+                this.setTemplate();  
+            }
 
             return this;
         },
         
-        setTemplate : function($root) {
-            var compiledTemplate = $$.render(this.template, this.defaultsSetting);
+        setTemplate : function() {
+            var compiledTemplate = $$.render(this.template, this.defaultsSetting),
+            $root = $(this.el);
             $root.html(compiledTemplate);
 
-            $(this.el).find("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
+            this.$("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
 
             if(this.defaultsSetting.expandable) {
                 $root.css("left", - this.defaultsSetting.width);
-                $root.find("#ets-epaper-main").width(this.defaultsSetting.width);
+                this.$("#ets-epaper-main").width(this.defaultsSetting.width);
 
                 // generate overlay
                 if(this.defaultsSetting.hasOverlay) {
@@ -75,15 +70,31 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
                 $(this.defaultsSetting.container).css('float', 'left');
             }
-              //call jquery plugin lionbars
+            
+            // whether neeed audio player bar or not
+            if(true) {
+                this.$("#ets-epaper-main").height(this.$("#ets-epaper-main").height()-73);
+                this.insertAudioPlayerBar();
+            }
+
+            //call jquery plugin lionbars
             // if browser is not lower than IE9,
             // then use lionbars plugin
             if(!($.browser.msie && ($.browser.version || 0) < 9)) {
                 $("#ets-epaper-main").lionbars();
             }
 
+
             this.clickOutOfEpaperInner();
 		},
+
+        // insert audio player bar
+        insertAudioPlayerBar: function() {
+            var that = this;
+            require(['views/widget/audio_player_bar'], function(APB) {
+                $(that.el).prepend((new APB).render().el);
+            });
+        },
 
         setOverlay : function() {
             this.$box.prepend("<div id='ets-act-overlay'>");

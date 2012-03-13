@@ -167,7 +167,7 @@ define([
                     'epaper' : {
                         'epaper_content' : _eContent,
                         'act_box_fullwidth' : false,
-                        'width' : 600,
+                        'width' : 620,
                         'expandable' : false,
                         'container' : "#ets-epaper-container"
                     },
