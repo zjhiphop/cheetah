@@ -72,7 +72,7 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             }
             
             // whether neeed audio player bar or not
-            if(true) {
+            if(this.defaultsSetting.audioPlayerBar.show) {
                 this.$("#ets-epaper-main").height(this.$("#ets-epaper-main").height()-73);
                 this.insertAudioPlayerBar();
             }
@@ -92,7 +92,7 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
         insertAudioPlayerBar: function() {
             var that = this;
             require(['views/widget/audio_player_bar'], function(APB) {
-                $(that.el).prepend((new APB).render().el);
+                $(that.el).prepend(APB.render(that.defaultsSetting.audioPlayerBar.src));
             });
         },
 

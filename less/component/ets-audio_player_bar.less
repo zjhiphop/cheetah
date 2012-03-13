@@ -1,4 +1,14 @@
+/*///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Component Styles  
+//  File:          ets-ets-audio_player_bar
+/  Images:        						
+//  Dependencies:  lib/mediaelementplayer.css
+//  Description:   Defined the audio player bar style
+//
+//////////////////////////////////////////////////////////////////////////////////////*/
 @img: url(../../_imgs/ui/courseware/study/audio_player_bar.png);
+/*@img: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png);*/
 @time-bar-width: 465px;
 @time-bar-height: 9px;
 @time-color: #494949;
@@ -73,6 +83,9 @@
 				-webkit-border-radius: 6px;
 				-moz-border-radius: 6px;
 				border-radius: 6px;
+			}
+			.mejs-time-float-corner {
+				display: none;
 			}
 			.mejs-time-total {
 				background: @img 0 -72px no-repeat transparent;

@@ -1,0 +1,101 @@
+/*///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Component Styles  
+//  File:          ets-ets-audio_player_bar
+/  Images:        						
+//  Dependencies:  lib/mediaelementplayer.css
+//  Description:   Defined the audio player bar style
+//
+//////////////////////////////////////////////////////////////////////////////////////*/
+/*@img: url(../../_imgs/ui/courseware/study/audio_player_bar.png);*/
+.act-audio_player_bar {
+  margin: 10px auto 20px;
+}
+.mejs-container {
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) no-repeat 0 0 transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+}
+.mejs-container .mejs-controls {
+  background: none;
+  height: 43px;
+}
+.mejs-container .mejs-controls div {
+  width: auto;
+  height: auto;
+}
+.mejs-container .mejs-controls .mejs-button button {
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -180px no-repeat transparent;
+  height: 36px;
+  width: 36px;
+  margin: 0;
+}
+.mejs-container .mejs-controls .mejs-play {
+  margin-left: 15px;
+  padding-top: 2px;
+  height: 41px;
+  width: 36px;
+}
+.mejs-container .mejs-controls .mejs-pause {
+  margin-left: 15px;
+  padding-top: 2px;
+  height: 41px;
+  width: 36px;
+}
+.mejs-container .mejs-controls .mejs-pause button {
+  background-position: -88px -180px;
+}
+.mejs-container .mejs-controls .mejs-time span {
+  color: #494949;
+  line-height: 43px;
+  height: 43px;
+  margin: 0;
+}
+.mejs-container .mejs-controls .mejs-duration-container {
+  padding: 0;
+  line-height: 43px;
+  height: 43px;
+  margin: 0 0 0 15px;
+}
+.mejs-container .mejs-controls .mejs-time-rail {
+  width: 465px;
+  height: 9px;
+  padding: 17px 0 0 10px;
+}
+.mejs-container .mejs-controls .mejs-time-rail span {
+  height: 9px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-float-corner {
+  display: none;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-total {
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -72px no-repeat transparent;
+  width: 465px;
+  margin: 0;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -108px no-repeat transparent;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -144px no-repeat transparent;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-float {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  height: 17px;
+}
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-handle {
+  display: block;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) -216px -180px no-repeat transparent;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  top: -6px;
+}

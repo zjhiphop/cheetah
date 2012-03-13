@@ -1,7 +1,18 @@
 define(['jquery', 
-		  'underscore',
-	   	'backbone'], function($, _, Backbone) {
-    var model = Backbone.Model.extend({
+'underscore',
+'backbone'], function($, _, Backbone) {
+    "use strict"
+    var Model = Backbone.Model.extend({
+        defaults: {
+            'width': 600,
+            'hasOverlay': true,
+            'expandable': false,
+            'epaper_content': '',
+            'audioPlayerBar': {
+                show: false,
+                src: ''
+            }
+        },
         initialize : function(options) {
             this.attributes = _.deepExtend(this.attributes, options);
         },
@@ -9,10 +20,6 @@ define(['jquery',
 			// todo
         }
     });
-    return new model({
-        'width': 600,
-        'hasOverlay': true,
-        'expandable': false,
-        'epaper_content': ''
-    });
+
+    return new Model();
 });

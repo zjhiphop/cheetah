@@ -1,10 +1,10 @@
 define(['jquery',
 'underscore',
 'backbone',
-'mustache',
-// 'engine',
-'help/text!tpl/mustache/common/audio_player_bar.tpl',
-'mejs'], function($, _, Backbone, $$, tpl) {
+'engine',
+'models/widget/audio_player_bar',
+'help/text!tpl/jtemplate/common/audio_player_bar.tpl',
+'mejs'], function($, _, Backbone, $$, Model, tpl) {
 	"use strict"
 
 	var AudioPlayerBar = Backbone.View.extend({
@@ -15,18 +15,14 @@ define(['jquery',
 		template: tpl,
 
 		initialize: function() {
-
 		},
 
 		domReady: false,
 
 		render: function() {
 			var that = this;
-			var data = {
-				src: "http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3"
-			};
 
-			$(this.el).html($$.render(this.template, data));
+			$(this.el).html($$.render(this.template, this.model.toJSON()));
 
 			// replace audio tag when this element has been insert into DOM
 			var myTime = setInterval(function() {
@@ -50,10 +46,15 @@ define(['jquery',
 				loop: false,
 				enableAutosize: true,
 				features: ['playpause', 'progress','duration'],
-				pluginPath: cacheSvr + '_imgs/ui/courseware/study/'
+				pluginPath: window.cacheSvr + '/_imgs/ui/courseware/study/'
 			});
 		}
 	});
 
-	return AudioPlayerBar;
+	return {
+		render: function(src) {
+			var model = new Model({src: src});
+			return (new AudioPlayerBar({model: model})).render().el;
+		}
+	};
 });
