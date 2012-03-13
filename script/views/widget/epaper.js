@@ -44,7 +44,7 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             if(!this.defaultsSetting.container){
                 this.setTemplate();  
             }
-
+            
             return this;
         },
         
