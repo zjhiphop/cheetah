@@ -7,7 +7,6 @@
 //  Description:   Defined the audio player bar style
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-/*@img: url(../../_imgs/ui/courseware/study/media_player.png);*/
 .mejs-container {
   background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) no-repeat 0 0 transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -95,4 +94,13 @@
   height: 20px;
   border: 0;
   top: -6px;
+}
+.media_player_nobar .mejs-container {
+  background-image: none;
+  background-color: transparent;
+  margin: 0;
+}
+.media_player_nobar .mejs-container .mejs-play,
+.media_player_nobar .mejs-container .mejs-pause {
+  margin: 0;
 }

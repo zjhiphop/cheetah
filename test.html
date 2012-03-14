@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="css/ets-base.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
     <link rel="stylesheet" href="css/ets-course.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
     
-    <link rel="stylesheet" href="css/lib/mediaelementplayer.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-    <link rel="stylesheet/less" type="text/css" href="less/component/ets-audio_player_bar.less">
+    <link rel="stylesheet" href="css/lib/mediaelementplayer.min.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet/less" type="text/css" href="less/component/ets-media_player.less">
     <script type="text/javascript" src="script/lib/less-1.2.2.min.js"></script>
 
 	
@@ -17,7 +17,10 @@
 </head>
 <body>
 
-	<audio id="player2" src="http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3" type="audio/mp3" controls="controls"></audio>
+	<div class="media_player_nobar">
+		<audio id="player2" src="http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3" type="audio/mp3" controls="controls"></audio>
+	</div>
+	
 
 	<script type="text/javascript">
 		window.cacheSvr = "http://localhost:8888/cheetah/";
@@ -25,13 +28,14 @@
 
 	<script type="text/javascript">
 		$('#player2').mediaelementplayer({
-			audioWidth: 587,
-			audioHeight: 43,
+			audioWidth: 36,
+			audioHeight: 41,
 			autosizeProgress: false,
 			startVolume: 1,
 			loop: false,
 			enableAutosize: true,
-			features: ['playpause', 'progress','duration'],
+			// features: ['playpause', 'progress','duration'],
+			features: ['playpause'],
 			pluginPath: window.cacheSvr + '_imgs/ui/courseware/study/'
 		});
 	</script>

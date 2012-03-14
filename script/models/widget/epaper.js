@@ -8,7 +8,7 @@ define(['jquery',
             'hasOverlay': true,
             'expandable': false,
             'epaper_content': '',
-            'audioPlayerBar': {
+            'mediaPlayer': {
                 show: false,
                 src: ''
             }

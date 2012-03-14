@@ -170,7 +170,7 @@ define([
                         'width' : 620,
                         'expandable' : false,
                         'container' : "#ets-epaper-container",
-                        'audioPlayerBar': {
+                        'mediaPlayer': {
                             show: true,
                             src: 'http://test.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3'
                         }

@@ -7,8 +7,8 @@
 //  Description:   Defined the audio player bar style
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-/*@img: url(../../_imgs/ui/courseware/study/media_player.png);*/
-@img: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png);
+@img: url(../../_imgs/ui/courseware/study/media_player.png);
+// @img: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png);
 @time-bar-width: 465px;
 @time-bar-height: 9px;
 @time-color: #494949;
@@ -118,5 +118,18 @@
 			}
 		}
 
+	}
+}
+
+.media_player_nobar {
+	.mejs-container {
+		background-image: none;
+		background-color: transparent;
+		margin: 0;
+
+		.mejs-play,
+		.mejs-pause {
+			margin: 0;
+		}
 	}
 }
