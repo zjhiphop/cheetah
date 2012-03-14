@@ -22,7 +22,7 @@
 }
 .mejs-container .mejs-controls .mejs-button button {
   background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) 0 -180px no-repeat transparent;
-  height: 36px;
+  height: 37px;
   width: 36px;
   margin: 0;
 }
@@ -32,6 +32,9 @@
   height: 41px;
   width: 36px;
 }
+.mejs-container .mejs-controls .mejs-play button.mejs-button-hover {
+  background-position: -43px -180px;
+}
 .mejs-container .mejs-controls .mejs-pause {
   margin-left: 15px;
   padding-top: 2px;
@@ -39,7 +42,10 @@
   width: 36px;
 }
 .mejs-container .mejs-controls .mejs-pause button {
-  background-position: -88px -180px;
+  background-position: -129px -180px;
+}
+.mejs-container .mejs-controls .mejs-pause button.mejs-button-hover {
+  background-position: -172px -180px;
 }
 .mejs-container .mejs-controls .mejs-time span {
   color: #494949;
@@ -89,7 +95,7 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) -216px -180px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) -302px -188px no-repeat transparent;
   width: 20px;
   height: 20px;
   border: 0;

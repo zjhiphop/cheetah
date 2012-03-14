@@ -31,7 +31,7 @@
 
 		.mejs-button button{
 			background: @img 0 -180px no-repeat transparent;			
-			height: 36px;
+			height: 37px;
 			width: 36px;
 			margin: 0;
 		}
@@ -41,6 +41,10 @@
 			padding-top: 2px;
 			height: 41px;
 			width: 36px;
+
+			button.mejs-button-hover {
+				background-position: -43px -180px;
+			}
 		}
 
 		.mejs-pause {
@@ -50,8 +54,12 @@
 			width: 36px;
 
 			button {
-				background-position: -88px -180px;
-			}	
+				background-position: -129px -180px;
+			}
+
+			button.mejs-button-hover {
+				background-position: -172px -180px;
+			}
 		}
 
 		.mejs-time {
@@ -110,7 +118,7 @@
 				-webkit-border-radius: 0;
 				-moz-border-radius: 0;
 				border-radius: 0;
-				background: @img -216px -180px no-repeat transparent;
+				background: @img -302px -188px no-repeat transparent;
 				width: 20px;
 				height: 20px;
 				border: 0;

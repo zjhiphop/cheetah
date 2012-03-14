@@ -14,7 +14,13 @@ define(['jquery',
 
 		template: tpl,
 
+		events: {
+			'mouseover .mejs-playpause-button button': 'hoverButton',
+			'mouseout .mejs-playpause-button button': 'leaveButton'
+		},
+
 		initialize: function() {
+			
 		},
 
 		domReady: false,
@@ -64,6 +70,15 @@ define(['jquery',
 			}
 			
 			this.$('audio').mediaelementplayer(options);
+		},
+
+		/*button events*/
+		hoverButton: function(e) {
+			$(e.target).addClass('mejs-button-hover');
+		},
+		leaveButton: function(e) {
+			_.log('leave')
+			$(e.target).removeClass('mejs-button-hover');
 		}
 	});
 
