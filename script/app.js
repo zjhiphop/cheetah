@@ -168,11 +168,11 @@ define([
                         'epaper_content' : _eContent,
                         'act_box_fullwidth' : false,
                         'width' : 620,
-                        'expandable' : true,
+                        'expandable' : false,
                         'container' : "#ets-epaper-container",
                         'audioPlayerBar': {
                             show: true,
-                            src: 'http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3'
+                            src: 'http://test.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3'
                         }
                     },
                     'audio' : {}

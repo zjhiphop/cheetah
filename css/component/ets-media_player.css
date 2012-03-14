@@ -1,18 +1,15 @@
 /*///////////////////////////////////////////////////////////////////////////////////////
 //
 //  Hierarchy:     Englishtown > School > Component Styles  
-//  File:          ets-ets-audio_player_bar
+//  File:          ets-ets-media_player
 /  Images:        						
 //  Dependencies:  lib/mediaelementplayer.css
 //  Description:   Defined the audio player bar style
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
-/*@img: url(../../_imgs/ui/courseware/study/audio_player_bar.png);*/
-.act-media_player {
-  margin: 10px auto 20px;
-}
+/*@img: url(../../_imgs/ui/courseware/study/media_player.png);*/
 .mejs-container {
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) no-repeat 0 0 transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) no-repeat 0 0 transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 auto;
 }
@@ -25,7 +22,7 @@
   height: auto;
 }
 .mejs-container .mejs-controls .mejs-button button {
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -180px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) 0 -180px no-repeat transparent;
   height: 36px;
   width: 36px;
   margin: 0;
@@ -72,15 +69,15 @@
   display: none;
 }
 .mejs-container .mejs-controls .mejs-time-rail .mejs-time-total {
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -72px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) 0 -72px no-repeat transparent;
   width: 465px;
   margin: 0;
 }
 .mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -108px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) 0 -108px no-repeat transparent;
 }
 .mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) 0 -144px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) 0 -144px no-repeat transparent;
 }
 .mejs-container .mejs-controls .mejs-time-rail .mejs-time-float {
   -webkit-border-radius: 0;
@@ -93,7 +90,7 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  background: url(#cacheSvr#/_imgs/ui/courseware/study/audio_player_bar.png) -216px -180px no-repeat transparent;
+  background: url(#cacheSvr#/_imgs/ui/courseware/study/media_player.png) -216px -180px no-repeat transparent;
   width: 20px;
   height: 20px;
   border: 0;

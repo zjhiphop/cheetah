@@ -2,15 +2,15 @@ define(['jquery',
 'underscore',
 'backbone',
 'engine',
-'models/widget/media_player',
-'help/text!tpl/jtemplate/common/media_player.tpl',
+'models/widget/audio_player_bar',
+'help/text!tpl/jtemplate/common/audio_player_bar.tpl',
 'mejs'], function($, _, Backbone, $$, Model, tpl) {
 	"use strict"
 
 	var AudioPlayerBar = Backbone.View.extend({
 		tagName: "div",
 
-		className: 'act-media_player',
+		className: 'act-audio_player_bar',
 
 		template: tpl,
 
