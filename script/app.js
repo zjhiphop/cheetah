@@ -168,7 +168,7 @@ define([
                         'epaper_content' : _eContent,
                         'act_box_fullwidth' : false,
                         'width' : 620,
-                        'expandable' : false,
+                        'expandable' : true,
                         'container' : "#ets-epaper-container",
                         'mediaPlayer': {
                             show: true,

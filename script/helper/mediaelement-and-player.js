@@ -1936,7 +1936,6 @@ if (typeof jQuery != 'undefined') {
 				loaded = t.controls.find('.mejs-time-loaded');
 				others = rail.siblings();
 			
-
 			// allow the size to come from custom CSS
 			if (t.options && !t.options.autosizeProgress) {
 				// Also, frontends devs can be more flexible 
@@ -1946,7 +1945,6 @@ if (typeof jQuery != 'undefined') {
 			
 			// attempt to autosize
 			if (railWidth === 0 || !railWidth) {
-				
 				// find the size of all the other controls besides the rail
 				others.each(function() {
 					if ($(this).css('position') != 'absolute') {

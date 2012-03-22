@@ -9,7 +9,7 @@
  //////////////////////////////////////////////////////////////////////////////////////*/
 
 #ets-act-multichoice {
-	width: 940px;
+	width: 942px;
 	margin: 0 auto;
 }
 #ets-act-multichoice h1 {
@@ -41,7 +41,8 @@
 	background: #f7f7f7;
 	width:320px;
 	float:right;
-    height: 100%
+    height: 100%;
+    border-radius: 0 10px 10px 0;
 }
 #ets-act-mc-form-hd {
 	padding: 10px 0 0 0;
@@ -80,9 +81,9 @@
     cursor: pointer;
 }
 #ets-epaper-container {
-  width:590px;
+  width: 100%;
   height:100%;
-  display: inline-block;
+  position: absolute;
 }
 #ets-act-mc-form-options label{
   width:98%;

@@ -17,9 +17,9 @@
 </head>
 <body>
 
-	<div class="media_player_nobar">
+<!-- 	<div class="media_player_nobar"> -->
 		<audio id="player2" src="http://local.englishtown.com/Juno/school/audios/5.1.3%20lo2.4%20comp.mp3" type="audio/mp3" controls="controls"></audio>
-	</div>
+	<!-- </div> -->
 	
 
 	<script type="text/javascript">
@@ -28,14 +28,14 @@
 
 	<script type="text/javascript">
 		$('#player2').mediaelementplayer({
-			audioWidth: 36,
-			audioHeight: 41,
+			audioWidth: 587,
+			audioHeight: 43,
 			autosizeProgress: false,
 			startVolume: 1,
 			loop: false,
 			enableAutosize: true,
-			// features: ['playpause', 'progress','duration'],
-			features: ['playpause'],
+			features: ['playpause', 'progress','duration'],
+			// features: ['playpause'],
 			pluginPath: window.cacheSvr + '_imgs/ui/courseware/study/'
 		});
 	</script>

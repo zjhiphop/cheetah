@@ -28,7 +28,7 @@ define(['jquery',
 		render: function() {
 			var that = this;
 
-			$(this.el).html($$.render(this.template, this.model.toJSON()));
+			$(this.el).append($$.render(this.template, this.model.toJSON()));
 
 			// replace audio tag when this element has been insert into DOM
 			var myTime = setInterval(function() {
@@ -77,7 +77,6 @@ define(['jquery',
 			$(e.target).addClass('mejs-button-hover');
 		},
 		leaveButton: function(e) {
-			_.log('leave')
 			$(e.target).removeClass('mejs-button-hover');
 		}
 	});

@@ -50,8 +50,9 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
         
         setTemplate : function() {
             var compiledTemplate = $$.render(this.template, this.defaultsSetting),
-            $root = $(this.el);
-            $root.html(compiledTemplate);
+            $root = this.$el;
+
+            $root.html(compiledTemplate).width(this.defaultsSetting.width);
 
             this.$("#ets-epaper-main-hd, #ets-epaper-main-ft").width(this.defaultsSetting.width - 10);
 
@@ -68,13 +69,15 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
                 }
             } else {
                 this.$box.width(this.defaultsSetting.width).css('overflow', 'visible');
-                $(this.defaultsSetting.container).css('float', 'left');
+                
             }
             
+            // $(this.defaultsSetting.container).css('float', 'left');
+
             // whether neeed audio player bar or not
             if(this.defaultsSetting.mediaPlayer.show) {
                 this.$("#ets-epaper-main").height(this.$("#ets-epaper-main").height()-73);
-                this.insertAudioPlayerBar();
+                this.insertMediaPlayer();
             }
 
             //call jquery plugin lionbars
@@ -88,8 +91,8 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             this.clickOutOfEpaperInner();
 		},
 
-        // insert audio player bar
-        insertAudioPlayerBar: function() {
+        // insert media player
+        insertMediaPlayer: function() {
             var that = this;
             require(['views/widget/media_player'], function(MP) {
                 $(that.el).prepend(MP.render({
