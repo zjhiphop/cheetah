@@ -8,6 +8,9 @@
 //                 Must be referenced in all school content !important
 //
 //////////////////////////////////////////////////////////////////////////////////////*/
+#ets-epaper-container {
+	z-index: 1;
+}
 #ets-epaper-outer {
     position: absolute;
     overflow: hidden;
