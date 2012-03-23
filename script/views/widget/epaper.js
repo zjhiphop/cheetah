@@ -81,12 +81,6 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             }
 
             //call jquery plugin lionbars
-            // if browser is not lower than IE9,
-            // then use lionbars plugin
-            // if(!($.browser.msie && ($.browser.version || 0) < 9)) {
-            //     $("#ets-epaper-main").lionbars();
-            // }
-            console.log(this.$box.parent());
             $("#ets-epaper-main").lionbars({
                 'autohide': true
             });
