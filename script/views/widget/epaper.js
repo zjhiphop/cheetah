@@ -86,6 +86,7 @@ function(require, $, _, Backbone, $$, epaper_tpl, model) {
             // if(!($.browser.msie && ($.browser.version || 0) < 9)) {
             //     $("#ets-epaper-main").lionbars();
             // }
+            console.log(this.$box.parent());
             $("#ets-epaper-main").lionbars({
                 'autohide': true
             });

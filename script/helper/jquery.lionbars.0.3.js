@@ -217,7 +217,7 @@
 			}
 		}
 		function setScrollRatios(elem) {
-			vRatio = (offsetHeight - $(elem).find('.lb-wrap').get(0).scrollHeight - borderTop - borderBottom)/(vLbHeight - vSliderHeight);
+			vRatio = (offsetHeight - $(elem).find('.lb-wrap').get(0).scrollHeight - (borderTop.toString() !== 'NaN' ? borderTop : 0) - borderBottom)/(vLbHeight - vSliderHeight);
 			hRatio = (offsetWidth - $(elem).find('.lb-wrap').get(0).scrollWidth - borderLeft - borderRight)/(hLbHeight - hSliderHeight);
 			
 			var el = $(elem);
@@ -390,18 +390,18 @@
 		function getPadding(elem) {
 			var el = $(elem);
 			
-			paddingTop = parseInt(el.css('padding-top').replace('px', ''));
-			paddingLeft = parseInt(el.css('padding-left').replace('px', ''));
-			paddingBottom = parseInt(el.css('padding-bottom').replace('px', ''));
-			paddingRight = parseInt(el.css('padding-right').replace('px', ''));
+			paddingTop = parseInt(el.css('padding-top'), 10) || 0;
+			paddingLeft = parseInt(el.css('padding-left'), 10) || 0;
+			paddingBottom = parseInt(el.css('padding-bottom'), 10) || 0;
+			paddingRight = parseInt(el.css('padding-right'), 10) || 0;
 		}
 		function getBorders(elem) {
 			var el = $(elem);
 			
-			borderTop = parseInt(el.css('border-top-width').replace('px', ''));
-			borderRight = parseInt(el.css('border-right-width').replace('px', ''));
-			borderBottom = parseInt(el.css('border-bottom-width').replace('px', ''));
-			borderLeft = parseInt(el.css('border-left-width').replace('px', ''));
+			borderTop = parseInt(el.css('border-top-width'), 10) || 0;
+			borderRight = parseInt(el.css('border-right-width'), 10) || 0;
+			borderBottom = parseInt(el.css('border-bottom-width'), 10) || 0;
+			borderLeft = parseInt(el.css('border-left-width'), 10) || 0;
 		}
 		function getDimentions(elem, scroll, update) {
 			var el = $(elem).get(0);
