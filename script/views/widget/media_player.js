@@ -32,11 +32,12 @@ define(['jquery',
 
 			// replace audio tag when this element has been insert into DOM
 			var myTime = setInterval(function() {
-				if ($('body').find(that.el).length > 0) {
+				if ($(that.el).parent().length > 0) {
 					that.replaceByME();
 					that.domReady = true;
 					clearInterval(myTime);
 				}
+				clearInterval(myTime);
 			}, 7);
 
 			return this;
